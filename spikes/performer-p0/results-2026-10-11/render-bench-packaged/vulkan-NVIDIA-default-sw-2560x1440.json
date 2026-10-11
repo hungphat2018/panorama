@@ -1,0 +1,3 @@
+{"run_id": "packaged-vulkan-NVIDIA-default-2560x1440", "bench_render": {"gpu": "NVIDIA GeForce RTX 5070 Ti Laptop GPU", "backend": "vulkan", "preset": "default", "source": [1920, 1080], "target": [2560, 1440], "target_format": "rgb10a2", "iterations": 300,
+  "wall_ms_draw_plus_gpu_finish": {"mean": 0.4729, "p50": 0.4596, "p90": 0.4927, "p99": 0.6066, "p999": 2.3777, "max": 2.3777},
+  "gpu_pass_sum_ms": {"mean": 0.2946, "p50": 0.2925, "p90": 0.2993, "p99": 0.3023, "p999": 0.3186, "max": 0.3186}}}

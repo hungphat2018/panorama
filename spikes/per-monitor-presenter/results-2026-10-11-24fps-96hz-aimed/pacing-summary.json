@@ -1,0 +1,46 @@
+{
+ "nearest": {
+  "monitors": [
+   {
+    "name": "DISPLAY1",
+    "refresh_hz": 240.0038,
+    "presents": 4558,
+    "fallback_times": 0,
+    "refreshes_per_frame": {
+     "8": 1,
+     "10": 455
+    },
+    "skipped_frames": 0,
+    "composition": {
+     "overlay (independent flip / MPO)": 4873,
+     "none": 3
+    },
+    "error": ""
+   },
+   {
+    "name": "DISPLAY2",
+    "refresh_hz": 96.0038,
+    "presents": 1825,
+    "fallback_times": 1,
+    "refreshes_per_frame": {
+     "3": 1,
+     "4": 455
+    },
+    "skipped_frames": 0,
+    "composition": {
+     "overlay (independent flip / MPO)": 1948,
+     "none": 3
+    },
+    "error": ""
+   }
+  ],
+  "offset_ms": {
+   "frames": 457,
+   "min": 0.37,
+   "p5": 0.38,
+   "median": 0.39,
+   "p95": 0.4,
+   "max": 2.47
+  }
+ }
+}

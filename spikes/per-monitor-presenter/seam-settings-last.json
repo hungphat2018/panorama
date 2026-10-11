@@ -1,0 +1,9 @@
+{
+ "gap_mm": 20.00,
+ "right_screen_lower_mm": 0.00,
+ "lag_ms": {"DISPLAY1": 0.00, "DISPLAY2": 0.00},
+ "scan_fraction": {"DISPLAY1": 0.8889, "DISPLAY2": 0.9686},
+ "refresh_hz": {"DISPLAY1": 240.0000, "DISPLAY2": 99.9999},
+ "rows_timing": true,
+ "note": "lag is relative; widths assumed 344 mm (2560 px) and 476 mm (1920 px)"
+}

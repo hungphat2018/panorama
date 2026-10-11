@@ -1,0 +1,162 @@
+[
+ {
+  "trial": "pts",
+  "frames_seen": "2879/2880",
+  "cuts_exact": "56/56",
+  "wrong_frames": 0,
+  "wrong_away_from_cuts": 0,
+  "delay_ms_min_med_max": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "unreadable": 0,
+  "drops": "0",
+  "vo_delayed": "0",
+  "display_fps": "240.001000"
+ },
+ {
+  "trial": "script",
+  "frames_seen": "2880/2880",
+  "cuts_exact": "15/56",
+  "wrong_frames": 38,
+  "wrong_away_from_cuts": 0,
+  "delay_ms_min_med_max": [
+   0.0,
+   41.0,
+   46.0
+  ],
+  "unreadable": 0,
+  "drops": "0",
+  "vo_delayed": "0",
+  "display_fps": "240.001000"
+ },
+ {
+  "trial": "pts-seeks",
+  "frames_seen": "2521/2880",
+  "cuts_exact": "51/51",
+  "wrong_frames": 0,
+  "wrong_away_from_cuts": 0,
+  "delay_ms_min_med_max": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "unreadable": 0,
+  "drops": "0",
+  "vo_delayed": "0",
+  "display_fps": "240.001000"
+ },
+ {
+  "trial": "script-seeks",
+  "frames_seen": "2520/2880",
+  "cuts_exact": "10/51",
+  "wrong_frames": 38,
+  "wrong_away_from_cuts": 0,
+  "delay_ms_min_med_max": [
+   0.0,
+   42.0,
+   50.0
+  ],
+  "unreadable": 0,
+  "drops": "0",
+  "vo_delayed": "0",
+  "display_fps": "240.001000"
+ },
+ {
+  "trial": "pts-display-resample",
+  "frames_seen": "2879/2880",
+  "cuts_exact": "56/56",
+  "wrong_frames": 0,
+  "wrong_away_from_cuts": 0,
+  "delay_ms_min_med_max": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "unreadable": 0,
+  "drops": "0",
+  "vo_delayed": "0",
+  "display_fps": "240.001000"
+ },
+ {
+  "trial": "pts-interpolation",
+  "frames_seen": "2879/2880",
+  "cuts_exact": "56/56",
+  "wrong_frames": 0,
+  "wrong_away_from_cuts": 0,
+  "delay_ms_min_med_max": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "unreadable": 0,
+  "drops": "0",
+  "vo_delayed": "0",
+  "display_fps": "240.001000"
+ },
+ {
+  "trial": "pts-3000-cues",
+  "frames_seen": "2880/2880",
+  "cuts_exact": "56/56",
+  "wrong_frames": 0,
+  "wrong_away_from_cuts": 0,
+  "delay_ms_min_med_max": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "unreadable": 0,
+  "drops": "0",
+  "vo_delayed": "0",
+  "display_fps": "240.001000"
+ },
+ {
+  "trial": "pts-23.976",
+  "frames_seen": "2877/2877",
+  "cuts_exact": "56/56",
+  "wrong_frames": 0,
+  "wrong_away_from_cuts": 0,
+  "delay_ms_min_med_max": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "unreadable": 0,
+  "drops": "0",
+  "vo_delayed": "0",
+  "display_fps": "240.001000"
+ },
+ {
+  "trial": "pts-25",
+  "frames_seen": "2999/3000",
+  "cuts_exact": "57/57",
+  "wrong_frames": 0,
+  "wrong_away_from_cuts": 0,
+  "delay_ms_min_med_max": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "unreadable": 0,
+  "drops": "0",
+  "vo_delayed": "0",
+  "display_fps": "240.001000"
+ },
+ {
+  "trial": "pts-25-interpolation",
+  "frames_seen": "2999/3000",
+  "cuts_exact": "57/57",
+  "wrong_frames": 0,
+  "wrong_away_from_cuts": 0,
+  "delay_ms_min_med_max": [
+   0.0,
+   0.0,
+   0.0
+  ],
+  "unreadable": 0,
+  "drops": "0",
+  "vo_delayed": "0",
+  "display_fps": "240.001000"
+ }
+]

@@ -1,0 +1,94 @@
+The Meson build system
+Version: 1.12.1
+Source dir: C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo
+Build dir: C:/Users/tamla/msys64/home/tamla/p0/out/libplacebo-master
+Build type: native build
+Project name: libplacebo
+Project version: 7.375.0
+C compiler for the host machine: cc (gcc 16.2.0 "cc (Rev5, Built by MSYS2 project) 16.2.0")
+C linker for the host machine: cc ld.bfd 2.47.20260726
+C++ compiler for the host machine: c++ (gcc 16.2.0 "c++ (Rev5, Built by MSYS2 project) 16.2.0")
+C++ linker for the host machine: c++ ld.bfd 2.47.20260726
+Host machine cpu family: x86_64
+Host machine cpu: x86_64
+Compiler for C supports arguments -Wincompatible-pointer-types: YES 
+Compiler for C supports arguments -Wc23-extensions: NO 
+Compiler for C supports link arguments -Wl,--exclude-libs=ALL: YES 
+Configuring libplacebo.rc using configuration
+Configuring demos.rc using configuration
+Library m found: YES
+Program python3 found: YES (C:/Users/tamla/msys64/ucrt64/bin/python.exe)
+Dependency libunwind for host machine skipped: feature unwind disabled
+Library execinfo found: NO
+Checking for function "backtrace_symbols" with dependency -lexecinfo: NO 
+Check usable header "dbghelp.h" : YES 
+Library shlwapi found: YES
+Fetching value of define "__MINGW32__" : 1 
+Program dlltool found: YES (C:\Users\tamla\msys64\ucrt64\bin/dlltool.exe)
+Found pkg-config: YES (C:\Users\tamla\msys64\ucrt64\bin/pkg-config.exe) 3.0.7
+Run-time dependency shaderc found: YES 2026.4.1
+Header "shaderc/shaderc.h" has symbol "shaderc_env_version_vulkan_1_4" with dependency shaderc: YES 
+Header "shaderc/shaderc.h" has symbol "shaderc_env_version_vulkan_1_3" with dependency shaderc: YES 
+Check usable header "d3d11.h" : YES 
+Check usable header "d3d11_4.h" : YES 
+Check usable header "dxgi1_6.h" : YES 
+Run-time dependency spirv-cross-c-shared found: YES 0.68.0
+Library version found: YES
+Header "dxgidebug.h" has symbol "IID_IDXGIInfoQueue" : YES 
+Header "d3d11sdklayers.h" has symbol "DXGI_DEBUG_D3D11" : YES 
+Run-time dependency vulkan found: YES 1.4.363
+Header "vulkan/vulkan_core.h" has symbol "VK_VERSION_1_4" : YES 
+Run-time dependency lcms2 found: YES 2.19
+Run-time dependency dovi found: YES 3.4.0
+Run-time dependency libxxhash found: YES 0.8.4
+Configuring config.h using configuration
+Configuring config_internal.h using configuration
+Windows resource compiler: GNU windres (GNU Binutils) 2.47.20260726
+Found pkg-config: YES (C:\Users\tamla\msys64\ucrt64\bin/pkg-config.exe) 3.0.7
+Run-time dependency glfw3 found: YES 3.5.1
+Run-time dependency sdl2 found: YES 2.32.10
+Did not find CMake 'cmake'
+Found CMake: NO
+Run-time dependency sdl2_image found: NO  (tried pkg-config and cmake)
+Run-time dependency libavcodec found: YES 63.1.102
+Run-time dependency libavformat found: YES 63.1.102
+Run-time dependency libavutil found: YES 61.1.102
+Has header "nuklear.h" : YES 
+Check usable header "EGL/egl.h" : NO 
+Configuring config_demos.h using configuration
+Library winmm found: YES
+Library shlwapi found: YES
+Build targets in project: 27
+
+libplacebo 7.375.0
+
+  Optional features
+    d3d11       : YES
+    dovi        : YES
+    gl-proc-addr: YES
+    glslang     : NO
+    lcms        : YES
+    libdovi     : YES
+    opengl      : NO
+    shaderc     : YES
+    vk-proc-addr: YES
+    vulkan      : YES
+    xxhash      : YES
+
+  User defined options
+    buildtype   : release
+    d3d11       : enabled
+    demos       : true
+    dovi        : enabled
+    glslang     : disabled
+    lcms        : enabled
+    libdovi     : enabled
+    opengl      : disabled
+    prefix      : C:/Users/tamla/msys64/home/tamla/p0/prefix/libplacebo-master
+    shaderc     : enabled
+    tests       : false
+    unwind      : disabled
+    vulkan      : enabled
+    xxhash      : enabled
+
+Found ninja-1.13.2 at C:\Users\tamla\msys64\ucrt64\bin/ninja.exe

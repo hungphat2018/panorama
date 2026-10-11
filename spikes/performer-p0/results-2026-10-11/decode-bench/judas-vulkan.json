@@ -1,0 +1,1 @@
+{"run_id": "judas-vulkan", "bench_decode": {"ok": true, "codec": "hevc", "hw_fmt": "vulkan/p010le", "frames": 15736, "elapsed_s": 12.001, "fps": 1311.2, "x_realtime": 54.7, "process_cpu_s": 2.688, "cpu_pct_of_one_core": 22.4, "stream_fps": 23.9760}}

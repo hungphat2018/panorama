@@ -1,0 +1,1 @@
+{"run_id": "hotel-d3d11va", "bench_decode": {"ok": true, "codec": "h264", "hw_fmt": "d3d11/nv12", "frames": 20969, "elapsed_s": 12.011, "fps": 1745.9, "x_realtime": 69.8, "process_cpu_s": 1.016, "cpu_pct_of_one_core": 8.5, "stream_fps": 25.0000}}

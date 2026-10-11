@@ -1,0 +1,3 @@
+{"run_id": "vulkan-AMD-hq-sw-2560x1440", "bench_render": {"gpu": "AMD Radeon(TM) 610M", "backend": "vulkan", "preset": "hq", "source": [1920, 1080], "target": [2560, 1440], "target_format": "rgb10a2", "iterations": 300,
+  "wall_ms_draw_plus_gpu_finish": {"mean": 18.6451, "p50": 18.6175, "p90": 18.8949, "p99": 19.1888, "p999": 20.3885, "max": 20.3885},
+  "gpu_pass_sum_ms": {"mean": 18.2231, "p50": 18.1834, "p90": 18.3886, "p99": 18.6844, "p999": 19.8477, "max": 19.8477}}}

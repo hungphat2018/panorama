@@ -1,0 +1,49 @@
+/home/tamla/p0/prefix/ffmpeg-lgpl/bin/ffmpeg
+ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers
+built with gcc 16.2.0 (Rev5, Built by MSYS2 project)
+configuration: --prefix=/home/tamla/p0/prefix/ffmpeg-lgpl --target-os=mingw32 --arch=x86_64 --cc=gcc --cxx=g++ --enable-shared --disable-static --disable-gpl --disable-nonfree --disable-doc --disable-debug --disable-autodetect --enable-runtime-cpudetect --enable-d3d11va --enable-d3d12va --enable-dxva2 --enable-vulkan --enable-zlib --enable-libdav1d
+libavutil      61.  1.102 / 61.  1.102
+libavcodec     63.  1.102 / 63.  1.102
+libavformat    63.  1.102 / 63.  1.102
+libavdevice    63.  1.102 / 63.  1.102
+libavfilter    12.  1.102 / 12.  1.102
+libswscale     10.  1.102 / 10.  1.102
+libswresample   7.  1.102 /  7.  1.102
+
+Exiting with exit code 0
+===LICENSE
+ffmpeg is free software; you can redistribute it and/or
+modify it under the terms of the GNU Lesser General Public
+License as published by the Free Software Foundation; either
+version 2.1 of the License, or (at your option) any later version.
+===HWACCELS
+Hardware acceleration methods:
+dxva2
+d3d11va
+vulkan
+d3d12va
+
+===BUILDCONF
+
+  configuration:
+    --prefix=/home/tamla/p0/prefix/ffmpeg-lgpl
+    --target-os=mingw32
+    --arch=x86_64
+    --cc=gcc
+    --cxx=g++
+    --enable-shared
+    --disable-static
+    --disable-gpl
+    --disable-nonfree
+    --disable-doc
+    --disable-debug
+    --disable-autodetect
+    --enable-runtime-cpudetect
+    --enable-d3d11va
+    --enable-d3d12va
+    --enable-dxva2
+    --enable-vulkan
+    --enable-zlib
+    --enable-libdav1d
+
+Exiting with exit code 0

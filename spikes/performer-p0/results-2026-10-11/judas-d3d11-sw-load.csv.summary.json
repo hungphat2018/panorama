@@ -1,0 +1,51 @@
+{
+    "pid":  26700,
+    "samples":  59,
+    "skipped_first_s":  3,
+    "columns":  {
+                    "cpu_total_pct":  {
+                                          "mean":  4.09,
+                                          "max":  14.37
+                                      },
+                    "proc_3d":  {
+                                    "mean":  6.34,
+                                    "max":  6.6
+                                },
+                    "proc_copy":  {
+                                      "mean":  0.07,
+                                      "max":  0.08
+                                  },
+                    "proc_jpeg_decode_0":  {
+                                               "mean":  0,
+                                               "max":  0
+                                           },
+                    "proc_ofa_0":  {
+                                       "mean":  0,
+                                       "max":  0
+                                   },
+                    "proc_security":  {
+                                          "mean":  0,
+                                          "max":  0
+                                      },
+                    "proc_security_1":  {
+                                            "mean":  0,
+                                            "max":  0
+                                        },
+                    "proc_videodecode":  {
+                                             "mean":  0,
+                                             "max":  0
+                                         },
+                    "proc_videoencode":  {
+                                             "mean":  0,
+                                             "max":  0
+                                         },
+                    "proc_vr":  {
+                                    "mean":  0,
+                                    "max":  0
+                                },
+                    "proc_vram_mb":  {
+                                         "mean":  105.65,
+                                         "max":  105.65
+                                     }
+                }
+}

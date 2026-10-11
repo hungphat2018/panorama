@@ -1,0 +1,1 @@
+{"run_id": "hotel-vulkan", "bench_decode": {"ok": true, "codec": "h264", "hw_fmt": "vulkan/nv12", "frames": 18061, "elapsed_s": 12.001, "fps": 1505.0, "x_realtime": 60.2, "process_cpu_s": 3.328, "cpu_pct_of_one_core": 27.7, "stream_fps": 25.0000}}

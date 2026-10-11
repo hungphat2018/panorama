@@ -1,0 +1,111 @@
+ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers
+built with gcc 16.2.0 (Rev4, Built by MSYS2 project)
+configuration: --prefix=/ucrt64 --target-os=mingw32 --arch=x86_64 --cc=gcc --cxx=g++ --disable-debug --disable-stripping --disable-doc --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-frei0r --enable-gmp --enable-gnutls --enable-gpl --enable-iconv --enable-libaom --enable-libass --enable-libbluray --enable-libcaca --enable-libdav1d --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libgme --enable-libgsm --enable-libharfbuzz --enable-libjxl --enable-libmodplug --enable-libmp3lame --enable-libopencore_amrnb --enable-libopencore_amrwb --enable-libopenjpeg --enable-libopus --enable-librtmp --enable-libssh --enable-libsoxr --enable-libspeex --enable-libsrt --enable-libtheora --enable-libvidstab --enable-libvorbis --enable-libx264 --enable-libx265 --enable-libxvid --enable-libvpx --enable-libwebp --enable-libxml2 --enable-libzimg --enable-libzvbi --enable-openal --enable-pic --enable-runtime-cpudetect --enable-swresample --enable-version3 --enable-vulkan --enable-zlib --enable-libvpl --enable-liblc3 --enable-libplacebo --enable-librav1e --enable-librsvg --enable-libsvtav1 --enable-whisper --enable-amf --enable-nvenc --logfile=config.log --enable-shared
+libavutil      61.  1.102 / 61.  1.102
+libavcodec     63.  1.102 / 63.  1.102
+libavformat    63.  1.102 / 63.  1.102
+libavdevice    63.  1.102 / 63.  1.102
+libavfilter    12.  1.102 / 12.  1.102
+libswscale     10.  1.102 / 10.  1.102
+libswresample   7.  1.102 /  7.  1.102
+
+Exiting with exit code 0
+
+==== LICENSE
+ffmpeg is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 3 of the License, or
+(at your option) any later version.
+
+ffmpeg is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with ffmpeg.  If not, see <http://www.gnu.org/licenses/>.
+
+==== BUILDCONF
+
+  configuration:
+    --prefix=/ucrt64
+    --target-os=mingw32
+    --arch=x86_64
+    --cc=gcc
+    --cxx=g++
+    --disable-debug
+    --disable-stripping
+    --disable-doc
+    --enable-dxva2
+    --enable-d3d11va
+    --enable-d3d12va
+    --enable-frei0r
+    --enable-gmp
+    --enable-gnutls
+    --enable-gpl
+    --enable-iconv
+    --enable-libaom
+    --enable-libass
+    --enable-libbluray
+    --enable-libcaca
+    --enable-libdav1d
+    --enable-libfontconfig
+    --enable-libfreetype
+    --enable-libfribidi
+    --enable-libgme
+    --enable-libgsm
+    --enable-libharfbuzz
+    --enable-libjxl
+    --enable-libmodplug
+    --enable-libmp3lame
+    --enable-libopencore_amrnb
+    --enable-libopencore_amrwb
+    --enable-libopenjpeg
+    --enable-libopus
+    --enable-librtmp
+    --enable-libssh
+    --enable-libsoxr
+    --enable-libspeex
+    --enable-libsrt
+    --enable-libtheora
+    --enable-libvidstab
+    --enable-libvorbis
+    --enable-libx264
+    --enable-libx265
+    --enable-libxvid
+    --enable-libvpx
+    --enable-libwebp
+    --enable-libxml2
+    --enable-libzimg
+    --enable-libzvbi
+    --enable-openal
+    --enable-pic
+    --enable-runtime-cpudetect
+    --enable-swresample
+    --enable-version3
+    --enable-vulkan
+    --enable-zlib
+    --enable-libvpl
+    --enable-liblc3
+    --enable-libplacebo
+    --enable-librav1e
+    --enable-librsvg
+    --enable-libsvtav1
+    --enable-whisper
+    --enable-amf
+    --enable-nvenc
+    --logfile=config.log
+    --enable-shared
+
+Exiting with exit code 0
+==== HWACCELS
+Hardware acceleration methods:
+cuda
+vaapi
+dxva2
+qsv
+d3d11va
+vulkan
+d3d12va
+amf
+

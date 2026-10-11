@@ -1,0 +1,153 @@
+ninja: Entering directory `C:/Users/tamla/msys64/home/tamla/p0/out/libplacebo-master'
+[1/97] Generating src/version.h with a custom command
+[2/97] Compiling Windows resource src/libplacebo.rc
+[3/97] Compiling C object demos/libglfw-vk.a.p/window_glfw.c.obj
+[4/97] Generating src/shaders.c with a custom command (wrapped by meson to set env)
+[5/97] Generating src/renderer.c with a custom command (wrapped by meson to set env)
+[6/97] Generating src/shaders/custom_mpv.c with a custom command (wrapped by meson to set env)
+[7/97] Generating src/shaders/deinterlacing.c with a custom command (wrapped by meson to set env)
+[8/97] Generating src/shaders/film_grain.c with a custom command (wrapped by meson to set env)
+[9/97] Generating src/shaders/colorspace.c with a custom command (wrapped by meson to set env)
+[10/97] Generating src/shaders/custom.c with a custom command (wrapped by meson to set env)
+[11/97] Generating src/shaders/dithering.c with a custom command (wrapped by meson to set env)
+[12/97] Generating src/shaders/film_grain_h274.c with a custom command (wrapped by meson to set env)
+[13/97] Generating src/shaders/icc.c with a custom command (wrapped by meson to set env)
+[14/97] Generating src/shaders/film_grain_av1.c with a custom command (wrapped by meson to set env)
+[15/97] Generating src/shaders/lut.c with a custom command (wrapped by meson to set env)
+[16/97] Generating src/shaders/sampling.c with a custom command (wrapped by meson to set env)
+[17/97] Generating src/vulkan/utils_gen.c with a custom command (wrapped by meson to set env)
+[18/97] Generating src/ucrt_math.lib with a custom command
+[19/97] Compiling C object demos/libsdl-vk.a.p/window_sdl.c.obj
+[20/97] Compiling C object demos/colors.exe.p/colors.c.obj
+[21/97] Compiling C object demos/colors.exe.p/window.c.obj
+[22/97] Compiling C object demos/plplay.exe.p/window.c.obj
+[23/97] Compiling C object demos/libglfw-d3d11.a.p/window_glfw.c.obj
+[24/97] Compiling C object src/libplacebo-375.dll.p/dither.c.obj
+[25/97] Compiling C object demos/multigpu-bench.exe.p/multigpu-bench.c.obj
+[26/97] Compiling C object src/libplacebo-375.dll.p/common.c.obj
+[27/97] Compiling C object demos/video-filtering.exe.p/video-filtering.c.obj
+[28/97] Compiling C object demos/colors.exe.p/utils.c.obj
+[29/97] Compiling C object src/libplacebo-375.dll.p/dummy.c.obj
+[30/97] Compiling C object src/libplacebo-375.dll.p/cache.c.obj
+[31/97] Compiling C object demos/plplay.exe.p/utils.c.obj
+[32/97] Compiling C object src/libplacebo-375.dll.p/meson-generated_.._shaders_custom.c.obj
+[33/97] Compiling C object src/libplacebo-375.dll.p/meson-generated_.._shaders_film_grain.c.obj
+[34/97] Compiling C object src/libplacebo-375.dll.p/meson-generated_.._shaders_deinterlacing.c.obj
+In file included from src/shaders/deinterlacing.c:19:
+In function 'sh_swizzle',
+    inlined from 'pl_shader_deinterlace' at src/shaders/deinterlacing.c:47:24:
+C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/shaders.h:436:20: warning: array subscript 17 is above array bounds of 'const char * const[16]' [-Warray-bounds=]
+  436 |     return swizzles[mask];
+      |            ~~~~~~~~^~~~~~
+C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/shaders.h: In function 'pl_shader_deinterlace':
+C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/shaders.h:430:31: note: while referencing 'swizzles'
+  430 |     static const char * const swizzles[0x10] = {
+      |                               ^~~~~~~~
+[35/97] Compiling C object src/libplacebo-375.dll.p/meson-generated_.._shaders_dithering.c.obj
+[36/97] Compiling C object src/libplacebo-375.dll.p/filters.c.obj
+[37/97] Compiling C object src/libplacebo-375.dll.p/meson-generated_.._shaders_film_grain_h274.c.obj
+[38/97] Compiling C object src/libplacebo-375.dll.p/meson-generated_.._shaders_icc.c.obj
+[39/97] Compiling C object src/libplacebo-375.dll.p/dispatch.c.obj
+[40/97] Compiling C object src/libplacebo-375.dll.p/format.c.obj
+[41/97] Compiling C object demos/plplay.exe.p/settings.c.obj
+C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/demos/settings.c: In function 'draw_cache_line':
+C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/demos/settings.c:208:33: warning: unknown conversion type character 'z' in format [-Wformat=]
+  208 |     nk_labelf(nk, NK_TEXT_LEFT, " - 0x%016"PRIx64": %zu bytes", obj.key, obj.size);
+      |                                 ^~~~~~~~~~~
+C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/demos/settings.c:208:54: note: format string is defined here
+  208 |     nk_labelf(nk, NK_TEXT_LEFT, " - 0x%016"PRIx64": %zu bytes", obj.key, obj.size);
+      |                                                      ^
+C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/demos/settings.c:208:33: warning: too many arguments for format [-Wformat-extra-args]
+  208 |     nk_labelf(nk, NK_TEXT_LEFT, " - 0x%016"PRIx64": %zu bytes", obj.key, obj.size);
+      |                                 ^~~~~~~~~~~
+C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/demos/settings.c: In function 'update_settings':
+C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/demos/settings.c:1177:47: warning: unknown conversion type character 'z' in format [-Wformat=]
+ 1177 |                 nk_labelf(nk, NK_TEXT_LEFT, "%zu", pl_cache_size(p->cache));
+      |                                               ^
+C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/demos/settings.c:1177:45: warning: too many arguments for format [-Wformat-extra-args]
+ 1177 |                 nk_labelf(nk, NK_TEXT_LEFT, "%zu", pl_cache_size(p->cache));
+      |                                             ^~~~~
+C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/demos/settings.c:1179:47: warning: unknown conversion type character 'z' in format [-Wformat=]
+ 1179 |                 nk_labelf(nk, NK_TEXT_LEFT, "%zu", p->cache->params.max_total_size);
+      |                                               ^
+C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/demos/settings.c:1179:45: warning: too many arguments for format [-Wformat-extra-args]
+ 1179 |                 nk_labelf(nk, NK_TEXT_LEFT, "%zu", p->cache->params.max_total_size);
+      |                                             ^~~~~
+C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/demos/settings.c:1181:47: warning: unknown conversion type character 'z' in format [-Wformat=]
+ 1181 |                 nk_labelf(nk, NK_TEXT_LEFT, "%zu", p->cache->params.max_object_size);
+      |                                               ^
+C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/demos/settings.c:1181:45: warning: too many arguments for format [-Wformat-extra-args]
+ 1181 |                 nk_labelf(nk, NK_TEXT_LEFT, "%zu", p->cache->params.max_object_size);
+      |                                             ^~~~~
+[42/97] Compiling C object src/libplacebo-375.dll.p/meson-generated_.._shaders.c.obj
+[43/97] Compiling C object src/libplacebo-375.dll.p/colorspace.c.obj
+[44/97] Compiling C object src/libplacebo-375.dll.p/meson-generated_.._shaders_film_grain_av1.c.obj
+[45/97] Compiling C object src/libplacebo-375.dll.p/meson-generated_.._shaders_sampling.c.obj
+In file included from src/shaders/sampling.c:19:
+In function 'sh_swizzle',
+    inlined from 'pl_shader_deband' at src/shaders/sampling.c:203:24:
+C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/shaders.h:436:20: warning: array subscript 17 is above array bounds of 'const char * const[16]' [-Warray-bounds=]
+  436 |     return swizzles[mask];
+      |            ~~~~~~~~^~~~~~
+C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/shaders.h: In function 'pl_shader_deband':
+C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/shaders.h:430:31: note: while referencing 'swizzles'
+  430 |     static const char * const swizzles[0x10] = {
+      |                               ^~~~~~~~
+[46/97] Compiling C object demos/plplay.exe.p/plplay.c.obj
+[47/97] Compiling C object src/libplacebo-375.dll.p/glsl_spirv.c.obj
+[48/97] Compiling C object src/libplacebo-375.dll.p/meson-generated_.._shaders_lut.c.obj
+[49/97] Compiling C object src/libplacebo-375.dll.p/meson-generated_.._shaders_custom_mpv.c.obj
+[50/97] Compiling C object src/libplacebo-375.dll.p/meson-generated_.._shaders_colorspace.c.obj
+[51/97] Compiling C object src/libplacebo-375.dll.p/pl_alloc.c.obj
+[52/97] Compiling C object src/libplacebo-375.dll.p/swapchain.c.obj
+[53/97] Compiling C object src/libplacebo-375.dll.p/log.c.obj
+[54/97] Compiling C object src/libplacebo-375.dll.p/gpu_utils.c.obj
+[55/97] Compiling C++ object src/libplacebo-375.dll.p/convert.cc.obj
+[56/97] Compiling C object src/libplacebo-375.dll.p/utils_dolbyvision.c.obj
+[57/97] Linking static target demos/libglfw-vk.a
+[58/97] Linking static target demos/libglfw-d3d11.a
+[59/97] Compiling C object src/libplacebo-375.dll.p/gpu.c.obj
+[60/97] Compiling C object src/libplacebo-375.dll.p/pl_string.c.obj
+[61/97] Linking static target demos/libsdl-vk.a
+[62/97] Compiling C object src/libplacebo-375.dll.p/options.c.obj
+[63/97] Compiling C object src/libplacebo-375.dll.p/tone_mapping.c.obj
+[64/97] Compiling C object src/libplacebo-375.dll.p/glsl_spirv_shaderc.c.obj
+[65/97] Compiling C object src/libplacebo-375.dll.p/utils_upload.c.obj
+[66/97] Compiling Windows resource demos/demos.rc
+[67/97] Compiling C object src/libplacebo-375.dll.p/opengl_stubs.c.obj
+[68/97] Compiling C object src/libplacebo-375.dll.p/gamut_mapping.c.obj
+[69/97] Compiling C object src/libplacebo-375.dll.p/utils_frame_queue.c.obj
+[70/97] Compiling C object src/libplacebo-375.dll.p/d3d11_formats.c.obj
+[71/97] Compiling C object src/libplacebo-375.dll.p/vulkan_formats.c.obj
+[72/97] Compiling C object src/libplacebo-375.dll.p/vulkan_gpu_buf.c.obj
+[73/97] Compiling C object src/libplacebo-375.dll.p/vulkan_command.c.obj
+[74/97] Compiling C object src/libplacebo-375.dll.p/d3d11_context.c.obj
+[75/97] Compiling C object src/libplacebo-375.dll.p/d3d11_utils.c.obj
+[76/97] Compiling C object src/libplacebo-375.dll.p/vulkan_gpu.c.obj
+[77/97] Compiling C object src/libplacebo-375.dll.p/d3d11_gpu_buf.c.obj
+[78/97] Compiling C object src/libplacebo-375.dll.p/vulkan_utils.c.obj
+[79/97] Compiling C object src/libplacebo-375.dll.p/meson-generated_.._renderer.c.obj
+[80/97] Compiling C object src/libplacebo-375.dll.p/d3d11_gpu_tex.c.obj
+[81/97] Compiling C object src/libplacebo-375.dll.p/d3d11_gpu.c.obj
+[82/97] Compiling C object src/libplacebo-375.dll.p/d3d11_swapchain.c.obj
+[83/97] Compiling C object src/libplacebo-375.dll.p/vulkan_gpu_tex.c.obj
+[84/97] Compiling C object src/libplacebo-375.dll.p/vulkan_swapchain.c.obj
+[85/97] Compiling C object src/libplacebo-375.dll.p/vulkan_context.c.obj
+[86/97] Compiling C object src/libplacebo-375.dll.p/vulkan_malloc.c.obj
+[87/97] Compiling C object src/libplacebo-375.dll.p/vulkan_gpu_pass.c.obj
+[88/97] Compiling C object src/libplacebo-375.dll.p/d3d11_gpu_pass.c.obj
+[89/97] Compiling C object src/libplacebo-375.dll.p/meson-generated_.._vulkan_utils_gen.c.obj
+[90/97] Linking target src/libplacebo-375.dll
+[91/97] Generating symbol file src/libplacebo-375.dll.p/libplacebo-375.dll.symbols
+[92/97] Linking target demos/multigpu-bench.exe
+[93/97] Linking target demos/video-filtering.exe
+[94/97] Linking target demos/colors.exe
+[95/97] Compiling C object demos/libnuklear.a.p/ui.c.obj
+[96/97] Linking static target demos/libnuklear.a
+[97/97] Linking target demos/plplay.exe
+INFO: autodetecting backend as ninja
+INFO: calculating backend command to run: C:\Users\tamla\msys64\ucrt64\bin/ninja.exe -C C:/Users/tamla/msys64/home/tamla/p0/out/libplacebo-master
+
+real	0m9.476s
+user	0m0.031s
+sys	0m0.000s

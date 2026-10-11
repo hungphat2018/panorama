@@ -1,0 +1,1 @@
+{"run_id": "hotel-sw", "bench_decode": {"ok": true, "codec": "h264", "hw_fmt": "", "frames": 22658, "elapsed_s": 12.000, "fps": 1888.1, "x_realtime": 75.5, "process_cpu_s": 139.062, "cpu_pct_of_one_core": 1158.8, "stream_fps": 25.0000}}

@@ -1,0 +1,30 @@
+{
+  "run_id": "ab-master-2",
+  "status": "ok",
+  "error": "",
+  "config": {"file": "C:/Users/tamla/Downloads/[Judas] Nama-Anaru - S01E02.mkv", "backend": "d3d11", "decode": "d3d11va", "preset": "default", "window": [1280, 800], "seconds": 10.0, "loop": false, "worst_case_no_frame_cache": false, "sync_render": false, "pl_cache_file": false, "vk_swapchain_depth": 3, "own_present": false},
+  "env": {"libplacebo_api": 375, "ffmpeg": "9.0.2", "libavutil": "61.1.102", "gpu": "NVIDIA GeForce RTX 5070 Ti Laptop GPU", "monitor": {"device": "\\\\.\\DISPLAY1", "hz": 240, "size": [2560, 1600]}},
+  "media": {"codec": "hevc", "pix_fmt": "yuv420p10le", "hw_fmt": "d3d11/p010le", "size": [1920, 1080], "fps": 23.9760, "duration_s": 1421.15},
+  "startup_ms_since_process_creation": {"main_entered": 26.6, "window_created": 36.7, "gpu_ready": 222.1, "file_opened": 225.9, "codec_opened": 237.3, "first_frame_decoded": 273.0, "first_render_done": 428.8, "first_present": 429.3},
+  "first_frame_ms": {"from_process_creation": 429.3, "from_main": 402.7, "from_gpu_ready": 207.3},
+  "playback": {"measured_s": 10.002, "refreshes_rendered": 2398, "refresh_rate_measured_hz": 239.999, "film_frames_front_changes": 240, "queue_estimated_fps": 23.9880, "queue_estimated_display_fps": 239.9682, "eof": false},
+  "counts": {"decoded": 244, "mapped": 241, "dropped_by_queue": 1, "queue_stalls": 0, "queue_stall_ms": 0.0, "late_refreshes_over_1p5x_steady": 0, "late_refreshes_over_2p5x_steady": 0, "steady_refreshes": 1920, "nominal_interval_ms": 4.1667, "skipped_refreshes_estimate": -0.0, "hitches_over_50ms_steady": 0, "max_message_pump_ms": 0.01},
+  "refreshes_per_film_frame": {"7": 1, "10": 237, "11": 1},
+  "dxgi_refreshes_between_presents": {"1": 2387, "4": 1, "7+": 1},
+  "timings_ms": {
+    "render_cpu_all": {"n": 2398, "min": 0.0146, "mean": 0.0649, "p50": 0.0270, "p90": 0.1321, "p99": 0.3587, "p999": 0.5062, "max": 20.2495},
+    "render_cpu_steady": {"n": 1920, "min": 0.0146, "mean": 0.0565, "p50": 0.0272, "p90": 0.1284, "p99": 0.3559, "p999": 0.4786, "max": 0.5062},
+    "render_cpu_steady_new_film_frame": {"n": 192, "min": 0.0195, "mean": 0.2286, "p50": 0.2827, "p90": 0.3520, "p99": 0.4786, "p999": 0.5062, "max": 0.5062},
+    "render_cpu_steady_repeated_frame": {"n": 1728, "min": 0.0146, "mean": 0.0374, "p50": 0.0263, "p90": 0.0384, "p99": 0.2585, "p999": 0.3579, "max": 0.3643},
+    "gpu_pass_sum_steady": {"n": 1920, "min": 0.0129, "mean": 0.0498, "p50": 0.0156, "p90": 0.0563, "p99": 0.2982, "p999": 3.9753, "max": 4.3067},
+    "gpu_pass_sum_steady_new_film_frame": {"n": 192, "min": 0.0133, "mean": 0.2582, "p50": 0.2666, "p90": 0.2852, "p99": 3.9753, "p999": 4.3067, "max": 4.3067},
+    "gpu_pass_sum_steady_repeated_frame": {"n": 1728, "min": 0.0129, "mean": 0.0266, "p50": 0.0155, "p90": 0.0267, "p99": 0.2963, "p999": 0.3254, "max": 0.6858},
+    "queue_update_steady": {"n": 1920, "min": 0.0007, "mean": 0.0070, "p50": 0.0047, "p90": 0.0153, "p99": 0.0318, "p999": 0.0366, "max": 0.0389},
+    "acquire_steady": {"n": 1920, "min": 0.0081, "mean": 0.0165, "p50": 0.0148, "p90": 0.0195, "p99": 0.0279, "p999": 0.1873, "max": 0.3309},
+    "submit_steady": {"n": 1920, "min": 0.0013, "mean": 0.0029, "p50": 0.0026, "p90": 0.0036, "p99": 0.0075, "p999": 0.0345, "max": 0.2405},
+    "swap_steady": {"n": 1920, "min": 3.5819, "mean": 4.0812, "p50": 4.1027, "p90": 4.1643, "p99": 4.2350, "p999": 4.2961, "max": 4.3080},
+    "present_interval_all": {"n": 2390, "min": 0.5266, "mean": 4.1754, "p50": 4.1652, "p90": 4.2216, "p99": 4.2897, "p999": 5.4719, "max": 20.3414},
+    "present_interval_steady": {"n": 1920, "min": 3.9714, "mean": 4.1667, "p50": 4.1652, "p90": 4.2210, "p99": 4.2897, "p999": 4.3661, "max": 4.3943}
+  },
+  "process": {"cpu_s": 1.375, "cpu_pct_of_one_core": 13.7, "cpu_pct_of_all_threads": 0.43, "logical_cpus": 32, "render_thread_cpu_pct": 3.9, "decode_thread_busy_s_in_libav_calls": 0.414, "decode_thread_cpu_s": 0.047, "peak_working_set_mb": 156, "peak_pagefile_mb": 220}
+}

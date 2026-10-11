@@ -1,0 +1,128 @@
+[
+ {
+  "name": "DISPLAY1",
+  "refresh_hz": 239.9693,
+  "presents": 1187,
+  "fallback_times": 29,
+  "refreshes_per_frame": {
+   "7": 1,
+   "8": 1,
+   "9": 48,
+   "10": 72,
+   "11": 1
+  },
+  "skipped_frames": 0,
+  "composition": {
+   "composed": 413,
+   "overlay (independent flip / MPO)": 1143
+  },
+  "error": "",
+  "perf1": {
+   "render_cpu_ms_all": {
+    "n": 1188,
+    "p50": 0.026,
+    "p99": 0.288,
+    "max": 0.461
+   },
+   "render_cpu_ms_new_frame": {
+    "n": 124,
+    "p50": 0.229,
+    "p99": 0.423,
+    "max": 0.461
+   },
+   "render_gpu_ms_all": {
+    "n": 1188,
+    "p50": 0.006,
+    "p99": 0.115,
+    "max": 0.155
+   },
+   "render_gpu_ms_new_frame": {
+    "n": 124,
+    "p50": 0.095,
+    "p99": 0.141,
+    "max": 0.155
+   },
+   "lead_ms_before_target": {
+    "n": 1188,
+    "p50": 3.842,
+    "p99": 4.004,
+    "max": 4.037
+   },
+   "present_calls_per_refresh": 0.999,
+   "queue_more": 0,
+   "empty_mix": 0,
+   "render_failed": 0,
+   "screen_minus_target_ms": {
+    "n": 1158,
+    "p50": 4.043,
+    "p99": 12.348,
+    "max": 12.349
+   },
+   "presents_with_stats": 1158,
+   "landed_off_target_refresh": 29,
+   "missed_refreshes_between_stat_presents": 0
+  }
+ },
+ {
+  "name": "DISPLAY2",
+  "refresh_hz": 99.988,
+  "presents": 1189,
+  "fallback_times": 1155,
+  "refreshes_per_frame": {
+   "3": 3,
+   "4": 120,
+   "5": 1
+  },
+  "skipped_frames": 0,
+  "composition": {
+   "composed": 1550,
+   "none": 6
+  },
+  "error": "",
+  "perf1": {
+   "render_cpu_ms_all": {
+    "n": 1189,
+    "p50": 0.024,
+    "p99": 0.117,
+    "max": 0.188
+   },
+   "render_cpu_ms_new_frame": {
+    "n": 124,
+    "p50": 0.091,
+    "p99": 0.14,
+    "max": 0.188
+   },
+   "render_gpu_ms_all": {
+    "n": 1189,
+    "p50": 0.003,
+    "p99": 0.09,
+    "max": 0.136
+   },
+   "render_gpu_ms_new_frame": {
+    "n": 124,
+    "p50": 0.087,
+    "p99": 0.127,
+    "max": 0.136
+   },
+   "lead_ms_before_target": {
+    "n": 1189,
+    "p50": 5.341,
+    "p99": 10.131,
+    "max": 10.297
+   },
+   "present_calls_per_refresh": 2.402,
+   "queue_more": 0,
+   "empty_mix": 0,
+   "render_failed": 0,
+   "screen_minus_target_ms": {
+    "n": 34,
+    "p50": 10.619,
+    "p99": 15.619,
+    "max": 15.619
+   },
+   "presents_with_stats": 34,
+   "landed_off_target_refresh": 1,
+   "missed_refreshes_between_stat_presents": 0
+  }
+ }
+]

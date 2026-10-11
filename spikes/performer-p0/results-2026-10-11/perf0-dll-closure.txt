@@ -1,0 +1,17 @@
+== perf0-master.exe (MSYS2 FFmpeg 9.0.2, GPL build): 100 non-Windows DLLs, 149 MiB
+== perf0-lgpl.exe (FFmpeg 9.0.2 built with --disable-gpl): 14 non-Windows DLLs, 42 MiB
+-- lgpl list:
+/home/tamla/p0/prefix/ffmpeg-lgpl/bin/avcodec-63.dll
+/home/tamla/p0/prefix/ffmpeg-lgpl/bin/avformat-63.dll
+/home/tamla/p0/prefix/ffmpeg-lgpl/bin/avutil-61.dll
+/home/tamla/p0/prefix/ffmpeg-lgpl/bin/swresample-7.dll
+/ucrt64/bin/glfw3.dll
+/ucrt64/bin/libdav1d-7.dll
+/ucrt64/bin/libdovi.dll
+/ucrt64/bin/libgcc_s_seh-1.dll
+/ucrt64/bin/liblcms2-2.dll
+/ucrt64/bin/libshaderc_shared.dll
+/ucrt64/bin/libspirv-cross-c-shared.dll
+/ucrt64/bin/libstdc++-6.dll
+/ucrt64/bin/libwinpthread-1.dll
+/ucrt64/bin/zlib1.dll

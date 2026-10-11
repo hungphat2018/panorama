@@ -1,0 +1,89 @@
+{
+ "displays": [
+  {
+   "index": 0,
+   "gdi": "\\\\.\\DISPLAY1",
+   "edid_name": "",
+   "tech": "DISPLAYPORT_EMBEDDED",
+   "x": 0,
+   "y": 0,
+   "w": 2560,
+   "h": 1600,
+   "refresh": [
+    240001,
+    1000
+   ],
+   "signal_refresh": [
+    240001,
+    1000
+   ],
+   "pixel_rate": 1175045000,
+   "gdi_now": {
+    "w": 2560,
+    "h": 1600,
+    "hz_int": 240,
+    "bpp": 32,
+    "orientation_deg": 0,
+    "fixed_output": 0,
+    "flags": 0,
+    "x": 0,
+    "y": 0
+   },
+   "gdi_registry": {
+    "w": 2560,
+    "h": 1600,
+    "hz_int": 240,
+    "bpp": 32,
+    "orientation_deg": 0,
+    "fixed_output": 0,
+    "flags": 0,
+    "x": 0,
+    "y": 0
+   },
+   "target_id": 4353
+  },
+  {
+   "index": 1,
+   "gdi": "\\\\.\\DISPLAY2",
+   "edid_name": "EGM22F100H",
+   "tech": "HDMI",
+   "x": 2560,
+   "y": 0,
+   "w": 1920,
+   "h": 1080,
+   "refresh": [
+    100,
+    1
+   ],
+   "signal_refresh": [
+    100,
+    1
+   ],
+   "pixel_rate": 223000000,
+   "gdi_now": {
+    "w": 1920,
+    "h": 1080,
+    "hz_int": 100,
+    "bpp": 32,
+    "orientation_deg": 0,
+    "fixed_output": 0,
+    "flags": 0,
+    "x": 2560,
+    "y": 0
+   },
+   "gdi_registry": {
+    "w": 1920,
+    "h": 1080,
+    "hz_int": 100,
+    "bpp": 32,
+    "orientation_deg": 0,
+    "fixed_output": 0,
+    "flags": 0,
+    "x": 2560,
+    "y": 0
+   },
+   "target_id": 4352
+  }
+ ],
+ "external_gdi": "\\\\.\\DISPLAY2"
+}

@@ -1,0 +1,91 @@
+{
+ "nearest": {
+  "monitors": [
+   {
+    "name": "DISPLAY1",
+    "refresh_hz": 240.0096,
+    "presents": 4557,
+    "fallback_times": 0,
+    "refreshes_per_frame": {
+     "9": 2,
+     "10": 453,
+     "11": 1
+    },
+    "skipped_frames": 0,
+    "composition": {
+     "overlay (independent flip / MPO)": 4867,
+     "none": 3
+    },
+    "error": ""
+   },
+   {
+    "name": "DISPLAY2",
+    "refresh_hz": 95.9978,
+    "presents": 1825,
+    "fallback_times": 1,
+    "refreshes_per_frame": {
+     "3": 1,
+     "4": 455
+    },
+    "skipped_frames": 0,
+    "composition": {
+     "overlay (independent flip / MPO)": 1947,
+     "none": 5
+    },
+    "error": ""
+   }
+  ],
+  "offset_ms": {
+   "frames": 457,
+   "min": -5.27,
+   "p5": -1.12,
+   "median": -1.11,
+   "p95": -1.1,
+   "max": 5.13
+  }
+ },
+ "own": {
+  "monitors": [
+   {
+    "name": "DISPLAY1",
+    "refresh_hz": 240.0096,
+    "presents": 4559,
+    "fallback_times": 0,
+    "refreshes_per_frame": {
+     "9": 1,
+     "10": 455
+    },
+    "skipped_frames": 0,
+    "composition": {
+     "overlay (independent flip / MPO)": 4869,
+     "none": 3
+    },
+    "error": ""
+   },
+   {
+    "name": "DISPLAY2",
+    "refresh_hz": 95.9997,
+    "presents": 1825,
+    "fallback_times": 1,
+    "refreshes_per_frame": {
+     "3": 1,
+     "4": 455
+    },
+    "skipped_frames": 0,
+    "composition": {
+     "overlay (independent flip / MPO)": 1947,
+     "none": 5
+    },
+    "error": ""
+   }
+  ],
+  "offset_ms": {
+   "frames": 457,
+   "min": -1.1,
+   "p5": -1.1,
+   "median": -1.09,
+   "p95": -1.08,
+   "max": 5.15
+  }
+ }
+}

@@ -1,0 +1,495 @@
+Initialized libplacebo v7.375.0 (API v375)
+Opening file: 'C:\Users\tamla\AppData\Local\Temp\claude\C--Users-tamla-Downloads-Telegram-Desktop-panorama\9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca\scratchpad\p0-clips\hotel-640x360-6s.mp4'
+Format: mov,mp4,m4a,3gp,3g2,mj2
+Found video track (stream 0)
+Resolution: 640 x 360
+FPS: 25.000000
+TBR: 25.000000
+TBN: 0.000078
+Bitrate: 666 kbps
+Format: yuv420p
+Attempting to initialize API: GLFW (vulkan)
+Creating 640x360 window...
+Spent 32.564 ms enumerating instance extensions
+Creating vulkan instance with extensions:
+    VK_KHR_surface
+    VK_EXT_swapchain_colorspace
+    VK_KHR_get_surface_capabilities2
+    VK_KHR_surface_maintenance1
+    VK_EXT_surface_maintenance1
+    VK_KHR_portability_enumeration
+    VK_KHR_surface
+    VK_KHR_win32_surface
+Spent 112.791 ms creating vulkan instance (slow!)
+Probing for vulkan devices:
+    GPU 0: NVIDIA GeForce RTX 5070 Ti Laptop GPU v1.4.351 (discrete)
+           uuid: 60:30:91:5E:08:36:35:2A:32:50:A3:D9:42:3A:37:14
+    GPU 1: AMD Radeon(TM) 610M v1.4.315 (integrated)
+           uuid: 00:00:00:00:6A:00:00:00:00:00:00:00:00:00:00:00
+Vulkan device properties:
+    Device Name: NVIDIA GeForce RTX 5070 Ti Laptop GPU
+    Device ID: 10de:2f18
+    Device UUID: 60:30:91:5E:08:36:35:2A:32:50:A3:D9:42:3A:37:14
+    Driver version: 9a4a8000
+    API version: 1.4.351
+    Driver ID: VK_DRIVER_ID_NVIDIA_PROPRIETARY
+    Driver name: NVIDIA
+    Driver info: 617.42
+    Conformance version: 1.4.3.3
+    Driver UUID: 8B:2E:D3:A7:D6:66:51:B8:AD:47:BB:85:41:6B:87:1B
+Using async transfer (queue 1)
+Using async compute (queue 2)
+Creating vulkan device with extensions:
+    VK_KHR_swapchain
+    VK_KHR_swapchain
+    VK_KHR_external_memory_win32
+    VK_EXT_external_memory_host
+    VK_KHR_external_semaphore_win32
+    VK_EXT_pci_bus_info
+    VK_EXT_hdr_metadata
+    VK_EXT_full_screen_exclusive
+    VK_KHR_swapchain_maintenance1
+    VK_EXT_swapchain_maintenance1
+    VK_KHR_internally_synchronized_queues
+Spent 422.929 ms creating vulkan device (slow!)
+Memory heaps supported by device:
+    0: flags 0x1 size   11G
+    1: flags 0x0 size   15G
+Memory summary:     0 used     0 res     0 alloc, efficiency 100.00%, utilization 100.00%, max page:  746M
+shaderc SPIR-V version 1.6 rev 1
+Initialized SPIR-V compiler 'shaderc'
+GPU information:
+    GLSL version: 450 (vulkan)
+      max_shmem_size:            49152
+      max_group_threads:         1024
+      max_group_size[0]:         1024
+      max_group_size[1]:         1024
+      max_group_size[2]:         64
+      subgroup_size:             32
+      min_gather_offset:         -32
+      max_gather_offset:         31
+    Limits:
+      thread_safe:               1
+      callbacks:                 1
+      max_buf_size:              16736731136
+      max_ubo_size:              65536
+      max_ssbo_size:             4294967295
+      max_vbo_size:              12524191744
+      max_mapped_size:           16736731136
+      max_buffer_texels:         268435456
+      align_host_ptr:            4096
+      host_cached:               1
+      max_tex_1d_dim:            32768
+      max_tex_2d_dim:            32768
+      max_tex_3d_dim:            16384
+      blittable_1d_3d:           1
+      buf_transfer:              1
+      align_tex_xfer_pitch:      1
+      align_tex_xfer_offset:     4
+      max_variable_comps:        0
+      max_constants:             18446744073709551615
+      max_pushc_size:            256
+      align_vertex_stride:       1
+      max_dispatch[0]:           2147483647
+      max_dispatch[1]:           65535
+      max_dispatch[2]:           65535
+      fragment_queues:           1
+      compute_queues:            1
+    External API interop:
+      UUID: 60:30:91:5E:08:36:35:2A:32:50:A3:D9:42:3A:37:14
+      PCI: 0000:01:00:0
+      buf export caps: 0x16
+      buf import caps: 0x16
+      tex export caps: 0x16
+      tex import caps: 0x16
+      sync export caps: 0x6
+      sync import caps: 0x0
+Available surface configurations:
+    0: VK_FORMAT_B8G8R8A8_UNORM                 VK_COLOR_SPACE_SRGB_NONLINEAR_KHR
+    1: VK_FORMAT_B8G8R8A8_SRGB                  VK_COLOR_SPACE_SRGB_NONLINEAR_KHR
+    2: VK_FORMAT_R8G8B8A8_UNORM                 VK_COLOR_SPACE_SRGB_NONLINEAR_KHR
+    3: VK_FORMAT_R8G8B8A8_SRGB                  VK_COLOR_SPACE_SRGB_NONLINEAR_KHR
+    4: VK_FORMAT_A2B10G10R10_UNORM_PACK32       VK_COLOR_SPACE_SRGB_NONLINEAR_KHR
+Picked surface configuration 4: VK_FORMAT_A2B10G10R10_UNORM_PACK32 + VK_COLOR_SPACE_SRGB_NONLINEAR_KHR
+Codec: h264 (H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10)
+Using hardware frame format: vulkan
+Spent 72.562 ms translating SPIR-V
+Dithering to 10 bit depth
+Dropped frame with PTS 0.080
+Estimated source FPS: 25.000, display FPS: 1000.200
+Dropped frame with PTS 0.160
+Dropped frame with PTS 0.280
+Dropped frame with PTS 0.400
+Estimated source FPS: 25.000, display FPS: 8.729
+Dropped frame with PTS 0.520
+Dropped frame with PTS 0.640
+Dropped frame with PTS 0.760
+Dropped frame with PTS 0.880
+Dropped frame with PTS 0.960
+Dropped frame with PTS 1.040
+Dropped frame with PTS 1.160
+Dropped frame with PTS 1.240
+Dropped frame with PTS 1.320
+Dropped frame with PTS 1.400
+Dropped frame with PTS 1.520
+Dropped frame with PTS 1.600
+Dropped frame with PTS 1.680
+Dropped frame with PTS 1.760
+Estimated source FPS: 25.000, display FPS: 12.270
+Dropped frame with PTS 1.920
+Dropped frame with PTS 1.960
+Dropped frame with PTS 2.080
+Dropped frame with PTS 2.200
+Estimated source FPS: 25.000, display FPS: 8.305
+Dropped frame with PTS 2.320
+Dropped frame with PTS 2.440
+Estimated source FPS: 25.000, display FPS: 17.006
+Dropped frame with PTS 2.640
+Dropped frame with PTS 2.760
+Dropped frame with PTS 2.880
+Dropped frame with PTS 3.000
+Estimated source FPS: 25.000, display FPS: 8.478
+Dropped frame with PTS 3.040
+Dropped frame with PTS 3.160
+Estimated source FPS: 25.000, display FPS: 17.355
+Dropped frame with PTS 3.360
+Dropped frame with PTS 3.480
+Dropped frame with PTS 3.600
+Dropped frame with PTS 3.720
+Estimated source FPS: 25.000, display FPS: 8.199
+Dropped frame with PTS 3.760
+Dropped frame with PTS 3.880
+Estimated source FPS: 25.000, display FPS: 16.626
+Dropped frame with PTS 4.080
+Dropped frame with PTS 4.200
+Dropped frame with PTS 4.320
+Dropped frame with PTS 4.440
+Estimated source FPS: 25.000, display FPS: 8.434
+Dropped frame with PTS 4.520
+Dropped frame with PTS 4.640
+Estimated source FPS: 25.000, display FPS: 16.207
+Dropped frame with PTS 4.800
+Dropped frame with PTS 4.920
+Dropped frame with PTS 5.040
+Dropped frame with PTS 5.160
+Estimated source FPS: 25.000, display FPS: 8.616
+Dropped frame with PTS 5.240
+Dropped frame with PTS 5.360
+Estimated source FPS: 25.000, display FPS: 16.892
+Dropped frame with PTS 5.520
+Dropped frame with PTS 5.640
+Dropped frame with PTS 5.760
+Dropped frame with PTS 5.880
+Estimated source FPS: 25.000, display FPS: 8.339
+Dropped frame with PTS 5.960
+Dropped frame with PTS 6.080
+Estimated source FPS: 25.000, display FPS: 16.017
+Dropped frame with PTS 6.240
+Exiting...
+Received frame after EOF signaled... discarding frame!
+Dropped frame with PTS 6.480
+Dropped frame with PTS 6.360
+Dropped frame with PTS 6.400
+Dropped frame with PTS 6.440
+API debugging requested but no debug meta layers present... ignoring
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+Stalled for 0.0679 ms due to frame queue underrun!
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+Stalled for 0.1176 ms due to frame queue underrun!
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+Stalled for 0.1497 ms due to frame queue underrun!
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+Stalled for 0.1742 ms due to frame queue underrun!
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+Stalled for 0.1509 ms due to frame queue underrun!
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+Stalled for 0.1148 ms due to frame queue underrun!
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+Stalled for 0.1348 ms due to frame queue underrun!
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+Stalled for 0.1602 ms due to frame queue underrun!
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+Stalled for 0.1601 ms due to frame queue underrun!
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+Stalled for 0.1571 ms due to frame queue underrun!
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+Stalled for 0.0480 ms due to frame queue underrun!
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+Stalled for 0.0543 ms due to frame queue underrun!
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+Stalled for 0.0639 ms due to frame queue underrun!
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+Stalled for 0.0493 ms due to frame queue underrun!
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+Stalled for 0.0614 ms due to frame queue underrun!
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+vkQueueSubmit2: VK_ERROR_UNKNOWN (C:/Users/tamla/AppData/Local/Temp/claude/C--Users-tamla-Downloads-Telegram-Desktop-panorama/9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca/scratchpad/src/libplacebo/src/vulkan/command.c:558)
+exit code: 

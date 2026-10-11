@@ -1,0 +1,365 @@
+{
+ "started": "2026-10-11T13:24:14+0700",
+ "windows": {
+  "windows": "10.0.26200",
+  "family": "Windows 11",
+  "ubr": 8875,
+  "display_version": "25H2",
+  "python": "3.11.9",
+  "elevated": false,
+  "windowed_vrr_optimization_setting": null
+ },
+ "dry_run": false,
+ "trials": [
+  {
+   "method": "cds0",
+   "child_pid": 40936,
+   "child_report": "APPLIED cds0 rc=0",
+   "readback_before_kill": {
+    "gdi_hz": 60,
+    "ccd_refresh": [
+     60,
+     1
+    ],
+    "registry_hz": 100
+   },
+   "killed_exit_code": 1,
+   "observed_seconds": 10.0,
+   "samples_t_gdi_hz_registry_hz_changes_only": [
+    [
+     0.0,
+     60,
+     100
+    ]
+   ],
+   "last_sample": [
+    9.78,
+    60,
+    100
+   ],
+   "reverted_by_itself": false,
+   "reverted_after_s": null,
+   "restore": {
+    "needed": true,
+    "steps": [
+     {
+      "step": "reset_to_saved_mode (ChangeDisplaySettingsEx NULL,0)",
+      "rc": 0,
+      "hz_after": 100,
+      "seconds": 3.31
+     }
+    ],
+    "final_hz": 100
+   },
+   "others_unchanged": true,
+   "final_state": {
+    "gdi_hz": 100,
+    "ccd_refresh": [
+     100,
+     1
+    ],
+    "registry_hz": 100,
+    "position": [
+     2560,
+     0
+    ]
+   }
+  },
+  {
+   "method": "cds_fullscreen",
+   "child_pid": 41540,
+   "child_report": "APPLIED cds_fullscreen rc=0",
+   "readback_before_kill": {
+    "gdi_hz": 60,
+    "ccd_refresh": [
+     60,
+     1
+    ],
+    "registry_hz": 100
+   },
+   "killed_exit_code": 1,
+   "observed_seconds": 10.0,
+   "samples_t_gdi_hz_registry_hz_changes_only": [
+    [
+     0.45,
+     100,
+     100
+    ]
+   ],
+   "last_sample": [
+    9.98,
+    100,
+    100
+   ],
+   "reverted_by_itself": true,
+   "reverted_after_s": 0.45,
+   "restore": {
+    "needed": false,
+    "final_hz": 100
+   },
+   "others_unchanged": true,
+   "final_state": {
+    "gdi_hz": 100,
+    "ccd_refresh": [
+     100,
+     1
+    ],
+    "registry_hz": 100,
+    "position": [
+     2560,
+     0
+    ]
+   }
+  },
+  {
+   "method": "sdc",
+   "child_pid": 41760,
+   "child_report": "APPLIED sdc rc=0",
+   "readback_before_kill": {
+    "gdi_hz": 60,
+    "ccd_refresh": [
+     60,
+     1
+    ],
+    "registry_hz": 100
+   },
+   "killed_exit_code": 1,
+   "observed_seconds": 10.0,
+   "samples_t_gdi_hz_registry_hz_changes_only": [
+    [
+     0.0,
+     60,
+     100
+    ]
+   ],
+   "last_sample": [
+    9.78,
+    60,
+    100
+   ],
+   "reverted_by_itself": false,
+   "reverted_after_s": null,
+   "restore": {
+    "needed": true,
+    "steps": [
+     {
+      "step": "reset_to_saved_mode (ChangeDisplaySettingsEx NULL,0)",
+      "rc": 0,
+      "hz_after": 100,
+      "seconds": 3.31
+     }
+    ],
+    "final_hz": 100
+   },
+   "others_unchanged": true,
+   "final_state": {
+    "gdi_hz": 100,
+    "ccd_refresh": [
+     100,
+     1
+    ],
+    "registry_hz": 100,
+    "position": [
+     2560,
+     0
+    ]
+   }
+  }
+ ],
+ "notes": [],
+ "original": {
+  "displays": [
+   {
+    "index": 0,
+    "gdi": "\\\\.\\DISPLAY1",
+    "edid_name": "",
+    "tech": "DISPLAYPORT_EMBEDDED",
+    "x": 0,
+    "y": 0,
+    "w": 2560,
+    "h": 1600,
+    "refresh": [
+     240001,
+     1000
+    ],
+    "signal_refresh": [
+     240001,
+     1000
+    ],
+    "pixel_rate": 1175045000,
+    "gdi_now": {
+     "w": 2560,
+     "h": 1600,
+     "hz_int": 240,
+     "bpp": 32,
+     "orientation_deg": 0,
+     "fixed_output": 0,
+     "flags": 0,
+     "x": 0,
+     "y": 0
+    },
+    "gdi_registry": {
+     "w": 2560,
+     "h": 1600,
+     "hz_int": 240,
+     "bpp": 32,
+     "orientation_deg": 0,
+     "fixed_output": 0,
+     "flags": 0,
+     "x": 0,
+     "y": 0
+    },
+    "target_id": 4353
+   },
+   {
+    "index": 1,
+    "gdi": "\\\\.\\DISPLAY2",
+    "edid_name": "EGM22F100H",
+    "tech": "HDMI",
+    "x": 2560,
+    "y": 0,
+    "w": 1920,
+    "h": 1080,
+    "refresh": [
+     100,
+     1
+    ],
+    "signal_refresh": [
+     100,
+     1
+    ],
+    "pixel_rate": 223000000,
+    "gdi_now": {
+     "w": 1920,
+     "h": 1080,
+     "hz_int": 100,
+     "bpp": 32,
+     "orientation_deg": 0,
+     "fixed_output": 0,
+     "flags": 0,
+     "x": 2560,
+     "y": 0
+    },
+    "gdi_registry": {
+     "w": 1920,
+     "h": 1080,
+     "hz_int": 100,
+     "bpp": 32,
+     "orientation_deg": 0,
+     "fixed_output": 0,
+     "flags": 0,
+     "x": 2560,
+     "y": 0
+    },
+    "target_id": 4352
+   }
+  ],
+  "external_gdi": "\\\\.\\DISPLAY2"
+ },
+ "validation": {
+  "cds0_CDS_TEST_rc": 0,
+  "cds_fullscreen_CDS_TEST_rc": 0,
+  "sdc_validate_variant": "auto",
+  "sdc_validate_rc": 0
+ },
+ "methods_run": [
+  "cds0",
+  "cds_fullscreen",
+  "sdc"
+ ],
+ "final_restore": {
+  "needed": false,
+  "final_hz": 100
+ },
+ "final_displays": [
+  {
+   "index": 0,
+   "gdi": "\\\\.\\DISPLAY1",
+   "edid_name": "",
+   "tech": "DISPLAYPORT_EMBEDDED",
+   "x": 0,
+   "y": 0,
+   "w": 2560,
+   "h": 1600,
+   "refresh": [
+    240001,
+    1000
+   ],
+   "signal_refresh": [
+    240001,
+    1000
+   ],
+   "pixel_rate": 1175045000,
+   "gdi_now": {
+    "w": 2560,
+    "h": 1600,
+    "hz_int": 240,
+    "bpp": 32,
+    "orientation_deg": 0,
+    "fixed_output": 0,
+    "flags": 0,
+    "x": 0,
+    "y": 0
+   },
+   "gdi_registry": {
+    "w": 2560,
+    "h": 1600,
+    "hz_int": 240,
+    "bpp": 32,
+    "orientation_deg": 0,
+    "fixed_output": 0,
+    "flags": 0,
+    "x": 0,
+    "y": 0
+   },
+   "target_id": 4353
+  },
+  {
+   "index": 1,
+   "gdi": "\\\\.\\DISPLAY2",
+   "edid_name": "EGM22F100H",
+   "tech": "HDMI",
+   "x": 2560,
+   "y": 0,
+   "w": 1920,
+   "h": 1080,
+   "refresh": [
+    100,
+    1
+   ],
+   "signal_refresh": [
+    100,
+    1
+   ],
+   "pixel_rate": 223000000,
+   "gdi_now": {
+    "w": 1920,
+    "h": 1080,
+    "hz_int": 100,
+    "bpp": 32,
+    "orientation_deg": 0,
+    "fixed_output": 0,
+    "flags": 0,
+    "x": 2560,
+    "y": 0
+   },
+   "gdi_registry": {
+    "w": 1920,
+    "h": 1080,
+    "hz_int": 100,
+    "bpp": 32,
+    "orientation_deg": 0,
+    "fixed_output": 0,
+    "flags": 0,
+    "x": 2560,
+    "y": 0
+   },
+   "target_id": 4352
+  }
+ ],
+ "all_displays_same_as_original": {
+  "others": true,
+  "external_hz": 100,
+  "external_registry_hz": 100
+ }
+}

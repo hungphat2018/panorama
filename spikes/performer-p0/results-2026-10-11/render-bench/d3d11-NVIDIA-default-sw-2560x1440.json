@@ -1,0 +1,3 @@
+{"run_id": "d3d11-NVIDIA-default-sw-2560x1440", "bench_render": {"gpu": "NVIDIA GeForce RTX 5070 Ti Laptop GPU", "backend": "d3d11", "preset": "default", "source": [1920, 1080], "target": [2560, 1440], "target_format": "rgb10a2", "iterations": 300,
+  "wall_ms_draw_plus_gpu_finish": {"mean": 0.4369, "p50": 0.4267, "p90": 0.4667, "p99": 0.6567, "p999": 0.7462, "max": 0.7462},
+  "gpu_pass_sum_ms": {"mean": 0.2974, "p50": 0.2990, "p90": 0.3004, "p99": 0.3027, "p999": 0.4400, "max": 0.4400}}}

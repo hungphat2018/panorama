@@ -1,0 +1,1 @@
+{"run_id": "judas-d3d11va", "bench_decode": {"ok": true, "codec": "hevc", "hw_fmt": "d3d11/p010le", "frames": 21427, "elapsed_s": 12.002, "fps": 1785.2, "x_realtime": 74.5, "process_cpu_s": 1.031, "cpu_pct_of_one_core": 8.6, "stream_fps": 23.9760}}

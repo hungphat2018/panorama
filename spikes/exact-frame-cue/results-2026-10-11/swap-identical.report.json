@@ -1,0 +1,276 @@
+{
+ "captures": 1800,
+ "unreadable_barcode": 0,
+ "frames_seen": 1800,
+ "frames_total": 1800,
+ "no_shader_frames": [],
+ "applied_mismatch": 0,
+ "applied_mismatch_examples": [],
+ "mid_shot_changes": 0,
+ "mid_shot_examples": [],
+ "plan_mismatch_frames": 0,
+ "plan_mismatch_examples": [],
+ "versions_shown": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14
+ ],
+ "swaps": [
+  {
+   "k": 1,
+   "kind": "version",
+   "request_frame": 72,
+   "ack_ms": 24.15,
+   "confirm_ms": null,
+   "first_frame": 73,
+   "latency_frames": 1,
+   "latency_ms": 46.0
+  },
+  {
+   "k": 2,
+   "kind": "version",
+   "request_frame": 192,
+   "ack_ms": 8.18,
+   "confirm_ms": null,
+   "first_frame": 193,
+   "latency_frames": 1,
+   "latency_ms": 46.0
+  },
+  {
+   "k": 3,
+   "kind": "version",
+   "request_frame": 312,
+   "ack_ms": 19.32,
+   "confirm_ms": null,
+   "first_frame": 313,
+   "latency_frames": 1,
+   "latency_ms": 42.0
+  },
+  {
+   "k": 4,
+   "kind": "version",
+   "request_frame": 432,
+   "ack_ms": 23.1,
+   "confirm_ms": null,
+   "first_frame": 433,
+   "latency_frames": 1,
+   "latency_ms": 38.0
+  },
+  {
+   "k": 5,
+   "kind": "version",
+   "request_frame": 552,
+   "ack_ms": 25.34,
+   "confirm_ms": null,
+   "first_frame": 553,
+   "latency_frames": 1,
+   "latency_ms": 46.0
+  },
+  {
+   "k": 6,
+   "kind": "version",
+   "request_frame": 672,
+   "ack_ms": 22.61,
+   "confirm_ms": null,
+   "first_frame": 673,
+   "latency_frames": 1,
+   "latency_ms": 46.0
+  },
+  {
+   "k": 7,
+   "kind": "version",
+   "request_frame": 792,
+   "ack_ms": 24.43,
+   "confirm_ms": null,
+   "first_frame": 793,
+   "latency_frames": 1,
+   "latency_ms": 38.0
+  },
+  {
+   "k": 8,
+   "kind": "version",
+   "request_frame": 912,
+   "ack_ms": 8.89,
+   "confirm_ms": null,
+   "first_frame": 913,
+   "latency_frames": 1,
+   "latency_ms": 42.0
+  },
+  {
+   "k": 9,
+   "kind": "version",
+   "request_frame": 1032,
+   "ack_ms": 21.55,
+   "confirm_ms": null,
+   "first_frame": 1033,
+   "latency_frames": 1,
+   "latency_ms": 42.0
+  },
+  {
+   "k": 10,
+   "kind": "version",
+   "request_frame": 1152,
+   "ack_ms": 47.23,
+   "confirm_ms": null,
+   "first_frame": 1154,
+   "latency_frames": 2,
+   "latency_ms": 79.0
+  },
+  {
+   "k": 11,
+   "kind": "version",
+   "request_frame": 1272,
+   "ack_ms": 13.72,
+   "confirm_ms": null,
+   "first_frame": 1273,
+   "latency_frames": 1,
+   "latency_ms": 46.0
+  },
+  {
+   "k": 12,
+   "kind": "version",
+   "request_frame": 1392,
+   "ack_ms": 19.86,
+   "confirm_ms": null,
+   "first_frame": 1393,
+   "latency_frames": 1,
+   "latency_ms": 42.0
+  },
+  {
+   "k": 13,
+   "kind": "version",
+   "request_frame": 1512,
+   "ack_ms": 17.98,
+   "confirm_ms": null,
+   "first_frame": 1513,
+   "latency_frames": 1,
+   "latency_ms": 38.0
+  },
+  {
+   "k": 14,
+   "kind": "version",
+   "request_frame": 1632,
+   "ack_ms": 21.11,
+   "confirm_ms": null,
+   "first_frame": 1633,
+   "latency_frames": 1,
+   "latency_ms": 46.0
+  }
+ ],
+ "swap_latency_frames": {
+  "count": 14,
+  "min": 1,
+  "median": 1.0,
+  "max": 2
+ },
+ "swap_latency_ms": {
+  "count": 14,
+  "min": 38.0,
+  "median": 44.0,
+  "max": 79.0
+ },
+ "swap_confirm_ms": null,
+ "reverts": [],
+ "pacing": {
+  "frame_ms": 41.667,
+  "gaps": 1787,
+  "gap_ms": {
+   "count": 1787,
+   "min": 33.0,
+   "median": 42.0,
+   "max": 50.0
+  },
+  "hitches": 0,
+  "hitches_near_swaps": 0,
+  "hitch_examples": [],
+  "settling_hitches": [
+   [
+    1,
+    1317.0
+   ],
+   [
+    2,
+    87.0
+   ]
+  ],
+  "missing_frames": 0,
+  "missing_near_swaps": 0,
+  "missing_examples": []
+ },
+ "main": {
+  "captures": 1800,
+  "blended": 0,
+  "mismatch_captures": 0,
+  "mismatch_frames": 0,
+  "mismatch_on_cut_frames": 0,
+  "cut_frames_checked": 32,
+  "mismatch_examples": []
+ },
+ "mpv_log": {
+  "startup_compile_ms": 196.3,
+  "swaps_logged": 14,
+  "swaps_with_compile": 0,
+  "compile_ms_per_swap": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "errors_after_start": [],
+  "counter_changes": [],
+  "final_counters": {
+   "frame-drop-count": "0",
+   "decoder-frame-drop-count": "0",
+   "vo-delayed-frame-count": "0",
+   "mistimed-frame-count": "nil",
+   "display-fps": "240.001000",
+   "container-fps": "24.000000",
+   "hwdec-current": "d3d11va",
+   "current-gpu-context": "d3d11",
+   "video-sync": "audio"
+  }
+ },
+ "mpv_counters": {
+  "frame-drop-count": "0",
+  "decoder-frame-drop-count": "0",
+  "vo-delayed-frame-count": "0",
+  "mistimed-frame-count": "nil",
+  "display-fps": "240.001000",
+  "container-fps": "24.000000",
+  "hwdec-current": "d3d11va",
+  "current-gpu-context": "d3d11",
+  "video-sync": "audio"
+ },
+ "mode": "pts",
+ "seeks": "",
+ "mpv_args": [],
+ "planner_mode": "identical",
+ "planner_args": [
+  "--every=5",
+  "--horizon=1.0",
+  "--capacity=8192",
+  "--main-stripe"
+ ]
+}

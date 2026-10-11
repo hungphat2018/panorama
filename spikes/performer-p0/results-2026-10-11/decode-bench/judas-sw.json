@@ -1,0 +1,1 @@
+{"run_id": "judas-sw", "bench_decode": {"ok": true, "codec": "hevc", "hw_fmt": "", "frames": 13472, "elapsed_s": 12.013, "fps": 1121.4, "x_realtime": 46.8, "process_cpu_s": 94.812, "cpu_pct_of_one_core": 789.2, "stream_fps": 23.9760}}

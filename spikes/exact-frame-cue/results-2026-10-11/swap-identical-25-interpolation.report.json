@@ -1,0 +1,303 @@
+{
+ "captures": 11054,
+ "unreadable_barcode": 0,
+ "frames_seen": 1874,
+ "frames_total": 1875,
+ "no_shader_frames": [],
+ "applied_mismatch": 0,
+ "applied_mismatch_examples": [],
+ "mid_shot_changes": 0,
+ "mid_shot_examples": [],
+ "plan_mismatch_frames": 0,
+ "plan_mismatch_examples": [],
+ "versions_shown": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14
+ ],
+ "swaps": [
+  {
+   "k": 1,
+   "kind": "version",
+   "request_frame": 75,
+   "ack_ms": 10.51,
+   "confirm_ms": null,
+   "first_frame": 75,
+   "latency_frames": 0,
+   "latency_ms": 34.0
+  },
+  {
+   "k": 2,
+   "kind": "version",
+   "request_frame": 200,
+   "ack_ms": 7.26,
+   "confirm_ms": null,
+   "first_frame": 200,
+   "latency_frames": 0,
+   "latency_ms": 0.0
+  },
+  {
+   "k": 3,
+   "kind": "version",
+   "request_frame": 324,
+   "ack_ms": 7.15,
+   "confirm_ms": null,
+   "first_frame": 324,
+   "latency_frames": 0,
+   "latency_ms": 8.0
+  },
+  {
+   "k": 4,
+   "kind": "version",
+   "request_frame": 448,
+   "ack_ms": 8.46,
+   "confirm_ms": null,
+   "first_frame": 448,
+   "latency_frames": 0,
+   "latency_ms": 25.0
+  },
+  {
+   "k": 5,
+   "kind": "version",
+   "request_frame": 572,
+   "ack_ms": 7.46,
+   "confirm_ms": null,
+   "first_frame": 572,
+   "latency_frames": 0,
+   "latency_ms": 29.0
+  },
+  {
+   "k": 6,
+   "kind": "version",
+   "request_frame": 696,
+   "ack_ms": 9.12,
+   "confirm_ms": null,
+   "first_frame": 696,
+   "latency_frames": 0,
+   "latency_ms": 37.0
+  },
+  {
+   "k": 7,
+   "kind": "version",
+   "request_frame": 820,
+   "ack_ms": 14.88,
+   "confirm_ms": null,
+   "first_frame": 820,
+   "latency_frames": 0,
+   "latency_ms": 29.0
+  },
+  {
+   "k": 8,
+   "kind": "version",
+   "request_frame": 944,
+   "ack_ms": 7.55,
+   "confirm_ms": null,
+   "first_frame": 945,
+   "latency_frames": 1,
+   "latency_ms": 38.0
+  },
+  {
+   "k": 9,
+   "kind": "version",
+   "request_frame": 1069,
+   "ack_ms": 7.39,
+   "confirm_ms": null,
+   "first_frame": 1069,
+   "latency_frames": 0,
+   "latency_ms": 8.0
+  },
+  {
+   "k": 10,
+   "kind": "version",
+   "request_frame": 1192,
+   "ack_ms": 8.18,
+   "confirm_ms": null,
+   "first_frame": 1193,
+   "latency_frames": 1,
+   "latency_ms": 42.0
+  },
+  {
+   "k": 11,
+   "kind": "version",
+   "request_frame": 1317,
+   "ack_ms": 7.53,
+   "confirm_ms": null,
+   "first_frame": 1317,
+   "latency_frames": 0,
+   "latency_ms": 17.0
+  },
+  {
+   "k": 12,
+   "kind": "version",
+   "request_frame": 1441,
+   "ack_ms": 7.56,
+   "confirm_ms": null,
+   "first_frame": 1441,
+   "latency_frames": 0,
+   "latency_ms": 9.0
+  },
+  {
+   "k": 13,
+   "kind": "version",
+   "request_frame": 1565,
+   "ack_ms": 9.79,
+   "confirm_ms": null,
+   "first_frame": 1565,
+   "latency_frames": 0,
+   "latency_ms": 29.0
+  },
+  {
+   "k": 14,
+   "kind": "version",
+   "request_frame": 1689,
+   "ack_ms": 8.81,
+   "confirm_ms": null,
+   "first_frame": 1689,
+   "latency_frames": 0,
+   "latency_ms": 21.0
+  }
+ ],
+ "swap_latency_frames": {
+  "count": 14,
+  "min": 0,
+  "median": 0.0,
+  "max": 1
+ },
+ "swap_latency_ms": {
+  "count": 14,
+  "min": 0.0,
+  "median": 27.0,
+  "max": 42.0
+ },
+ "swap_confirm_ms": null,
+ "reverts": [],
+ "pacing": {
+  "frame_ms": 40.0,
+  "gaps": 1861,
+  "gap_ms": {
+   "count": 1861,
+   "min": 29.0,
+   "median": 41.0,
+   "max": 50.0
+  },
+  "hitches": 0,
+  "hitches_near_swaps": 0,
+  "hitch_examples": [],
+  "settling_hitches": [
+   [
+    1,
+    1308.0
+   ],
+   [
+    3,
+    84.0
+   ]
+  ],
+  "missing_frames": 0,
+  "missing_near_swaps": 0,
+  "missing_examples": []
+ },
+ "main": {
+  "captures": 11054,
+  "blended": 17,
+  "mismatch_captures": 120,
+  "mismatch_frames": 22,
+  "mismatch_on_cut_frames": 22,
+  "cut_frames_checked": 33,
+  "mismatch_examples": [
+   70,
+   158,
+   211,
+   215,
+   296,
+   377,
+   559,
+   614,
+   710,
+   935,
+   937,
+   992,
+   1073,
+   1138,
+   1279,
+   1349,
+   1402,
+   1414,
+   1471,
+   1505
+  ]
+ },
+ "mpv_log": {
+  "startup_compile_ms": 191.7,
+  "swaps_logged": 14,
+  "swaps_with_compile": 0,
+  "compile_ms_per_swap": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "errors_after_start": [],
+  "counter_changes": [
+   "cue-counter mistimed-frame-count=1 time-pos=0.080",
+   "cue-counter mistimed-frame-count=2 time-pos=0.120"
+  ],
+  "final_counters": {
+   "mistimed-frame-count": "2",
+   "frame-drop-count": "0",
+   "decoder-frame-drop-count": "0",
+   "vo-delayed-frame-count": "0",
+   "display-fps": "240.001000",
+   "container-fps": "25.000000",
+   "hwdec-current": "d3d11va",
+   "current-gpu-context": "d3d11",
+   "video-sync": "display-resample"
+  }
+ },
+ "mpv_counters": {
+  "mistimed-frame-count": "2",
+  "frame-drop-count": "0",
+  "decoder-frame-drop-count": "0",
+  "vo-delayed-frame-count": "0",
+  "display-fps": "240.001000",
+  "container-fps": "25.000000",
+  "hwdec-current": "d3d11va",
+  "current-gpu-context": "d3d11",
+  "video-sync": "display-resample"
+ },
+ "mode": "pts",
+ "seeks": "",
+ "mpv_args": [
+  "--video-sync=display-resample",
+  "--interpolation"
+ ],
+ "planner_mode": "identical",
+ "planner_args": [
+  "--every=5",
+  "--horizon=1.0",
+  "--capacity=8192",
+  "--main-stripe"
+ ]
+}

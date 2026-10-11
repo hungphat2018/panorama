@@ -1,0 +1,9 @@
+monitor 0 DISPLAY1: 2560x1600 at (0,0), window/swapchain 1280x800, refresh 240.0043 Hz, 344x215 mm at 0 mm
+monitor 1 DISPLAY2: 1920x1080 at (2560,0), window/swapchain 960x540, refresh 100.0000 Hz, 476x268 mm at 364 mm
+film 23.9760 fps; master DISPLAY2 100.0000 Hz; speed NOT locked (plays at 1.0) (speed 1.0427 if locked, hold 4 refreshes)
+film starts 4 master refreshes later: predicted follower offset 0.151 ms
+picture 382.2 x 215.0 mm (aspect 1.7778) at x 162.9..545.1 mm; DISPLAY1: shows part DISPLAY2: shows part 
+DISPLAY1: 3731 presents, render cpu p50 0.027 / p99 0.319 ms, gpu p50 0.007 / p99 0.329 ms, queue_more 0, empty 0
+wrote .\results-2026-10-11\windowed-judas/monitor-0-nearest.json
+DISPLAY2: 3732 presents, render cpu p50 0.024 / p99 0.120 ms, gpu p50 0.003 / p99 0.146 ms, queue_more 0, empty 0
+wrote .\results-2026-10-11\windowed-judas/monitor-1-nearest.json

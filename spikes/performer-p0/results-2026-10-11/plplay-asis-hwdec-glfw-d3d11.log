@@ -1,0 +1,85 @@
+Initialized libplacebo v7.375.0 (API v375)
+Opening file: 'C:\Users\tamla\AppData\Local\Temp\claude\C--Users-tamla-Downloads-Telegram-Desktop-panorama\9ea8b6f2-fbe5-489c-8bd3-26de4f2494ca\scratchpad\p0-clips\hotel-640x360-6s.mp4'
+Format: mov,mp4,m4a,3gp,3g2,mj2
+Found video track (stream 0)
+Resolution: 640 x 360
+FPS: 25.000000
+TBR: 25.000000
+TBN: 0.000078
+Bitrate: 666 kbps
+Format: yuv420p
+Attempting to initialize API: GLFW (D3D11)
+Creating 640x360 window...
+Using DXGI 1.2+
+Using Direct3D 11 feature level 12_1
+Direct3D 11 device properties:
+    Device Name: NVIDIA GeForce RTX 5070 Ti Laptop GPU
+    Device ID: 10de:2f18 (rev a1)
+    Subsystem ID: 1462:14d1
+    LUID: 0000000000015558
+    Driver version: 32.0.16.1742
+shaderc SPIR-V version 1.6 rev 1
+Initialized SPIR-V compiler 'shaderc'
+Using Direct3D 11.4 runtime
+D3DCompiler version: 10.0.26100.8875
+GPU information:
+    GLSL version: 450 (vulkan)
+      max_shmem_size:            32768
+      max_group_threads:         1024
+      max_group_size[0]:         1024
+      max_group_size[1]:         1024
+      max_group_size[2]:         64
+      subgroup_size:             0
+      min_gather_offset:         -32
+      max_gather_offset:         31
+    Limits:
+      thread_safe:               0
+      callbacks:                 0
+      max_buf_size:              2147483648
+      max_ubo_size:              65536
+      max_ssbo_size:             2147483648
+      max_vbo_size:              2147483648
+      max_mapped_size:           0
+      max_buffer_texels:         134217728
+      align_host_ptr:            0
+      host_cached:               0
+      max_tex_1d_dim:            16384
+      max_tex_2d_dim:            16384
+      max_tex_3d_dim:            2048
+      blittable_1d_3d:           1
+      buf_transfer:              0
+      align_tex_xfer_pitch:      1
+      align_tex_xfer_offset:     32
+      max_variable_comps:        0
+      max_constants:             0
+      max_pushc_size:            0
+      align_vertex_stride:       1
+      max_dispatch[0]:           65535
+      max_dispatch[1]:           65535
+      max_dispatch[2]:           65535
+      fragment_queues:           1
+      compute_queues:            1
+Using flip-model presentation
+Initial swap chain configuration: format: R10G10B10A2_UNORM, color space: RGB_FULL_G22_NONE_P709.
+Codec: h264 (H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10)
+Using software decoding
+Dithering to 10 bit depth
+Estimated source FPS: 25.000, display FPS: 240.597
+Exiting...
+Received frame after EOF signaled... discarding frame!
+Dropped frame with PTS 7.640
+Dropped frame with PTS 7.560
+Dropped frame with PTS 7.600
+After colorspace hint:
+  Backtrace:
+    #0  0x7ff854cc6db3 in pl_d3d11_create_swapchain+0x533 (C:\Users\tamla\Downloads\Telegram Desktop\panorama\spikes\performer-p0\bin\libplacebo-375.dll+0xa6db3) (0x2f2986db3)
+    #1  0x7ff854cc5d07 in pl_d3d11_wrap+0x88d7 (C:\Users\tamla\Downloads\Telegram Desktop\panorama\spikes\performer-p0\bin\libplacebo-375.dll+0xa5d07) (0x2f2985d07)
+    #2  0x7ff854cc6a1f in pl_d3d11_create_swapchain+0x19f (C:\Users\tamla\Downloads\Telegram Desktop\panorama\spikes\performer-p0\bin\libplacebo-375.dll+0xa6a1f) (0x2f2986a1f)
+    #3  0x7ff7132fde66 (C:\Users\tamla\Downloads\Telegram Desktop\panorama\spikes\performer-p0\bin\plplay-master.exe+0xde66) (0x14000de66)
+    #4  0x7ff7132fcaaa (C:\Users\tamla\Downloads\Telegram Desktop\panorama\spikes\performer-p0\bin\plplay-master.exe+0xcaaa) (0x14000caaa)
+    #5  0x7ff713351c43 (C:\Users\tamla\Downloads\Telegram Desktop\panorama\spikes\performer-p0\bin\plplay-master.exe+0x61c43) (0x140061c43)
+    #6  0x7ff7132f1156 (C:\Users\tamla\Downloads\Telegram Desktop\panorama\spikes\performer-p0\bin\plplay-master.exe+0x1156) (0x140001156)
+    #7  0x7ff8e124e956 in BaseThreadInitThunk+0x16 (C:\WINDOWS\System32\KERNEL32.DLL+0x2e956) (0x18002e956)
+    #8  0x7ff8e23ead6b in RtlUserThreadStart+0x2b (C:\WINDOWS\SYSTEM32\ntdll.dll+0xaad6b) (0x1800aad6b)
+ 295: IDXGISwapChain4::SetHDRMetaData: Redundant invocation on unchanged metadata could result in presentation performance inefficiency.
+exit code: 

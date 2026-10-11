@@ -1,0 +1,52 @@
+{
+ "captures": 2879,
+ "unreadable_captures": 0,
+ "frames_seen": 2879,
+ "frames_total": 2880,
+ "cuts_total": 56,
+ "cuts_observed": 56,
+ "cuts_exact": 56,
+ "wrong_frames": 0,
+ "wrong_frames_away_from_cuts": [],
+ "landing_delay_ms": {
+  "count": 56,
+  "min": 0.0,
+  "median": 0.0,
+  "max": 0.0,
+  "nonzero": 0
+ },
+ "stripe_gray_by_level": {
+  "0": [
+   0.2,
+   0.2
+  ],
+  "1": [
+   0.4,
+   0.4
+  ],
+  "2": [
+   0.6,
+   0.6
+  ],
+  "3": [
+   0.8,
+   0.8
+  ]
+ },
+ "non_exact_cuts": [],
+ "wrong_detail": {},
+ "mpv_counters": {
+  "frame-drop-count": "0",
+  "decoder-frame-drop-count": "0",
+  "vo-delayed-frame-count": "0",
+  "mistimed-frame-count": "nil",
+  "display-fps": "240.001000",
+  "container-fps": "24.000000",
+  "hwdec-current": "d3d11va",
+  "current-gpu-context": "d3d11",
+  "video-sync": "audio"
+ },
+ "mode": "pts",
+ "seeks": "",
+ "mpv_args": []
+}

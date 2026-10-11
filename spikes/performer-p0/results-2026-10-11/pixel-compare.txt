@@ -1,0 +1,17 @@
+# Pixel comparison of one film frame rendered alone (no mixing) through different decode paths.
+# reference = D3D11 backend + software decode. Output of compare-ppm.py (8-bit levels).
+
+## H.264 High 8-bit 1080p -> 640x360 clip (hotel, film frame 40)
+d3d11-sw vs d3d11-d3d11va: {"size": [640, 360], "mean_abs_diff": 0.0007, "max_abs_diff": 1, "psnr_db": 79.49, "pct_pixels_diff_gt2": 0.0, "pct_pixels_diff_gt8": 0.0, "mean_rgb_reference": [81.62, 78.91, 66.37], "mean_rgb_other": [81.62, 78.91, 66.37]}
+d3d11-sw vs vulkan-sw: {"size": [640, 360], "mean_abs_diff": 0.0, "max_abs_diff": 0, "psnr_db": Infinity, "pct_pixels_diff_gt2": 0.0, "pct_pixels_diff_gt8": 0.0, "mean_rgb_reference": [81.62, 78.91, 66.37], "mean_rgb_other": [81.62, 78.91, 66.37]}
+d3d11-sw vs vulkan-vulkan: {"size": [640, 360], "mean_abs_diff": 0.0007, "max_abs_diff": 1, "psnr_db": 79.42, "pct_pixels_diff_gt2": 0.0, "pct_pixels_diff_gt8": 0.0, "mean_rgb_reference": [81.62, 78.91, 66.37], "mean_rgb_other": [81.62, 78.91, 66.37]}
+
+## HEVC Main10 1080p -> 1280x800 window (Judas, film frame 120)
+d3d11-sw vs d3d11-d3d11va: {"size": [1280, 800], "mean_abs_diff": 0.0015, "max_abs_diff": 5, "psnr_db": 73.25, "pct_pixels_diff_gt2": 0.035, "pct_pixels_diff_gt8": 0.0, "mean_rgb_reference": [174.87, 173.2, 169.96], "mean_rgb_other": [174.87, 173.2, 169.96]}
+d3d11-sw vs vulkan-sw: {"size": [1280, 800], "mean_abs_diff": 0.0, "max_abs_diff": 1, "psnr_db": 98.53, "pct_pixels_diff_gt2": 0.0, "pct_pixels_diff_gt8": 0.0, "mean_rgb_reference": [174.87, 173.2, 169.96], "mean_rgb_other": [174.87, 173.2, 169.96]}
+d3d11-sw vs vulkan-vulkan: {"size": [1280, 800], "mean_abs_diff": 0.0043, "max_abs_diff": 1, "psnr_db": 71.75, "pct_pixels_diff_gt2": 0.0, "pct_pixels_diff_gt8": 0.0, "mean_rgb_reference": [174.87, 173.2, 169.96], "mean_rgb_other": [174.87, 173.2, 169.96]}
+d3d11-sw (master) vs d3d11-d3d11va built against packaged libplacebo 7.360.1: {"size": [1280, 800], "mean_abs_diff": 0.0064, "max_abs_diff": 5, "psnr_db": 69.09, "pct_pixels_diff_gt2": 0.035, "pct_pixels_diff_gt8": 0.0, "mean_rgb_reference": [174.87, 173.2, 169.96], "mean_rgb_other": [174.87, 173.19, 169.95]}
+
+## AV1 Main 10-bit 1080p -> 640x360 (hotel re-encoded with SVT-AV1, film frame 40; software = libdav1d, hardware = native av1 decoder + hwaccel)
+d3d11-sw vs d3d11-d3d11va: {"size": [640, 360], "mean_abs_diff": 0.0007, "max_abs_diff": 2, "psnr_db": 79.76, "pct_pixels_diff_gt2": 0.0, "pct_pixels_diff_gt8": 0.0, "mean_rgb_reference": [81.53, 79.25, 66.54], "mean_rgb_other": [81.53, 79.25, 66.54]}
+d3d11-sw vs vulkan-vulkan: {"size": [640, 360], "mean_abs_diff": 0.008, "max_abs_diff": 1, "psnr_db": 69.11, "pct_pixels_diff_gt2": 0.0, "pct_pixels_diff_gt8": 0.0, "mean_rgb_reference": [81.53, 79.25, 66.54], "mean_rgb_other": [81.53, 79.25, 66.54]}
