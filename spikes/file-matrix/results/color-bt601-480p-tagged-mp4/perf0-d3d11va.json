@@ -1,0 +1,30 @@
+{
+  "run_id": "color-bt601-480p-tagged-mp4-d3d11va",
+  "status": "ok",
+  "error": "",
+  "config": {"file": "C:/Users/tamla/Downloads/Telegram Desktop/panorama/spikes/file-matrix/media/color-bt601-480p-tagged.mp4", "backend": "d3d11", "decode": "d3d11va", "preset": "default", "window": [1920, 1080], "seconds": 5.0, "loop": false, "worst_case_no_frame_cache": false, "sync_render": false, "pl_cache_file": false, "vk_swapchain_depth": 3, "own_present": false},
+  "env": {"libplacebo_api": 375, "ffmpeg": "9.0.2", "libavutil": "61.1.102", "gpu": "NVIDIA GeForce RTX 5070 Ti Laptop GPU", "monitor": {"device": "\\\\.\\DISPLAY1", "hz": 240, "size": [2560, 1600]}},
+  "media": {"codec": "h264", "pix_fmt": "yuv420p", "hw_fmt": "d3d11/nv12", "size": [720, 480], "fps": 24.0000, "duration_s": 6.00},
+  "startup_ms_since_process_creation": {"main_entered": 12.3, "window_created": 22.8, "gpu_ready": 206.3, "file_opened": 208.8, "codec_opened": 209.4, "first_frame_decoded": 242.3, "first_render_done": 430.2, "first_present": 431.3},
+  "first_frame_ms": {"from_process_creation": 431.3, "from_main": 419.0, "from_gpu_ready": 225.0},
+  "playback": {"measured_s": 5.001, "refreshes_rendered": 1190, "refresh_rate_measured_hz": 239.984, "film_frames_front_changes": 120, "queue_estimated_fps": 24.0000, "queue_estimated_display_fps": 240.0019, "eof": false},
+  "counts": {"decoded": 124, "mapped": 121, "dropped_by_queue": 1, "queue_stalls": 0, "queue_stall_ms": 0.0, "late_refreshes_over_1p5x_steady": 1, "late_refreshes_over_2p5x_steady": 0, "steady_refreshes": 720, "nominal_interval_ms": 4.1669, "skipped_refreshes_estimate": 0.0, "hitches_over_50ms_steady": 0, "max_message_pump_ms": 0.01},
+  "refreshes_per_film_frame": {"1": 1, "7": 1, "9": 2, "10": 114, "14": 1},
+  "dxgi_refreshes_between_presents": {"1": 1174, "2": 1, "7+": 2},
+  "timings_ms": {
+    "render_cpu_all": {"n": 1190, "min": 0.0136, "mean": 0.0754, "p50": 0.0286, "p90": 0.1458, "p99": 0.4286, "p999": 0.6625, "max": 18.7626},
+    "render_cpu_steady": {"n": 720, "min": 0.0140, "mean": 0.0578, "p50": 0.0290, "p90": 0.1409, "p99": 0.3679, "p999": 0.5293, "max": 0.5293},
+    "render_cpu_steady_new_film_frame": {"n": 72, "min": 0.0192, "mean": 0.1546, "p50": 0.0296, "p90": 0.3679, "p99": 0.5293, "p999": 0.5293, "max": 0.5293},
+    "render_cpu_steady_repeated_frame": {"n": 648, "min": 0.0140, "mean": 0.0471, "p50": 0.0289, "p90": 0.1196, "p99": 0.2758, "p999": 0.3304, "max": 0.3304},
+    "gpu_pass_sum_steady": {"n": 720, "min": 0.0253, "mean": 0.0531, "p50": 0.0300, "p90": 0.0480, "p99": 0.2775, "p999": 0.2887, "max": 0.2887},
+    "gpu_pass_sum_steady_new_film_frame": {"n": 72, "min": 0.0259, "mean": 0.1092, "p50": 0.0344, "p90": 0.2456, "p99": 0.2582, "p999": 0.2582, "max": 0.2582},
+    "gpu_pass_sum_steady_repeated_frame": {"n": 648, "min": 0.0253, "mean": 0.0469, "p50": 0.0296, "p90": 0.0411, "p99": 0.2780, "p999": 0.2887, "max": 0.2887},
+    "queue_update_steady": {"n": 720, "min": 0.0007, "mean": 0.0065, "p50": 0.0047, "p90": 0.0145, "p99": 0.0296, "p999": 0.0677, "max": 0.0677},
+    "acquire_steady": {"n": 720, "min": 0.0075, "mean": 0.0180, "p50": 0.0147, "p90": 0.0179, "p99": 0.1272, "p999": 0.3921, "max": 0.3921},
+    "submit_steady": {"n": 720, "min": 0.0012, "mean": 0.0032, "p50": 0.0026, "p90": 0.0036, "p99": 0.0062, "p999": 0.1300, "max": 0.1300},
+    "swap_steady": {"n": 720, "min": 1.0605, "mean": 4.0786, "p50": 4.1026, "p90": 4.1916, "p99": 5.3338, "p999": 7.2329, "max": 7.2329},
+    "present_interval_all": {"n": 1182, "min": 0.2530, "mean": 4.2085, "p50": 4.1654, "p90": 4.2456, "p99": 5.3953, "p999": 18.9820, "max": 57.2905},
+    "present_interval_steady": {"n": 720, "min": 1.1096, "mean": 4.1669, "p50": 4.1658, "p90": 4.2524, "p99": 5.3972, "p999": 7.2904, "max": 7.2904}
+  },
+  "process": {"cpu_s": 0.406, "cpu_pct_of_one_core": 8.1, "cpu_pct_of_all_threads": 0.25, "logical_cpus": 32, "render_thread_cpu_pct": 2.8, "decode_thread_busy_s_in_libav_calls": 0.292, "decode_thread_cpu_s": 0.031, "peak_working_set_mb": 126, "peak_pagefile_mb": 205}
+}

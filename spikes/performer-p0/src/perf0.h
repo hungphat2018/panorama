@@ -52,6 +52,14 @@ struct cfg {
     const char *run_id;
     int log_level;            // enum pl_log_level
     bool probe_only;          // print adapters / outputs / window monitor, then exit
+
+    // Supported-file matrix switches (spikes/file-matrix). All off by default: the P0 numbers stay reproducible.
+    const char *deinterlace;  // weave | bob | yadif | bwdif: libplacebo deinterlacing of frames FFmpeg flags as interlaced
+    bool rotation;            // turn the picture by the stream's display matrix (pl_frame.rotation) when fitting it
+    bool sw_fallback;         // hardware decode: when the decoder offers no hardware format, decode in software instead
+    bool skip_bad_packets;    // carry on after AVERROR_INVALIDDATA from the decoder or demuxer instead of ending the stream
+    bool synth_pts;           // frames without any timestamp (raw .264/.hevc streams): count them at the stream's frame rate
+    bool sd_passthrough;      // show BT.601 (SD) material with BT.709 primaries, no gamut conversion (what mpv's target-prim=auto does)
 };
 
 // ---- time ---------------------------------------------------------------

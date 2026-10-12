@@ -1,0 +1,35 @@
+perf1 cue log results-p3\latch-test-after-slot-fix\scrub-synthetic-vf-72-s10\cuelog.json
+  monitors: DISPLAY1 240.001 Hz [10 per 3 master refreshes], DISPLAY2 72.000 Hz (master)
+  clock: step 13.9028 ms per master refresh, hysteresis True, re-aim True, eta 0.050 ms
+  run: swaps 21, swap_failures 0, seeks 116, resume_seeks 2, pauses 2, resumes 2, restarts 114, epochs 114, versions 22, shots_latched 126, decided_frames 2773, reaims 0, adversarial_seeks 22
+  refreshes: DISPLAY1 10061, DISPLAY2 3181
+RESULT
+  wrong frames ............ 0
+  shots changed on screen . 0
+  break failures .......... 0
+  clock rule violations ... 0
+    ok   C1a          0  frame start refresh differs from the formula (J0 + S + ceil(film time/step - 0.5))
+    ok   C1b          0  a monitor showed a frame other than the last one started on it (early or wrong)
+    ok   C2           0  cue not looked up by the frame's own timestamp (frame outside the latched shot's span)
+    ok   C2b          0  latched shot start differs from the version's table
+    ok   C3           0  applied cue fingerprint differs from the version's table for that shot
+    ok   C12          0  the renderer drew another frame than the one chosen
+    ok   C4           0  shot changed on screen: version or latch entry changed inside a latched shot
+    ok   C4b          0  monitors applied different cues to the same frame
+    ok   C5           0  shot captured a version other than the newest published at that moment
+    ok   C6           0  latch entry used outside the epoch it was captured in (latch not reset at a break)
+    ok   C6b          0  refresh record whose latch entry was never captured
+    ok   C7           0  an epoch did not start on every monitor together (frame 0, master refresh J0, planned refresh)
+    ok   C7b          0  first frame of an epoch not within half a refresh of the master in light
+    ok   C8           0  refresh of the old epoch presented after a break command
+    ok   C9           0  a follower moved its refresh mid-shot (not at a cut)
+    ok   C9b          0  a shown frame lasted less than one refresh on a follower
+    ok   C10          0  re-aim not at a cut, outside one refresh of the start, or shortened the frame before the cut below one refresh
+    ok   C11          0  follower further than half a refresh (+0.5 ms) from the master in light at the aim row
+    ok   C13          0  epoch bookkeeping wrong (timestamps not increasing, origin, ordinals)
+    ok   C0           0  log incomplete (refresh records truncated)
+    info C1late       0  a monitor showed an older frame than the last one started on it (decoder or queue behind)
+    info I1           0  follower slips at cuts (informational)
+    info I2           0  follower flip-flops: a slip undone within 2 s (informational)
+  seam offset at the aim row, DISPLAY1 minus master (ms, first appearance of each frame): p5 -1.699, median -0.280, p95 +1.135, max |x| 1.731 (n 2393)
+VERDICT: PASS

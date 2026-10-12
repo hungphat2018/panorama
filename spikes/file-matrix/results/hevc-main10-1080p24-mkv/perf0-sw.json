@@ -1,0 +1,30 @@
+{
+  "run_id": "hevc-main10-1080p24-mkv-sw",
+  "status": "ok",
+  "error": "",
+  "config": {"file": "C:/Users/tamla/Downloads/Telegram Desktop/panorama/spikes/file-matrix/media/hevc-main10-1080p24.mkv", "backend": "d3d11", "decode": "sw", "preset": "default", "window": [1920, 1080], "seconds": 8.0, "loop": false, "worst_case_no_frame_cache": false, "sync_render": false, "pl_cache_file": false, "vk_swapchain_depth": 3, "own_present": false},
+  "env": {"libplacebo_api": 375, "ffmpeg": "9.0.2", "libavutil": "61.1.102", "gpu": "NVIDIA GeForce RTX 5070 Ti Laptop GPU", "monitor": {"device": "\\\\.\\DISPLAY1", "hz": 240, "size": [2560, 1600]}},
+  "media": {"codec": "hevc", "pix_fmt": "yuv420p10le", "hw_fmt": "", "size": [1920, 1080], "fps": 23.9760, "duration_s": 10.02},
+  "startup_ms_since_process_creation": {"main_entered": 10.4, "window_created": 21.9, "gpu_ready": 209.4, "file_opened": 211.8, "codec_opened": 212.5, "first_frame_decoded": 247.9, "first_render_done": 391.1, "first_present": 391.7},
+  "first_frame_ms": {"from_process_creation": 391.7, "from_main": 381.3, "from_gpu_ready": 182.3},
+  "playback": {"measured_s": 8.002, "refreshes_rendered": 1907, "refresh_rate_measured_hz": 237.969, "film_frames_front_changes": 192, "queue_estimated_fps": 23.9880, "queue_estimated_display_fps": 239.8855, "eof": false},
+  "counts": {"decoded": 196, "mapped": 193, "dropped_by_queue": 1, "queue_stalls": 0, "queue_stall_ms": 0.0, "late_refreshes_over_1p5x_steady": 4, "late_refreshes_over_2p5x_steady": 1, "steady_refreshes": 1428, "nominal_interval_ms": 4.2022, "skipped_refreshes_estimate": 12.0, "hitches_over_50ms_steady": 1, "max_message_pump_ms": 0.07},
+  "refreshes_per_film_frame": {"1": 1, "7": 1, "8": 2, "10": 186, "13": 1},
+  "dxgi_refreshes_between_presents": {"1": 1887, "3": 1, "7+": 2},
+  "timings_ms": {
+    "render_cpu_all": {"n": 1907, "min": 0.0095, "mean": 0.0456, "p50": 0.0254, "p90": 0.0732, "p99": 0.1351, "p999": 0.3542, "max": 20.3670},
+    "render_cpu_steady": {"n": 1428, "min": 0.0095, "mean": 0.0342, "p50": 0.0252, "p90": 0.0747, "p99": 0.1266, "p999": 0.1445, "max": 0.1607},
+    "render_cpu_steady_new_film_frame": {"n": 144, "min": 0.0235, "mean": 0.0769, "p50": 0.0853, "p90": 0.1188, "p99": 0.1429, "p999": 0.1445, "max": 0.1445},
+    "render_cpu_steady_repeated_frame": {"n": 1284, "min": 0.0095, "mean": 0.0294, "p50": 0.0244, "p90": 0.0397, "p99": 0.1162, "p999": 0.1410, "max": 0.1607},
+    "gpu_pass_sum_steady": {"n": 1428, "min": 0.0285, "mean": 0.0592, "p50": 0.0309, "p90": 0.2290, "p99": 0.2901, "p999": 0.3013, "max": 4.2186},
+    "gpu_pass_sum_steady_new_film_frame": {"n": 144, "min": 0.0297, "mean": 0.2058, "p50": 0.2380, "p90": 0.2572, "p99": 0.2739, "p999": 4.2186, "max": 4.2186},
+    "gpu_pass_sum_steady_repeated_frame": {"n": 1284, "min": 0.0285, "mean": 0.0428, "p50": 0.0306, "p90": 0.0482, "p99": 0.2902, "p999": 0.3008, "max": 0.3013},
+    "queue_update_steady": {"n": 1428, "min": 0.0024, "mean": 0.0694, "p50": 0.0048, "p90": 0.3396, "p99": 0.8213, "p999": 2.1143, "max": 2.4762},
+    "acquire_steady": {"n": 1428, "min": 0.0079, "mean": 0.0167, "p50": 0.0150, "p90": 0.0206, "p99": 0.0424, "p999": 0.1477, "max": 0.1695},
+    "submit_steady": {"n": 1428, "min": 0.0010, "mean": 0.0027, "p50": 0.0026, "p90": 0.0035, "p99": 0.0049, "p999": 0.0079, "max": 0.0146},
+    "swap_steady": {"n": 1428, "min": 0.0541, "mean": 4.0322, "p50": 4.1088, "p90": 4.2702, "p99": 5.5225, "p999": 8.6942, "max": 8.7535},
+    "present_interval_all": {"n": 1899, "min": 0.1750, "mean": 4.1999, "p50": 4.1657, "p90": 4.3022, "p99": 5.5755, "p999": 20.8859, "max": 63.8664},
+    "present_interval_steady": {"n": 1428, "min": 0.1750, "mean": 4.2022, "p50": 4.1653, "p90": 4.3235, "p99": 5.5774, "p999": 8.7934, "max": 63.8664}
+  },
+  "process": {"cpu_s": 2.078, "cpu_pct_of_one_core": 26.0, "cpu_pct_of_all_threads": 0.81, "logical_cpus": 32, "render_thread_cpu_pct": 3.1, "decode_thread_busy_s_in_libav_calls": 0.045, "decode_thread_cpu_s": 0.000, "peak_working_set_mb": 337, "peak_pagefile_mb": 430}
+}

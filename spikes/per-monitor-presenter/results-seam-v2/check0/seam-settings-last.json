@@ -1,0 +1,15 @@
+{
+ "gap_mm": 20.000,
+ "right_screen_lower_mm": 0.000,
+ "lag_ms": {"DISPLAY1": 0.000, "DISPLAY2": 0.000},
+ "scan_fraction": {"DISPLAY1": 0.8889, "DISPLAY2": 0.9310},
+ "refresh_hz": {"DISPLAY1": 240.0010, "DISPLAY2": 96.0000},
+ "rows_timing": true,
+ "version": 2,
+ "timing": "top-row times from the scan-line grid (D3DKMTGetScanLine); each row is drawn for the middle of the time its light stays up",
+ "line_us": {"DISPLAY1": 2.3148, "DISPLAY2": 8.9799},
+ "scan_ms": {"DISPLAY1": 3.7037, "DISPLAY2": 9.6983},
+ "blank_ms": {"DISPLAY1": 0.4630, "DISPLAY2": 0.7184},
+ "brightness_note": "set at the brightness used for matching (laptop backlight 44%)",
+ "note": "lag is relative to the first (left) screen; widths assumed 344 mm (2560 px) and 476 mm (1920 px). Set at the brightness used for matching (laptop backlight 44%)."
+}

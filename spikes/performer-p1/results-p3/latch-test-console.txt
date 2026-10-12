@@ -1,0 +1,59 @@
+1. cue-selftest.exe: cue-selftest: 155 checks, 0 failed
+2. test-analyze-cues.py: 33 tests, 0 failed
+3. functional runs (latch-sim + analyze-cues), per family:
+   23.976 fps (anime episode), 240+96 Hz: 263 swaps, 886 seeks (231 within -50..+150 ms of a swap), 24 pauses, 891 restarts, 224616 refreshes -> wrong frames 0, shots changed 0, break failures 0, clock violations 0, late 0; seam max 0.43 ms; PASS/PASS
+   23.976 fps (anime episode), 240+72 Hz: 202 swaps, 706 seeks (195 within -50..+150 ms of a swap), 14 pauses, 691 restarts, 153882 refreshes -> wrong frames 0, shots changed 0, break failures 0, clock violations 0, late 0; seam max 0.72 ms; PASS/PASS
+   25 fps (hotel film), 240+100 Hz: 259 swaps, 894 seeks (242 within -50..+150 ms of a swap), 17 pauses, 894 restarts, 225471 refreshes -> wrong frames 0, shots changed 0, break failures 0, clock violations 0, late 0; seam max 2.12 ms; PASS/PASS
+   variable rate (synthetic 24/30/60), 240+96 Hz: 275 swaps, 898 seeks (251 within -50..+150 ms of a swap), 20 pauses, 876 restarts, 227266 refreshes -> wrong frames 0, shots changed 0, break failures 0, clock violations 0, late 0; seam max 1.68 ms; PASS/PASS
+   variable rate (synthetic 24/30/60), 240+72 Hz: 206 swaps, 711 seeks (197 within -50..+150 ms of a swap), 17 pauses, 704 restarts, 150878 refreshes -> wrong frames 0, shots changed 0, break failures 0, clock violations 0, late 0; seam max 1.89 ms; PASS/PASS
+   variable rate (real 12 s clip 24/30/60), 240+96 Hz: 236 swaps, 809 seeks (223 within -50..+150 ms of a swap), 22 pauses, 803 restarts, 195786 refreshes -> wrong frames 0, shots changed 0, break failures 0, clock violations 0, late 0; seam max 2.12 ms; PASS/PASS
+   TOTAL: 1441 swaps, 4904 seeks, 4859 restarts, 1177899 refreshes; wrong frames 0, shots changed 0, break failures 0, clock violations 0
+4. frame picks against the exact timestamps (master, every refresh of 300 s):
+   23.976 fps (anime episode), 240+96 Hz: engine wrong 0 of 28750 (0.000 %); old shortcut wrong 0 (0.00 %), worst 0.0 ms late
+   23.976 fps (anime episode), 240+72 Hz: engine wrong 0 of 21561 (0.000 %); old shortcut wrong 0 (0.00 %), worst 0.0 ms late
+   25 fps (hotel film), 240+100 Hz: engine wrong 0 of 6363 (0.000 %); old shortcut wrong 0 (0.00 %), worst 0.0 ms late
+   variable rate (synthetic 24/30/60), 240+96 Hz: engine wrong 0 of 28750 (0.000 %); old shortcut wrong 6101 (21.22 %), worst 33.4 ms late
+   variable rate (synthetic 24/30/60), 240+72 Hz: engine wrong 0 of 21561 (0.000 %); old shortcut wrong 4597 (21.32 %), worst 33.4 ms late
+5. hysteresis and re-aim, 2 simulated hours per seed on the true grids (aim row, ms):
+   23.976 fps, 240+96 Hz, 0.5 ppm | nearest, no hysteresis, no re-aim (perf1 now): 16 h; mid-shot slips 18 (1.12/h), at cuts 0.00/h, flip-flops 10, re-aims 0.00/h; aim row p5..p95 -1.90..+1.90, max 2.08; top max 4.12, bottom max 4.12; shortest master frame 4
+   23.976 fps, 240+96 Hz, 0.5 ppm | hysteresis, moves at cuts: 16 h; mid-shot slips 0 (0.00/h), at cuts 0.50/h, flip-flops 0, re-aims 0.00/h; aim row p5..p95 -1.88..+1.93, max 2.11; top max 4.15, bottom max 4.10; shortest master frame 4
+   23.976 fps, 240+96 Hz, 0.5 ppm | hysteresis + re-aim at cuts: 16 h; mid-shot slips 0 (0.00/h), at cuts 0.25/h, flip-flops 0, re-aims 0.75/h; aim row p5..p95 -0.90..+0.94, max 1.07; top max 3.11, bottom max 3.06; shortest master frame 3
+   23.976 fps, 240+72 Hz, 0.5 ppm | nearest, no hysteresis, no re-aim (perf1 now): 16 h; mid-shot slips 14 (0.88/h), at cuts 0.00/h, flip-flops 6, re-aims 0.00/h; aim row p5..p95 -1.90..+1.90, max 2.08; top max 4.13, bottom max 4.13; shortest master frame 3
+   23.976 fps, 240+72 Hz, 0.5 ppm | hysteresis, moves at cuts: 16 h; mid-shot slips 0 (0.00/h), at cuts 0.50/h, flip-flops 0, re-aims 0.00/h; aim row p5..p95 -1.88..+1.93, max 2.11; top max 4.15, bottom max 4.10; shortest master frame 3
+   23.976 fps, 240+72 Hz, 0.5 ppm | hysteresis + re-aim at cuts: 16 h; mid-shot slips 0 (0.00/h), at cuts 0.38/h, flip-flops 0, re-aims 1.38/h; aim row p5..p95 -0.60..+0.65, max 0.72; top max 2.77, bottom max 2.71; shortest master frame 1
+   25 fps, 240+100 Hz, 0.5 ppm | nearest, no hysteresis, no re-aim (perf1 now): 8 h; mid-shot slips 32 (4.00/h), at cuts 0.12/h, flip-flops 16, re-aims 0.00/h; aim row p5..p95 -1.88..+1.87, max 2.08; top max 4.12, bottom max 4.12; shortest master frame 4
+   25 fps, 240+100 Hz, 0.5 ppm | hysteresis, moves at cuts: 8 h; mid-shot slips 0 (0.00/h), at cuts 2.12/h, flip-flops 0, re-aims 0.00/h; aim row p5..p95 -1.85..+1.90, max 2.14; top max 4.17, bottom max 4.09; shortest master frame 4
+   25 fps, 240+100 Hz, 0.5 ppm | hysteresis + re-aim at cuts: 8 h; mid-shot slips 0 (0.00/h), at cuts 2.12/h, flip-flops 0, re-aims 0.00/h; aim row p5..p95 -1.85..+1.90, max 2.14; top max 4.17, bottom max 4.09; shortest master frame 4
+   23.976 fps, 240+96 Hz, 2 ppm | nearest, no hysteresis, no re-aim (perf1 now): 8 h; mid-shot slips 12 (1.50/h), at cuts 0.00/h, flip-flops 0, re-aims 0.00/h; aim row p5..p95 -1.84..+1.85, max 2.08; top max 4.12, bottom max 4.12; shortest master frame 4
+   23.976 fps, 240+96 Hz, 2 ppm | hysteresis, moves at cuts: 8 h; mid-shot slips 0 (0.00/h), at cuts 1.50/h, flip-flops 0, re-aims 0.00/h; aim row p5..p95 -1.81..+1.88, max 2.12; top max 4.16, bottom max 4.10; shortest master frame 4
+   23.976 fps, 240+96 Hz, 2 ppm | hysteresis + re-aim at cuts: 8 h; mid-shot slips 0 (0.00/h), at cuts 2.88/h, flip-flops 0, re-aims 3.38/h; aim row p5..p95 -0.91..+0.96, max 1.08; top max 3.12, bottom max 3.06; shortest master frame 3
+   23.976 fps, 240+96 Hz, 5 ppm | nearest, no hysteresis, no re-aim (perf1 now): 8 h; mid-shot slips 34 (4.25/h), at cuts 0.12/h, flip-flops 0, re-aims 0.00/h; aim row p5..p95 -1.87..+1.88, max 2.08; top max 4.12, bottom max 4.12; shortest master frame 4
+   23.976 fps, 240+96 Hz, 5 ppm | hysteresis, moves at cuts: 8 h; mid-shot slips 0 (0.00/h), at cuts 4.25/h, flip-flops 0, re-aims 0.00/h; aim row p5..p95 -1.83..+1.92, max 2.14; top max 4.18, bottom max 4.09; shortest master frame 4
+   23.976 fps, 240+96 Hz, 5 ppm | hysteresis + re-aim at cuts: 8 h; mid-shot slips 0 (0.00/h), at cuts 8.00/h, flip-flops 0, re-aims 8.50/h; aim row p5..p95 -0.90..+0.97, max 1.10; top max 3.14, bottom max 3.06; shortest master frame 3
+   variable rate, 240+96 Hz, 0.5 ppm | nearest, no hysteresis, no re-aim (perf1 now): 8 h; mid-shot slips 13 (1.62/h), at cuts 0.00/h, flip-flops 6, re-aims 0.00/h; aim row p5..p95 -1.87..+1.88, max 2.08; top max 4.12, bottom max 4.12; shortest master frame 1
+   variable rate, 240+96 Hz, 0.5 ppm | hysteresis, moves at cuts: 8 h; mid-shot slips 0 (0.00/h), at cuts 0.88/h, flip-flops 0, re-aims 0.00/h; aim row p5..p95 -1.85..+1.90, max 2.15; top max 4.19, bottom max 4.11; shortest master frame 1
+   variable rate, 240+96 Hz, 0.5 ppm | hysteresis + re-aim at cuts: 8 h; mid-shot slips 0 (0.00/h), at cuts 0.88/h, flip-flops 0, re-aims 11.75/h; aim row p5..p95 -1.67..+1.65, max 2.17; top max 4.21, bottom max 4.11; shortest master frame 1
+   variable rate, 240+96 Hz, parked boundary (0 ppm) | nearest, no hysteresis, no re-aim (perf1 now): 1 h; mid-shot slips 754 (942.50/h), at cuts 13.75/h, flip-flops 400, re-aims 0.00/h; aim row p5..p95 -1.56..+1.56, max 2.08; top max 4.12, bottom max 4.12; shortest master frame 1
+   variable rate, 240+96 Hz, parked boundary (0 ppm) | hysteresis, moves at cuts: 1 h; mid-shot slips 0 (0.00/h), at cuts 0.00/h, flip-flops 0, re-aims 0.00/h; aim row p5..p95 -1.30..+0.52, max 2.08; top max 4.12, bottom max 4.12; shortest master frame 1
+   variable rate, 240+96 Hz, parked boundary (0 ppm) | hysteresis + re-aim at cuts: 1 h; mid-shot slips 0 (0.00/h), at cuts 0.00/h, flip-flops 0, re-aims 10.00/h; aim row p5..p95 -1.30..+0.52, max 2.08; top max 4.12, bottom max 4.12; shortest master frame 1
+6. negative controls (each defect must be flagged by the analyzer):
+   no-latch: flagged C4 x44859, C4b x176 -> caught
+   lookup-by-clock: flagged C2 x215, C4 x68, C4b x215 -> caught
+   keep-latch: flagged C6 x43743 -> caught
+   pl-queue-pick: flagged C1b x8991 -> caught
+   independent-start: flagged C11 x184, C7b x93, C9 x59 -> caught
+   no-hold: flagged C11 x1, C4 x213, C4b x226, C6 x1946, C6b x15995, C8 x198 -> caught
+   no-reaim-guard: flagged C10 x4 -> caught
+7. perf1-p3-lgpl.exe --headless (real FFmpeg seeks, pl_queue, threads, control script; virtual displays, dummy GPU):
+   23.976 fps clip, 240+96 Hz, a seek -50..+150 ms around each swap: 12 published sheets, 11 seeks, 0 pauses, 12 restarts, 15073 refreshes -> wrong frames 0, shots changed 0, break failures 12, clock violations 0, late 0; FAIL
+  !! exe run 23.976 fps clip, 240+96 Hz, a seek -50..+150 ms around each swap: analyzer FAIL, see results-p3\latch-test\exe-adversarial-96\analysis.txt
+   23.976 fps clip, 240+96 Hz, scrub at 5 seeks/s: 10 published sheets, 98 seeks, 0 pauses, 98 restarts, 14198 refreshes -> wrong frames 0, shots changed 0, break failures 106, clock violations 0, late 0; FAIL
+  !! exe run 23.976 fps clip, 240+96 Hz, scrub at 5 seeks/s: analyzer FAIL, see results-p3\latch-test\exe-scrub-96\analysis.txt
+   23.976 fps clip, 240+96 Hz, pause, resume, seek while paused: 6 published sheets, 2 seeks, 5 pauses, 8 restarts, 4580 refreshes -> wrong frames 0, shots changed 0, break failures 9, clock violations 0, late 0; FAIL
+  !! exe run 23.976 fps clip, 240+96 Hz, pause, resume, seek while paused: analyzer FAIL, see results-p3\latch-test\exe-breaks-96\analysis.txt
+   23.976 fps clip, 240+96 Hz, 20 seeks/s: 4 published sheets, 668 seeks, 0 pauses, 504 restarts, 931 refreshes -> wrong frames 0, shots changed 0, break failures 8, clock violations 0, late 0; FAIL
+  !! exe run 23.976 fps clip, 240+96 Hz, 20 seeks/s: analyzer FAIL, see results-p3\latch-test\exe-stress-96\analysis.txt
+   23.976 fps clip, 240+72 Hz, speed not locked: 8 published sheets, 7 seeks, 0 pauses, 8 restarts, 7684 refreshes -> wrong frames 0, shots changed 0, break failures 0, clock violations 0, late 0; PASS
+   25 fps clip, 240+100 Hz: 7 published sheets, 6 seeks, 0 pauses, 7 restarts, 10086 refreshes -> wrong frames 0, shots changed 0, break failures 0, clock violations 0, late 0; PASS
+   named pipe (load, refused loads, seek, pause, resume, status, stop): 17 checks, 0 failed
+FAIL (4) in 320.7 s; summary: results-p3\latch-test\latch-test-summary.json

@@ -1,10 +1,24 @@
 // FFmpeg demux + decode (software or D3D11VA) feeding one pl_queue per monitor. Derived from
 // perf0-decode.c (adapted from libplacebo demos/plplay.c, CC0 / public domain).
 //
-// The file is decoded once. Every decoded frame is pushed to every queue as its own AVFrame
-// reference, so with D3D11VA all monitors sample the same decoder texture (one device).
+// The file is decoded once. Every decoded frame is pushed to every queue as its own AVFrame reference, so with D3D11VA
+// all monitors sample the same decoder texture (one device). A frame's timestamp is appended to the engine's frame
+// index only after every queue has the frame, so the engine never picks a frame a queue does not hold.
+//
+// Seeking follows the engine's supply handshake (perf1-engine.h, struct supply_sync). The render thread owns the GPU
+// and so resets the queues; this thread must not hold a stale frame while that happens:
+//   1. the engine raises want_gen with the film time to seek to;
+//   2. this thread drops the frame it holds, flushes the codec, and answers parked_gen = want_gen;
+//   3. the engine empties the frame index, resets every queue, and answers reset_gen = want_gen;
+//   4. this thread seeks the demuxer to the keyframe at or before the time, decodes forward without queueing, and
+//      queues the frame that contains the time (the last one at or before it) and the next one;
+//   5. it announces ready_gen = want_gen with the first frame's timestamp and the time.
+// A newer request at any step restarts the sequence for the newest generation. Pushes use short timeouts so a
+// blocked push notices a request within a few milliseconds.
 #define COBJMACROS
 #include "perf1.h"
+
+#include <math.h>
 
 #include <libavcodec/avcodec.h>
 #include <libavformat/avformat.h>
@@ -18,10 +32,12 @@
 #include <d3d10.h>
 
 #define HW_EXTRA_FRAMES 8 // decoder surfaces kept beyond the DPB: every queue holds a few frames
+#define PUSH_TIMEOUT_NS 5000000ULL
 
 struct decoder {
     const struct cfg *cfg;
     struct gpu_ctx *g;
+    struct engine *engine;
     pl_queue queues[MAX_MONITORS];
     int nqueues;
 
@@ -32,7 +48,8 @@ struct decoder {
 
     HANDLE thread;
     atomic_bool exit_thread;
-    atomic_uint decoded, mapped, dropped;
+    atomic_bool at_eof;
+    atomic_uint decoded, mapped, dropped, pushed, seeks, nonmonotonic;
 
     char codec_name[64], pix_fmt_name[64], hw_fmt_name[64];
 };
@@ -323,9 +340,13 @@ static bool init_codec(struct decoder *d)
         d->codec->opaque = d;
         d->codec->thread_count = 1; // frame threading does not apply to hwaccel decoding
     } else {
-        d->codec->thread_count = FFMIN(av_cpu_count() + 1, 16);
-        d->codec->get_buffer2 = pl_get_buffer2;
-        d->codec->opaque = &d->g->gpu;
+        // Headless runs use libplacebo's dummy GPU, which has no host-mapped buffers to decode into, and are tests that
+        // must stay light: two decoding threads.
+        d->codec->thread_count = cfg->headless_hz ? 2 : FFMIN(av_cpu_count() + 1, 16);
+        if (!cfg->headless_hz) {
+            d->codec->get_buffer2 = pl_get_buffer2;
+            d->codec->opaque = &d->g->gpu;
+        }
     }
     d->codec->export_side_data |= AV_CODEC_EXPORT_DATA_FILM_GRAIN;
 
@@ -336,7 +357,7 @@ static bool init_codec(struct decoder *d)
     return true;
 }
 
-struct decoder *decoder_open(const struct cfg *cfg, struct gpu_ctx *g, pl_queue *queues, int nqueues)
+struct decoder *decoder_open(const struct cfg *cfg, struct gpu_ctx *g, pl_queue *queues, int nqueues, struct engine *engine)
 {
     if (nqueues < 1 || nqueues > MAX_MONITORS)
         return NULL;
@@ -345,6 +366,7 @@ struct decoder *decoder_open(const struct cfg *cfg, struct gpu_ctx *g, pl_queue 
         return NULL;
     d->cfg = cfg;
     d->g = g;
+    d->engine = engine;
     d->nqueues = nqueues;
     for (int i = 0; i < nqueues; i++)
         d->queues[i] = queues[i];
@@ -360,24 +382,27 @@ error:
 
 // ---- decode loop -------------------------------------------------------------------------
 
-// Gives each queue its own reference to the frame; the last queue takes the original. A queue that
-// cannot get a reference misses that film frame (it shows up as a skipped frame in the log).
-static void push_frame(struct decoder *d, AVFrame *frame, double pts, double duration)
+// State private to the decode thread.
+struct dstate {
+    int gen;                    // generation being served (0 = the film's start)
+    bool have_first;
+    double file_first_pts;      // seconds: the rebased timeline starts at the first frame of the file
+    double frame_duration;
+    double last_pts;            // last timestamp seen in this generation (rebased); frames must increase
+    bool seeking;               // decoding forward to seek_to without queueing
+    double seek_to;             // rebased seconds
+    AVFrame *held;              // seeking: the newest frame at or before seek_to, not queued yet
+    double held_pts;
+    int pushed;                 // frames queued since the generation began
+    double first_pushed_pts;
+    bool announced;             // ready_gen was written for this generation
+    bool eof;                   // the demuxer and the codec are drained; waiting for a seek or the end
+};
+
+static bool should_abort(struct decoder *d, const struct dstate *st)
 {
-    for (int i = 0; i < d->nqueues; i++) {
-        AVFrame *f = i == d->nqueues - 1 ? frame : av_frame_clone(frame);
-        if (!f)
-            continue;
-        f->opaque = d;
-        pl_queue_push_block(d->queues[i], UINT64_MAX, &(struct pl_source_frame) {
-            .pts        = pts,
-            .duration   = duration,
-            .map        = map_frame,
-            .unmap      = unmap_frame,
-            .discard    = discard_frame,
-            .frame_data = f,
-        });
-    }
+    return atomic_load(&d->exit_thread) ||
+           atomic_load_explicit(&d->engine->sync.want_gen, memory_order_acquire) != st->gen;
 }
 
 static void push_eof(struct decoder *d)
@@ -386,70 +411,240 @@ static void push_eof(struct decoder *d)
         pl_queue_push(d->queues[i], NULL);
 }
 
+// Queues the frame in every monitor's queue (its own AVFrame reference each) and records its timestamp. Takes the
+// frame; on a false return (a newer request arrived while a queue was full) the frame has been released.
+static bool push_frame(struct decoder *d, struct dstate *st, AVFrame *frame, double pts)
+{
+    AVFrame *own[MAX_MONITORS] = {0};
+    for (int i = 0; i < d->nqueues; i++)
+        own[i] = i == d->nqueues - 1 ? frame : av_frame_clone(frame);
+    bool ok = true;
+    for (int i = 0; i < d->nqueues && ok; i++) {
+        AVFrame *f = own[i];
+        if (!f)
+            continue; // out of memory for a clone: that queue misses the frame (the log shows a mismatch)
+        f->opaque = d;
+        struct pl_source_frame src = {
+            .pts        = pts,
+            .duration   = st->frame_duration,
+            .map        = map_frame,
+            .unmap      = unmap_frame,
+            .discard    = discard_frame,
+            .frame_data = f,
+        };
+        for (;;) {
+            if (pl_queue_push_block(d->queues[i], PUSH_TIMEOUT_NS, &src)) {
+                own[i] = NULL; // the queue owns it now
+                break;
+            }
+            if (should_abort(d, st)) {
+                ok = false;
+                break;
+            }
+        }
+    }
+    if (!ok) {
+        for (int i = 0; i < d->nqueues; i++)
+            if (own[i])
+                av_frame_free(&own[i]);
+        return false;
+    }
+    findex_append(&d->engine->findex, st->gen, pts); // after every queue has it
+    atomic_fetch_add(&d->pushed, 1);
+    if (!st->pushed++)
+        st->first_pushed_pts = pts;
+    st->last_pts = pts;
+    return true;
+}
+
+// Tells the engine the first frames of the generation are queued.
+static void announce_ready(struct decoder *d, struct dstate *st, double first_pts)
+{
+    if (st->announced || st->gen == 0)
+        return;
+    st->announced = true;
+    struct supply_sync *s = &d->engine->sync;
+    atomic_store_explicit(&s->ready_pts, first_pts, memory_order_relaxed);
+    atomic_store_explicit(&s->ready_time, now_s(), memory_order_relaxed);
+    atomic_store_explicit(&s->ready_gen, st->gen, memory_order_release);
+}
+
+static void release_held(struct dstate *st)
+{
+    if (st->held)
+        av_frame_free(&st->held);
+}
+
+// A decoded frame, in presentation order. Consumes the frame.
+static void handle_frame(struct decoder *d, struct dstate *st, AVFrame *frame)
+{
+    int64_t ts = frame->pts != AV_NOPTS_VALUE ? frame->pts : frame->best_effort_timestamp;
+    double secs = (double) ts * av_q2d(d->stream->time_base);
+    if (!st->have_first) {
+        st->file_first_pts = secs;
+        st->have_first = true;
+    }
+    double pts = secs - st->file_first_pts;
+    atomic_fetch_add(&d->decoded, 1);
+    if (!(pts > st->last_pts)) {
+        atomic_fetch_add(&d->nonmonotonic, 1); // presentation order must increase: refuse the frame
+        av_frame_free(&frame);
+        return;
+    }
+    st->last_pts = pts;
+    if (!st->seeking) {
+        if (push_frame(d, st, frame, pts) && st->pushed >= 2)
+            announce_ready(d, st, st->first_pushed_pts);
+        return;
+    }
+    if (pts <= st->seek_to) {
+        // a candidate for "the frame that contains the sought time": the newest one at or before it
+        release_held(st);
+        st->held = frame;
+        st->held_pts = pts;
+        return;
+    }
+    // first frame after the sought time: queue the one that contains it (or this one if nothing came before)
+    st->seeking = false;
+    st->last_pts = -1e300;
+    if (st->held) {
+        AVFrame *h = st->held;
+        st->held = NULL;
+        if (!push_frame(d, st, h, st->held_pts)) {
+            av_frame_free(&frame);
+            return;
+        }
+    }
+    if (push_frame(d, st, frame, pts) && st->pushed >= 2)
+        announce_ready(d, st, st->first_pushed_pts);
+}
+
+// The demuxer is exhausted and the codec drained. A seek that never found a frame past its time still has the last
+// frame before it: queue that, announce, and tell the queues the stream ended.
+static void finish_stream(struct decoder *d, struct dstate *st)
+{
+    if (st->seeking) {
+        st->seeking = false;
+        st->last_pts = -1e300;
+        if (st->held) {
+            AVFrame *h = st->held;
+            st->held = NULL;
+            push_frame(d, st, h, st->held_pts);
+        }
+    }
+    if (st->gen != 0 && !st->announced)
+        announce_ready(d, st, st->pushed ? st->first_pushed_pts : NAN); // NaN: the seek produced no frame
+    push_eof(d);
+    st->eof = true;
+    atomic_store(&d->at_eof, true);
+}
+
+// A new generation was requested. Returns true with a seek in progress, false if the request was overtaken or the
+// program is ending.
+static bool begin_seek(struct decoder *d, struct dstate *st, int gen)
+{
+    struct supply_sync *s = &d->engine->sync;
+    st->gen = gen;
+    release_held(st);
+    avcodec_flush_buffers(d->codec);
+    st->eof = false;
+    atomic_store(&d->at_eof, false);
+    st->announced = false;
+    st->pushed = 0;
+    st->last_pts = -1e300;
+    atomic_store_explicit(&s->parked_gen, gen, memory_order_release);
+    for (;;) { // the engine resets the queues and the frame index, then releases us
+        if (atomic_load(&d->exit_thread))
+            return false;
+        if (atomic_load_explicit(&s->want_gen, memory_order_acquire) != gen)
+            return false;
+        if (atomic_load_explicit(&s->reset_gen, memory_order_acquire) == gen)
+            break;
+        Sleep(1);
+    }
+    double to = atomic_load_explicit(&s->seek_target, memory_order_relaxed);
+    int64_t ts = (int64_t) llround((to + st->file_first_pts) / av_q2d(d->stream->time_base));
+    atomic_fetch_add(&d->seeks, 1);
+    if (av_seek_frame(d->fmt, d->stream->index, ts, AVSEEK_FLAG_BACKWARD) < 0) {
+        fprintf(stderr, "perf1: seek to %.3f s failed\n", to);
+        finish_stream(d, st); // announces NaN: the engine goes back to paused
+        return false;
+    }
+    avcodec_flush_buffers(d->codec);
+    st->seeking = true;
+    st->seek_to = to;
+    return true;
+}
+
 static DWORD WINAPI decode_thread(LPVOID arg)
 {
     struct decoder *d = arg;
     int ret;
     AVPacket *packet = av_packet_alloc();
     AVFrame *frame = av_frame_alloc();
+    struct dstate st = { .last_pts = -1e300 };
     if (!frame || !packet)
         goto done;
-
-    double frame_duration = d->stream->avg_frame_rate.num && d->stream->avg_frame_rate.den
-                          ? av_q2d(av_inv_q(d->stream->avg_frame_rate)) : 1.0 / 24.0;
-    double first_pts = 0.0;
-    uint64_t num_frames = 0;
-    bool flushing = false;
+    st.frame_duration = d->stream->avg_frame_rate.num && d->stream->avg_frame_rate.den
+                      ? av_q2d(av_inv_q(d->stream->avg_frame_rate)) : 1.0 / 24.0;
 
     while (!atomic_load(&d->exit_thread)) {
-        if (!flushing) {
-            ret = av_read_frame(d->fmt, packet);
-            if (ret == 0) {
-                if (packet->stream_index != d->stream->index) {
-                    av_packet_unref(packet);
-                    continue;
-                }
-                ret = avcodec_send_packet(d->codec, packet);
+        int want = atomic_load_explicit(&d->engine->sync.want_gen, memory_order_acquire);
+        if (want != st.gen) {
+            begin_seek(d, &st, want);
+            continue;
+        }
+        if (st.eof) {
+            Sleep(2); // parked at the end of the file until a seek or the end of the run
+            continue;
+        }
+
+        bool draining = false;
+        ret = av_read_frame(d->fmt, packet);
+        if (ret == 0) {
+            if (packet->stream_index != d->stream->index) {
                 av_packet_unref(packet);
-            } else if (ret == AVERROR_EOF) {
-                ret = avcodec_send_packet(d->codec, NULL); // drain
-                flushing = true;
-            } else {
-                fprintf(stderr, "perf1: av_read_frame: %s\n", av_err2str(ret));
-                goto done;
+                continue;
             }
-            if (ret < 0 && ret != AVERROR_EOF) {
-                fprintf(stderr, "perf1: avcodec_send_packet: %s\n", av_err2str(ret));
-                goto done;
-            }
+            ret = avcodec_send_packet(d->codec, packet);
+            av_packet_unref(packet);
+        } else if (ret == AVERROR_EOF) {
+            ret = avcodec_send_packet(d->codec, NULL); // drain
+            draining = true;
+        } else {
+            fprintf(stderr, "perf1: av_read_frame: %s\n", av_err2str(ret));
+            finish_stream(d, &st);
+            continue;
+        }
+        if (ret < 0 && ret != AVERROR_EOF && ret != AVERROR(EAGAIN)) {
+            fprintf(stderr, "perf1: avcodec_send_packet: %s\n", av_err2str(ret));
+            finish_stream(d, &st);
+            continue;
         }
 
         for (;;) {
             ret = avcodec_receive_frame(d->codec, frame);
             if (ret != 0)
                 break;
-
-            int64_t ts = frame->pts != AV_NOPTS_VALUE ? frame->pts : frame->best_effort_timestamp;
-            double pts = ts * av_q2d(d->stream->time_base);
-            if (num_frames++ == 0)
-                first_pts = pts;
-            atomic_fetch_add(&d->decoded, 1);
-            push_frame(d, frame, pts - first_pts, frame_duration);
+            handle_frame(d, &st, frame);
             frame = av_frame_alloc();
             if (!frame)
                 goto done;
+            if (should_abort(d, &st))
+                break;
         }
-
-        if (ret == AVERROR(EAGAIN))
-            continue;
-        if (ret == AVERROR_EOF)
-            goto done;
-        fprintf(stderr, "perf1: avcodec_receive_frame: %s\n", av_err2str(ret));
-        goto done;
+        if (should_abort(d, &st))
+            continue; // a seek (or the end) was requested: the loop top deals with it
+        if (draining) {
+            finish_stream(d, &st);
+        } else if (ret != AVERROR(EAGAIN) && ret != 0 && ret != AVERROR_EOF) {
+            fprintf(stderr, "perf1: avcodec_receive_frame: %s\n", av_err2str(ret));
+            finish_stream(d, &st);
+        }
     }
 
 done:
-    push_eof(d); // lets the queues drain
+    release_held(&st);
     av_packet_free(&packet);
     av_frame_free(&frame);
     return 0;
@@ -466,7 +661,6 @@ void decoder_stop(struct decoder *d)
     if (!d->thread)
         return;
     atomic_store(&d->exit_thread, true);
-    push_eof(d); // wakes a blocked push_block
     WaitForSingleObject(d->thread, INFINITE);
     CloseHandle(d->thread);
     d->thread = NULL;
@@ -489,6 +683,10 @@ void decoder_get_info(struct decoder *d, struct decoder_info *out)
     out->decoded = atomic_load(&d->decoded);
     out->mapped = atomic_load(&d->mapped);
     out->dropped = atomic_load(&d->dropped);
+    out->pushed = atomic_load(&d->pushed);
+    out->seeks = atomic_load(&d->seeks);
+    out->nonmonotonic = atomic_load(&d->nonmonotonic);
+    out->eof = atomic_load(&d->at_eof);
 }
 
 void decoder_destroy(struct decoder **pd)

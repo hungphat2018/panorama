@@ -128,6 +128,14 @@ double vclock_time_of(struct vclock *c, int64_t i)
     return r;
 }
 
+void vclock_line(struct vclock *c, double *base, double *period)
+{
+    EnterCriticalSection(&c->cs);
+    *base = c->base;
+    *period = c->period;
+    LeaveCriticalSection(&c->cs);
+}
+
 double *vclock_copy_log(struct vclock *c, size_t *n)
 {
     EnterCriticalSection(&c->cs);

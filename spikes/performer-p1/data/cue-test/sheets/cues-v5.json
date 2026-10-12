@@ -1,0 +1,215 @@
+{
+ "schema": "panorama.cues/1",
+ "version": 5,
+ "file_hash": "test-clip",
+ "room_signature": "setup-a",
+ "preferences_hash": "default",
+ "shots": [
+  {
+   "start": 0.0,
+   "crop": [
+    192,
+    108,
+    1728,
+    972
+   ],
+   "placement": {
+    "center_mm": [
+     379.0,
+     107.5
+    ],
+    "height_mm": 215.0
+   }
+  },
+  {
+   "start": 5.193,
+   "crop": [
+    192,
+    108,
+    1728,
+    972
+   ],
+   "placement": {
+    "center_mm": [
+     354.0,
+     107.5
+    ],
+    "height_mm": 195.0
+   }
+  },
+  {
+   "start": 10.405999999999999,
+   "crop": [
+    192,
+    108,
+    1728,
+    972
+   ],
+   "placement": {
+    "center_mm": [
+     354.0,
+     107.5
+    ],
+    "height_mm": 205.0
+   }
+  },
+  {
+   "start": 14.452,
+   "placement": {
+    "center_mm": [
+     354.0,
+     107.5
+    ],
+    "height_mm": 205.0
+   }
+  },
+  {
+   "start": 17.58,
+   "crop": [
+    96,
+    54,
+    1824,
+    1026
+   ],
+   "placement": {
+    "center_mm": [
+     379.0,
+     107.5
+    ],
+    "height_mm": 215.0
+   }
+  },
+  {
+   "start": 19.7905,
+   "crop": [
+    96,
+    54,
+    1824,
+    1026
+   ]
+  },
+  {
+   "start": 23.294,
+   "crop": [
+    96,
+    54,
+    1824,
+    1026
+   ],
+   "placement": {
+    "center_mm": [
+     342.0,
+     107.5
+    ],
+    "height_mm": 195.0
+   }
+  },
+  {
+   "start": 26.923000000000002,
+   "placement": {
+    "center_mm": [
+     354.0,
+     107.5
+    ],
+    "height_mm": 195.0
+   }
+  },
+  {
+   "start": 29.0915,
+   "crop": [
+    96,
+    54,
+    1824,
+    1026
+   ],
+   "placement": {
+    "center_mm": [
+     354.0,
+     107.5
+    ],
+    "height_mm": 195.0
+   }
+  },
+  {
+   "start": 31.2605,
+   "placement": {
+    "center_mm": [
+     342.0,
+     107.5
+    ],
+    "height_mm": 215.0
+   }
+  },
+  {
+   "start": 37.225,
+   "placement": {
+    "center_mm": [
+     354.0,
+     107.5
+    ],
+    "height_mm": 205.0
+   }
+  },
+  {
+   "start": 41.8125,
+   "crop": [
+    96,
+    54,
+    1824,
+    1026
+   ]
+  },
+  {
+   "start": 44.732,
+   "placement": {
+    "center_mm": [
+     342.0,
+     107.5
+    ],
+    "height_mm": 205.0
+   }
+  },
+  {
+   "start": 48.444,
+   "placement": {
+    "center_mm": [
+     329.0,
+     107.5
+    ],
+    "height_mm": 215.0
+   }
+  },
+  {
+   "start": 54.325,
+   "crop": [
+    96,
+    54,
+    1824,
+    1026
+   ],
+   "placement": {
+    "center_mm": [
+     366.0,
+     107.5
+    ],
+    "height_mm": 215.0
+   }
+  },
+  {
+   "start": 59.914,
+   "crop": [
+    192,
+    108,
+    1728,
+    972
+   ],
+   "placement": {
+    "center_mm": [
+     342.0,
+     107.5
+    ],
+    "height_mm": 215.0
+   }
+  }
+ ]
+}

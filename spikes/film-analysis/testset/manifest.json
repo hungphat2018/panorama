@@ -1,0 +1,934 @@
+{
+ "manifest_format": "panorama-testset-manifest/1",
+ "media_root": "tools/testset",
+ "clips": [
+  {
+   "id": "anime-nama-anaru-ep2",
+   "kind": "real",
+   "domain": "anime",
+   "path": "C:/Users/tamla/Downloads/[Judas] Nama-Anaru - S01E02.mkv",
+   "source": {
+    "kind": "local-file",
+    "licence": {
+     "id": "private (all rights reserved by the rights holders); kept on this PC, never uploaded"
+    },
+    "origin": "the user's own download of a fansub-style HEVC release; HEVC Main10 1080p 23.976 fps, 24 min, no bars, 10 soft subtitle tracks (SRT en/zh/zh/id/th, ASS fr/de/pl)"
+   },
+   "tests": [
+    "shots",
+    "faces",
+    "slides",
+    "subtitles"
+   ],
+   "notes": "Whole episode. Cold open, opening (about 0:50-2:20), eyecatch at 13:20, dark night scenes 14:00-17:40, ending and next-episode card from 22:00.",
+   "video": {
+    "codec": "hevc",
+    "profile": "Main 10",
+    "width": 1920,
+    "height": 1080,
+    "fps": "24000/1001",
+    "pix_fmt": "yuv420p10le",
+    "range": "tv",
+    "color_space": null,
+    "transfer": null,
+    "sar": "1:1",
+    "time_base": "1/1000",
+    "stream_index": 0,
+    "container": "matroska,webm",
+    "duration_s": 1421.15,
+    "frames": 34047
+   },
+   "identity": {
+    "scheme": "size+3x1MiB/sha256/0",
+    "size_bytes": 258980864,
+    "sample_sha256": "ad0b4ee694629d88b4a8eedc0f65240b222b0ed7edfc17242a20756ab7e0e3b3"
+   },
+   "sha256": "1a8153003879fd5f007b4e2abc0ccf0e28f7059fd2d5c7840bca14801c545fca",
+   "size_bytes": 258980864
+  },
+  {
+   "id": "hotel-aman-promo",
+   "kind": "real",
+   "domain": "live",
+   "path": "C:/Users/tamla/Downloads/260723_HOTEL_AMAN_43_V3_MAIN_50s_MASTER_16x9_VA_H264.mp4",
+   "source": {
+    "kind": "local-file",
+    "licence": {
+     "id": "private (brand promo, all rights reserved); kept on this PC, never uploaded"
+    },
+    "origin": "the user's own promo file; H.264 1080p 25 fps, 62 s, 16:9, no bars"
+   },
+   "tests": [
+    "shots",
+    "faces",
+    "slides"
+   ],
+   "notes": "Whole file. Bodies, architecture, a bird; few faces.",
+   "video": {
+    "codec": "h264",
+    "profile": "High",
+    "width": 1920,
+    "height": 1080,
+    "fps": "25/1",
+    "pix_fmt": "yuv420p",
+    "range": "tv",
+    "color_space": "bt709",
+    "transfer": "bt709",
+    "sar": null,
+    "time_base": "1/12800",
+    "stream_index": 0,
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "duration_s": 62.741333,
+    "frames": 1567
+   },
+   "identity": {
+    "scheme": "size+3x1MiB/sha256/0",
+    "size_bytes": 36814224,
+    "sample_sha256": "ea8b1077ff4488d3310903c14df256abc1ffc757b89731fdb2f9d660679c1ff2"
+   },
+   "sha256": "b244c083526488df29964db06033bf79245cbb99294b55e0269f8bfac0d673f5",
+   "size_bytes": 36814224
+  },
+  {
+   "id": "tos-1080p",
+   "kind": "real",
+   "domain": "live",
+   "path": "downloads/tears-of-steel-1080p/extracted/tears_of_steel_1080p.mov",
+   "source": {
+    "kind": "public-download",
+    "source_id": "tears-of-steel-1080p",
+    "licence": {
+     "id": "CC-BY-3.0",
+     "url": "https://creativecommons.org/licenses/by/3.0/",
+     "credit": "(CC) Blender Foundation | mango.blender.org",
+     "checked": "2026-10-12",
+     "evidence_url": "https://mango.blender.org/about/",
+     "source_title": "Tears of Steel (2012), 1080p H.264 in a 1920x800 frame (2.4:1)",
+     "source_url": "https://download.blender.org/demo/movies/ToS/tears_of_steel_1080p.mov.zip"
+    }
+   },
+   "tests": [
+    "shots",
+    "faces",
+    "slides",
+    "subtitles"
+   ],
+   "notes": "Whole film: live action with VFX in a 1920x800 frame (2.4:1, no bars stored), 24 fps, dark interiors, end-credit roll. Subtitles: the 12 SRT files of tears-of-steel-subtitles.",
+   "video": {
+    "codec": "h264",
+    "profile": "Main",
+    "width": 1920,
+    "height": 800,
+    "fps": "24/1",
+    "pix_fmt": "yuv420p",
+    "range": null,
+    "color_space": null,
+    "transfer": null,
+    "sar": "1:1",
+    "time_base": "1/24",
+    "stream_index": 0,
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "duration_s": 734.166667,
+    "frames": 17620
+   },
+   "identity": {
+    "scheme": "size+3x1MiB/sha256/0",
+    "size_bytes": 583774083,
+    "sample_sha256": "493a046052b458bc019768df161b1c5dceb2f22f70bba2ac497aa5662c3aab10"
+   },
+   "sha256": "99486359be7e3681168a0fe94e1cbb0284c48b57b2a3ce7df4fa75e185987a15",
+   "size_bytes": 583774083
+  },
+  {
+   "id": "meridian-4k",
+   "kind": "real",
+   "domain": "live",
+   "path": "downloads/meridian-uhd-4k5994/Meridian_UHD4k5994_HDR_P3PQ.mp4",
+   "source": {
+    "kind": "public-download",
+    "source_id": "meridian-uhd-4k5994",
+    "licence": {
+     "id": "CC-BY-4.0",
+     "url": "https://creativecommons.org/licenses/by/4.0/",
+     "credit": "Meridian (c) Netflix, CC BY 4.0",
+     "checked": "2026-10-12",
+     "evidence_url": "https://opencontent.netflix.com/",
+     "source_title": "Meridian (2016, Netflix Open Content), 3840x2160 59.94 fps H.264, 16:9, dark live action",
+     "source_url": "http://download.opencontent.netflix.com.s3.amazonaws.com/Meridian/Meridian_UHD4k5994_HDR_P3PQ.mp4"
+    }
+   },
+   "tests": [
+    "shots",
+    "faces",
+    "slides"
+   ],
+   "notes": "Whole film: dark noir live action, 3840x2160 at 59.94 fps, 16:9 full frame, title text inside the picture, end cards on black.",
+   "video": {
+    "codec": "h264",
+    "profile": "High",
+    "width": 3840,
+    "height": 2160,
+    "fps": "60000/1001",
+    "pix_fmt": "yuv420p",
+    "range": null,
+    "color_space": null,
+    "transfer": null,
+    "sar": "1:1",
+    "time_base": "1/60000",
+    "stream_index": 0,
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "duration_s": 718.934883,
+    "frames": 43093
+   },
+   "identity": {
+    "scheme": "size+3x1MiB/sha256/0",
+    "size_bytes": 850587087,
+    "sample_sha256": "9ec51b86e4c6c2e3f0eeefedb93edc28a94f2e7006e70c9cfed6b9f53add5fb0"
+   },
+   "sha256": "e14ff5ab8ce4cc90269e8ed45babcf6e25d7a073b71438b3e7ffee5901a7177e",
+   "size_bytes": 850587087
+  },
+  {
+   "id": "bbb-1080p30",
+   "kind": "real",
+   "domain": "cg",
+   "path": "downloads/big-buck-bunny-1080p30/extracted/bbb_sunflower_1080p_30fps_normal.mp4",
+   "source": {
+    "kind": "public-download",
+    "source_id": "big-buck-bunny-1080p30",
+    "licence": {
+     "id": "CC-BY-3.0",
+     "url": "https://creativecommons.org/licenses/by/3.0/",
+     "credit": "(c) copyright 2008, Blender Foundation / www.bigbuckbunny.org",
+     "checked": "2026-10-12",
+     "evidence_url": "https://peach.blender.org/about/",
+     "source_title": "Big Buck Bunny (2008), 1080p 30 fps H.264, 16:9",
+     "source_url": "https://download.blender.org/demo/movies/BBB/bbb_sunflower_1080p_30fps_normal.mp4.zip"
+    }
+   },
+   "tests": [
+    "shots",
+    "slides"
+   ],
+   "notes": "Whole film: bright CG, 1920x1080 at 30 fps, many camera moves with parallax.",
+   "video": {
+    "codec": "h264",
+    "profile": "High",
+    "width": 1920,
+    "height": 1080,
+    "fps": "30/1",
+    "pix_fmt": "yuv420p",
+    "range": null,
+    "color_space": null,
+    "transfer": null,
+    "sar": "1:1",
+    "time_base": "1/30000",
+    "stream_index": 0,
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "duration_s": 634.6,
+    "frames": 19036
+   },
+   "identity": {
+    "scheme": "size+3x1MiB/sha256/0",
+    "size_bytes": 276134947,
+    "sample_sha256": "85a1ea431b2eb39139ea16fe895069102629206f4a60271f9ef611461d1bdfe4"
+   },
+   "sha256": "ae51005850b0ff757fe60c3dd7a12d754d3cd2397d87d939b55235e457f97658",
+   "size_bytes": 276134947
+  },
+  {
+   "id": "sintel-w1",
+   "kind": "real",
+   "domain": "cg",
+   "path": "downloads/sintel-1080p-w1/sintel-1080p-w1.mkv",
+   "source": {
+    "kind": "public-download",
+    "source_id": "sintel-1080p-w1",
+    "licence": {
+     "id": "CC-BY-3.0",
+     "url": "https://creativecommons.org/licenses/by/3.0/",
+     "credit": "(c) copyright Blender Foundation | durian.blender.org",
+     "checked": "2026-10-12",
+     "evidence_url": "https://durian.blender.org/sharing/",
+     "source_title": "Sintel 0:03-0:53: title card over snow, fight, close faces",
+     "source_url": "https://download.blender.org/durian/movies/Sintel.2010.1080p.mkv"
+    }
+   },
+   "tests": [
+    "shots",
+    "faces",
+    "slides",
+    "subtitles"
+   ],
+   "notes": "Sintel 0:03-0:53 (stream copy, starts at the keyframe at or before 3 s): title card text over snow, fight, close faces, 1920x818 frame, soft English SRT.",
+   "video": {
+    "codec": "h264",
+    "profile": "High",
+    "width": 1920,
+    "height": 818,
+    "fps": "24/1",
+    "pix_fmt": "yuv420p",
+    "range": "tv",
+    "color_space": "bt709",
+    "transfer": null,
+    "sar": "1:1",
+    "time_base": "1/1000",
+    "stream_index": 0,
+    "container": "matroska,webm",
+    "duration_s": 53.291,
+    "frames": 1274
+   },
+   "identity": {
+    "scheme": "size+3x1MiB/sha256/0",
+    "size_bytes": 69636984,
+    "sample_sha256": "ae181f047be5c1a3c5f9ce487b938431ab6c9beefd0cf3f66de75e3a06326327"
+   },
+   "sha256": "ec9394f487484701935be8498619f0272c0a536b47080bc26b5ec6960e581f46",
+   "size_bytes": 69636984
+  },
+  {
+   "id": "sintel-w2",
+   "kind": "real",
+   "domain": "cg",
+   "path": "downloads/sintel-1080p-w2/sintel-1080p-w2.mkv",
+   "source": {
+    "kind": "public-download",
+    "source_id": "sintel-1080p-w2",
+    "licence": {
+     "id": "CC-BY-3.0",
+     "url": "https://creativecommons.org/licenses/by/3.0/",
+     "credit": "(c) copyright Blender Foundation | durian.blender.org",
+     "checked": "2026-10-12",
+     "evidence_url": "https://durian.blender.org/sharing/",
+     "source_title": "Sintel 3:35-4:25: very dark cave and ruins next to a sunlit market",
+     "source_url": "https://download.blender.org/durian/movies/Sintel.2010.1080p.mkv"
+    }
+   },
+   "tests": [
+    "shots",
+    "faces",
+    "slides",
+    "subtitles"
+   ],
+   "notes": "Sintel 3:35-4:25: very dark cave and ruins next to a sunlit market; dark-scene stress test; soft English SRT.",
+   "video": {
+    "codec": "h264",
+    "profile": "High",
+    "width": 1920,
+    "height": 818,
+    "fps": "24/1",
+    "pix_fmt": "yuv420p",
+    "range": "tv",
+    "color_space": "bt709",
+    "transfer": null,
+    "sar": "1:1",
+    "time_base": "1/1000",
+    "stream_index": 0,
+    "container": "matroska,webm",
+    "duration_s": 59.166,
+    "frames": 1418
+   },
+   "identity": {
+    "scheme": "size+3x1MiB/sha256/0",
+    "size_bytes": 86238566,
+    "sample_sha256": "1b7fff6e991201eee00bc202a44ba1b7ee051b5409a9d587e290bf16ea8807bf"
+   },
+   "sha256": "cf4aa12bcc09876ff6130ec14d55bb88af0d1ad3c933bc6292efdd30a31ca70c",
+   "size_bytes": 86238566
+  },
+  {
+   "id": "sintel-w3",
+   "kind": "real",
+   "domain": "cg",
+   "path": "downloads/sintel-1080p-w3/sintel-1080p-w3.mkv",
+   "source": {
+    "kind": "public-download",
+    "source_id": "sintel-1080p-w3",
+    "licence": {
+     "id": "CC-BY-3.0",
+     "url": "https://creativecommons.org/licenses/by/3.0/",
+     "credit": "(c) copyright Blender Foundation | durian.blender.org",
+     "checked": "2026-10-12",
+     "evidence_url": "https://durian.blender.org/sharing/",
+     "source_title": "Sintel 6:00-6:50: dissolve between a face and desert, snow mountain",
+     "source_url": "https://download.blender.org/durian/movies/Sintel.2010.1080p.mkv"
+    }
+   },
+   "tests": [
+    "shots",
+    "faces",
+    "slides",
+    "subtitles"
+   ],
+   "notes": "Sintel 6:00-6:50: a dissolve between a face and a desert, snow mountain; soft English SRT.",
+   "video": {
+    "codec": "h264",
+    "profile": "High",
+    "width": 1920,
+    "height": 818,
+    "fps": "24/1",
+    "pix_fmt": "yuv420p",
+    "range": "tv",
+    "color_space": "bt709",
+    "transfer": null,
+    "sar": "1:1",
+    "time_base": "1/1000",
+    "stream_index": 0,
+    "container": "matroska,webm",
+    "duration_s": 57.54,
+    "frames": 1378
+   },
+   "identity": {
+    "scheme": "size+3x1MiB/sha256/0",
+    "size_bytes": 96101048,
+    "sample_sha256": "0e3cb4a0056997609a6ae39748a23339baf51336d620722c5231fc26dd99d997"
+   },
+   "sha256": "c4c0e853c37d2e8295030d16c4bfaa65103ef3ffad207f70461c946979f6b588",
+   "size_bytes": 96101048
+  },
+  {
+   "id": "sintel-w4",
+   "kind": "real",
+   "domain": "cg",
+   "path": "downloads/sintel-1080p-w4/sintel-1080p-w4.mkv",
+   "source": {
+    "kind": "public-download",
+    "source_id": "sintel-1080p-w4",
+    "licence": {
+     "id": "CC-BY-3.0",
+     "url": "https://creativecommons.org/licenses/by/3.0/",
+     "credit": "(c) copyright Blender Foundation | durian.blender.org",
+     "checked": "2026-10-12",
+     "evidence_url": "https://durian.blender.org/sharing/",
+     "source_title": "Sintel 8:35-9:25: night cave with a dragon silhouette",
+     "source_url": "https://download.blender.org/durian/movies/Sintel.2010.1080p.mkv"
+    }
+   },
+   "tests": [
+    "shots",
+    "faces",
+    "slides",
+    "subtitles"
+   ],
+   "notes": "Sintel 8:35-9:25: night cave with a dragon silhouette, very dark; soft English SRT.",
+   "video": {
+    "codec": "h264",
+    "profile": "High",
+    "width": 1920,
+    "height": 818,
+    "fps": "24/1",
+    "pix_fmt": "yuv420p",
+    "range": "tv",
+    "color_space": "bt709",
+    "transfer": null,
+    "sar": "1:1",
+    "time_base": "1/1000",
+    "stream_index": 0,
+    "container": "matroska,webm",
+    "duration_s": 52.499,
+    "frames": 1258
+   },
+   "identity": {
+    "scheme": "size+3x1MiB/sha256/0",
+    "size_bytes": 73838325,
+    "sample_sha256": "4faecb3ec2d4e90a2f81f3f3411d9748cd840cececf5ba7af12515d7a35f9284"
+   },
+   "sha256": "a6729155815730cd5f4abdfc15962f71993bf1d4daec73ef3ce25e81e38e0a8c",
+   "size_bytes": 73838325
+  },
+  {
+   "id": "sol-levante-w1",
+   "kind": "real",
+   "domain": "anime",
+   "path": "downloads/sol-levante-w1/sol-levante-w1.mkv",
+   "source": {
+    "kind": "public-download",
+    "source_id": "sol-levante-w1",
+    "licence": {
+     "id": "CC-BY-4.0",
+     "url": "https://creativecommons.org/licenses/by/4.0/",
+     "credit": "Sol Levante (c) Netflix / Production I.G, CC BY 4.0",
+     "checked": "2026-10-12",
+     "evidence_url": "https://opencontent.netflix.com/",
+     "source_title": "Sol Levante 0:11-0:18: blue mandala turning into a face in a mirror (slide, dissolve-like overlays)",
+     "source_url": "http://download.opencontent.netflix.com.s3.amazonaws.com/SolLevante/sdr/SolLevante_SDR_UHD_24fps.mov"
+    }
+   },
+   "tests": [
+    "shots",
+    "faces",
+    "slides"
+   ],
+   "notes": "Sol Levante 0:11-0:18 (4K ProRes HQ master read by HTTP range, re-encoded to 1080p H.264 CRF 12): a blue mandala turning into a face in a mirror; painterly anime with heavy particle layers.",
+   "video": {
+    "codec": "h264",
+    "profile": "High",
+    "width": 1920,
+    "height": 1080,
+    "fps": "24/1",
+    "pix_fmt": "yuv420p",
+    "range": "tv",
+    "color_space": "bt709",
+    "transfer": "bt709",
+    "sar": "1:1",
+    "time_base": "1/1000",
+    "stream_index": 0,
+    "container": "matroska,webm",
+    "duration_s": 7.0,
+    "frames": 168
+   },
+   "identity": {
+    "scheme": "size+3x1MiB/sha256/0",
+    "size_bytes": 35812052,
+    "sample_sha256": "eb986644276adec2e368f109c5163c8d03cac19d83a084d78bcee1f6b62d17bf"
+   },
+   "sha256": "d2342c6615664b9355b09c118babe76477bdcb6a99e57a4b7f83e9f625f7cd9e",
+   "size_bytes": 35812052
+  },
+  {
+   "id": "sol-levante-w2",
+   "kind": "real",
+   "domain": "anime",
+   "path": "downloads/sol-levante-w2/sol-levante-w2.mkv",
+   "source": {
+    "kind": "public-download",
+    "source_id": "sol-levante-w2",
+    "licence": {
+     "id": "CC-BY-4.0",
+     "url": "https://creativecommons.org/licenses/by/4.0/",
+     "credit": "Sol Levante (c) Netflix / Production I.G, CC BY 4.0",
+     "checked": "2026-10-12",
+     "evidence_url": "https://opencontent.netflix.com/",
+     "source_title": "Sol Levante 2:53-3:00: a figure in a sunset sky and a face close-up (painted anime faces)",
+     "source_url": "http://download.opencontent.netflix.com.s3.amazonaws.com/SolLevante/sdr/SolLevante_SDR_UHD_24fps.mov"
+    }
+   },
+   "tests": [
+    "shots",
+    "faces",
+    "slides"
+   ],
+   "notes": "Sol Levante 2:53-3:00: a figure in a sunset sky and a close-up of a painted face with green eyes.",
+   "video": {
+    "codec": "h264",
+    "profile": "High",
+    "width": 1920,
+    "height": 1080,
+    "fps": "24/1",
+    "pix_fmt": "yuv420p",
+    "range": "tv",
+    "color_space": "bt709",
+    "transfer": "bt709",
+    "sar": "1:1",
+    "time_base": "1/1000",
+    "stream_index": 0,
+    "container": "matroska,webm",
+    "duration_s": 7.0,
+    "frames": 168
+   },
+   "identity": {
+    "scheme": "size+3x1MiB/sha256/0",
+    "size_bytes": 45396259,
+    "sample_sha256": "d757072cd8f4856b4e42ed716580f9bcc79bdecf9d4ba2263abf32a53937c7a6"
+   },
+   "sha256": "b714b3ee2a8f46ae81bf61dec29f23a01f2eb4e5a6baa3b9d4844aa5afca093b",
+   "size_bytes": 45396259
+  },
+  {
+   "id": "ctor-hardsub-tos-logo",
+   "kind": "constructed",
+   "domain": "live",
+   "path": "clips/ctor-hardsub-tos-logo.mp4",
+   "tests": [
+    "bars",
+    "text_in_bars"
+   ],
+   "recipe": {
+    "script": "make-hardsub.py",
+    "args": {
+     "variant": "tos-logo"
+    }
+   },
+   "derived_from": [
+    "tos-1080p"
+   ],
+   "notes": "constructed: tos-1080p with a padded bar rectangle [0, 140, 1920, 940], subtitles burned in with libass (tos-en-tos-logo.srt, FontSize=28,Outline=2,Shadow=0); truth boxes are libass's own rendering on black (luma >= 48)",
+   "labels": {
+    "bars": {
+     "file": "labels/ctor-hardsub-tos-logo/bars.json",
+     "status": "exact",
+     "items": 1
+    },
+    "text_in_bars": {
+     "file": "labels/ctor-hardsub-tos-logo/text_in_bars.json",
+     "status": "exact",
+     "items": 9
+    }
+   },
+   "video": {
+    "codec": "h264",
+    "profile": "High",
+    "width": 1920,
+    "height": 1080,
+    "fps": "24000/1001",
+    "pix_fmt": "yuv420p",
+    "range": null,
+    "color_space": null,
+    "transfer": null,
+    "sar": null,
+    "time_base": "1/24000",
+    "stream_index": 0,
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "duration_s": 60.06,
+    "frames": 1440
+   },
+   "identity": {
+    "scheme": "size+3x1MiB/sha256/0",
+    "size_bytes": 79636112,
+    "sample_sha256": "200de974205d9fd9a901171e5b6b185509e9e072cce30a0480c339106fb548f6"
+   },
+   "sha256": "b928977067b0fbd8811a4e74de8faafd4fddb83e421456a9ce847982a83820f2",
+   "size_bytes": 79636112
+  },
+  {
+   "id": "ctor-hardsub-tos-48",
+   "kind": "constructed",
+   "domain": "live",
+   "path": "clips/ctor-hardsub-tos-48.mp4",
+   "tests": [
+    "bars",
+    "text_in_bars"
+   ],
+   "recipe": {
+    "script": "make-hardsub.py",
+    "args": {
+     "variant": "tos-48"
+    }
+   },
+   "derived_from": [
+    "tos-1080p"
+   ],
+   "notes": "constructed: tos-1080p with a padded bar rectangle [0, 140, 1920, 940], subtitles burned in with libass (tos-en-tos-48.srt, FontSize=48,Outline=2,Shadow=0); truth boxes are libass's own rendering on black (luma >= 48)",
+   "labels": {
+    "bars": {
+     "file": "labels/ctor-hardsub-tos-48/bars.json",
+     "status": "exact",
+     "items": 1
+    },
+    "text_in_bars": {
+     "file": "labels/ctor-hardsub-tos-48/text_in_bars.json",
+     "status": "exact",
+     "items": 21
+    }
+   },
+   "video": {
+    "codec": "h264",
+    "profile": "High",
+    "width": 1920,
+    "height": 1080,
+    "fps": "24000/1001",
+    "pix_fmt": "yuv420p",
+    "range": null,
+    "color_space": null,
+    "transfer": null,
+    "sar": null,
+    "time_base": "1/24000",
+    "stream_index": 0,
+    "container": "mov,mp4,m4a,3gp,3g2,mj2",
+    "duration_s": 150.15,
+    "frames": 3600
+   },
+   "identity": {
+    "scheme": "size+3x1MiB/sha256/0",
+    "size_bytes": 198289694,
+    "sample_sha256": "c27b310beef4fd7186f197a454a5b60151819894b36e4ded36f13d07fb3e5ae1"
+   },
+   "sha256": "8372ac6669ad1b5e2b0554c65e39c3c3d0478bd4b265d91a2397337bdb104b9b",
+   "size_bytes": 198289694
+  },
+  {
+   "id": "ctor-hardsub-anime-72",
+   "kind": "constructed",
+   "domain": "anime",
+   "path": "clips/ctor-hardsub-anime-72.mkv",
+   "tests": [
+    "bars",
+    "text_in_bars"
+   ],
+   "recipe": {
+    "script": "make-hardsub.py",
+    "args": {
+     "variant": "anime-72"
+    }
+   },
+   "derived_from": [
+    "anime-nama-anaru-ep2"
+   ],
+   "notes": "constructed: anime-nama-anaru-ep2 with a painted bar rectangle [0, 138, 1920, 942], subtitles burned in with libass (judas-fr.ass, FontSize=72); truth boxes are libass's own rendering on black (luma >= 48)",
+   "labels": {
+    "bars": {
+     "file": "labels/ctor-hardsub-anime-72/bars.json",
+     "status": "exact",
+     "items": 1
+    },
+    "text_in_bars": {
+     "file": "labels/ctor-hardsub-anime-72/text_in_bars.json",
+     "status": "exact",
+     "items": 47
+    }
+   },
+   "video": {
+    "codec": "hevc",
+    "profile": "Main 10",
+    "width": 1920,
+    "height": 1080,
+    "fps": "24000/1001",
+    "pix_fmt": "yuv420p10le",
+    "range": "tv",
+    "color_space": null,
+    "transfer": null,
+    "sar": null,
+    "time_base": "1/1000",
+    "stream_index": 0,
+    "container": "matroska,webm",
+    "duration_s": 150.15,
+    "frames": 3600
+   },
+   "identity": {
+    "scheme": "size+3x1MiB/sha256/0",
+    "size_bytes": 39360581,
+    "sample_sha256": "842ed1760dab94a96e77c06a715c0d9ecd591ce9fc64ae1ee58b6522def57025"
+   },
+   "sha256": "13723245b8a91eac709fba50ab8628acab630cff796f0d07251aedff2a412939",
+   "size_bytes": 39360581
+  },
+  {
+   "id": "ctor-slides-anime",
+   "kind": "constructed",
+   "domain": "anime",
+   "path": "clips/ctor-slides-anime.mkv",
+   "tests": [
+    "slides",
+    "shots"
+   ],
+   "recipe": {
+    "script": "make-slides.py",
+    "args": {
+     "variant": "anime",
+     "seed": 3
+    }
+   },
+   "derived_from": [
+    "anime-nama-anaru-ep2"
+   ],
+   "notes": "constructed: windows 1280x720 moved over real frames (anime-nama-anaru-ep2@0.0s, anime-nama-anaru-ep2@120.0s, anime-nama-anaru-ep2@480.0s, anime-nama-anaru-ep2@940.0s) along known sub-pixel paths, re-encoded libx265 CRF 22; 13 scenarios joined by hard cuts; path = exact content displacement per frame",
+   "labels": {
+    "slides": {
+     "file": "labels/ctor-slides-anime/slides.json",
+     "status": "exact",
+     "items": 13
+    },
+    "shots": {
+     "file": "labels/ctor-slides-anime/shots.json",
+     "status": "exact",
+     "items": 12
+    }
+   },
+   "video": {
+    "codec": "hevc",
+    "profile": "Main 10",
+    "width": 1280,
+    "height": 720,
+    "fps": "24000/1001",
+    "pix_fmt": "yuv420p10le",
+    "range": "tv",
+    "color_space": null,
+    "transfer": null,
+    "sar": null,
+    "time_base": "1/1000",
+    "stream_index": 0,
+    "container": "matroska,webm",
+    "duration_s": 46.046,
+    "frames": 1104
+   },
+   "identity": {
+    "scheme": "size+3x1MiB/sha256/0",
+    "size_bytes": 1736961,
+    "sample_sha256": "dc273249e8c5d6d69bd8a8888b8183736ca395c6ac512510a529ce3a9c7b3b75"
+   },
+   "sha256": "ca7a0878fe598217015f0612579a19be33847619201f319e7fab2dc24c248bf5",
+   "size_bytes": 1736961
+  },
+  {
+   "id": "ctor-hardsub-anime-36",
+   "kind": "constructed",
+   "domain": "anime",
+   "path": "clips/ctor-hardsub-anime-36.mkv",
+   "tests": [
+    "bars",
+    "text_in_bars"
+   ],
+   "recipe": {
+    "script": "make-hardsub.py",
+    "args": {
+     "variant": "anime-36"
+    }
+   },
+   "derived_from": [
+    "anime-nama-anaru-ep2"
+   ],
+   "notes": "constructed: anime-nama-anaru-ep2 with a painted bar rectangle [0, 138, 1920, 942], subtitles burned in with libass (judas-fr.ass, FontSize=36); truth boxes are libass's own rendering on black (luma >= 48)",
+   "labels": {
+    "bars": {
+     "file": "labels/ctor-hardsub-anime-36/bars.json",
+     "status": "exact",
+     "items": 1
+    },
+    "text_in_bars": {
+     "file": "labels/ctor-hardsub-anime-36/text_in_bars.json",
+     "status": "exact",
+     "items": 47
+    }
+   },
+   "video": {
+    "codec": "hevc",
+    "profile": "Main 10",
+    "width": 1920,
+    "height": 1080,
+    "fps": "24000/1001",
+    "pix_fmt": "yuv420p10le",
+    "range": "tv",
+    "color_space": null,
+    "transfer": null,
+    "sar": null,
+    "time_base": "1/1000",
+    "stream_index": 0,
+    "container": "matroska,webm",
+    "duration_s": 150.15,
+    "frames": 3600
+   },
+   "identity": {
+    "scheme": "size+3x1MiB/sha256/0",
+    "size_bytes": 38743520,
+    "sample_sha256": "59d5c8cf093be3f1ef3aa0121ed6090413c07521ca3cd619c5cc73d759222468"
+   },
+   "sha256": "094460a841d8cbb453f25448b395d396171c7dea388c77d505eb9f0f29a7df2e",
+   "size_bytes": 38743520
+  },
+  {
+   "id": "ctor-slides-sol",
+   "kind": "constructed",
+   "domain": "anime",
+   "path": "clips/ctor-slides-sol.mkv",
+   "tests": [
+    "slides",
+    "shots"
+   ],
+   "recipe": {
+    "script": "make-slides.py",
+    "args": {
+     "variant": "sol",
+     "seed": 3
+    }
+   },
+   "derived_from": [
+    "sol-levante-w1",
+    "sol-levante-w2"
+   ],
+   "notes": "constructed: windows 1280x720 moved over real frames (sol-levante-w1@0.5s, sol-levante-w1@4.5s, sol-levante-w2@0.5s, sol-levante-w2@5.0s) along known sub-pixel paths, re-encoded libx265 CRF 22; 13 scenarios joined by hard cuts; path = exact content displacement per frame",
+   "labels": {
+    "slides": {
+     "file": "labels/ctor-slides-sol/slides.json",
+     "status": "exact",
+     "items": 13
+    },
+    "shots": {
+     "file": "labels/ctor-slides-sol/shots.json",
+     "status": "exact",
+     "items": 12
+    }
+   },
+   "video": {
+    "codec": "hevc",
+    "profile": "Main 10",
+    "width": 1280,
+    "height": 720,
+    "fps": "24000/1001",
+    "pix_fmt": "yuv420p10le",
+    "range": "tv",
+    "color_space": null,
+    "transfer": null,
+    "sar": null,
+    "time_base": "1/1000",
+    "stream_index": 0,
+    "container": "matroska,webm",
+    "duration_s": 46.046,
+    "frames": 1104
+   },
+   "identity": {
+    "scheme": "size+3x1MiB/sha256/0",
+    "size_bytes": 2639242,
+    "sample_sha256": "141f3e17684ae8fe96c9c5eba41e0cae2d06fab65aee1bcbd13ad2e693ee175c"
+   },
+   "sha256": "3bd003bcf57758886258c543ebf29134761ea5e1097289a493e6bea96fbd9581",
+   "size_bytes": 2639242
+  },
+  {
+   "id": "ctor-slides-live",
+   "kind": "constructed",
+   "domain": "live",
+   "path": "clips/ctor-slides-live.mkv",
+   "tests": [
+    "slides",
+    "shots"
+   ],
+   "recipe": {
+    "script": "make-slides.py",
+    "args": {
+     "variant": "live",
+     "seed": 3
+    }
+   },
+   "derived_from": [
+    "meridian-4k"
+   ],
+   "notes": "constructed: windows 1920x1080 moved over real frames (meridian-4k@60.0s, meridian-4k@180.0s, meridian-4k@5.0s, meridian-4k@420.0s) along known sub-pixel paths, re-encoded libx264 CRF 18; 13 scenarios joined by hard cuts; path = exact content displacement per frame",
+   "labels": {
+    "slides": {
+     "file": "labels/ctor-slides-live/slides.json",
+     "status": "exact",
+     "items": 13
+    },
+    "shots": {
+     "file": "labels/ctor-slides-live/shots.json",
+     "status": "exact",
+     "items": 12
+    }
+   },
+   "video": {
+    "codec": "h264",
+    "profile": "High",
+    "width": 1920,
+    "height": 1080,
+    "fps": "24000/1001",
+    "pix_fmt": "yuv420p",
+    "range": "tv",
+    "color_space": null,
+    "transfer": null,
+    "sar": null,
+    "time_base": "1/1000",
+    "stream_index": 0,
+    "container": "matroska,webm",
+    "duration_s": 46.046,
+    "frames": 1104
+   },
+   "identity": {
+    "scheme": "size+3x1MiB/sha256/0",
+    "size_bytes": 8625504,
+    "sample_sha256": "dcdea06c00bdce9c0d904fd3b48309869b1b8d5e675d907ccde5c25ff3196ef0"
+   },
+   "sha256": "b9fd440734c7e154bf722e6475c0d5df81ae5f9d25df33fa5aa9078e20a192d4",
+   "size_bytes": 8625504
+  }
+ ]
+}

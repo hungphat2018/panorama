@@ -1,0 +1,52 @@
+[h264 @ 000000004900df80] gray chroma
+[h264 @ 000000004900df80] error while decoding MB 10 12, bytestream 937
+[h264 @ 0000000048ffecc0] gray chroma
+[h264 @ 0000000048ffecc0] error while decoding MB 10 12, bytestream 937
+[h264 @ 0000000049058f00] Reference 4 >= 4
+[h264 @ 0000000049058f00] error while decoding MB 17 14, bytestream 230
+[h264 @ 000000004914b400] error while decoding MB 19 12, bytestream -8
+[h264 @ 000000004912b080] top block unavailable for requested intra mode -1
+[h264 @ 000000004912b080] error while decoding MB 17 0, bytestream 2688
+[h264 @ 000000004922ec00] error while decoding MB 19 14, bytestream -16
+[h264 @ 000000004ab461c0] gray chroma
+[h264 @ 000000004ab461c0] error while decoding MB 18 12, bytestream 48
+[h264 @ 0000000048fff480] gray chroma
+[h264 @ 0000000048fff480] error while decoding MB 14 13, bytestream 94
+[h264 @ 0000000049058b80] top block unavailable for requested intra mode -1
+[h264 @ 0000000049058b80] error while decoding MB 4 0, bytestream 3188
+[h264 @ 000000004914b400] gray chroma
+[h264 @ 000000004914b400] error while decoding MB 13 13, bytestream 204
+[h264 @ 0000000049111e00] gray chroma
+[h264 @ 0000000049111e00] error while decoding MB 2 13, bytestream 164
+[h264 @ 000000004ab46900] top block unavailable for requested intra mode -1
+[h264 @ 000000004ab46900] error while decoding MB 4 0, bytestream 3234
+[h264 @ 00000000490596c0] gray chroma
+[h264 @ 00000000490596c0] error while decoding MB 1 14, bytestream 59
+[h264 @ 0000000049059e80] top block unavailable for requested intra mode -1
+[h264 @ 0000000049059e80] error while decoding MB 4 0, bytestream 3136
+[h264 @ 0000000049142c00] top block unavailable for requested intra mode -1
+[h264 @ 0000000049142c00] error while decoding MB 4 0, bytestream 3175
+[h264 @ 000000004914b400] Reference 4 >= 4
+[h264 @ 000000004914b400] error while decoding MB 7 12, bytestream 203
+[h264 @ 00000000490596c0] Reference 4 >= 4
+[h264 @ 00000000490596c0] error while decoding MB 6 12, bytestream 222
+[h264 @ 000000004912c000] top block unavailable for requested intra mode -1
+[h264 @ 000000004912c000] error while decoding MB 4 0, bytestream 3168
+[h264 @ 0000000049142880] Reference 4 >= 4
+[h264 @ 0000000049142880] error while decoding MB 15 13, bytestream 109
+[h264 @ 000000004914b400] top block unavailable for requested intra mode -1
+[h264 @ 000000004914b400] error while decoding MB 4 0, bytestream 3183
+[h264 @ 000000004912b080] gray chroma
+[h264 @ 000000004912b080] error while decoding MB 0 13, bytestream 206
+[h264 @ 000000004922ec00] Reference 7 >= 4
+[h264 @ 000000004922ec00] error while decoding MB 12 14, bytestream 108
+[h264 @ 000000004ab461c0] Reference 5 >= 4
+[h264 @ 000000004ab461c0] error while decoding MB 6 13, bytestream 210
+[h264 @ 0000000048ffecc0] top block unavailable for requested intra mode -1
+[h264 @ 0000000048ffecc0] error while decoding MB 4 0, bytestream 3264
+[h264 @ 00000000490596c0] gray chroma
+[h264 @ 00000000490596c0] error while decoding MB 10 14, bytestream 83
+[h264 @ 000000004912b080] gray chroma
+[h264 @ 000000004912b080] error while decoding MB 7 12, bytestream 1398
+[h264 @ 0000000049142c00] Reference 4 >= 4
+[h264 @ 0000000049142c00] error while decoding MB 19 14, bytestream 92

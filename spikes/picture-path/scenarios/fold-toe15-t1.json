@@ -1,0 +1,21 @@
+{
+ "room": "room/setup-a-toe15.json",
+ "surface": {
+  "model": "fold"
+ },
+ "source": {
+  "file": "patterns/t1-1920x1080.ppm",
+  "width": 1920,
+  "height": 1080,
+  "sar": 1.0
+ },
+ "cue": {
+  "centre_mm": [
+   0.0,
+   0.0
+  ],
+  "height_mm": 215.0
+ },
+ "kernel": "ewa_lanczossharp",
+ "domain": "auto"
+}

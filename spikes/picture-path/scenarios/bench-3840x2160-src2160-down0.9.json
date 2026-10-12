@@ -1,0 +1,21 @@
+{
+ "room": "room/bench-3840x2160.json",
+ "surface": {
+  "model": "fold"
+ },
+ "source": {
+  "file": "patterns/t1-3840x2160.ppm",
+  "width": 3840,
+  "height": 2160,
+  "sar": 1.0
+ },
+ "cue": {
+  "centre_mm": [
+   0.0,
+   0.0
+  ],
+  "height_mm": 261.2736
+ },
+ "kernel": "ewa_lanczossharp",
+ "domain": "auto"
+}

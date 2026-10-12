@@ -1,0 +1,116 @@
+{
+ "nearest": {
+  "monitors": [
+   {
+    "name": "DISPLAY1",
+    "refresh_hz": 240.0038,
+    "presents": 4560,
+    "fallback_times": 0,
+    "refreshes_per_frame": {
+     "9": 1,
+     "10": 455
+    },
+    "skipped_frames": 0,
+    "composition": {
+     "overlay (independent flip / MPO)": 4871,
+     "none": 3
+    },
+    "error": ""
+   },
+   {
+    "name": "DISPLAY2",
+    "refresh_hz": 96.0034,
+    "presents": 1825,
+    "fallback_times": 1,
+    "refreshes_per_frame": {
+     "3": 1,
+     "4": 455
+    },
+    "skipped_frames": 0,
+    "composition": {
+     "overlay (independent flip / MPO)": 1947,
+     "none": 5
+    },
+    "error": ""
+   }
+  ],
+  "offset_ms": {
+   "frames": 457,
+   "min": -1.87,
+   "p5": -1.87,
+   "median": -1.86,
+   "p95": -1.84,
+   "max": 4.38
+  },
+  "row_offset": {
+   "second": "DISPLAY2",
+   "first": "DISPLAY1",
+   "master": 1,
+   "heights_mm": {
+    "top": 0.0,
+    "aim": 107.5,
+    "bottom": 215.0
+   },
+   "offset_ms": {
+    "top": {
+     "frames": 456,
+     "min": -1.64,
+     "p5": -1.64,
+     "median": -1.63,
+     "p95": -1.62,
+     "max": -1.61
+    },
+    "aim": {
+     "frames": 456,
+     "min": 0.4,
+     "p5": 0.4,
+     "median": 0.41,
+     "p95": 0.42,
+     "max": 0.42
+    },
+    "bottom": {
+     "frames": 456,
+     "min": 2.44,
+     "p5": 2.44,
+     "median": 2.45,
+     "p95": 2.46,
+     "max": 2.46
+    }
+   },
+   "windowed": false,
+   "checks": {
+    "DISPLAY1": {
+     "sync_to_top_ms": {
+      "median": 0.427,
+      "min": 0.405,
+      "max": 0.443
+     },
+     "sync_in_blank_fraction": 1.0,
+     "wake_median_to_top_ms": 0.385,
+     "wake_to_top_ms": 0.3904,
+     "wake_to_top_end_ms": 0.3869,
+     "live_refits": 24,
+     "grid_drift_us": -7.3
+    },
+    "DISPLAY2": {
+     "sync_to_top_ms": {
+      "median": 0.654,
+      "min": 0.646,
+      "max": 0.668
+     },
+     "sync_in_blank_fraction": 1.0,
+     "wake_median_to_top_ms": 0.612,
+     "wake_to_top_ms": 0.629,
+     "wake_to_top_end_ms": 0.6115,
+     "live_refits": 24,
+     "grid_drift_us": -14.4
+    }
+   },
+   "predicted_ms": {
+    "top": -1.6393,
+    "aim": 0.3991,
+    "bottom": 2.4374
+   }
+  }
+ }
+}

@@ -1,0 +1,353 @@
+{
+  "sources_format": "panorama-testset-sources/1",
+  "about": "Public films the test set is cut from. Every licence was read from the owner's own page on the date in 'checked'. Downloads go to tools/testset/downloads/<folder>/ (git-ignored); fetch-sources.py records bytes and SHA-256 in tools/testset/downloads/ledger.json.",
+  "budget": {
+    "total_bytes": 4000000000,
+    "note": "The user's cap is about 4 GB in total (decision of 2026-10-12). Windows read by HTTP range count as the media bytes they transfer (estimated from the bit rate), not the smaller clip they leave on disk."
+  },
+  "sources": [
+    {
+      "id": "tears-of-steel-1080p",
+      "title": "Tears of Steel (2012), 1080p H.264 in a 1920x800 frame (2.4:1)",
+      "domain": "live",
+      "kind": "download",
+      "folder": "tears-of-steel-1080p",
+      "files": [
+        {
+          "url": "https://download.blender.org/demo/movies/ToS/tears_of_steel_1080p.mov.zip",
+          "name": "tears_of_steel_1080p.mov.zip",
+          "bytes": 583774281,
+          "extract": "zip"
+        }
+      ],
+      "licence": {
+        "id": "CC-BY-3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "evidence_url": "https://mango.blender.org/about/",
+        "checked": "2026-10-12",
+        "credit": "(CC) Blender Foundation | mango.blender.org",
+        "note": "The page says the film is licensed as Creative Commons Attribution 3.0 and may be shared and shown while the credit scroll stays with it. The soundtrack files in the same folder are CC BY-ND 3.0 (copyright.txt) and are not downloaded."
+      }
+    },
+    {
+      "id": "tears-of-steel-subtitles",
+      "title": "Tears of Steel subtitle files (24 SRT languages)",
+      "domain": "live",
+      "kind": "download",
+      "folder": "tears-of-steel-subtitles",
+      "files": [
+        {
+          "url": "https://download.blender.org/demo/movies/ToS/subtitles/TOS-en.srt",
+          "name": "TOS-en.srt",
+          "bytes": null
+        },
+        {
+          "url": "https://download.blender.org/demo/movies/ToS/subtitles/TOS-de.srt",
+          "name": "TOS-de.srt",
+          "bytes": null
+        },
+        {
+          "url": "https://download.blender.org/demo/movies/ToS/subtitles/TOS-es.srt",
+          "name": "TOS-es.srt",
+          "bytes": null
+        },
+        {
+          "url": "https://download.blender.org/demo/movies/ToS/subtitles/TOS-fr-orig.srt",
+          "name": "TOS-fr-orig.srt",
+          "bytes": null
+        },
+        {
+          "url": "https://download.blender.org/demo/movies/ToS/subtitles/TOS-it.srt",
+          "name": "TOS-it.srt",
+          "bytes": null
+        },
+        {
+          "url": "https://download.blender.org/demo/movies/ToS/subtitles/TOS-nl.srt",
+          "name": "TOS-nl.srt",
+          "bytes": null
+        },
+        {
+          "url": "https://download.blender.org/demo/movies/ToS/subtitles/TOS-ru.srt",
+          "name": "TOS-ru.srt",
+          "bytes": null
+        },
+        {
+          "url": "https://download.blender.org/demo/movies/ToS/subtitles/TOS-JP.srt",
+          "name": "TOS-JP.srt",
+          "bytes": null
+        },
+        {
+          "url": "https://download.blender.org/demo/movies/ToS/subtitles/TOS-CH.srt",
+          "name": "TOS-CH.srt",
+          "bytes": null
+        },
+        {
+          "url": "https://download.blender.org/demo/movies/ToS/subtitles/TOS-HE.srt",
+          "name": "TOS-HE.srt",
+          "bytes": null
+        },
+        {
+          "url": "https://download.blender.org/demo/movies/ToS/subtitles/TOS-GK.srt",
+          "name": "TOS-GK.srt",
+          "bytes": null
+        },
+        {
+          "url": "https://download.blender.org/demo/movies/ToS/subtitles/TOS-Persian.srt",
+          "name": "TOS-Persian.srt",
+          "bytes": null
+        }
+      ],
+      "licence": {
+        "id": "CC-BY-3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "evidence_url": "https://mango.blender.org/about/",
+        "checked": "2026-10-12",
+        "credit": "(CC) Blender Foundation | mango.blender.org",
+        "note": "Community translations published by the project next to the film; treated under the film's licence (the page does not give them a separate one)."
+      }
+    },
+    {
+      "id": "big-buck-bunny-1080p30",
+      "title": "Big Buck Bunny (2008), 1080p 30 fps H.264, 16:9",
+      "domain": "cg",
+      "kind": "download",
+      "folder": "big-buck-bunny-1080p30",
+      "files": [
+        {
+          "url": "https://download.blender.org/demo/movies/BBB/bbb_sunflower_1080p_30fps_normal.mp4.zip",
+          "name": "bbb_sunflower_1080p_30fps_normal.mp4.zip",
+          "bytes": 275524128,
+          "extract": "zip"
+        }
+      ],
+      "licence": {
+        "id": "CC-BY-3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "evidence_url": "https://peach.blender.org/about/",
+        "checked": "2026-10-12",
+        "credit": "(c) copyright 2008, Blender Foundation / www.bigbuckbunny.org",
+        "note": "The page allows re-editing parts of the movie into a clip with attribution."
+      }
+    },
+    {
+      "id": "meridian-uhd-4k5994",
+      "title": "Meridian (2016, Netflix Open Content), 3840x2160 59.94 fps H.264, 16:9, dark live action",
+      "domain": "live",
+      "kind": "download",
+      "folder": "meridian-uhd-4k5994",
+      "files": [
+        {
+          "url": "http://download.opencontent.netflix.com.s3.amazonaws.com/Meridian/Meridian_UHD4k5994_HDR_P3PQ.mp4",
+          "name": "Meridian_UHD4k5994_HDR_P3PQ.mp4",
+          "bytes": 850587087
+        },
+        {
+          "url": "http://download.opencontent.netflix.com.s3.amazonaws.com/Meridian/creative-commons-attribution-4-intl-public-license.txt",
+          "name": "creative-commons-attribution-4-intl-public-license.txt",
+          "bytes": null
+        }
+      ],
+      "licence": {
+        "id": "CC-BY-4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "evidence_url": "https://opencontent.netflix.com/",
+        "checked": "2026-10-12",
+        "credit": "Meridian (c) Netflix, CC BY 4.0",
+        "note": "Netflix's open-content page states one licence for all its open source content (Creative Commons Attribution 4.0 International); the bucket folder carries the full licence text. The file is tagged HDR P3 PQ in its name but is an 8-bit H.264 stream with no colour tags."
+      }
+    }
+  ],
+  "remote_files": [
+    {
+      "id": "sintel-1080p-windows",
+      "title": "Sintel (2010), windows read by HTTP range from the 1080p Matroska (1920x818, 2.35:1, 10 soft SRT tracks)",
+      "domain": "cg",
+      "kind": "remote-file",
+      "folder": "sintel-1080p-windows",
+      "url": "https://download.blender.org/durian/movies/Sintel.2010.1080p.mkv",
+      "bytes": 1180090590,
+      "duration_s": 888.032,
+      "licence": {
+        "id": "CC-BY-3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "evidence_url": "https://durian.blender.org/sharing/",
+        "checked": "2026-10-12",
+        "credit": "(c) copyright Blender Foundation | durian.blender.org",
+        "note": "Credit scroll stays with the film; only short windows are kept."
+      }
+    },
+    {
+      "id": "sol-levante-sdr-windows",
+      "title": "Sol Levante (2020, Netflix/Production I.G anime short), windows read by HTTP range from the 4K ProRes HQ SDR master (16 GB, 263 s)",
+      "domain": "anime",
+      "kind": "remote-file",
+      "folder": "sol-levante-sdr-windows",
+      "url": "http://download.opencontent.netflix.com.s3.amazonaws.com/SolLevante/sdr/SolLevante_SDR_UHD_24fps.mov",
+      "bytes": 16136968701,
+      "duration_s": 263.0833,
+      "bit_rate": 490700926,
+      "licence": {
+        "id": "CC-BY-4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "evidence_url": "https://opencontent.netflix.com/",
+        "checked": "2026-10-12",
+        "credit": "Sol Levante (c) Netflix / Production I.G, CC BY 4.0",
+        "note": "Only short windows are read (about 61 MB per second of film) and kept as 1080p H.264."
+      }
+    }
+  ],
+  "windows": [
+    {
+      "id": "sintel-1080p-w1",
+      "kind": "remote-window",
+      "parent": "sintel-1080p-windows",
+      "folder": "sintel-1080p-w1",
+      "url": "https://download.blender.org/durian/movies/Sintel.2010.1080p.mkv",
+      "in_s": 3.0,
+      "out_s": 53.0,
+      "title": "Sintel 0:03-0:53: title card over snow, fight, close faces",
+      "domain": "cg",
+      "licence": {
+        "id": "CC-BY-3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "evidence_url": "https://durian.blender.org/sharing/",
+        "checked": "2026-10-12",
+        "credit": "(c) copyright Blender Foundation | durian.blender.org",
+        "note": "Credit scroll stays with the film; only short windows are kept."
+      },
+      "estimated_bytes": 69444147,
+      "mode": "copy",
+      "maps": [
+        "0:v:0",
+        "0:s:1"
+      ]
+    },
+    {
+      "id": "sintel-1080p-w2",
+      "kind": "remote-window",
+      "parent": "sintel-1080p-windows",
+      "folder": "sintel-1080p-w2",
+      "url": "https://download.blender.org/durian/movies/Sintel.2010.1080p.mkv",
+      "in_s": 215.0,
+      "out_s": 265.0,
+      "title": "Sintel 3:35-4:25: very dark cave and ruins next to a sunlit market",
+      "domain": "cg",
+      "licence": {
+        "id": "CC-BY-3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "evidence_url": "https://durian.blender.org/sharing/",
+        "checked": "2026-10-12",
+        "credit": "(c) copyright Blender Foundation | durian.blender.org",
+        "note": "Credit scroll stays with the film; only short windows are kept."
+      },
+      "estimated_bytes": 69444147,
+      "mode": "copy",
+      "maps": [
+        "0:v:0",
+        "0:s:1"
+      ]
+    },
+    {
+      "id": "sintel-1080p-w3",
+      "kind": "remote-window",
+      "parent": "sintel-1080p-windows",
+      "folder": "sintel-1080p-w3",
+      "url": "https://download.blender.org/durian/movies/Sintel.2010.1080p.mkv",
+      "in_s": 360.0,
+      "out_s": 410.0,
+      "title": "Sintel 6:00-6:50: dissolve between a face and desert, snow mountain",
+      "domain": "cg",
+      "licence": {
+        "id": "CC-BY-3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "evidence_url": "https://durian.blender.org/sharing/",
+        "checked": "2026-10-12",
+        "credit": "(c) copyright Blender Foundation | durian.blender.org",
+        "note": "Credit scroll stays with the film; only short windows are kept."
+      },
+      "estimated_bytes": 69444147,
+      "mode": "copy",
+      "maps": [
+        "0:v:0",
+        "0:s:1"
+      ]
+    },
+    {
+      "id": "sintel-1080p-w4",
+      "kind": "remote-window",
+      "parent": "sintel-1080p-windows",
+      "folder": "sintel-1080p-w4",
+      "url": "https://download.blender.org/durian/movies/Sintel.2010.1080p.mkv",
+      "in_s": 515.0,
+      "out_s": 565.0,
+      "title": "Sintel 8:35-9:25: night cave with a dragon silhouette",
+      "domain": "cg",
+      "licence": {
+        "id": "CC-BY-3.0",
+        "url": "https://creativecommons.org/licenses/by/3.0/",
+        "evidence_url": "https://durian.blender.org/sharing/",
+        "checked": "2026-10-12",
+        "credit": "(c) copyright Blender Foundation | durian.blender.org",
+        "note": "Credit scroll stays with the film; only short windows are kept."
+      },
+      "estimated_bytes": 69444147,
+      "mode": "copy",
+      "maps": [
+        "0:v:0",
+        "0:s:1"
+      ]
+    },
+    {
+      "id": "sol-levante-w1",
+      "kind": "remote-window",
+      "parent": "sol-levante-sdr-windows",
+      "folder": "sol-levante-w1",
+      "url": "http://download.opencontent.netflix.com.s3.amazonaws.com/SolLevante/sdr/SolLevante_SDR_UHD_24fps.mov",
+      "in_s": 11.0,
+      "out_s": 18.0,
+      "title": "Sol Levante 0:11-0:18: blue mandala turning into a face in a mirror (slide, dissolve-like overlays)",
+      "domain": "anime",
+      "licence": {
+        "id": "CC-BY-4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "evidence_url": "https://opencontent.netflix.com/",
+        "checked": "2026-10-12",
+        "credit": "Sol Levante (c) Netflix / Production I.G, CC BY 4.0",
+        "note": "Only short windows are read (about 61 MB per second of film) and kept as 1080p H.264."
+      },
+      "mode": "transcode",
+      "transcode": {
+        "vf": "scale=1920:1080:flags=lanczos,format=yuv420p",
+        "crf": 12,
+        "preset": "slow"
+      },
+      "estimated_bytes": 432363310
+    },
+    {
+      "id": "sol-levante-w2",
+      "kind": "remote-window",
+      "parent": "sol-levante-sdr-windows",
+      "folder": "sol-levante-w2",
+      "url": "http://download.opencontent.netflix.com.s3.amazonaws.com/SolLevante/sdr/SolLevante_SDR_UHD_24fps.mov",
+      "in_s": 173.0,
+      "out_s": 180.0,
+      "title": "Sol Levante 2:53-3:00: a figure in a sunset sky and a face close-up (painted anime faces)",
+      "domain": "anime",
+      "licence": {
+        "id": "CC-BY-4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "evidence_url": "https://opencontent.netflix.com/",
+        "checked": "2026-10-12",
+        "credit": "Sol Levante (c) Netflix / Production I.G, CC BY 4.0",
+        "note": "Only short windows are read (about 61 MB per second of film) and kept as 1080p H.264."
+      },
+      "mode": "transcode",
+      "transcode": {
+        "vf": "scale=1920:1080:flags=lanczos,format=yuv420p",
+        "crf": 12,
+        "preset": "slow"
+      },
+      "estimated_bytes": 432363310
+    }
+  ]
+}

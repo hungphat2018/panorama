@@ -1,0 +1,30 @@
+{
+  "run_id": "rotate-90-mp4-d3d11va",
+  "status": "ok",
+  "error": "",
+  "config": {"file": "C:/Users/tamla/Downloads/Telegram Desktop/panorama/spikes/file-matrix/media/rotate-90.mp4", "backend": "d3d11", "decode": "d3d11va", "preset": "default", "window": [1920, 1080], "seconds": 8.0, "loop": false, "worst_case_no_frame_cache": false, "sync_render": false, "pl_cache_file": false, "vk_swapchain_depth": 3, "own_present": false},
+  "env": {"libplacebo_api": 375, "ffmpeg": "9.0.2", "libavutil": "61.1.102", "gpu": "NVIDIA GeForce RTX 5070 Ti Laptop GPU", "monitor": {"device": "\\\\.\\DISPLAY1", "hz": 240, "size": [2560, 1600]}},
+  "media": {"codec": "h264", "pix_fmt": "yuv420p", "hw_fmt": "d3d11/nv12", "size": [1920, 1080], "fps": 23.9760, "duration_s": 8.01},
+  "startup_ms_since_process_creation": {"main_entered": 10.5, "window_created": 20.3, "gpu_ready": 216.0, "file_opened": 223.4, "codec_opened": 224.2, "first_frame_decoded": 261.4, "first_render_done": 412.3, "first_present": 412.9},
+  "first_frame_ms": {"from_process_creation": 412.9, "from_main": 402.4, "from_gpu_ready": 196.8},
+  "playback": {"measured_s": 8.001, "refreshes_rendered": 1906, "refresh_rate_measured_hz": 237.832, "film_frames_front_changes": 192, "queue_estimated_fps": 23.9760, "queue_estimated_display_fps": 240.2108, "eof": false},
+  "counts": {"decoded": 192, "mapped": 192, "dropped_by_queue": 0, "queue_stalls": 0, "queue_stall_ms": 0.0, "late_refreshes_over_1p5x_steady": 7, "late_refreshes_over_2p5x_steady": 1, "steady_refreshes": 1427, "nominal_interval_ms": 4.2047, "skipped_refreshes_estimate": 13.0, "hitches_over_50ms_steady": 1, "max_message_pump_ms": 0.01},
+  "refreshes_per_film_frame": {"1": 1, "7": 1, "8": 2, "9": 1, "10": 185, "13": 1},
+  "dxgi_refreshes_between_presents": {"1": 1888, "2": 1, "3": 1, "7+": 2},
+  "timings_ms": {
+    "render_cpu_all": {"n": 1906, "min": 0.0154, "mean": 0.0674, "p50": 0.0288, "p90": 0.1352, "p99": 0.3606, "p999": 0.5781, "max": 21.0568},
+    "render_cpu_steady": {"n": 1427, "min": 0.0154, "mean": 0.0564, "p50": 0.0300, "p90": 0.1322, "p99": 0.3509, "p999": 0.4716, "max": 0.5699},
+    "render_cpu_steady_new_film_frame": {"n": 144, "min": 0.0183, "mean": 0.1664, "p50": 0.1078, "p90": 0.3507, "p99": 0.4716, "p999": 0.5699, "max": 0.5699},
+    "render_cpu_steady_repeated_frame": {"n": 1283, "min": 0.0154, "mean": 0.0440, "p50": 0.0290, "p90": 0.0631, "p99": 0.2722, "p999": 0.3320, "max": 0.4420},
+    "gpu_pass_sum_steady": {"n": 1427, "min": 0.0163, "mean": 0.0672, "p50": 0.0286, "p90": 0.2143, "p99": 0.4029, "p999": 3.7605, "max": 3.9104},
+    "gpu_pass_sum_steady_new_film_frame": {"n": 144, "min": 0.0279, "mean": 0.2643, "p50": 0.3460, "p90": 0.3569, "p99": 0.6187, "p999": 0.6285, "max": 0.6285},
+    "gpu_pass_sum_steady_repeated_frame": {"n": 1283, "min": 0.0163, "mean": 0.0450, "p50": 0.0284, "p90": 0.0322, "p99": 0.4024, "p999": 3.7605, "max": 3.9104},
+    "queue_update_steady": {"n": 1427, "min": 0.0006, "mean": 0.0066, "p50": 0.0046, "p90": 0.0145, "p99": 0.0359, "p999": 0.0903, "max": 0.1115},
+    "acquire_steady": {"n": 1427, "min": 0.0076, "mean": 0.0169, "p50": 0.0149, "p90": 0.0197, "p99": 0.0690, "p999": 0.2023, "max": 0.2102},
+    "submit_steady": {"n": 1427, "min": 0.0010, "mean": 0.0037, "p50": 0.0026, "p90": 0.0036, "p99": 0.0061, "p999": 0.2321, "max": 0.2350},
+    "swap_steady": {"n": 1427, "min": 0.0555, "mean": 4.0744, "p50": 4.1010, "p90": 4.2175, "p99": 4.8658, "p999": 8.1594, "max": 8.2171},
+    "present_interval_all": {"n": 1898, "min": 0.1319, "mean": 4.2018, "p50": 4.1673, "p90": 4.3067, "p99": 4.9205, "p999": 23.3257, "max": 62.6040},
+    "present_interval_steady": {"n": 1427, "min": 0.1319, "mean": 4.2047, "p50": 4.1673, "p90": 4.2825, "p99": 4.9247, "p999": 8.2667, "max": 62.6040}
+  },
+  "process": {"cpu_s": 2.328, "cpu_pct_of_one_core": 29.1, "cpu_pct_of_all_threads": 0.91, "logical_cpus": 32, "render_thread_cpu_pct": 15.8, "decode_thread_busy_s_in_libav_calls": 0.484, "decode_thread_cpu_s": 0.031, "peak_working_set_mb": 140, "peak_pagefile_mb": 252}
+}

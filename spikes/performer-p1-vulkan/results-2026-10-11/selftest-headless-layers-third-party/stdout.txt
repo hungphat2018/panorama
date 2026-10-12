@@ -1,0 +1,16 @@
+monitor 0 DISPLAY1: 2560x1600 at (0,0), window/swapchain 2560x1600, refresh 239.9980 Hz, 344x215 mm at 0 mm
+monitor 1 DISPLAY2: 1920x1080 at (2560,0), window/swapchain 1920x1080, refresh 100.0005 Hz, 476x268 mm at 364 mm
+  DISPLAY1: signal 2720x1800 total, line 2.3148 us, scan 3.7037 ms, blank 0.4630 ms; scan grid 249 of 249 samples, residual p50 1.35 us; top row 0.357 ms after the vblank wake-up; height 215.0 mm, top 0.0 mm, lag 0.00 ms
+  DISPLAY2: signal 2000x1115 total, line 8.9686 us, scan 9.6861 ms, blank 0.3139 ms; scan grid 248 of 249 samples, residual p50 2.27 us; top row 0.173 ms after the vblank wake-up; height 268.0 mm, top 0.0 mm, lag 0.00 ms
+aim row 107.5 mm; shared height 0.0..215.0 mm
+film 23.9760 fps; master DISPLAY2 100.0005 Hz; speed NOT locked (plays at 1.0) (speed 1.0427 if locked, hold 4 refreshes)
+film starts 3 master refreshes later; aim row 107.5 mm
+predicted seam offset DISPLAY2 - DISPLAY1, in light: top row (0.0 mm) -1.83 ms, aim row +0.20 ms, bottom row (215.0 mm) +2.24 ms
+picture 382.2 x 215.0 mm (aspect 1.7778) at x 162.9..545.1 mm; DISPLAY1: shows part DISPLAY2: shows part 
+DISPLAY1: top-row grid at film start vs end, at the film's end: -0.6 us (end fit: 1009 of 1009 samples, residual p50 1.31 us, p95 3.89 us; the film followed a grid refitted 8 times); vblank wake-up to top row 0.357 ms at film start, 0.366 ms at the end
+DISPLAY1: 1085 presents, render cpu p50 0.225 / p99 1.417 ms, gpu p50 0.030 / p99 0.248 ms, queue_more 0, empty 0, swapchain rgb10a2 opaque (1 distinct images), swap_begin failures 0
+wrote results-2026-10-11/selftest-headless-layers-third-party/monitor-0-nearest.json
+DISPLAY2: top-row grid at film start vs end, at the film's end: +2.9 us (end fit: 1047 of 1049 samples, residual p50 2.29 us, p95 6.09 us; the film followed a grid refitted 8 times); vblank wake-up to top row 0.173 ms at film start, 0.175 ms at the end
+DISPLAY2: 455 presents, render cpu p50 0.250 / p99 1.391 ms, gpu p50 0.013 / p99 0.155 ms, queue_more 0, empty 0, swapchain rgb10a2 opaque (1 distinct images), swap_begin failures 0
+wrote results-2026-10-11/selftest-headless-layers-third-party/monitor-1-nearest.json
+wrote results-2026-10-11/selftest-headless-layers-third-party/events.json (104 events)

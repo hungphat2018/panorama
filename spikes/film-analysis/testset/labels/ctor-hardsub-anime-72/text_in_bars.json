@@ -1,0 +1,629 @@
+{
+ "label_format": "panorama-testset-labels/1",
+ "clip": "ctor-hardsub-anime-72",
+ "field": "text_in_bars",
+ "status": "exact",
+ "proposed_by": "script",
+ "basis": "constructed: anime-nama-anaru-ep2 with a painted bar rectangle [0, 138, 1920, 942], subtitles burned in with libass (judas-fr.ass, FontSize=72); truth boxes are libass's own rendering on black (luma >= 48)",
+ "created": "2026-10-12",
+ "frame_count": 3600,
+ "fps": "24000/1001",
+ "storage": {
+  "w": 1920,
+  "h": 1080
+ },
+ "events": [
+  {
+   "frames": [
+    55,
+    122
+   ],
+   "box": [
+    421,
+    888,
+    1496,
+    1019
+   ],
+   "kind": "subtitle"
+  },
+  {
+   "frames": [
+    131,
+    183
+   ],
+   "box": [
+    595,
+    959,
+    1326,
+    1020
+   ],
+   "kind": "subtitle"
+  },
+  {
+   "frames": [
+    187,
+    248
+   ],
+   "box": [
+    419,
+    948,
+    1497,
+    1019
+   ],
+   "kind": "subtitle"
+  },
+  {
+   "frames": [
+    266,
+    358
+   ],
+   "box": [
+    426,
+    887,
+    1492,
+    1019
+   ],
+   "kind": "subtitle"
+  },
+  {
+   "frames": [
+    362,
+    387
+   ],
+   "box": [
+    753,
+    961,
+    1164,
+    1019
+   ],
+   "kind": "subtitle"
+  },
+  {
+   "frames": [
+    392,
+    452
+   ],
+   "box": [
+    566,
+    959,
+    1354,
+    1020
+   ],
+   "kind": "subtitle"
+  },
+  {
+   "frames": [
+    456,
+    483
+   ],
+   "box": [
+    751,
+    959,
+    1167,
+    1011
+   ],
+   "kind": "subtitle"
+  },
+  {
+   "frames": [
+    511,
+    533
+   ],
+   "box": [
+    672,
+    960,
+    1248,
+    1020
+   ],
+   "kind": "subtitle"
+  },
+  {
+   "frames": [
+    537,
+    544
+   ],
+   "box": [
+    450,
+    959,
+    1468,
+    1007
+   ],
+   "kind": "subtitle"
+  },
+  {
+   "frames": [
+    544,
+    567
+   ],
+   "box": [
+    450,
+    71,
+    1468,
+    1007
+   ],
+   "kind": "subtitle"
+  },
+  {
+   "frames": [
+    567,
+    571
+   ],
+   "box": [
+    450,
+    959,
+    1468,
+    1007
+   ],
+   "kind": "subtitle"
+  },
+  {
+   "frames": [
+    571,
+    636
+   ],
+   "box": [
+    450,
+    72,
+    1468,
+    1007
+   ],
+   "kind": "subtitle"
+  },
+  {
+   "frames": [
+    636,
+    644
+   ],
+   "box": [
+    450,
+    959,
+    1468,
+    1007
+   ],
+   "kind": "subtitle"
+  },
+  {
+   "frames": [
+    890,
+    951
+   ],
+   "box": [
+    353,
+    959,
+    1570,
+    1020
+   ],
+   "kind": "subtitle"
+  },
+  {
+   "frames": [
+    1025,
+    1100
+   ],
+   "box": [
+    100,
+    887,
+    1219,
+    1020
+   ],
+   "kind": "subtitle"
+  },
+  {
+   "frames": [
+    1193,
+    1247
+   ],
+   "box": [
+    580,
+    71,
+    1337,
+    191
+   ],
+   "kind": "subtitle"
+  },
+  {
+   "frames": [
+    1331,
+    1385
+   ],
+   "box": [
+    467,
+    959,
+    1454,
+    1020
+   ],
+   "kind": "subtitle"
+  },
+  {
+   "frames": [
+    1408,
+    1460
+   ],
+   "box": [
+    330,
+    959,
+    1586,
+    1020
+   ],
+   "kind": "subtitle"
+  },
+  {
+   "frames": [
+    1473,
+    1523
+   ],
+   "box": [
+    567,
+    959,
+    1352,
+    1007
+   ],
+   "kind": "subtitle"
+  },
+  {
+   "frames": [
+    1551,
+    1609
+   ],
+   "box": [
+    101,
+    888,
+    565,
+    1019
+   ],
+   "kind": "subtitle"
+  },
+  {
+   "frames": [
+    1653,
+    1786
+   ],
+   "box": [
+    578,
+    887,
+    1342,
+    1020
+   ],
+   "kind": "subtitle"
+  },
+  {
+   "frames": [
+    1847,
+    1918
+   ],
+   "box": [
+    549,
+    960,
+    1373,
+    1020
+   ],
+   "kind": "subtitle"
+  },
+  {
+   "frames": [
+    1932,
+    2008
+   ],
+   "box": [
+    576,
+    960,
+    1346,
+    1020
+   ],
+   "kind": "subtitle"
+  },
+  {
+   "frames": [
+    2021,
+    2093
+   ],
+   "box": [
+    395,
+    959,
+    1527,
+    1020
+   ],
+   "kind": "subtitle"
+  },
+  {
+   "frames": [
+    2113,
+    2188
+   ],
+   "box": [
+    445,
+    959,
+    1477,
+    1019
+   ],
+   "kind": "subtitle"
+  },
+  {
+   "frames": [
+    2213,
+    2270
+   ],
+   "box": [
+    550,
+    72,
+    1368,
+    191
+   ],
+   "kind": "subtitle"
+  },
+  {
+   "frames": [
+    2332,
+    2399
+   ],
+   "box": [
+    503,
+    959,
+    1417,
+    1007
+   ],
+   "kind": "subtitle"
+  },
+  {
+   "frames": [
+    2469,
+    2527
+   ],
+   "box": [
+    501,
+    959,
+    1422,
+    1020
+   ],
+   "kind": "subtitle"
+  },
+  {
+   "frames": [
+    2541,
+    2578
+   ],
+   "box": [
+    312,
+    887,
+    1609,
+    1007
+   ],
+   "kind": "subtitle"
+  },
+  {
+   "frames": [
+    2615,
+    2770
+   ],
+   "box": [
+    486,
+    887,
+    1436,
+    1007
+   ],
+   "kind": "subtitle"
+  },
+  {
+   "frames": [
+    2776,
+    2802
+   ],
+   "box": [
+    485,
+    71,
+    1437,
+    132
+   ],
+   "kind": "subtitle"
+  },
+  {
+   "frames": [
+    2806,
+    2874
+   ],
+   "box": [
+    477,
+    60,
+    1444,
+    129
+   ],
+   "kind": "subtitle"
+  },
+  {
+   "frames": [
+    2887,
+    2990
+   ],
+   "box": [
+    471,
+    888,
+    1447,
+    1019
+   ],
+   "kind": "subtitle"
+  },
+  {
+   "frames": [
+    2994,
+    3019
+   ],
+   "box": [
+    823,
+    959,
+    1096,
+    1019
+   ],
+   "kind": "subtitle"
+  },
+  {
+   "frames": [
+    3050,
+    3103
+   ],
+   "box": [
+    596,
+    959,
+    1323,
+    1007
+   ],
+   "kind": "subtitle"
+  },
+  {
+   "frames": [
+    3107,
+    3127
+   ],
+   "box": [
+    810,
+    960,
+    1110,
+    1017
+   ],
+   "kind": "subtitle"
+  },
+  {
+   "frames": [
+    3143,
+    3181
+   ],
+   "box": [
+    512,
+    960,
+    1418,
+    1007
+   ],
+   "kind": "subtitle"
+  },
+  {
+   "frames": [
+    3199,
+    3248
+   ],
+   "box": [
+    443,
+    959,
+    1478,
+    1019
+   ],
+   "kind": "subtitle"
+  },
+  {
+   "frames": [
+    3255,
+    3345
+   ],
+   "box": [
+    472,
+    887,
+    1448,
+    1020
+   ],
+   "kind": "subtitle"
+  },
+  {
+   "frames": [
+    3356,
+    3395
+   ],
+   "box": [
+    622,
+    959,
+    1296,
+    1019
+   ],
+   "kind": "subtitle"
+  },
+  {
+   "frames": [
+    3399,
+    3452
+   ],
+   "box": [
+    464,
+    959,
+    1453,
+    1019
+   ],
+   "kind": "subtitle"
+  },
+  {
+   "frames": [
+    3458,
+    3476
+   ],
+   "box": [
+    730,
+    959,
+    1191,
+    1007
+   ],
+   "kind": "subtitle"
+  },
+  {
+   "frames": [
+    3489,
+    3492
+   ],
+   "box": [
+    586,
+    71,
+    1335,
+    132
+   ],
+   "kind": "subtitle"
+  },
+  {
+   "frames": [
+    3492,
+    3538
+   ],
+   "box": [
+    512,
+    71,
+    1418,
+    1007
+   ],
+   "kind": "subtitle"
+  },
+  {
+   "frames": [
+    3538,
+    3542
+   ],
+   "box": [
+    512,
+    960,
+    1418,
+    1007
+   ],
+   "kind": "subtitle"
+  },
+  {
+   "frames": [
+    3542,
+    3596
+   ],
+   "box": [
+    372,
+    71,
+    1545,
+    1007
+   ],
+   "kind": "subtitle"
+  },
+  {
+   "frames": [
+    3596,
+    3600
+   ],
+   "box": [
+    512,
+    960,
+    1418,
+    1007
+   ],
+   "kind": "subtitle"
+  }
+ ],
+ "text_frames": 2411
+}

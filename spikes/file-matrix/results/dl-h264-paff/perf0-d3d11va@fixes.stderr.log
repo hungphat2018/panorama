@@ -1,0 +1,10 @@
+[AVHWFramesContext @ 0000000049ff6240] Static surface pool size exceeded.
+[h264 @ 000000004a0d8a40] Failed to allocate a d3d11/nv12 frame from a fixed pool of hardware frames.
+[h264 @ 000000004a0d8a40] Consider setting extra_hw_frames to a larger value (currently set to 6, giving a pool size of 23).
+[h264 @ 000000004a0d8a40] get_buffer() failed
+[h264 @ 000000004a0d8a40] no frame!
+perf0: avcodec_send_packet: Invalid data found when processing input
+[AVHWFramesContext @ 0000000049ff6240] Static surface pool size exceeded.
+[h264 @ 000000004a0d8a40] get_buffer() failed
+[h264 @ 000000004a0d8a40] no frame!
+perf0: avcodec_send_packet: Invalid data found when processing input

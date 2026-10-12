@@ -1,0 +1,1 @@
+{"scenario":"picks","trace":"C:/Users/tamla/Downloads/Telegram Desktop/panorama/spikes/clock","setup":96,"frame_dur_s":0.041708336,"step_s":0.010427084,"hold":4,"exact_truth":true,"fault":0,"master_refreshes_checked":5710,"wrong":0,"wrong_fraction":0.000000,"showing_an_earlier_frame":0,"worst_late_ms":0.000}

@@ -1,0 +1,93 @@
+{
+  "ffmpeg-samples-pgs-supsample": {
+    "name": "ffmpeg-samples-pgs-supsample",
+    "url": "https://samples.ffmpeg.org/sub/PGS/supsample.mkv",
+    "file": "supsample.mkv",
+    "why": "real Blu-ray PGS (image subtitles) in MKV, 23 KB",
+    "size_bytes": 23644,
+    "sha256": "e6c8f93f57d0371603704d7e7b16933e6c4c5df669da42b42a2a84de881e0f27",
+    "first_downloaded_utc": "2026-10-11T11:28Z"
+  },
+  "fate-dovi-p5": {
+    "name": "fate-dovi-p5",
+    "url": "https://fate-suite.ffmpeg.org/mov/dovi-p5.mp4",
+    "file": "dovi-p5.mp4",
+    "why": "Dolby Vision profile 5 (IPTPQc2 base layer, no HDR10 fallback), 4 KB",
+    "size_bytes": 4182,
+    "sha256": "11fe599fd77e31e26fbf855bae1cd9931df9f261a0a7b1dce9fad9b236677c4b",
+    "first_downloaded_utc": "2026-10-11T11:28Z"
+  },
+  "fate-dovi-p81": {
+    "name": "fate-dovi-p81",
+    "url": "https://fate-suite.ffmpeg.org/mov/dovi-p81.mp4",
+    "file": "dovi-p81.mp4",
+    "why": "Dolby Vision profile 8.1 (HDR10-compatible base layer), 4 KB",
+    "size_bytes": 3941,
+    "sha256": "3313278f3dc49b0b3680ec7c3d72622ec0a770faff9721c5842aaf899d5471c5",
+    "first_downloaded_utc": "2026-10-11T11:28Z"
+  },
+  "fate-dovi-p7-hvce": {
+    "name": "fate-dovi-p7-hvce",
+    "url": "https://fate-suite.ffmpeg.org/mkv/dovi-p7-hvce.mkv",
+    "file": "dovi-p7-hvce.mkv",
+    "why": "Dolby Vision profile 7 (UHD Blu-ray dual layer), 657 KB",
+    "size_bytes": 673212,
+    "sha256": "3287bac8deade11e1c57bd65b9c7c8750a1e38e286666cbb4fa39eac264875df",
+    "first_downloaded_utc": "2026-10-11T11:28Z"
+  },
+  "fate-h264-paff": {
+    "name": "fate-h264-paff",
+    "url": "https://fate-suite.ffmpeg.org/h264-conformance/camp_mot_picaff0_full.26l",
+    "file": "camp_mot_picaff0_full.26l",
+    "why": "JVT conformance stream with picture-adaptive frame/field (PAFF) coding, raw H.264",
+    "size_bytes": 408004,
+    "sha256": "cdf09622b0879240864f1258dd3ae0a0fe03690028780d4be834f528ecdade83",
+    "first_downloaded_utc": "2026-10-11T11:28Z"
+  },
+  "ffmpeg-samples-4khdr-leopard-4k": {
+    "name": "ffmpeg-samples-4khdr-leopard-4k",
+    "url": "https://samples.ffmpeg.org/4khdr/PE2_Leopard_4K.mkv",
+    "file": "PE2_Leopard_4K.mkv",
+    "why": "real HDR10 4K HEVC from a UHD Blu-ray (Planet Earth II), 24 MB",
+    "size_bytes": 24689000,
+    "sha256": "6ef71678bfe7a416cfbc10bd756abe4942dd3407f07e59ca9e215fe6eb3d2fa2",
+    "first_downloaded_utc": "2026-10-11T11:28Z"
+  },
+  "fate-hdr10-plus": {
+    "name": "fate-hdr10-plus",
+    "url": "https://fate-suite.ffmpeg.org/hevc/hdr10_plus_h265_sample.hevc",
+    "file": "hdr10_plus_h265_sample.hevc",
+    "why": "HDR10+ (ST 2094-40 dynamic metadata) raw HEVC, 76 KB",
+    "size_bytes": 77718,
+    "sha256": "663bd5179571133660a1e8ac260aa1f5bf8ce61d33dedb828a1cd7188771abcc",
+    "first_downloaded_utc": "2026-10-11T11:28Z"
+  },
+  "fate-mov-empty-edit": {
+    "name": "fate-mov-empty-edit",
+    "url": "https://fate-suite.ffmpeg.org/mov/empty_edit_5s.mp4",
+    "file": "empty_edit_5s.mp4",
+    "why": "MP4 whose edit list starts with a 5 s empty edit",
+    "size_bytes": 68638,
+    "sha256": "3c5938fc313f5d8cfa4309ecb5e06123f986a60d4338eff42625d6ffca3c4215",
+    "first_downloaded_utc": "2026-10-11T11:28Z"
+  },
+  "fate-mov-neg-first-pts": {
+    "name": "fate-mov-neg-first-pts",
+    "url": "https://fate-suite.ffmpeg.org/mov/mov_neg_first_pts_discard.mov",
+    "file": "mov_neg_first_pts_discard.mov",
+    "why": "MOV with negative first pts and frames the edit list discards",
+    "size_bytes": 38679,
+    "sha256": "166b9808452fe5068265cb428005c5adcb0590363b82ccf67f3e09f6308a77d8",
+    "first_downloaded_utc": "2026-10-11T11:28Z"
+  },
+  "mkvtoolnix": {
+    "name": "mkvtoolnix",
+    "url": "https://mkvtoolnix.download/windows/releases/102.0/mkvtoolnix-64-bit-102.0.7z",
+    "file": "mkvtoolnix-64-bit-102.0.7z",
+    "why": "mkvmerge for ordered chapters, segment UIDs, attachments, display size and HDR colour elements",
+    "size_bytes": 29536742,
+    "sha256": "cd63c42caee3d9e5b631e029657b3bd322beba77e150cecbfc9ae4923638b049",
+    "published_sha256_matches": true,
+    "first_downloaded_utc": "2026-10-11T11:25Z"
+  }
+}

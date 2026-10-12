@@ -1,0 +1,30 @@
+{
+  "run_id": "ass-attached-fonts-mkv-sw",
+  "status": "ok",
+  "error": "",
+  "config": {"file": "C:/Users/tamla/Downloads/Telegram Desktop/panorama/spikes/file-matrix/media/ass-attached-fonts.mkv", "backend": "d3d11", "decode": "sw", "preset": "default", "window": [1920, 1080], "seconds": 8.0, "loop": false, "worst_case_no_frame_cache": false, "sync_render": false, "pl_cache_file": false, "vk_swapchain_depth": 3, "own_present": false},
+  "env": {"libplacebo_api": 375, "ffmpeg": "9.0.2", "libavutil": "61.1.102", "gpu": "NVIDIA GeForce RTX 5070 Ti Laptop GPU", "monitor": {"device": "\\\\.\\DISPLAY1", "hz": 240, "size": [2560, 1600]}},
+  "media": {"codec": "h264", "pix_fmt": "yuv420p", "hw_fmt": "", "size": [1920, 1080], "fps": 23.9760, "duration_s": 10.03},
+  "startup_ms_since_process_creation": {"main_entered": 11.4, "window_created": 21.7, "gpu_ready": 217.2, "file_opened": 226.7, "codec_opened": 227.8, "first_frame_decoded": 245.6, "first_render_done": 383.3, "first_present": 384.0},
+  "first_frame_ms": {"from_process_creation": 384.0, "from_main": 372.6, "from_gpu_ready": 166.8},
+  "playback": {"measured_s": 8.001, "refreshes_rendered": 1909, "refresh_rate_measured_hz": 238.163, "film_frames_front_changes": 192, "queue_estimated_fps": 23.9880, "queue_estimated_display_fps": 240.3294, "eof": false},
+  "counts": {"decoded": 196, "mapped": 193, "dropped_by_queue": 1, "queue_stalls": 0, "queue_stall_ms": 0.0, "late_refreshes_over_1p5x_steady": 1, "late_refreshes_over_2p5x_steady": 1, "steady_refreshes": 1429, "nominal_interval_ms": 4.1988, "skipped_refreshes_estimate": 11.0, "hitches_over_50ms_steady": 1, "max_message_pump_ms": 0.06},
+  "refreshes_per_film_frame": {"1": 1, "8": 2, "9": 2, "10": 184, "11": 1, "13": 1},
+  "dxgi_refreshes_between_presents": {"1": 1893, "2": 2, "7+": 1},
+  "timings_ms": {
+    "render_cpu_all": {"n": 1909, "min": 0.0109, "mean": 0.0452, "p50": 0.0259, "p90": 0.0662, "p99": 0.1345, "p999": 0.3154, "max": 19.5342},
+    "render_cpu_steady": {"n": 1429, "min": 0.0109, "mean": 0.0354, "p50": 0.0266, "p90": 0.0677, "p99": 0.1317, "p999": 0.1942, "max": 0.1985},
+    "render_cpu_steady_new_film_frame": {"n": 144, "min": 0.0220, "mean": 0.0808, "p50": 0.0910, "p90": 0.1165, "p99": 0.1495, "p999": 0.1942, "max": 0.1942},
+    "render_cpu_steady_repeated_frame": {"n": 1285, "min": 0.0109, "mean": 0.0304, "p50": 0.0261, "p90": 0.0392, "p99": 0.1187, "p999": 0.1460, "max": 0.1985},
+    "gpu_pass_sum_steady": {"n": 1429, "min": 0.0287, "mean": 0.0581, "p50": 0.0348, "p90": 0.2305, "p99": 0.2949, "p999": 0.5812, "max": 0.9751},
+    "gpu_pass_sum_steady_new_film_frame": {"n": 144, "min": 0.0321, "mean": 0.1867, "p50": 0.2393, "p90": 0.2530, "p99": 0.5331, "p999": 0.9751, "max": 0.9751},
+    "gpu_pass_sum_steady_repeated_frame": {"n": 1285, "min": 0.0287, "mean": 0.0437, "p50": 0.0343, "p90": 0.0383, "p99": 0.2949, "p999": 0.3058, "max": 0.5812},
+    "queue_update_steady": {"n": 1429, "min": 0.0022, "mean": 0.0546, "p50": 0.0046, "p90": 0.1753, "p99": 0.7281, "p999": 1.1842, "max": 1.2843},
+    "acquire_steady": {"n": 1429, "min": 0.0089, "mean": 0.0169, "p50": 0.0152, "p90": 0.0206, "p99": 0.0471, "p999": 0.2148, "max": 0.3136},
+    "submit_steady": {"n": 1429, "min": 0.0011, "mean": 0.0027, "p50": 0.0025, "p90": 0.0036, "p99": 0.0049, "p999": 0.0118, "max": 0.0414},
+    "swap_steady": {"n": 1429, "min": 0.0534, "mean": 4.0462, "p50": 4.1091, "p90": 4.2819, "p99": 4.7188, "p999": 5.9307, "max": 5.9963},
+    "present_interval_all": {"n": 1901, "min": 0.1633, "mean": 4.1952, "p50": 4.1675, "p90": 4.3301, "p99": 4.8320, "p999": 19.7484, "max": 58.0898},
+    "present_interval_steady": {"n": 1429, "min": 0.3847, "mean": 4.1988, "p50": 4.1676, "p90": 4.3461, "p99": 5.0607, "p999": 6.0446, "max": 58.0898}
+  },
+  "process": {"cpu_s": 0.938, "cpu_pct_of_one_core": 11.7, "cpu_pct_of_all_threads": 0.37, "logical_cpus": 32, "render_thread_cpu_pct": 1.2, "decode_thread_busy_s_in_libav_calls": 0.026, "decode_thread_cpu_s": 0.000, "peak_working_set_mb": 234, "peak_pagefile_mb": 316}
+}

@@ -1,0 +1,321 @@
+{
+ "mode": "nearest",
+ "monitors": [
+  {
+   "name": "DISPLAY1",
+   "refresh_hz": 240.0154,
+   "presents": 961,
+   "fallback_times": 961,
+   "refreshes_per_frame": {
+    "9": 41,
+    "10": 59
+   },
+   "skipped_frames": 0,
+   "composition": {},
+   "error": "",
+   "vk": {
+    "backend": "libplacebo",
+    "headless": true,
+    "present_mode": "fifo",
+    "depth": 1,
+    "images": 0,
+    "alpha": "opaque",
+    "format": "rgb10a2",
+    "device": "NVIDIA GeForce RTX 5070 Ti Laptop GPU",
+    "layers_off": "none"
+   },
+   "loop": {
+    "loops": 961,
+    "refresh_hz": 240.015,
+    "present_interval_ms": {
+     "n": 960,
+     "p50": 4.166,
+     "p99": 4.919,
+     "max": 6.774
+    },
+    "acquire_interval_ms": {
+     "n": 960,
+     "p50": 4.166,
+     "p99": 4.233,
+     "max": 4.313
+    },
+    "acquire_gap_refreshes": {
+     "1": 960
+    },
+    "missed_refreshes_inferred": 0,
+    "loops_over_1_5_refreshes": 0,
+    "phase_ms": {
+     "acquire": {
+      "n": 961,
+      "p50": 3.936,
+      "p99": 4.063,
+      "max": 4.106
+     },
+     "pick": {
+      "n": 961,
+      "p50": 0.004,
+      "p99": 0.031,
+      "max": 0.052
+     },
+     "render": {
+      "n": 961,
+      "p50": 0.078,
+      "p99": 0.757,
+      "max": 2.589
+     },
+     "gap": {
+      "n": 961,
+      "p50": 0.0,
+      "p99": 0.0,
+      "max": 0.0
+     },
+     "present": {
+      "n": 961,
+      "p50": 0.116,
+      "p99": 0.474,
+      "max": 0.946
+     },
+     "swap": {
+      "n": 961,
+      "p50": 0.0,
+      "p99": 0.0,
+      "max": 0.0
+     }
+    },
+    "lead_before_target_ms": {
+     "n": 961,
+     "p50": 3.883,
+     "p99": 3.901,
+     "max": 3.911
+    }
+   },
+   "landing": null,
+   "render": {
+    "render_cpu_ms_all": {
+     "n": 961,
+     "p50": 0.078,
+     "p99": 0.757,
+     "max": 2.589
+    },
+    "render_cpu_ms_new_frame": {
+     "n": 100,
+     "p50": 0.665,
+     "p99": 0.963,
+     "max": 2.589
+    },
+    "render_gpu_ms_all": {
+     "n": 961,
+     "p50": 0.02,
+     "p99": 0.259,
+     "max": 0.278
+    },
+    "render_gpu_ms_new_frame": {
+     "n": 100,
+     "p50": 0.209,
+     "p99": 0.27,
+     "max": 0.278
+    },
+    "queue_more": 0,
+    "empty_mix": 0,
+    "render_failed": 0,
+    "swap_begin_failures": 0,
+    "distinct_swapchain_images": 1
+   }
+  },
+  {
+   "name": "DISPLAY2",
+   "refresh_hz": 99.997,
+   "presents": 401,
+   "fallback_times": 401,
+   "refreshes_per_frame": {
+    "3": 1,
+    "4": 99
+   },
+   "skipped_frames": 0,
+   "composition": {},
+   "error": "",
+   "vk": {
+    "backend": "libplacebo",
+    "headless": true,
+    "present_mode": "fifo",
+    "depth": 1,
+    "images": 0,
+    "alpha": "opaque",
+    "format": "rgb10a2",
+    "device": "NVIDIA GeForce RTX 5070 Ti Laptop GPU",
+    "layers_off": "none"
+   },
+   "loop": {
+    "loops": 401,
+    "refresh_hz": 99.997,
+    "present_interval_ms": {
+     "n": 400,
+     "p50": 9.999,
+     "p99": 10.635,
+     "max": 12.623
+    },
+    "acquire_interval_ms": {
+     "n": 400,
+     "p50": 10.0,
+     "p99": 10.003,
+     "max": 10.041
+    },
+    "acquire_gap_refreshes": {
+     "1": 400
+    },
+    "missed_refreshes_inferred": 0,
+    "loops_over_1_5_refreshes": 0,
+    "phase_ms": {
+     "acquire": {
+      "n": 401,
+      "p50": 9.78,
+      "p99": 9.884,
+      "max": 9.888
+     },
+     "pick": {
+      "n": 401,
+      "p50": 0.003,
+      "p99": 0.05,
+      "max": 0.075
+     },
+     "render": {
+      "n": 401,
+      "p50": 0.088,
+      "p99": 0.684,
+      "max": 2.686
+     },
+     "gap": {
+      "n": 401,
+      "p50": 0.0,
+      "p99": 0.0,
+      "max": 0.0
+     },
+     "present": {
+      "n": 401,
+      "p50": 0.077,
+      "p99": 0.319,
+      "max": 0.471
+     },
+     "swap": {
+      "n": 401,
+      "p50": 0.0,
+      "p99": 0.0,
+      "max": 0.0
+     }
+    },
+    "lead_before_target_ms": {
+     "n": 401,
+     "p50": 9.709,
+     "p99": 9.731,
+     "max": 9.742
+    }
+   },
+   "landing": null,
+   "render": {
+    "render_cpu_ms_all": {
+     "n": 401,
+     "p50": 0.088,
+     "p99": 0.684,
+     "max": 2.686
+    },
+    "render_cpu_ms_new_frame": {
+     "n": 100,
+     "p50": 0.464,
+     "p99": 0.943,
+     "max": 2.686
+    },
+    "render_gpu_ms_all": {
+     "n": 401,
+     "p50": 0.009,
+     "p99": 0.175,
+     "max": 0.187
+    },
+    "render_gpu_ms_new_frame": {
+     "n": 100,
+     "p50": 0.12,
+     "p99": 0.186,
+     "max": 0.187
+    },
+    "queue_more": 0,
+    "empty_mix": 0,
+    "render_failed": 0,
+    "swap_begin_failures": 0,
+    "distinct_swapchain_images": 1
+   }
+  }
+ ],
+ "hitches": {
+  "DISPLAY1": [],
+  "DISPLAY2": []
+ },
+ "film": {
+  "fps": 25.0,
+  "locked": true,
+  "windowed": false
+ },
+ "blank_start_offset_ms": {
+  "frames": 101,
+  "min": -4.04,
+  "median": -2.29,
+  "p95": -0.61,
+  "max": 3.54
+ },
+ "row_offsets": {
+  "second": "DISPLAY2",
+  "first": "DISPLAY1",
+  "master": 1,
+  "heights_mm": {
+   "top": 0.0,
+   "aim": 107.5,
+   "bottom": 215.0
+  },
+  "offset_ms": {
+   "top": {
+    "frames": 100,
+    "min": -4.11,
+    "p5": -4.11,
+    "median": -2.44,
+    "p95": -0.78,
+    "max": -0.78
+   },
+   "aim": {
+    "frames": 100,
+    "min": -2.08,
+    "p5": -2.08,
+    "median": -0.41,
+    "p95": 1.26,
+    "max": 1.26
+   },
+   "bottom": {
+    "frames": 100,
+    "min": -0.04,
+    "p5": -0.04,
+    "median": 1.62,
+    "p95": 3.29,
+    "max": 3.29
+   }
+  },
+  "windowed": false,
+  "checks": {
+   "DISPLAY1": {
+    "wake_median_to_top_ms": 0.384,
+    "wake_to_top_ms": 0.3507,
+    "wake_to_top_end_ms": 0.3718,
+    "live_refits": 9,
+    "grid_drift_us": -10.3
+   },
+   "DISPLAY2": {
+    "wake_median_to_top_ms": 0.238,
+    "wake_to_top_ms": 0.2445,
+    "wake_to_top_end_ms": 0.2284,
+    "live_refits": 9,
+    "grid_drift_us": 6.7
+   }
+  },
+  "predicted_ms": {
+   "top": -2.4401,
+   "aim": -0.4067,
+   "bottom": 1.6267
+  }
+ }
+}

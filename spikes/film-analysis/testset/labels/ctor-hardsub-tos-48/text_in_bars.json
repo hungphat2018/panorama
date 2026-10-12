@@ -1,0 +1,291 @@
+{
+ "label_format": "panorama-testset-labels/1",
+ "clip": "ctor-hardsub-tos-48",
+ "field": "text_in_bars",
+ "status": "exact",
+ "proposed_by": "script",
+ "basis": "constructed: tos-1080p with a padded bar rectangle [0, 140, 1920, 940], subtitles burned in with libass (tos-en-tos-48.srt, FontSize=48,Outline=2,Shadow=0); truth boxes are libass's own rendering on black (luma >= 48)",
+ "created": "2026-10-12",
+ "frame_count": 3600,
+ "fps": "24000/1001",
+ "storage": {
+  "w": 1920,
+  "h": 1080
+ },
+ "events": [
+  {
+   "frames": [
+    408,
+    456
+   ],
+   "box": [
+    415,
+    711,
+    1508,
+    1011
+   ],
+   "kind": "subtitle"
+  },
+  {
+   "frames": [
+    744,
+    792
+   ],
+   "box": [
+    362,
+    713,
+    1550,
+    1042
+   ],
+   "kind": "subtitle"
+  },
+  {
+   "frames": [
+    864,
+    912
+   ],
+   "box": [
+    413,
+    711,
+    1508,
+    1042
+   ],
+   "kind": "subtitle"
+  },
+  {
+   "frames": [
+    2182,
+    2206
+   ],
+   "box": [
+    413,
+    891,
+    1498,
+    1043
+   ],
+   "kind": "subtitle"
+  },
+  {
+   "frames": [
+    2230,
+    2278
+   ],
+   "box": [
+    133,
+    711,
+    1781,
+    1042
+   ],
+   "kind": "subtitle"
+  },
+  {
+   "frames": [
+    2326,
+    2350
+   ],
+   "box": [
+    97,
+    891,
+    1827,
+    1043
+   ],
+   "kind": "subtitle"
+  },
+  {
+   "frames": [
+    2374,
+    2422
+   ],
+   "box": [
+    258,
+    713,
+    1654,
+    1011
+   ],
+   "kind": "subtitle"
+  },
+  {
+   "frames": [
+    2434,
+    2470
+   ],
+   "box": [
+    302,
+    891,
+    1606,
+    1041
+   ],
+   "kind": "subtitle"
+  },
+  {
+   "frames": [
+    2482,
+    2554
+   ],
+   "box": [
+    378,
+    533,
+    1531,
+    1043
+   ],
+   "kind": "subtitle"
+  },
+  {
+   "frames": [
+    2590,
+    2686
+   ],
+   "box": [
+    357,
+    711,
+    1556,
+    1043
+   ],
+   "kind": "subtitle"
+  },
+  {
+   "frames": [
+    2710,
+    2806
+   ],
+   "box": [
+    191,
+    891,
+    1731,
+    1043
+   ],
+   "kind": "subtitle"
+  },
+  {
+   "frames": [
+    2950,
+    2974
+   ],
+   "box": [
+    554,
+    893,
+    1356,
+    1011
+   ],
+   "kind": "subtitle"
+  },
+  {
+   "frames": [
+    2986,
+    3014
+   ],
+   "box": [
+    139,
+    893,
+    1779,
+    1043
+   ],
+   "kind": "subtitle"
+  },
+  {
+   "frames": [
+    3021,
+    3045
+   ],
+   "box": [
+    735,
+    893,
+    1174,
+    1011
+   ],
+   "kind": "subtitle"
+  },
+  {
+   "frames": [
+    3141,
+    3189
+   ],
+   "box": [
+    498,
+    893,
+    1412,
+    1011
+   ],
+   "kind": "subtitle"
+  },
+  {
+   "frames": [
+    3201,
+    3225
+   ],
+   "box": [
+    788,
+    893,
+    1130,
+    1011
+   ],
+   "kind": "subtitle"
+  },
+  {
+   "frames": [
+    3237,
+    3261
+   ],
+   "box": [
+    486,
+    893,
+    1421,
+    1011
+   ],
+   "kind": "subtitle"
+  },
+  {
+   "frames": [
+    3285,
+    3321
+   ],
+   "box": [
+    242,
+    891,
+    1672,
+    1043
+   ],
+   "kind": "subtitle"
+  },
+  {
+   "frames": [
+    3357,
+    3381
+   ],
+   "box": [
+    371,
+    893,
+    1546,
+    1011
+   ],
+   "kind": "subtitle"
+  },
+  {
+   "frames": [
+    3393,
+    3465
+   ],
+   "box": [
+    53,
+    893,
+    1864,
+    1011
+   ],
+   "kind": "subtitle"
+  },
+  {
+   "frames": [
+    3477,
+    3549
+   ],
+   "box": [
+    90,
+    893,
+    1828,
+    1011
+   ],
+   "kind": "subtitle"
+  }
+ ],
+ "text_frames": 964
+}

@@ -38,6 +38,7 @@ struct run {
     uint64_t cache_sig;
     struct decoder *dec;
     struct pl_render_params params;
+    struct pl_deinterlace_params deint; // used when --deinterlace is set; params.deinterlace_params points here
     IDXGISwapChain *dxgi;
 
     // per-render accumulators filled by info_cb
@@ -137,6 +138,8 @@ static bool render_frame(struct run *r, const struct pl_swapchain_frame *frame,
     float sar = frame_sar(mix->frames[0]);
     if (sar)
         pl_rect2df_stretch(&crop, fmaxf(1.0f, sar), fmaxf(1.0f, 1.0f / sar));
+    if (r->cfg.rotation) // the target gets the aspect of the *displayed* picture, as plplay does
+        pl_rect2df_rotate(&crop, mix->frames[0]->rotation);
     pl_rect2df_aspect_copy(&target.crop, &crop, 0.0f);
 
     // --worst-case: libplacebo reuses a frame's rendered texture while its source crop is unchanged.
@@ -201,6 +204,8 @@ static bool dump_frame(struct run *r, const struct pl_frame_mix *mix, int idx, c
     float sar = frame_sar(frames[0]);
     if (sar)
         pl_rect2df_stretch(&crop, fmaxf(1.0f, sar), fmaxf(1.0f, 1.0f / sar));
+    if (r->cfg.rotation)
+        pl_rect2df_rotate(&crop, frames[0]->rotation);
     pl_rect2df_aspect_copy(&target.crop, &crop, 0.0f);
 
     uint8_t *rgba = malloc((size_t) w * h * 4);
@@ -565,10 +570,14 @@ static void write_json(const struct run *r, const char *path)
     json_string(f, c->file);
     fprintf(f, ", \"backend\": \"%s\", \"decode\": \"%s\", \"preset\": \"%s\", "
             "\"window\": [%d, %d], \"seconds\": %.1f, \"loop\": %s, \"worst_case_no_frame_cache\": %s, "
-            "\"sync_render\": %s, \"pl_cache_file\": %s, \"vk_swapchain_depth\": %d, \"own_present\": %s},\n",
+            "\"sync_render\": %s, \"pl_cache_file\": %s, \"vk_swapchain_depth\": %d, \"own_present\": %s, "
+            "\"deinterlace\": \"%s\", \"rotation\": %s, \"sw_fallback\": %s, \"skip_bad_packets\": %s, \"synth_pts\": %s, \"sd_passthrough\": %s},\n",
             backends[c->backend], decodes[c->decode], c->preset, c->win_w, c->win_h, c->seconds,
             c->loop ? "true" : "false", c->worst_case ? "true" : "false", c->sync_render ? "true" : "false",
-            c->cache_file ? "true" : "false", c->vk_depth ? c->vk_depth : 3, c->own_present ? "true" : "false");
+            c->cache_file ? "true" : "false", c->vk_depth ? c->vk_depth : 3, c->own_present ? "true" : "false",
+            c->deinterlace ? c->deinterlace : "off", c->rotation ? "true" : "false", c->sw_fallback ? "true" : "false",
+            c->skip_bad_packets ? "true" : "false", c->synth_pts ? "true" : "false",
+            c->sd_passthrough ? "true" : "false");
 
     fprintf(f, "  \"env\": {\"libplacebo_api\": %d, \"ffmpeg\": \"%s\", \"libavutil\": \"%u.%u.%u\", \"gpu\": ",
             PL_API_VER, av_version_info(),
@@ -723,7 +732,13 @@ static void usage(const char *argv0)
         "  --bench-render   headless: draw one frame into an offscreen WxH target repeatedly, caches bypassed\n"
         "  --vk-depth N     Vulkan swapchain depth (0 = libplacebo default 3)\n"
         "  --own-present    D3D11: own waitable DXGI swapchain (max latency 1) wrapped by libplacebo, own Present1\n"
-        "  --dump-ppm FILE  write film frame --dump-frame (default 50) rendered alone, for pixel comparison\n",
+        "  --dump-ppm FILE  write film frame --dump-frame (default 50) rendered alone, for pixel comparison\n"
+        "  --deinterlace A  weave|bob|yadif|bwdif: libplacebo deinterlaces frames FFmpeg flags as interlaced\n"
+        "  --rotation       fit the picture with the stream's display-matrix rotation applied\n"
+        "  --sw-fallback    with --decode d3d11va/vulkan: decode in software when the decoder offers no hardware format\n"
+        "  --skip-bad-packets  carry on after AVERROR_INVALIDDATA from demuxer or decoder\n"
+        "  --synth-pts      give frames that carry no timestamp (raw .264/.hevc) times at the stream's frame rate\n"
+        "  --sd-passthrough show BT.601 (SD) material with BT.709 primaries instead of converting the gamut\n",
         argv0);
 }
 
@@ -782,6 +797,16 @@ static bool parse_args(struct cfg *c, int argc, char **argv)
         else if (!strcmp(a, "--id") && v) { c->run_id = v; i++; }
         else if (!strcmp(a, "--log-level") && v) { c->log_level = atoi(v); i++; }
         else if (!strcmp(a, "--probe")) c->probe_only = true;
+        else if (!strcmp(a, "--deinterlace") && v) {
+            if (strcmp(v, "weave") && strcmp(v, "bob") && strcmp(v, "yadif") && strcmp(v, "bwdif")) return false;
+            c->deinterlace = v;
+            i++;
+        }
+        else if (!strcmp(a, "--rotation")) c->rotation = true;
+        else if (!strcmp(a, "--sw-fallback")) c->sw_fallback = true;
+        else if (!strcmp(a, "--skip-bad-packets")) c->skip_bad_packets = true;
+        else if (!strcmp(a, "--synth-pts")) c->synth_pts = true;
+        else if (!strcmp(a, "--sd-passthrough")) c->sd_passthrough = true;
         else return false;
     }
 
@@ -865,6 +890,16 @@ int main(int argc, char **argv)
     r->params.info_callback = info_cb;
     r->params.info_priv = r;
     r->params.skip_caching_single_frame = cfg->worst_case;
+    if (cfg->deinterlace) {
+        static const char *names[] = { "weave", "bob", "yadif", "bwdif" };
+        static const enum pl_deinterlace_algorithm algos[] = {
+            PL_DEINTERLACE_WEAVE, PL_DEINTERLACE_BOB, PL_DEINTERLACE_YADIF, PL_DEINTERLACE_BWDIF };
+        r->deint = pl_deinterlace_default_params;
+        for (int k = 0; k < 4; k++)
+            if (!strcmp(cfg->deinterlace, names[k]))
+                r->deint.algo = algos[k];
+        r->params.deinterlace_params = &r->deint;
+    }
 
     r->rr = pl_renderer_create(r->log, r->g.gpu);
     r->queue = pl_queue_create(r->g.gpu);

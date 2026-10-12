@@ -1,0 +1,58 @@
+{
+ "second": "DISPLAY2",
+ "first": "DISPLAY1",
+ "master": 1,
+ "heights_mm": {
+  "top": 0.0,
+  "aim": 107.5,
+  "bottom": 215.0
+ },
+ "offset_ms": {
+  "top": {
+   "frames": 167,
+   "min": -10.84,
+   "p5": -7.5,
+   "median": -2.5,
+   "p95": -0.0,
+   "max": 5.83
+  },
+  "aim": {
+   "frames": 167,
+   "min": -8.8,
+   "p5": -5.47,
+   "median": -0.47,
+   "p95": 2.03,
+   "max": 7.87
+  },
+  "bottom": {
+   "frames": 167,
+   "min": -6.77,
+   "p5": -3.44,
+   "median": 1.57,
+   "p95": 4.07,
+   "max": 9.9
+  }
+ },
+ "windowed": false,
+ "checks": {
+  "DISPLAY1": {
+   "wake_median_to_top_ms": 0.388,
+   "wake_to_top_ms": 0.3799,
+   "wake_to_top_end_ms": 0.3745,
+   "live_refits": 12,
+   "grid_drift_us": 4.7
+  },
+  "DISPLAY2": {
+   "wake_median_to_top_ms": 0.205,
+   "wake_to_top_ms": 0.2056,
+   "wake_to_top_end_ms": 0.195,
+   "live_refits": 12,
+   "grid_drift_us": -4.9
+  }
+ },
+ "predicted_ms": {
+  "top": -1.6729,
+  "aim": 0.3606,
+  "bottom": 2.394
+ }
+}

@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://panorama.invalid/schema/content/0/content.schema.json",
+  "title": "content.json: index of a content-model folder (panorama.content/0)",
+  "description": "The index a reader opens first. It names the file the model describes, the tools that made it, the decode path, every table with its state and analyzer version, and how far the full scan has got. It is rewritten atomically after every step, so it can be read while the worker runs. A table whose version differs from the current analyzer's is stale and is made again. Time and space conventions: see common.schema.json.",
+  "type": "object",
+  "required": ["schema", "worker_version", "created_at", "updated_at", "file", "tables", "scan"],
+  "properties": {
+    "schema": {"const": "panorama.content/0"},
+    "worker_version": {"type": "string"},
+    "created_at": {"type": "string", "description": "ISO 8601 time with offset."},
+    "updated_at": {"type": "string"},
+    "file": {
+      "type": "object", "required": ["key", "name"],
+      "properties": {
+        "key": {"$ref": "common.schema.json#/$defs/file_key"},
+        "name": {"type": "string", "description": "File name the model was made from (informational: identity is the key)."}
+      }
+    },
+    "tools": {
+      "description": "Versions of what produced the model: ffmpeg and ffprobe banner lines, Python, platform, NumPy, OpenCV, ONNX Runtime where used.",
+      "type": "object", "additionalProperties": {"type": "string"}
+    },
+    "decode_path": {
+      "description": "How frames were decoded: the path used (cuda = NVDEC with GPU scaling, d3d11va, software) and what each tried path answered.",
+      "type": ["object", "null"],
+      "properties": {"path": {"enum": ["cuda", "d3d11va", "software"]}, "tried": {"type": "object", "additionalProperties": {"type": "string"}}, "note": {"type": "string"}}
+    },
+    "tables": {
+      "description": "One entry per table: where it is, its analyzer version and state. Names: file-facts, signals, shots, slide-paths, subjects, subjects-raw, subtitles.",
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["version", "state"],
+        "properties": {
+          "file": {"type": ["string", "null"]},
+          "version": {"$ref": "common.schema.json#/$defs/analyzer_version"},
+          "state": {"type": "string", "description": "provisional, partial or complete for frame-covering tables; complete or partial for others."},
+          "updated_at": {"type": "string"}
+        }
+      }
+    },
+    "scan": {
+      "description": "Progress of the full scan. `done` lists the frame intervals whose raw signals are final (signals.bin column `scanned` is 1 exactly there); `failed` lists segments that could not be scanned with the reason.",
+      "type": "object",
+      "required": ["state", "n_frames", "done"],
+      "properties": {
+        "state": {"type": "string", "enum": ["not-started", "running", "complete", "partial", "failed"]},
+        "n_frames": {"type": "integer", "minimum": 1},
+        "done": {"type": "array", "items": {"$ref": "common.schema.json#/$defs/frame_interval"}},
+        "failed": {"type": "array", "items": {"type": "object", "properties": {"first": {"type": "integer"}, "last": {"type": "integer"}, "error": {"type": "string"}, "attempts": {"type": "integer"}}}},
+        "playhead_s": {"type": "number", "description": "Where the scan was told to start (seconds on the rebased timeline)."},
+        "started_at": {"type": ["string", "null"]},
+        "finished_at": {"type": ["string", "null"]},
+        "workers": {"type": "integer"},
+        "segment_seconds": {"type": "number"},
+        "sample_stride": {"type": "integer", "description": "Faces, heads and people are looked for on every Nth frame of the frame table."},
+        "timing": {
+          "description": "Wall-clock and per-segment timings, model-call statistics (calls longer than 20 ms are counted), the execution provider that really ran the models.",
+          "type": "object"
+        }
+      }
+    },
+    "prescan": {
+      "description": "Timings of the quick pre-scan and how many keyframes it matched to the frame table.",
+      "type": "object"
+    },
+    "warnings": {"type": "array", "items": {"type": "string"}}
+  }
+}

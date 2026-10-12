@@ -1,0 +1,105 @@
+{
+ "name": "episode-v0",
+ "mode": "scan",
+ "file": "C:/Users/tamla/Downloads/[Judas] Nama-Anaru - S01E02.mkv",
+ "workers": 3,
+ "from_s": 0.0,
+ "segment_seconds": 45.0,
+ "decode_path": "auto",
+ "exit": 0,
+ "wall_s": 164.11,
+ "first_usable_result_s": 8.37,
+ "prescan_s": 2.829,
+ "worker": {
+  "content": "C:\\Users\\tamla\\AppData\\Local\\Temp\\claude\\C--Users-tamla-Downloads-Telegram-Desktop-panorama\\5b4695cd-4a8f-4325-a7dc-d07eae3b28e6\\scratchpad\\content\\episode-v0\\content.json",
+  "prescan_s": 2.829,
+  "subtitles": {
+   "seconds": 26.56,
+   "tracks": 8
+  },
+  "wall_s": 163.74,
+  "job": {
+   "active": true,
+   "error": null,
+   "cpu": {
+    "user_s": 591.8125,
+    "kernel_s": 299.875,
+    "processes": 178
+   },
+   "peak_memory_bytes": 10862624768
+  }
+ },
+ "scan": {
+  "wall_s": 160.23,
+  "first_segment_done_s": 5.22,
+  "frames_scanned": 34047,
+  "frames_per_s": 212.5,
+  "model_warm_up_s": {
+   "transnetv2": 0.77,
+   "anime-face-v1.4s": 0.77,
+   "anime-head-v2.0s-yv11": 0.63,
+   "anime-person-v1.3s": 0.23
+  },
+  "gpu_calls": {
+   "transnetv2": {
+    "calls": 710,
+    "mean_ms": 9.49,
+    "p99_ms": 11.09,
+    "max_ms": 13.06,
+    "calls_over_20ms": 0
+   },
+   "anime-face-v1.4s": {
+    "calls": 368,
+    "mean_ms": 35.6,
+    "p99_ms": 94.05,
+    "max_ms": 105.81,
+    "calls_over_20ms": 367
+   },
+   "anime-head-v2.0s-yv11": {
+    "calls": 368,
+    "mean_ms": 40.98,
+    "p99_ms": 139.87,
+    "max_ms": 156.06,
+    "calls_over_20ms": 368
+   },
+   "anime-person-v1.3s": {
+    "calls": 368,
+    "mean_ms": 32.52,
+    "p99_ms": 97.0,
+    "max_ms": 109.25,
+    "calls_over_20ms": 356
+   }
+  },
+  "execution_provider": {
+   "transnetv2": "CUDAExecutionProvider"
+  },
+  "models_on": "auto"
+ },
+ "samples": {
+  "gpu": {
+   "samples": 300,
+   "util_mean_pct": 21.7,
+   "util_max_pct": 91.0,
+   "decoder_util_mean_pct": 21.9,
+   "decoder_util_max_pct": 90.0,
+   "memory_used_max_mib": 5580.0,
+   "memory_used_min_mib": 1489.0,
+   "power_mean_w": 52.1
+  },
+  "cpu_total": {
+   "samples": 166,
+   "mean_pct": 23.8,
+   "max_pct": 54.8
+  }
+ },
+ "stderr_tail": [
+  "[scan 10:52:45] segment 27/31 frames 28572-29717 (48 s of film) worker 11.3 s, models 2.1 s; 211 frames/s overall",
+  "[scan 10:52:48] segment 26/31 frames 27346-28572 (51 s of film) worker 14.5 s, models 2.1 s; 216 frames/s overall",
+  "[scan 10:52:54] segment 28/31 frames 29717-30921 (50 s of film) worker 14.3 s, models 2.3 s; 215 frames/s overall",
+  "[scan 10:53:00] segment 29/31 frames 30921-32116 (50 s of film) worker 15.2 s, models 1.8 s; 214 frames/s overall",
+  "[scan 10:53:03] segment 30/31 frames 32116-33196 (45 s of film) worker 15.9 s, models 1.6 s; 217 frames/s overall",
+  "[scan 10:53:10] segment 31/31 frames 33196-34047 (35 s of film) worker 17.3 s, models 1.2 s; 213 frames/s overall"
+ ],
+ "cpu_seconds_total": 891.7,
+ "cpu_core_equivalents_mean": 5.43
+}

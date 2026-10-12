@@ -1,0 +1,21 @@
+{
+ "room": "room/single-laptop.json",
+ "surface": {
+  "model": "fold"
+ },
+ "source": {
+  "file": "patterns/noise-2560x1600.ppm",
+  "width": 2560,
+  "height": 1600,
+  "sar": 1.0
+ },
+ "cue": {
+  "centre_mm": [
+   0.0,
+   0.0
+  ],
+  "height_mm": 215.0
+ },
+ "kernel": "ewa_lanczossharp",
+ "domain": "auto"
+}

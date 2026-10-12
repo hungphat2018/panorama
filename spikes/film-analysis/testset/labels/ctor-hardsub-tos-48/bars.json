@@ -1,0 +1,35 @@
+{
+ "label_format": "panorama-testset-labels/1",
+ "clip": "ctor-hardsub-tos-48",
+ "field": "bars",
+ "status": "exact",
+ "proposed_by": "script",
+ "basis": "constructed: tos-1080p with a padded bar rectangle [0, 140, 1920, 940], subtitles burned in with libass (tos-en-tos-48.srt, FontSize=48,Outline=2,Shadow=0); truth boxes are libass's own rendering on black (luma >= 48)",
+ "created": "2026-10-12",
+ "frame_count": 3600,
+ "fps": "24000/1001",
+ "storage": {
+  "w": 1920,
+  "h": 1080
+ },
+ "bar_level": {
+  "y": 16,
+  "noise_sigma": 0.0
+ },
+ "segments": [
+  {
+   "frames": [
+    0,
+    3600
+   ],
+   "rect": [
+    0,
+    140,
+    1920,
+    940
+   ]
+  }
+ ],
+ "ambiguous": [],
+ "cuts": []
+}

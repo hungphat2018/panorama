@@ -1,0 +1,30 @@
+{
+  "run_id": "color-bt601-480p-tagged-mp4-sw",
+  "status": "ok",
+  "error": "",
+  "config": {"file": "C:/Users/tamla/Downloads/Telegram Desktop/panorama/spikes/file-matrix/media/color-bt601-480p-tagged.mp4", "backend": "d3d11", "decode": "sw", "preset": "default", "window": [1920, 1080], "seconds": 5.0, "loop": false, "worst_case_no_frame_cache": false, "sync_render": false, "pl_cache_file": false, "vk_swapchain_depth": 3, "own_present": false},
+  "env": {"libplacebo_api": 375, "ffmpeg": "9.0.2", "libavutil": "61.1.102", "gpu": "NVIDIA GeForce RTX 5070 Ti Laptop GPU", "monitor": {"device": "\\\\.\\DISPLAY1", "hz": 240, "size": [2560, 1600]}},
+  "media": {"codec": "h264", "pix_fmt": "yuv420p", "hw_fmt": "", "size": [720, 480], "fps": 24.0000, "duration_s": 6.00},
+  "startup_ms_since_process_creation": {"main_entered": 17.6, "window_created": 27.7, "gpu_ready": 208.0, "file_opened": 210.5, "codec_opened": 211.5, "first_frame_decoded": 217.0, "first_render_done": 403.5, "first_present": 404.6},
+  "first_frame_ms": {"from_process_creation": 404.6, "from_main": 387.0, "from_gpu_ready": 196.6},
+  "playback": {"measured_s": 5.003, "refreshes_rendered": 1188, "refresh_rate_measured_hz": 239.986, "film_frames_front_changes": 121, "queue_estimated_fps": 24.0000, "queue_estimated_display_fps": 240.1370, "eof": false},
+  "counts": {"decoded": 125, "mapped": 122, "dropped_by_queue": 1, "queue_stalls": 0, "queue_stall_ms": 0.0, "late_refreshes_over_1p5x_steady": 2, "late_refreshes_over_2p5x_steady": 0, "steady_refreshes": 720, "nominal_interval_ms": 4.1669, "skipped_refreshes_estimate": 0.0, "hitches_over_50ms_steady": 0, "max_message_pump_ms": 0.00},
+  "refreshes_per_film_frame": {"1": 1, "7": 1, "8": 2, "9": 1, "10": 114, "14": 1},
+  "dxgi_refreshes_between_presents": {"1": 1174, "3": 1, "7+": 2},
+  "timings_ms": {
+    "render_cpu_all": {"n": 1188, "min": 0.0113, "mean": 0.0511, "p50": 0.0243, "p90": 0.0847, "p99": 0.1566, "p999": 0.3985, "max": 19.9779},
+    "render_cpu_steady": {"n": 720, "min": 0.0124, "mean": 0.0334, "p50": 0.0250, "p90": 0.0819, "p99": 0.1439, "p999": 0.1736, "max": 0.1736},
+    "render_cpu_steady_new_film_frame": {"n": 73, "min": 0.0160, "mean": 0.0324, "p50": 0.0246, "p90": 0.0567, "p99": 0.1736, "p999": 0.1736, "max": 0.1736},
+    "render_cpu_steady_repeated_frame": {"n": 647, "min": 0.0124, "mean": 0.0335, "p50": 0.0251, "p90": 0.0829, "p99": 0.1439, "p999": 0.1629, "max": 0.1629},
+    "gpu_pass_sum_steady": {"n": 720, "min": 0.0252, "mean": 0.0929, "p50": 0.0302, "p90": 0.1679, "p99": 0.3454, "p999": 5.1658, "max": 5.1658},
+    "gpu_pass_sum_steady_new_film_frame": {"n": 73, "min": 0.0258, "mean": 0.2479, "p50": 0.0312, "p90": 0.0446, "p99": 4.0910, "p999": 4.0910, "max": 4.0910},
+    "gpu_pass_sum_steady_repeated_frame": {"n": 647, "min": 0.0252, "mean": 0.0755, "p50": 0.0301, "p90": 0.2779, "p99": 0.2945, "p999": 5.1658, "max": 5.1658},
+    "queue_update_steady": {"n": 720, "min": 0.0023, "mean": 0.0094, "p50": 0.0044, "p90": 0.0391, "p99": 0.0654, "p999": 0.0778, "max": 0.0778},
+    "acquire_steady": {"n": 720, "min": 0.0069, "mean": 0.0142, "p50": 0.0138, "p90": 0.0170, "p99": 0.0266, "p999": 0.1390, "max": 0.1390},
+    "submit_steady": {"n": 720, "min": 0.0009, "mean": 0.0025, "p50": 0.0024, "p90": 0.0033, "p99": 0.0048, "p999": 0.0078, "max": 0.0078},
+    "swap_steady": {"n": 720, "min": 0.8466, "mean": 4.1052, "p50": 4.1109, "p90": 4.2078, "p99": 5.2821, "p999": 7.2066, "max": 7.2066},
+    "present_interval_all": {"n": 1180, "min": 0.4157, "mean": 4.2162, "p50": 4.1653, "p90": 4.2459, "p99": 5.3160, "p999": 20.1786, "max": 58.6444},
+    "present_interval_steady": {"n": 720, "min": 0.9670, "mean": 4.1669, "p50": 4.1651, "p90": 4.2610, "p99": 5.3366, "p999": 7.2589, "max": 7.2589}
+  },
+  "process": {"cpu_s": 0.359, "cpu_pct_of_one_core": 7.2, "cpu_pct_of_all_threads": 0.22, "logical_cpus": 32, "render_thread_cpu_pct": 2.8, "decode_thread_busy_s_in_libav_calls": 0.009, "decode_thread_cpu_s": 0.000, "peak_working_set_mb": 131, "peak_pagefile_mb": 204}
+}

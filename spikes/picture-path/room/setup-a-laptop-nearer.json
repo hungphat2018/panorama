@@ -1,0 +1,82 @@
+{
+  "schema": "panorama.room/1",
+  "name": "setup-a-laptop-nearer",
+  "note": "laptop 150 mm nearer to the eye",
+  "units": "mm, deg. Frame = seat: right-handed, +x right, +y up, +z away from the eye toward the screens, origin = eye point",
+  "seat": {
+    "gaze_yaw_deg": 0,
+    "gaze_pitch_deg": 0,
+    "distance_mm": 700.0,
+    "source": "default: 700 mm from the seam, eye level with the laptop's centre"
+  },
+  "monitors": [
+    {
+      "id": "laptop",
+      "panel": {
+        "native_px": [
+          2560,
+          1600
+        ],
+        "active_area_mm": [
+          344.0,
+          215.0
+        ]
+      },
+      "pose": {
+        "centre_mm": [
+          -182.0,
+          0.0,
+          550.0
+        ],
+        "yaw_deg": 0.0,
+        "pitch_deg": 0.0,
+        "roll_deg": 0.0
+      },
+      "timing": {
+        "refresh_hz": 240.001,
+        "scan_ms": 3.704,
+        "lag_ms": 0.0
+      }
+    },
+    {
+      "id": "external",
+      "panel": {
+        "native_px": [
+          1920,
+          1080
+        ],
+        "active_area_mm": [
+          480.0,
+          270.0
+        ]
+      },
+      "pose": {
+        "centre_mm": [
+          250.0,
+          -27.5,
+          700.0
+        ],
+        "yaw_deg": -0.0,
+        "pitch_deg": 0.0,
+        "roll_deg": 0.0
+      },
+      "timing": {
+        "refresh_hz": 100.0,
+        "scan_ms": 9.69,
+        "lag_ms": 0.0
+      }
+    }
+  ],
+  "derived": {
+    "seams": [
+      {
+        "a": "laptop",
+        "b": "external",
+        "gap_mm": 20.0,
+        "stagger_mm": 0.0,
+        "hinge_deg": 0.0
+      }
+    ],
+    "anchor": "seam 0 (the gaze axis passes through its centre)"
+  }
+}

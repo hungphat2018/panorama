@@ -1,0 +1,4 @@
+# Only for checking the worker's output files against the JSON Schemas in schema/ (validate-content.py).
+# Install into the same venv after requirements.txt:
+#   tools\venv-analysis\Scripts\python.exe -I -m pip install -r spikes\film-analysis\requirements-dev.txt
+jsonschema==4.26.0

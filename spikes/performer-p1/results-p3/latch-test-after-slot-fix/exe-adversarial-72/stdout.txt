@@ -1,0 +1,20 @@
+headless: DISPLAY1 240.0010 Hz (laptop) + DISPLAY2 72.0000 Hz (external), 0.50 ppm drift, dummy GPU
+perf1: cue sheet version 1 from C:\Users\tamla\Downloads\Telegram Desktop\panorama\spikes\performer-p1\data\cue-test\sheets\cues-v1.json, 16 shots
+perf1: control script C:\Users\tamla\Downloads\Telegram Desktop\panorama\spikes\performer-p1\data\cue-test\sheets\script-adversarial.jsonl: 15 commands
+monitor 0 DISPLAY1: 2560x1600 at (0,0), window/swapchain 2560x1600, refresh 239.9994 Hz, 344x215 mm at 0 mm
+monitor 1 DISPLAY2: 1920x1080 at (2560,0), window/swapchain 1920x1080, refresh 71.9998 Hz, 476x268 mm at 364 mm
+aim row 107.5 mm; shared height 0.0..215.0 mm
+film 23.9760 fps; master DISPLAY2 71.9998 Hz; speed NOT locked (plays at 1.0) (speed 1.0010 if locked, hold 3 refreshes)
+film starts on master refresh 147 (class chosen for the followers, seam error 0.639 ms at the aim row); aim row 107.5 mm
+predicted seam offset DISPLAY2 - DISPLAY1, in light: top row (0.0 mm) -1.40 ms, aim row +0.64 ms, bottom row (215.0 mm) +2.68 ms
+picture 382.2 x 215.0 mm at x 162.9..545.1 mm; DISPLAY1: shows part DISPLAY2: shows part 
+perf1: cue sheet version 2 published (C:/Users/tamla/Downloads/Telegram Desktop/panorama/spikes/performer-p1/data/cue-test/sheets/cues-v2.json, 16 shots)
+perf1: script line 1 at 3.543 s: {"ok":true,"version":2,"shots":16}
+perf1: script line 2 at 0.025 s: {"ok":true}
+perf1: cue sheet version 3 published (C:/Users/tamla/Downloads/Telegram Desktop/panorama/spikes/performer-p1/data/cue-test/sheets/cues-v3.json, 16 shots)
+perf1: script line 3 at 2.871 s: {"ok":true,"version":3,"shots":16}
+perf1: script line 4 at 0.075 s: {"ok":true}
+perf1: cue sheet version 4 published (C:/Users/tamla/Downloads/Telegram Desktop/panorama/spikes/performer-p1/data/cue-test/sheets/cues-v4.json, 16 shots)
+perf1: script line 5 at 2.358 s: {"ok":true,"version":4,"shots":16}
+perf1: script line 6 at 0.133 s: {"ok":true}
+wrote results-p3\latch-test-after-slot-fix\exe-adversarial-72/perf1-cuelog.json (4 swaps, 3 seeks, 4 restarts, 0 re-aims, 0 follower moves at cuts)

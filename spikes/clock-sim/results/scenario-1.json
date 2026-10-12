@@ -1,0 +1,1866 @@
+{
+ "setup": "laptop 240 Hz + external 96 Hz (custom), 23.976 fps",
+ "drift_ppm": 0.5,
+ "variants": {
+  "perf1-as-built": {
+   "runs": 8,
+   "hours": 15.995,
+   "frames": 1382008,
+   "hold": 4,
+   "speed": 1.001,
+   "locked": true,
+   "classes": 2,
+   "master_reaims_per_hour": 0.0,
+   "av_shift_refreshes": [
+    0,
+    0
+   ],
+   "skipped_frames": 0,
+   "master_pace": {
+    "4": 1382000
+   },
+   "seams": {
+    "laptop": {
+     "kind": "crisp",
+     "reference": "external",
+     "offset_ms": {
+      "top": {
+       "p5": -1.6749,
+       "p50": 0.4241,
+       "p95": 2.1318,
+       "max_abs": 2.3192
+      },
+      "aim": {
+       "p5": 0.3634,
+       "p50": 2.4624,
+       "p95": 4.1702,
+       "max_abs": 4.3575
+      },
+      "bottom": {
+       "p5": 2.4017,
+       "p50": 4.5007,
+       "p95": 6.2085,
+       "max_abs": 6.3958
+      }
+     },
+     "slips_at_cuts_per_hour": 0.3126,
+     "slips_at_cuts_total": 5,
+     "slips_mid_shot_per_hour": 24.5697,
+     "slips_mid_shot_total": 393,
+     "flip_flops_per_hour": 22.6317,
+     "flip_flops_total": 362,
+     "pace": {
+      "9": 195,
+      "10": 1381602,
+      "11": 203
+     },
+     "whole_multiple": true
+    }
+   }
+  },
+  "perf1-with-row-timing": {
+   "runs": 8,
+   "hours": 15.992,
+   "frames": 1381720,
+   "hold": 4,
+   "speed": 1.001,
+   "locked": true,
+   "classes": 2,
+   "master_reaims_per_hour": 0.0,
+   "av_shift_refreshes": [
+    0,
+    0
+   ],
+   "skipped_frames": 0,
+   "master_pace": {
+    "4": 1381712
+   },
+   "seams": {
+    "laptop": {
+     "kind": "crisp",
+     "reference": "external",
+     "offset_ms": {
+      "top": {
+       "p5": -3.9417,
+       "p50": -1.9197,
+       "p95": -0.1349,
+       "max_abs": 4.1217
+      },
+      "aim": {
+       "p5": -1.9034,
+       "p50": 0.1187,
+       "p95": 1.9034,
+       "max_abs": 2.0833
+      },
+      "bottom": {
+       "p5": 0.1349,
+       "p50": 2.157,
+       "p95": 3.9417,
+       "max_abs": 4.1217
+      }
+     },
+     "slips_at_cuts_per_hour": 0.0,
+     "slips_at_cuts_total": 0,
+     "slips_mid_shot_per_hour": 0.5003,
+     "slips_mid_shot_total": 8,
+     "flip_flops_per_hour": 0.0,
+     "flip_flops_total": 0,
+     "pace": {
+      "10": 1381704,
+      "11": 8
+     },
+     "whole_multiple": true
+    }
+   }
+  },
+  "nearest-no-aim": {
+   "runs": 8,
+   "hours": 15.995,
+   "frames": 1382008,
+   "hold": 4,
+   "speed": 1.001,
+   "locked": true,
+   "classes": 2,
+   "master_reaims_per_hour": 0.0,
+   "av_shift_refreshes": [
+    0,
+    0
+   ],
+   "skipped_frames": 0,
+   "master_pace": {
+    "4": 1382000
+   },
+   "seams": {
+    "laptop": {
+     "kind": "crisp",
+     "reference": "external",
+     "offset_ms": {
+      "top": {
+       "p5": -3.9159,
+       "p50": -1.8622,
+       "p95": -0.1378,
+       "max_abs": 4.1319
+      },
+      "aim": {
+       "p5": -1.8776,
+       "p50": 0.1761,
+       "p95": 1.9005,
+       "max_abs": 2.0936
+      },
+      "bottom": {
+       "p5": 0.1607,
+       "p50": 2.2144,
+       "p95": 3.9388,
+       "max_abs": 4.1294
+      }
+     },
+     "slips_at_cuts_per_hour": 0.3126,
+     "slips_at_cuts_total": 5,
+     "slips_mid_shot_per_hour": 22.0065,
+     "slips_mid_shot_total": 352,
+     "flip_flops_per_hour": 20.1309,
+     "flip_flops_total": 322,
+     "pace": {
+      "9": 175,
+      "10": 1381643,
+      "11": 182
+     },
+     "whole_multiple": true
+    }
+   }
+  },
+  "nearest-aimed": {
+   "runs": 8,
+   "hours": 15.995,
+   "frames": 1382008,
+   "hold": 4,
+   "speed": 1.001,
+   "locked": true,
+   "classes": 2,
+   "master_reaims_per_hour": 0.0,
+   "av_shift_refreshes": [
+    0,
+    0
+   ],
+   "skipped_frames": 0,
+   "master_pace": {
+    "4": 1382000
+   },
+   "seams": {
+    "laptop": {
+     "kind": "crisp",
+     "reference": "external",
+     "offset_ms": {
+      "top": {
+       "p5": -3.9418,
+       "p50": -1.9199,
+       "p95": -0.135,
+       "max_abs": 4.1319
+      },
+      "aim": {
+       "p5": -1.9034,
+       "p50": 0.1184,
+       "p95": 1.9033,
+       "max_abs": 2.0956
+      },
+      "bottom": {
+       "p5": 0.1349,
+       "p50": 2.1568,
+       "p95": 3.9416,
+       "max_abs": 4.1339
+      }
+     },
+     "slips_at_cuts_per_hour": 0.3751,
+     "slips_at_cuts_total": 6,
+     "slips_mid_shot_per_hour": 24.6322,
+     "slips_mid_shot_total": 394,
+     "flip_flops_per_hour": 22.0065,
+     "flip_flops_total": 352,
+     "pace": {
+      "9": 196,
+      "10": 1381600,
+      "11": 204
+     },
+     "whole_multiple": true
+    }
+   }
+  },
+  "recommended": {
+   "runs": 8,
+   "hours": 15.995,
+   "frames": 1382008,
+   "hold": 4,
+   "speed": 1.001,
+   "locked": true,
+   "classes": 2,
+   "master_reaims_per_hour": 0.8127,
+   "av_shift_refreshes": [
+    -1,
+    1
+   ],
+   "skipped_frames": 0,
+   "master_pace": {
+    "3": 5,
+    "4": 1381987,
+    "5": 8
+   },
+   "seams": {
+    "laptop": {
+     "kind": "crisp",
+     "reference": "external",
+     "offset_ms": {
+      "top": {
+       "p5": -2.944,
+       "p50": -2.0149,
+       "p95": -1.0821,
+       "max_abs": 3.0571
+      },
+      "aim": {
+       "p5": -0.9056,
+       "p50": 0.0235,
+       "p95": 0.9562,
+       "max_abs": 1.0692
+      },
+      "bottom": {
+       "p5": 1.1327,
+       "p50": 2.0618,
+       "p95": 2.9945,
+       "max_abs": 3.1075
+      }
+     },
+     "slips_at_cuts_per_hour": 0.8127,
+     "slips_at_cuts_total": 13,
+     "slips_mid_shot_per_hour": 0.0,
+     "slips_mid_shot_total": 0,
+     "flip_flops_per_hour": 0.0,
+     "flip_flops_total": 0,
+     "pace": {
+      "8": 5,
+      "10": 1381987,
+      "13": 8
+     },
+     "whole_multiple": true
+    }
+   }
+  },
+  "recommended/scan-fit": {
+   "runs": 8,
+   "hours": 15.992,
+   "frames": 1381720,
+   "hold": 4,
+   "speed": 1.001,
+   "locked": true,
+   "classes": 2,
+   "master_reaims_per_hour": 0.8129,
+   "av_shift_refreshes": [
+    0,
+    1
+   ],
+   "skipped_frames": 0,
+   "master_pace": {
+    "3": 5,
+    "4": 1381699,
+    "5": 8
+   },
+   "seams": {
+    "laptop": {
+     "kind": "crisp",
+     "reference": "external",
+     "offset_ms": {
+      "top": {
+       "p5": -2.9442,
+       "p50": -2.015,
+       "p95": -1.0823,
+       "max_abs": 3.0563
+      },
+      "aim": {
+       "p5": -0.9058,
+       "p50": 0.0233,
+       "p95": 0.956,
+       "max_abs": 1.0682
+      },
+      "bottom": {
+       "p5": 1.1325,
+       "p50": 2.0617,
+       "p95": 2.9944,
+       "max_abs": 3.1065
+      }
+     },
+     "slips_at_cuts_per_hour": 0.8129,
+     "slips_at_cuts_total": 13,
+     "slips_mid_shot_per_hour": 0.0,
+     "slips_mid_shot_total": 0,
+     "flip_flops_per_hour": 0.0,
+     "flip_flops_total": 0,
+     "pace": {
+      "8": 5,
+      "10": 1381699,
+      "13": 8
+     },
+     "whole_multiple": true
+    }
+   }
+  },
+  "blend/wake-corrected": {
+   "runs": 8,
+   "hours": 15.995,
+   "frames": 1382016,
+   "hold": 4,
+   "speed": 1.001,
+   "locked": true,
+   "classes": 1,
+   "master_reaims_per_hour": 0.0,
+   "av_shift_refreshes": [
+    0,
+    0
+   ],
+   "skipped_frames": 0,
+   "master_pace": {
+    "4": 1382008
+   },
+   "seams": {
+    "laptop": {
+     "kind": "blend",
+     "reference": "external",
+     "offset_ms": {
+      "top": {
+       "p5": -0.006,
+       "p50": 0.0,
+       "p95": 0.006,
+       "max_abs": 0.0202
+      },
+      "aim": {
+       "p5": -0.006,
+       "p50": 0.0,
+       "p95": 0.006,
+       "max_abs": 0.0202
+      },
+      "bottom": {
+       "p5": -0.006,
+       "p50": 0.0,
+       "p95": 0.006,
+       "max_abs": 0.0203
+      }
+     },
+     "blend": {
+      "err_us_p50": 2.45217,
+      "err_us_p95": 7.13625,
+      "err_us_p999": 11.9887,
+      "err_us_max": 20.2839,
+      "err_us_max_top_mid_bottom": [
+       20.2031,
+       20.2435,
+       20.2839
+      ],
+      "lw_frame_duration_err_us_max": 7.99789,
+      "share_new_p5_p50_p95": [
+       0.0498,
+       0.5006,
+       0.9499
+      ],
+      "rows_mixed_fraction": 0.960055,
+      "mix_threshold": 0.02,
+      "mixed_refreshes_per_change_mean": 1.93362,
+      "mixed_refreshes_per_change_hist": {
+       "1": 1062,
+       "2": 14938
+      }
+     }
+    }
+   }
+  },
+  "blend/scan-fit": {
+   "runs": 8,
+   "hours": 15.992,
+   "frames": 1381722,
+   "hold": 4,
+   "speed": 1.001,
+   "locked": true,
+   "classes": 1,
+   "master_reaims_per_hour": 0.0,
+   "av_shift_refreshes": [
+    0,
+    0
+   ],
+   "skipped_frames": 0,
+   "master_pace": {
+    "4": 1381714
+   },
+   "seams": {
+    "laptop": {
+     "kind": "blend",
+     "reference": "external",
+     "offset_ms": {
+      "top": {
+       "p5": -0.0001,
+       "p50": -0.0,
+       "p95": 0.0001,
+       "max_abs": 0.0007
+      },
+      "aim": {
+       "p5": -0.0001,
+       "p50": -0.0,
+       "p95": 0.0001,
+       "max_abs": 0.0007
+      },
+      "bottom": {
+       "p5": -0.0001,
+       "p50": -0.0,
+       "p95": 0.0001,
+       "max_abs": 0.0007
+      }
+     },
+     "blend": {
+      "err_us_p50": 0.052027,
+      "err_us_p95": 0.152835,
+      "err_us_p999": 0.259188,
+      "err_us_max": 0.664748,
+      "err_us_max_top_mid_bottom": [
+       0.664748,
+       0.664737,
+       0.664726
+      ],
+      "lw_frame_duration_err_us_max": 0.7521,
+      "share_new_p5_p50_p95": [
+       0.0499,
+       0.4994,
+       0.9501
+      ],
+      "rows_mixed_fraction": 0.960135,
+      "mix_threshold": 0.02,
+      "mixed_refreshes_per_change_mean": 1.92881,
+      "mixed_refreshes_per_change_hist": {
+       "1": 1139,
+       "2": 14861
+      }
+     }
+    }
+   }
+  },
+  "frozen-aimed": {
+   "runs": 8,
+   "hours": 15.995,
+   "frames": 1382008,
+   "hold": 4,
+   "speed": 1.001,
+   "locked": true,
+   "classes": 2,
+   "master_reaims_per_hour": 0.0,
+   "av_shift_refreshes": [
+    0,
+    0
+   ],
+   "skipped_frames": 0,
+   "master_pace": {
+    "4": 1382000
+   },
+   "seams": {
+    "laptop": {
+     "kind": "crisp",
+     "reference": "external",
+     "offset_ms": {
+      "top": {
+       "p5": -2.2697,
+       "p50": -0.2909,
+       "p95": 1.6951,
+       "max_abs": 2.8323
+      },
+      "aim": {
+       "p5": -0.2313,
+       "p50": 1.7475,
+       "p95": 3.7334,
+       "max_abs": 4.4501
+      },
+      "bottom": {
+       "p5": 1.807,
+       "p50": 3.7858,
+       "p95": 5.7718,
+       "max_abs": 6.4885
+      }
+     },
+     "slips_at_cuts_per_hour": 0.0,
+     "slips_at_cuts_total": 0,
+     "slips_mid_shot_per_hour": 0.0,
+     "slips_mid_shot_total": 0,
+     "flip_flops_per_hour": 0.0,
+     "flip_flops_total": 0,
+     "pace": {
+      "10": 1382000
+     },
+     "whole_multiple": true
+    }
+   }
+  },
+  "hyst-anytime": {
+   "runs": 8,
+   "hours": 15.995,
+   "frames": 1382008,
+   "hold": 4,
+   "speed": 1.001,
+   "locked": true,
+   "classes": 2,
+   "master_reaims_per_hour": 0.0,
+   "av_shift_refreshes": [
+    0,
+    0
+   ],
+   "skipped_frames": 0,
+   "master_pace": {
+    "4": 1382000
+   },
+   "seams": {
+    "laptop": {
+     "kind": "crisp",
+     "reference": "external",
+     "offset_ms": {
+      "top": {
+       "p5": -3.9243,
+       "p50": -1.8966,
+       "p95": -0.1175,
+       "max_abs": 4.1048
+      },
+      "aim": {
+       "p5": -1.886,
+       "p50": 0.1418,
+       "p95": 1.9208,
+       "max_abs": 2.1017
+      },
+      "bottom": {
+       "p5": 0.1524,
+       "p50": 2.1801,
+       "p95": 3.9591,
+       "max_abs": 4.14
+      }
+     },
+     "slips_at_cuts_per_hour": 0.0625,
+     "slips_at_cuts_total": 1,
+     "slips_mid_shot_per_hour": 0.4376,
+     "slips_mid_shot_total": 7,
+     "flip_flops_per_hour": 0.0,
+     "flip_flops_total": 0,
+     "pace": {
+      "10": 1381992,
+      "11": 8
+     },
+     "whole_multiple": true
+    }
+   }
+  },
+  "hyst-cuts": {
+   "runs": 8,
+   "hours": 15.995,
+   "frames": 1382008,
+   "hold": 4,
+   "speed": 1.001,
+   "locked": true,
+   "classes": 2,
+   "master_reaims_per_hour": 0.0,
+   "av_shift_refreshes": [
+    0,
+    0
+   ],
+   "skipped_frames": 0,
+   "master_pace": {
+    "4": 1382000
+   },
+   "seams": {
+    "laptop": {
+     "kind": "crisp",
+     "reference": "external",
+     "offset_ms": {
+      "top": {
+       "p5": -3.9192,
+       "p50": -1.8898,
+       "p95": -0.1125,
+       "max_abs": 4.1047
+      },
+      "aim": {
+       "p5": -1.8809,
+       "p50": 0.1485,
+       "p95": 1.9258,
+       "max_abs": 2.1115
+      },
+      "bottom": {
+       "p5": 0.1574,
+       "p50": 2.1868,
+       "p95": 3.9642,
+       "max_abs": 4.1498
+      }
+     },
+     "slips_at_cuts_per_hour": 0.5001,
+     "slips_at_cuts_total": 8,
+     "slips_mid_shot_per_hour": 0.0,
+     "slips_mid_shot_total": 0,
+     "flip_flops_per_hour": 0.0,
+     "flip_flops_total": 0,
+     "pace": {
+      "10": 1381992,
+      "11": 8
+     },
+     "whole_multiple": true
+    }
+   }
+  },
+  "recommended/eta-0.3ms": {
+   "runs": 8,
+   "hours": 15.995,
+   "frames": 1382008,
+   "hold": 4,
+   "speed": 1.001,
+   "locked": true,
+   "classes": 2,
+   "master_reaims_per_hour": 0.8127,
+   "av_shift_refreshes": [
+    -1,
+    1
+   ],
+   "skipped_frames": 0,
+   "master_pace": {
+    "3": 5,
+    "4": 1381987,
+    "5": 8
+   },
+   "seams": {
+    "laptop": {
+     "kind": "crisp",
+     "reference": "external",
+     "offset_ms": {
+      "top": {
+       "p5": -2.8205,
+       "p50": -1.8994,
+       "p95": -0.9578,
+       "max_abs": 2.932
+      },
+      "aim": {
+       "p5": -0.7822,
+       "p50": 0.1389,
+       "p95": 1.0806,
+       "max_abs": 1.1936
+      },
+      "bottom": {
+       "p5": 1.2561,
+       "p50": 2.1772,
+       "p95": 3.1189,
+       "max_abs": 3.2319
+      }
+     },
+     "slips_at_cuts_per_hour": 0.8127,
+     "slips_at_cuts_total": 13,
+     "slips_mid_shot_per_hour": 0.0,
+     "slips_mid_shot_total": 0,
+     "flip_flops_per_hour": 0.0,
+     "flip_flops_total": 0,
+     "pace": {
+      "8": 5,
+      "10": 1381987,
+      "13": 8
+     },
+     "whole_multiple": true
+    }
+   }
+  },
+  "nearest-aimed/log-jitter": {
+   "runs": 8,
+   "hours": 15.995,
+   "frames": 1382008,
+   "hold": 4,
+   "speed": 1.001,
+   "locked": true,
+   "classes": 2,
+   "master_reaims_per_hour": 0.0,
+   "av_shift_refreshes": [
+    0,
+    0
+   ],
+   "skipped_frames": 0,
+   "master_pace": {
+    "4": 1382000
+   },
+   "seams": {
+    "laptop": {
+     "kind": "crisp",
+     "reference": "external",
+     "offset_ms": {
+      "top": {
+       "p5": -3.9426,
+       "p50": -1.921,
+       "p95": -0.1359,
+       "max_abs": 4.1339
+      },
+      "aim": {
+       "p5": -1.9043,
+       "p50": 0.1173,
+       "p95": 1.9024,
+       "max_abs": 2.0963
+      },
+      "bottom": {
+       "p5": 0.134,
+       "p50": 2.1556,
+       "p95": 3.9408,
+       "max_abs": 4.1346
+      }
+     },
+     "slips_at_cuts_per_hour": 0.1876,
+     "slips_at_cuts_total": 3,
+     "slips_mid_shot_per_hour": 30.1964,
+     "slips_mid_shot_total": 483,
+     "flip_flops_per_hour": 27.1955,
+     "flip_flops_total": 435,
+     "pace": {
+      "9": 239,
+      "10": 1381514,
+      "11": 247
+     },
+     "whole_multiple": true
+    }
+   }
+  },
+  "recommended/log-jitter": {
+   "runs": 8,
+   "hours": 15.995,
+   "frames": 1382008,
+   "hold": 4,
+   "speed": 1.001,
+   "locked": true,
+   "classes": 2,
+   "master_reaims_per_hour": 0.8127,
+   "av_shift_refreshes": [
+    -1,
+    1
+   ],
+   "skipped_frames": 0,
+   "master_pace": {
+    "3": 6,
+    "4": 1381987,
+    "5": 7
+   },
+   "seams": {
+    "laptop": {
+     "kind": "crisp",
+     "reference": "external",
+     "offset_ms": {
+      "top": {
+       "p5": -2.9456,
+       "p50": -2.0164,
+       "p95": -1.0838,
+       "max_abs": 3.0598
+      },
+      "aim": {
+       "p5": -0.9073,
+       "p50": 0.0219,
+       "p95": 0.9545,
+       "max_abs": 1.0692
+      },
+      "bottom": {
+       "p5": 1.131,
+       "p50": 2.0602,
+       "p95": 2.9928,
+       "max_abs": 3.1075
+      }
+     },
+     "slips_at_cuts_per_hour": 0.8127,
+     "slips_at_cuts_total": 13,
+     "slips_mid_shot_per_hour": 0.0,
+     "slips_mid_shot_total": 0,
+     "flip_flops_per_hour": 0.0,
+     "flip_flops_total": 0,
+     "pace": {
+      "8": 6,
+      "10": 1381987,
+      "13": 7
+     },
+     "whole_multiple": true
+    }
+   }
+  },
+  "blend/perf1-wake-times": {
+   "runs": 8,
+   "hours": 15.995,
+   "frames": 1382016,
+   "hold": 4,
+   "speed": 1.001,
+   "locked": true,
+   "classes": 1,
+   "master_reaims_per_hour": 0.0,
+   "av_shift_refreshes": [
+    0,
+    0
+   ],
+   "skipped_frames": 0,
+   "master_pace": {
+    "4": 1382008
+   },
+   "seams": {
+    "laptop": {
+     "kind": "blend",
+     "reference": "external",
+     "offset_ms": {
+      "top": {
+       "p5": 0.2225,
+       "p50": 0.2284,
+       "p95": 0.2344,
+       "max_abs": 0.2486
+      },
+      "aim": {
+       "p5": 0.2225,
+       "p50": 0.2284,
+       "p95": 0.2344,
+       "max_abs": 0.2487
+      },
+      "bottom": {
+       "p5": 0.2224,
+       "p50": 0.2284,
+       "p95": 0.2344,
+       "max_abs": 0.2487
+      }
+     },
+     "blend": {
+      "err_us_p50": 228.437,
+      "err_us_p95": 234.417,
+      "err_us_p999": 239.765,
+      "err_us_max": 248.709,
+      "err_us_max_top_mid_bottom": [
+       248.628,
+       248.669,
+       248.709
+      ],
+      "lw_frame_duration_err_us_max": 7.99561,
+      "share_new_p5_p50_p95": [
+       0.0501,
+       0.5009,
+       0.9501
+      ],
+      "rows_mixed_fraction": 0.959989,
+      "mix_threshold": 0.02,
+      "mixed_refreshes_per_change_mean": 1.94006,
+      "mixed_refreshes_per_change_hist": {
+       "1": 959,
+       "2": 15041
+      }
+     }
+    }
+   }
+  },
+  "blend/exact": {
+   "runs": 8,
+   "hours": 15.995,
+   "frames": 1382016,
+   "hold": 4,
+   "speed": 1.001,
+   "locked": true,
+   "classes": 1,
+   "master_reaims_per_hour": 0.0,
+   "av_shift_refreshes": [
+    0,
+    0
+   ],
+   "skipped_frames": 0,
+   "master_pace": {
+    "4": 1382008
+   },
+   "seams": {
+    "laptop": {
+     "kind": "blend",
+     "reference": "external",
+     "offset_ms": {
+      "top": {
+       "p5": -0.0,
+       "p50": -0.0,
+       "p95": 0.0,
+       "max_abs": 0.0
+      },
+      "aim": {
+       "p5": -0.0,
+       "p50": -0.0,
+       "p95": 0.0,
+       "max_abs": 0.0
+      },
+      "bottom": {
+       "p5": -0.0,
+       "p50": -0.0,
+       "p95": 0.0,
+       "max_abs": 0.0
+      }
+     },
+     "blend": {
+      "err_us_p50": 0.0,
+      "err_us_p95": 1e-06,
+      "err_us_p999": 1e-06,
+      "err_us_max": 9.09495e-07,
+      "err_us_max_top_mid_bottom": [
+       9.09495e-07,
+       9.09495e-07,
+       9.09495e-07
+      ],
+      "lw_frame_duration_err_us_max": 1.81899e-06,
+      "share_new_p5_p50_p95": [
+       0.0498,
+       0.5006,
+       0.9499
+      ],
+      "rows_mixed_fraction": 0.960056,
+      "mix_threshold": 0.02,
+      "mixed_refreshes_per_change_mean": 1.93394,
+      "mixed_refreshes_per_change_hist": {
+       "1": 1057,
+       "2": 14943
+      }
+     }
+    }
+   }
+  },
+  "blend/wake-corrected/log-jitter": {
+   "runs": 8,
+   "hours": 15.995,
+   "frames": 1382016,
+   "hold": 4,
+   "speed": 1.001,
+   "locked": true,
+   "classes": 1,
+   "master_reaims_per_hour": 0.0,
+   "av_shift_refreshes": [
+    0,
+    0
+   ],
+   "skipped_frames": 0,
+   "master_pace": {
+    "4": 1382008
+   },
+   "seams": {
+    "laptop": {
+     "kind": "blend",
+     "reference": "external",
+     "offset_ms": {
+      "top": {
+       "p5": -0.0079,
+       "p50": -0.0009,
+       "p95": 0.0062,
+       "max_abs": 0.0243
+      },
+      "aim": {
+       "p5": -0.008,
+       "p50": -0.0009,
+       "p95": 0.0063,
+       "max_abs": 0.0244
+      },
+      "bottom": {
+       "p5": -0.008,
+       "p50": -0.0009,
+       "p95": 0.0063,
+       "max_abs": 0.0244
+      }
+     },
+     "blend": {
+      "err_us_p50": 2.95303,
+      "err_us_p95": 8.67259,
+      "err_us_p999": 15.0252,
+      "err_us_max": 24.4077,
+      "err_us_max_top_mid_bottom": [
+       24.3107,
+       24.3592,
+       24.4077
+      ],
+      "lw_frame_duration_err_us_max": 15.767,
+      "share_new_p5_p50_p95": [
+       0.0498,
+       0.5005,
+       0.9498
+      ],
+      "rows_mixed_fraction": 0.960058,
+      "mix_threshold": 0.02,
+      "mixed_refreshes_per_change_mean": 1.93419,
+      "mixed_refreshes_per_change_hist": {
+       "1": 1053,
+       "2": 14947
+      }
+     }
+    }
+   }
+  }
+ },
+ "drift_sensitivity": {
+  "2 ppm": {
+   "perf1-with-row-timing": {
+    "runs": 4,
+    "hours": 7.996,
+    "frames": 690860,
+    "hold": 4,
+    "speed": 1.001,
+    "locked": true,
+    "classes": 2,
+    "master_reaims_per_hour": 0.0,
+    "av_shift_refreshes": [
+     0,
+     0
+    ],
+    "skipped_frames": 0,
+    "master_pace": {
+     "4": 690856
+    },
+    "seams": {
+     "laptop": {
+      "kind": "crisp",
+      "reference": "external",
+      "offset_ms": {
+       "top": {
+        "p5": -3.8818,
+        "p50": -1.8918,
+        "p95": -0.192,
+        "max_abs": 4.1218
+       },
+       "aim": {
+        "p5": -1.8435,
+        "p50": 0.1465,
+        "p95": 1.8464,
+        "max_abs": 2.0835
+       },
+       "bottom": {
+        "p5": 0.1949,
+        "p50": 2.1849,
+        "p95": 3.8847,
+        "max_abs": 4.1217
+       }
+      },
+      "slips_at_cuts_per_hour": 0.0,
+      "slips_at_cuts_total": 0,
+      "slips_mid_shot_per_hour": 1.5008,
+      "slips_mid_shot_total": 12,
+      "flip_flops_per_hour": 0.0,
+      "flip_flops_total": 0,
+      "pace": {
+       "10": 690844,
+       "11": 12
+      },
+      "whole_multiple": true
+     }
+    }
+   },
+   "nearest-no-aim": {
+    "runs": 4,
+    "hours": 7.998,
+    "frames": 691004,
+    "hold": 4,
+    "speed": 1.001,
+    "locked": true,
+    "classes": 2,
+    "master_reaims_per_hour": 0.0,
+    "av_shift_refreshes": [
+     0,
+     0
+    ],
+    "skipped_frames": 0,
+    "master_pace": {
+     "4": 691000
+    },
+    "seams": {
+     "laptop": {
+      "kind": "crisp",
+      "reference": "external",
+      "offset_ms": {
+       "top": {
+        "p5": -3.8996,
+        "p50": -1.9275,
+        "p95": -0.1746,
+        "max_abs": 4.1313
+       },
+       "aim": {
+        "p5": -1.8613,
+        "p50": 0.1108,
+        "p95": 1.8637,
+        "max_abs": 2.093
+       },
+       "bottom": {
+        "p5": 0.177,
+        "p50": 2.1491,
+        "p95": 3.9021,
+        "max_abs": 4.1279
+       }
+      },
+      "slips_at_cuts_per_hour": 0.125,
+      "slips_at_cuts_total": 1,
+      "slips_mid_shot_per_hour": 23.5069,
+      "slips_mid_shot_total": 188,
+      "flip_flops_per_hour": 21.0061,
+      "flip_flops_total": 168,
+      "pace": {
+       "9": 88,
+       "10": 690811,
+       "11": 101
+      },
+      "whole_multiple": true
+     }
+    }
+   },
+   "nearest-aimed": {
+    "runs": 4,
+    "hours": 7.998,
+    "frames": 691004,
+    "hold": 4,
+    "speed": 1.001,
+    "locked": true,
+    "classes": 2,
+    "master_reaims_per_hour": 0.0,
+    "av_shift_refreshes": [
+     0,
+     0
+    ],
+    "skipped_frames": 0,
+    "master_pace": {
+     "4": 691000
+    },
+    "seams": {
+     "laptop": {
+      "kind": "crisp",
+      "reference": "external",
+      "offset_ms": {
+       "top": {
+        "p5": -3.8812,
+        "p50": -1.8917,
+        "p95": -0.1915,
+        "max_abs": 4.1313
+       },
+       "aim": {
+        "p5": -1.8428,
+        "p50": 0.1466,
+        "p95": 1.8468,
+        "max_abs": 2.093
+       },
+       "bottom": {
+        "p5": 0.1955,
+        "p50": 2.1849,
+        "p95": 3.8852,
+        "max_abs": 4.1279
+       }
+      },
+      "slips_at_cuts_per_hour": 0.125,
+      "slips_at_cuts_total": 1,
+      "slips_mid_shot_per_hour": 20.8811,
+      "slips_mid_shot_total": 167,
+      "flip_flops_per_hour": 18.7555,
+      "flip_flops_total": 150,
+      "pace": {
+       "9": 78,
+       "10": 690832,
+       "11": 90
+      },
+      "whole_multiple": true
+     }
+    }
+   },
+   "recommended": {
+    "runs": 4,
+    "hours": 7.998,
+    "frames": 691004,
+    "hold": 4,
+    "speed": 1.001,
+    "locked": true,
+    "classes": 2,
+    "master_reaims_per_hour": 3.501,
+    "av_shift_refreshes": [
+     -1,
+     1
+    ],
+    "skipped_frames": 0,
+    "master_pace": {
+     "3": 13,
+     "4": 690972,
+     "5": 15
+    },
+    "seams": {
+     "laptop": {
+      "kind": "crisp",
+      "reference": "external",
+      "offset_ms": {
+       "top": {
+        "p5": -2.952,
+        "p50": -1.9999,
+        "p95": -1.0744,
+        "max_abs": 3.0669
+       },
+       "aim": {
+        "p5": -0.9137,
+        "p50": 0.0385,
+        "p95": 0.9639,
+        "max_abs": 1.0758
+       },
+       "bottom": {
+        "p5": 1.1246,
+        "p50": 2.0768,
+        "p95": 3.0022,
+        "max_abs": 3.1142
+       }
+      },
+      "slips_at_cuts_per_hour": 3.501,
+      "slips_at_cuts_total": 28,
+      "slips_mid_shot_per_hour": 0.0,
+      "slips_mid_shot_total": 0,
+      "flip_flops_per_hour": 0.0,
+      "flip_flops_total": 0,
+      "pace": {
+       "8": 13,
+       "10": 690972,
+       "13": 15
+      },
+      "whole_multiple": true
+     }
+    }
+   }
+  },
+  "5 ppm": {
+   "perf1-with-row-timing": {
+    "runs": 4,
+    "hours": 7.996,
+    "frames": 690856,
+    "hold": 4,
+    "speed": 1.001,
+    "locked": true,
+    "classes": 2,
+    "master_reaims_per_hour": 0.0,
+    "av_shift_refreshes": [
+     0,
+     0
+    ],
+    "skipped_frames": 0,
+    "master_pace": {
+     "4": 690852
+    },
+    "seams": {
+     "laptop": {
+      "kind": "crisp",
+      "reference": "external",
+      "offset_ms": {
+       "top": {
+        "p5": -3.91,
+        "p50": -1.9589,
+        "p95": -0.1598,
+        "max_abs": 4.1218
+       },
+       "aim": {
+        "p5": -1.8717,
+        "p50": 0.0794,
+        "p95": 1.8785,
+        "max_abs": 2.0835
+       },
+       "bottom": {
+        "p5": 0.1666,
+        "p50": 2.1177,
+        "p95": 3.9168,
+        "max_abs": 4.1217
+       }
+      },
+      "slips_at_cuts_per_hour": 0.2501,
+      "slips_at_cuts_total": 2,
+      "slips_mid_shot_per_hour": 4.002,
+      "slips_mid_shot_total": 32,
+      "flip_flops_per_hour": 0.0,
+      "flip_flops_total": 0,
+      "pace": {
+       "10": 690818,
+       "11": 34
+      },
+      "whole_multiple": true
+     }
+    }
+   },
+   "nearest-no-aim": {
+    "runs": 4,
+    "hours": 7.998,
+    "frames": 691004,
+    "hold": 4,
+    "speed": 1.001,
+    "locked": true,
+    "classes": 2,
+    "master_reaims_per_hour": 0.0,
+    "av_shift_refreshes": [
+     0,
+     0
+    ],
+    "skipped_frames": 0,
+    "master_pace": {
+     "4": 691000
+    },
+    "seams": {
+     "laptop": {
+      "kind": "crisp",
+      "reference": "external",
+      "offset_ms": {
+       "top": {
+        "p5": -3.9159,
+        "p50": -1.9985,
+        "p95": -0.159,
+        "max_abs": 4.1347
+       },
+       "aim": {
+        "p5": -1.8776,
+        "p50": 0.0399,
+        "p95": 1.8794,
+        "max_abs": 2.0964
+       },
+       "bottom": {
+        "p5": 0.1607,
+        "p50": 2.0782,
+        "p95": 3.9177,
+        "max_abs": 4.1282
+       }
+      },
+      "slips_at_cuts_per_hour": 0.3751,
+      "slips_at_cuts_total": 3,
+      "slips_mid_shot_per_hour": 25.0072,
+      "slips_mid_shot_total": 200,
+      "flip_flops_per_hour": 20.2559,
+      "flip_flops_total": 162,
+      "pace": {
+       "9": 84,
+       "10": 690797,
+       "11": 119
+      },
+      "whole_multiple": true
+     }
+    }
+   },
+   "nearest-aimed": {
+    "runs": 4,
+    "hours": 7.998,
+    "frames": 691004,
+    "hold": 4,
+    "speed": 1.001,
+    "locked": true,
+    "classes": 2,
+    "master_reaims_per_hour": 0.0,
+    "av_shift_refreshes": [
+     0,
+     0
+    ],
+    "skipped_frames": 0,
+    "master_pace": {
+     "4": 691000
+    },
+    "seams": {
+     "laptop": {
+      "kind": "crisp",
+      "reference": "external",
+      "offset_ms": {
+       "top": {
+        "p5": -3.9103,
+        "p50": -1.9597,
+        "p95": -0.1602,
+        "max_abs": 4.1347
+       },
+       "aim": {
+        "p5": -1.872,
+        "p50": 0.0786,
+        "p95": 1.8781,
+        "max_abs": 2.0964
+       },
+       "bottom": {
+        "p5": 0.1663,
+        "p50": 2.1169,
+        "p95": 3.9165,
+        "max_abs": 4.1296
+       }
+      },
+      "slips_at_cuts_per_hour": 0.5001,
+      "slips_at_cuts_total": 4,
+      "slips_mid_shot_per_hour": 24.257,
+      "slips_mid_shot_total": 194,
+      "flip_flops_per_hour": 19.5056,
+      "flip_flops_total": 156,
+      "pace": {
+       "9": 82,
+       "10": 690802,
+       "11": 116
+      },
+      "whole_multiple": true
+     }
+    }
+   },
+   "recommended": {
+    "runs": 4,
+    "hours": 7.998,
+    "frames": 691004,
+    "hold": 4,
+    "speed": 1.001,
+    "locked": true,
+    "classes": 2,
+    "master_reaims_per_hour": 8.5024,
+    "av_shift_refreshes": [
+     -1,
+     1
+    ],
+    "skipped_frames": 0,
+    "master_pace": {
+     "3": 32,
+     "4": 690932,
+     "5": 36
+    },
+    "seams": {
+     "laptop": {
+      "kind": "crisp",
+      "reference": "external",
+      "offset_ms": {
+       "top": {
+        "p5": -2.9491,
+        "p50": -2.0156,
+        "p95": -1.0776,
+        "max_abs": 3.074
+       },
+       "aim": {
+        "p5": -0.9108,
+        "p50": 0.0228,
+        "p95": 0.9608,
+        "max_abs": 1.0838
+       },
+       "bottom": {
+        "p5": 1.1275,
+        "p50": 2.0611,
+        "p95": 2.9991,
+        "max_abs": 3.1221
+       }
+      },
+      "slips_at_cuts_per_hour": 8.5024,
+      "slips_at_cuts_total": 68,
+      "slips_mid_shot_per_hour": 0.0,
+      "slips_mid_shot_total": 0,
+      "flip_flops_per_hour": 0.0,
+      "flip_flops_total": 0,
+      "pace": {
+       "8": 32,
+       "10": 690932,
+       "13": 36
+      },
+      "whole_multiple": true
+     }
+    }
+   }
+  }
+ },
+ "boundary_crossings": {
+  "crossings": 16,
+  "seconds_each": 300.0,
+  "per_crossing": {
+   "wake/probe": {
+    "eta 0 ms/anytime": {
+     "slips_mid_shot": 57.3125,
+     "slips_at_cuts": 0.3125,
+     "flip_flops": 53.3125
+    },
+    "eta 0 ms/cuts": {
+     "slips_mid_shot": 0.0,
+     "slips_at_cuts": 1.625,
+     "flip_flops": 0.0
+    },
+    "eta 0.002 ms/anytime": {
+     "slips_mid_shot": 26.5625,
+     "slips_at_cuts": 0.1875,
+     "flip_flops": 23.0
+    },
+    "eta 0.002 ms/cuts": {
+     "slips_mid_shot": 0.0,
+     "slips_at_cuts": 1.25,
+     "flip_flops": 0.0
+    },
+    "eta 0.005 ms/anytime": {
+     "slips_mid_shot": 14.125,
+     "slips_at_cuts": 0.125,
+     "flip_flops": 10.625
+    },
+    "eta 0.005 ms/cuts": {
+     "slips_mid_shot": 0.0,
+     "slips_at_cuts": 1.0,
+     "flip_flops": 0.0
+    },
+    "eta 0.01 ms/anytime": {
+     "slips_mid_shot": 5.125,
+     "slips_at_cuts": 0.0,
+     "flip_flops": 2.8125
+    },
+    "eta 0.01 ms/cuts": {
+     "slips_mid_shot": 0.0,
+     "slips_at_cuts": 1.0,
+     "flip_flops": 0.0
+    },
+    "eta 0.02 ms/anytime": {
+     "slips_mid_shot": 1.1875,
+     "slips_at_cuts": 0.0625,
+     "flip_flops": 0.0625
+    },
+    "eta 0.02 ms/cuts": {
+     "slips_mid_shot": 0.0,
+     "slips_at_cuts": 1.0,
+     "flip_flops": 0.0
+    },
+    "eta 0.05 ms/anytime": {
+     "slips_mid_shot": 1.0,
+     "slips_at_cuts": 0.0,
+     "flip_flops": 0.0
+    },
+    "eta 0.05 ms/cuts": {
+     "slips_mid_shot": 0.0,
+     "slips_at_cuts": 1.0,
+     "flip_flops": 0.0
+    },
+    "eta 0.1 ms/anytime": {
+     "slips_mid_shot": 1.0,
+     "slips_at_cuts": 0.0,
+     "flip_flops": 0.0
+    },
+    "eta 0.1 ms/cuts": {
+     "slips_mid_shot": 0.0,
+     "slips_at_cuts": 1.0,
+     "flip_flops": 0.0
+    },
+    "eta 0.3 ms/anytime": {
+     "slips_mid_shot": 0.0,
+     "slips_at_cuts": 0.0,
+     "flip_flops": 0.0
+    },
+    "eta 0.3 ms/cuts": {
+     "slips_mid_shot": 0.0,
+     "slips_at_cuts": 0.0,
+     "flip_flops": 0.0
+    }
+   },
+   "wake-corrected/probe": {
+    "eta 0 ms/anytime": {
+     "slips_mid_shot": 57.1875,
+     "slips_at_cuts": 0.6875,
+     "flip_flops": 52.5
+    },
+    "eta 0 ms/cuts": {
+     "slips_mid_shot": 0.0,
+     "slips_at_cuts": 2.125,
+     "flip_flops": 0.0
+    },
+    "eta 0.002 ms/anytime": {
+     "slips_mid_shot": 27.125,
+     "slips_at_cuts": 0.25,
+     "flip_flops": 23.5625
+    },
+    "eta 0.002 ms/cuts": {
+     "slips_mid_shot": 0.0,
+     "slips_at_cuts": 1.25,
+     "flip_flops": 0.0
+    },
+    "eta 0.005 ms/anytime": {
+     "slips_mid_shot": 14.0625,
+     "slips_at_cuts": 0.0625,
+     "flip_flops": 10.5625
+    },
+    "eta 0.005 ms/cuts": {
+     "slips_mid_shot": 0.0,
+     "slips_at_cuts": 1.0,
+     "flip_flops": 0.0
+    },
+    "eta 0.01 ms/anytime": {
+     "slips_mid_shot": 5.25,
+     "slips_at_cuts": 0.0,
+     "flip_flops": 2.875
+    },
+    "eta 0.01 ms/cuts": {
+     "slips_mid_shot": 0.0,
+     "slips_at_cuts": 1.0,
+     "flip_flops": 0.0
+    },
+    "eta 0.02 ms/anytime": {
+     "slips_mid_shot": 1.1875,
+     "slips_at_cuts": 0.0625,
+     "flip_flops": 0.125
+    },
+    "eta 0.02 ms/cuts": {
+     "slips_mid_shot": 0.0,
+     "slips_at_cuts": 1.0,
+     "flip_flops": 0.0
+    },
+    "eta 0.05 ms/anytime": {
+     "slips_mid_shot": 1.0,
+     "slips_at_cuts": 0.0,
+     "flip_flops": 0.0
+    },
+    "eta 0.05 ms/cuts": {
+     "slips_mid_shot": 0.0,
+     "slips_at_cuts": 1.0,
+     "flip_flops": 0.0
+    },
+    "eta 0.1 ms/anytime": {
+     "slips_mid_shot": 1.0,
+     "slips_at_cuts": 0.0,
+     "flip_flops": 0.0
+    },
+    "eta 0.1 ms/cuts": {
+     "slips_mid_shot": 0.0,
+     "slips_at_cuts": 1.0,
+     "flip_flops": 0.0
+    },
+    "eta 0.3 ms/anytime": {
+     "slips_mid_shot": 0.0,
+     "slips_at_cuts": 0.0,
+     "flip_flops": 0.0
+    },
+    "eta 0.3 ms/cuts": {
+     "slips_mid_shot": 0.0,
+     "slips_at_cuts": 0.0,
+     "flip_flops": 0.0
+    }
+   },
+   "wake-corrected/log": {
+    "eta 0 ms/anytime": {
+     "slips_mid_shot": 58.75,
+     "slips_at_cuts": 0.25,
+     "flip_flops": 53.4375
+    },
+    "eta 0 ms/cuts": {
+     "slips_mid_shot": 0.0,
+     "slips_at_cuts": 2.0,
+     "flip_flops": 0.0
+    },
+    "eta 0.002 ms/anytime": {
+     "slips_mid_shot": 32.125,
+     "slips_at_cuts": 0.25,
+     "flip_flops": 27.25
+    },
+    "eta 0.002 ms/cuts": {
+     "slips_mid_shot": 0.0,
+     "slips_at_cuts": 1.5,
+     "flip_flops": 0.0
+    },
+    "eta 0.005 ms/anytime": {
+     "slips_mid_shot": 17.0625,
+     "slips_at_cuts": 0.1875,
+     "flip_flops": 12.9375
+    },
+    "eta 0.005 ms/cuts": {
+     "slips_mid_shot": 0.0,
+     "slips_at_cuts": 1.125,
+     "flip_flops": 0.0
+    },
+    "eta 0.01 ms/anytime": {
+     "slips_mid_shot": 6.9375,
+     "slips_at_cuts": 0.0625,
+     "flip_flops": 4.1875
+    },
+    "eta 0.01 ms/cuts": {
+     "slips_mid_shot": 0.0,
+     "slips_at_cuts": 1.0,
+     "flip_flops": 0.0
+    },
+    "eta 0.02 ms/anytime": {
+     "slips_mid_shot": 1.5,
+     "slips_at_cuts": 0.0,
+     "flip_flops": 0.125
+    },
+    "eta 0.02 ms/cuts": {
+     "slips_mid_shot": 0.0,
+     "slips_at_cuts": 1.0,
+     "flip_flops": 0.0
+    },
+    "eta 0.05 ms/anytime": {
+     "slips_mid_shot": 1.0,
+     "slips_at_cuts": 0.0,
+     "flip_flops": 0.0
+    },
+    "eta 0.05 ms/cuts": {
+     "slips_mid_shot": 0.0,
+     "slips_at_cuts": 1.0,
+     "flip_flops": 0.0
+    },
+    "eta 0.1 ms/anytime": {
+     "slips_mid_shot": 1.0,
+     "slips_at_cuts": 0.0,
+     "flip_flops": 0.0
+    },
+    "eta 0.1 ms/cuts": {
+     "slips_mid_shot": 0.0,
+     "slips_at_cuts": 1.0,
+     "flip_flops": 0.0
+    },
+    "eta 0.3 ms/anytime": {
+     "slips_mid_shot": 0.0,
+     "slips_at_cuts": 0.0,
+     "flip_flops": 0.0
+    },
+    "eta 0.3 ms/cuts": {
+     "slips_mid_shot": 0.0,
+     "slips_at_cuts": 0.0,
+     "flip_flops": 0.0
+    }
+   },
+   "scan/probe": {
+    "eta 0 ms/anytime": {
+     "slips_mid_shot": 1.0,
+     "slips_at_cuts": 0.0,
+     "flip_flops": 0.0
+    },
+    "eta 0 ms/cuts": {
+     "slips_mid_shot": 0.0,
+     "slips_at_cuts": 1.0,
+     "flip_flops": 0.0
+    },
+    "eta 0.002 ms/anytime": {
+     "slips_mid_shot": 1.0,
+     "slips_at_cuts": 0.0,
+     "flip_flops": 0.0
+    },
+    "eta 0.002 ms/cuts": {
+     "slips_mid_shot": 0.0,
+     "slips_at_cuts": 1.0,
+     "flip_flops": 0.0
+    },
+    "eta 0.005 ms/anytime": {
+     "slips_mid_shot": 1.0,
+     "slips_at_cuts": 0.0,
+     "flip_flops": 0.0
+    },
+    "eta 0.005 ms/cuts": {
+     "slips_mid_shot": 0.0,
+     "slips_at_cuts": 1.0,
+     "flip_flops": 0.0
+    },
+    "eta 0.01 ms/anytime": {
+     "slips_mid_shot": 1.0,
+     "slips_at_cuts": 0.0,
+     "flip_flops": 0.0
+    },
+    "eta 0.01 ms/cuts": {
+     "slips_mid_shot": 0.0,
+     "slips_at_cuts": 1.0,
+     "flip_flops": 0.0
+    },
+    "eta 0.02 ms/anytime": {
+     "slips_mid_shot": 1.0,
+     "slips_at_cuts": 0.0,
+     "flip_flops": 0.0
+    },
+    "eta 0.02 ms/cuts": {
+     "slips_mid_shot": 0.0,
+     "slips_at_cuts": 1.0,
+     "flip_flops": 0.0
+    },
+    "eta 0.05 ms/anytime": {
+     "slips_mid_shot": 1.0,
+     "slips_at_cuts": 0.0,
+     "flip_flops": 0.0
+    },
+    "eta 0.05 ms/cuts": {
+     "slips_mid_shot": 0.0,
+     "slips_at_cuts": 1.0,
+     "flip_flops": 0.0
+    },
+    "eta 0.1 ms/anytime": {
+     "slips_mid_shot": 1.0,
+     "slips_at_cuts": 0.0,
+     "flip_flops": 0.0
+    },
+    "eta 0.1 ms/cuts": {
+     "slips_mid_shot": 0.0,
+     "slips_at_cuts": 1.0,
+     "flip_flops": 0.0
+    },
+    "eta 0.3 ms/anytime": {
+     "slips_mid_shot": 0.0,
+     "slips_at_cuts": 0.0,
+     "flip_flops": 0.0
+    },
+    "eta 0.3 ms/cuts": {
+     "slips_mid_shot": 0.0,
+     "slips_at_cuts": 0.0,
+     "flip_flops": 0.0
+    }
+   }
+  },
+  "zero_drift_parked_on_the_boundary_per_run": {
+   "scan/probe": {
+    "eta 0 ms/anytime": {
+     "slips_mid_shot": 40.5,
+     "slips_at_cuts": 0.0625,
+     "flip_flops": 11.875
+    },
+    "eta 0 ms/cuts": {
+     "slips_mid_shot": 0.0,
+     "slips_at_cuts": 22.1875,
+     "flip_flops": 0.0
+    },
+    "eta 0.05 ms/anytime": {
+     "slips_mid_shot": 0.0,
+     "slips_at_cuts": 0.0,
+     "flip_flops": 0.0
+    },
+    "eta 0.05 ms/cuts": {
+     "slips_mid_shot": 0.0,
+     "slips_at_cuts": 0.0,
+     "flip_flops": 0.0
+    }
+   },
+   "wake-corrected/probe": {
+    "eta 0 ms/anytime": {
+     "slips_mid_shot": 885.062,
+     "slips_at_cuts": 7.5,
+     "flip_flops": 870.375
+    },
+    "eta 0 ms/cuts": {
+     "slips_mid_shot": 0.0,
+     "slips_at_cuts": 28.8125,
+     "flip_flops": 0.0
+    },
+    "eta 0.05 ms/anytime": {
+     "slips_mid_shot": 0.0,
+     "slips_at_cuts": 0.0,
+     "flip_flops": 0.0
+    },
+    "eta 0.05 ms/cuts": {
+     "slips_mid_shot": 0.0,
+     "slips_at_cuts": 0.0,
+     "flip_flops": 0.0
+    }
+   }
+  }
+ },
+ "meta": {
+  "hours_per_seed": 2.0,
+  "seeds": 8,
+  "wake_pool_sizes": {
+   "laptop": 21139,
+   "external": 8019
+  },
+  "seconds_to_run": 43.7
+ }
+}

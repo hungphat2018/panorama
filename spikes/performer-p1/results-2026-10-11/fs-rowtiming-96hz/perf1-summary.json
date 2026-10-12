@@ -1,0 +1,123 @@
+[
+ {
+  "name": "DISPLAY1",
+  "refresh_hz": 240.0096,
+  "presents": 4560,
+  "fallback_times": 2,
+  "refreshes_per_frame": {
+   "9": 2,
+   "10": 454
+  },
+  "skipped_frames": 0,
+  "composition": {
+   "overlay (independent flip / MPO)": 4923
+  },
+  "error": "",
+  "perf1": {
+   "render_cpu_ms_all": {
+    "n": 4560,
+    "p50": 0.023,
+    "p99": 0.28,
+    "max": 0.479
+   },
+   "render_cpu_ms_new_frame": {
+    "n": 456,
+    "p50": 0.22,
+    "p99": 0.395,
+    "max": 0.479
+   },
+   "render_gpu_ms_all": {
+    "n": 4560,
+    "p50": 0.042,
+    "p99": 0.414,
+    "max": 0.79
+   },
+   "render_gpu_ms_new_frame": {
+    "n": 456,
+    "p50": 0.389,
+    "p99": 0.619,
+    "max": 0.79
+   },
+   "lead_ms_before_target": {
+    "n": 4560,
+    "p50": 4.059,
+    "p99": 4.148,
+    "max": 4.174
+   },
+   "present_calls_per_refresh": 1.0,
+   "queue_more": 0,
+   "empty_mix": 0,
+   "render_failed": 0,
+   "screen_minus_target_ms": {
+    "n": 4558,
+    "p50": 4.053,
+    "p99": 4.061,
+    "max": 4.063
+   },
+   "presents_with_stats": 4558,
+   "landed_off_target_refresh": 0,
+   "missed_refreshes_between_stat_presents": 0
+  }
+ },
+ {
+  "name": "DISPLAY2",
+  "refresh_hz": 96.0131,
+  "presents": 1825,
+  "fallback_times": 2,
+  "refreshes_per_frame": {
+   "3": 2,
+   "4": 454
+  },
+  "skipped_frames": 0,
+  "composition": {
+   "overlay (independent flip / MPO)": 1969,
+   "none": 3
+  },
+  "error": "",
+  "perf1": {
+   "render_cpu_ms_all": {
+    "n": 1825,
+    "p50": 0.024,
+    "p99": 0.12,
+    "max": 0.241
+   },
+   "render_cpu_ms_new_frame": {
+    "n": 456,
+    "p50": 0.072,
+    "p99": 0.19,
+    "max": 0.241
+   },
+   "render_gpu_ms_all": {
+    "n": 1825,
+    "p50": 0.023,
+    "p99": 0.334,
+    "max": 0.615
+   },
+   "render_gpu_ms_new_frame": {
+    "n": 456,
+    "p50": 0.213,
+    "p99": 0.389,
+    "max": 0.615
+   },
+   "lead_ms_before_target": {
+    "n": 1825,
+    "p50": 10.296,
+    "p99": 10.425,
+    "max": 10.466
+   },
+   "present_calls_per_refresh": 1.0,
+   "queue_more": 0,
+   "empty_mix": 0,
+   "render_failed": 0,
+   "screen_minus_target_ms": {
+    "n": 1823,
+    "p50": 10.286,
+    "p99": 10.297,
+    "max": 10.301
+   },
+   "presents_with_stats": 1823,
+   "landed_off_target_refresh": 0,
+   "missed_refreshes_between_stat_presents": 0
+  }
+ }
+]

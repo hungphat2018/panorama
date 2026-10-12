@@ -1,0 +1,87 @@
+{
+ "label_format": "panorama-testset-labels/1",
+ "clip": "ctor-slides-anime",
+ "field": "shots",
+ "status": "exact",
+ "proposed_by": "script",
+ "basis": "constructed: windows 1280x720 moved over real frames (anime-nama-anaru-ep2@0.0s, anime-nama-anaru-ep2@120.0s, anime-nama-anaru-ep2@480.0s, anime-nama-anaru-ep2@940.0s) along known sub-pixel paths, re-encoded libx265 CRF 22; 13 scenarios joined by hard cuts; path = exact content displacement per frame",
+ "created": "2026-10-12",
+ "frame_count": 1104,
+ "fps": "24000/1001",
+ "boundaries": [
+  {
+   "frame": 120,
+   "kind": "hard",
+   "span": null,
+   "layout_change_point": true
+  },
+  {
+   "frame": 204,
+   "kind": "hard",
+   "span": null,
+   "layout_change_point": true
+  },
+  {
+   "frame": 288,
+   "kind": "hard",
+   "span": null,
+   "layout_change_point": true
+  },
+  {
+   "frame": 408,
+   "kind": "hard",
+   "span": null,
+   "layout_change_point": true
+  },
+  {
+   "frame": 468,
+   "kind": "hard",
+   "span": null,
+   "layout_change_point": true
+  },
+  {
+   "frame": 552,
+   "kind": "hard",
+   "span": null,
+   "layout_change_point": true
+  },
+  {
+   "frame": 636,
+   "kind": "hard",
+   "span": null,
+   "layout_change_point": true
+  },
+  {
+   "frame": 720,
+   "kind": "hard",
+   "span": null,
+   "layout_change_point": true
+  },
+  {
+   "frame": 804,
+   "kind": "hard",
+   "span": null,
+   "layout_change_point": true
+  },
+  {
+   "frame": 888,
+   "kind": "hard",
+   "span": null,
+   "layout_change_point": true
+  },
+  {
+   "frame": 972,
+   "kind": "hard",
+   "span": null,
+   "layout_change_point": true
+  },
+  {
+   "frame": 1056,
+   "kind": "hard",
+   "span": null,
+   "layout_change_point": true
+  }
+ ],
+ "not_cuts": [],
+ "regions": []
+}

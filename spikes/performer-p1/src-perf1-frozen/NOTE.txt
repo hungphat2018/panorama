@@ -1,0 +1,5 @@
+These are the sources (and analyzer) that built ../bin/perf1-lgpl.exe, copied unchanged on 2026-10-11 20:15 before the
+cue-sheet work started. The uncommitted row-timing changes are in them, so git cannot restore them. ../src and ../*.py moved on
+(perf1-p3); this folder stays as the record of what the controller's full-screen run of perf1-lgpl.exe executes.
+compile-perf1.sh here rebuilds them into src-perf1-frozen/bin/ (a different file from ../bin/perf1-lgpl.exe, which is never
+rewritten).

@@ -1,0 +1,47 @@
+headless: DISPLAY1 240.0010 Hz (laptop) + DISPLAY2 100.0000 Hz (external), 0.50 ppm drift, dummy GPU
+audio: track 0 of 1, stream 1: flac, 48000 Hz, 6 ch (5.1)
+audio: null "no device (stand-in clock, drift +0.0 ppm, latency 0.0 ms)", 48000 Hz, 2 ch, buffer 1920 frames, period 480, stream latency 0.0 ms
+perf1: cue sheet version 1 from C:\Users\tamla\Downloads\Telegram Desktop\panorama\spikes\performer-p1\data\audio-test-25\sheets\cues-v1.json, 10 shots
+perf1: control script C:\Users\tamla\Downloads\Telegram Desktop\panorama\spikes\performer-p1\data\audio-test-25\sheets\script-adversarial.jsonl: 15 commands
+subtitles: none (C:\Users\tamla\Downloads\Telegram Desktop\panorama\spikes\performer-p1\data\audio-test-25\cue-test.mkv has no text subtitle stream)
+monitor 0 DISPLAY1: 2560x1600 at (0,0), window/swapchain 2560x1600, refresh 240.0015 Hz, 344x215 mm at 0 mm
+monitor 1 DISPLAY2: 1920x1080 at (2560,0), window/swapchain 1920x1080, refresh 100.0008 Hz, 476x268 mm at 364 mm
+aim row 107.5 mm; shared height 0.0..215.0 mm
+film 25.0000 fps; master DISPLAY2 100.0008 Hz; speed LOCKED to the master's refresh count (speed 1.0000 if locked, hold 4 refreshes)
+film starts on master refresh 205 (class chosen for the followers, seam error 0.076 ms at the aim row); aim row 107.5 mm
+predicted seam offset DISPLAY2 - DISPLAY1, in light: top row (0.0 mm) -2.11 ms, aim row -0.08 ms, bottom row (215.0 mm) +1.96 ms
+picture 382.2 x 215.0 mm at x 162.9..545.1 mm; DISPLAY1: shows part DISPLAY2: shows part 
+perf1: cue sheet version 2 published (C:/Users/tamla/Downloads/Telegram Desktop/panorama/spikes/performer-p1/data/audio-test-25/sheets/cues-v2.json, 10 shots)
+perf1: script line 1 at 2.150 s: {"ok":true,"version":2,"shots":10}
+perf1: script line 2 at 0.148 s: {"ok":true}
+perf1: script line 3 at 3.775 s: {"ok":true}
+perf1: cue sheet version 3 published (C:/Users/tamla/Downloads/Telegram Desktop/panorama/spikes/performer-p1/data/audio-test-25/sheets/cues-v3.json, 10 shots)
+perf1: script line 4 at 0.027 s: {"ok":true,"version":3,"shots":10}
+perf1: script line 5 at 2.106 s: {"ok":true}
+perf1: cue sheet version 4 published (C:/Users/tamla/Downloads/Telegram Desktop/panorama/spikes/performer-p1/data/audio-test-25/sheets/cues-v4.json, 10 shots)
+perf1: script line 6 at 0.028 s: {"ok":true,"version":4,"shots":10}
+perf1: cue sheet version 5 published (C:/Users/tamla/Downloads/Telegram Desktop/panorama/spikes/performer-p1/data/audio-test-25/sheets/cues-v5.json, 10 shots)
+perf1: script line 7 at 3.493 s: {"ok":true,"version":5,"shots":10}
+perf1: script line 8 at 0.137 s: {"ok":true}
+perf1: script line 9 at 2.404 s: {"ok":true}
+perf1: cue sheet version 6 published (C:/Users/tamla/Downloads/Telegram Desktop/panorama/spikes/performer-p1/data/audio-test-25/sheets/cues-v6.json, 10 shots)
+perf1: script line 10 at 0.027 s: {"ok":true,"version":6,"shots":10}
+perf1: cue sheet version 7 published (C:/Users/tamla/Downloads/Telegram Desktop/panorama/spikes/performer-p1/data/audio-test-25/sheets/cues-v7.json, 10 shots)
+perf1: script line 11 at 3.623 s: {"ok":true,"version":7,"shots":10}
+perf1: script line 12 at 0.108 s: {"ok":true}
+perf1: script line 13 at 3.750 s: {"ok":true}
+perf1: cue sheet version 8 published (C:/Users/tamla/Downloads/Telegram Desktop/panorama/spikes/performer-p1/data/audio-test-25/sheets/cues-v8.json, 10 shots)
+perf1: script line 14 at 0.015 s: {"ok":true,"version":8,"shots":10}
+perf1: script line 15 at 1.001 s: {"ok":true,"state":"playing","epoch":7,"playhead":27.480000,"version":8,"versions":9,"swaps":8,"seeks":7,"restarts":8}
+perf1: the film has ended
+DISPLAY1 picture path, GPU ms p50 / p99: prepare 0.000 / 0.000; resample 0.000 / 0.000; surround 0.000 / 0.000; finish 0.000 / 0.000; subtitles 0.000 / 0.000; slide 0, blended 0 (partner gone 0), magnified 8394 of 8394 refreshes
+DISPLAY2 picture path, GPU ms p50 / p99: prepare 0.000 / 0.000; resample 0.000 / 0.000; surround 0.000 / 0.000; finish 0.000 / 0.000; subtitles 0.000 / 0.000; slide 0, blended 0 (partner gone 0), magnified 3 of 3500 refreshes
+audio: null, 8 epochs played, |error| p50 0.006 ms p99 0.071 ms max 0.121 ms over 3450 measurements, 0 resyncs, 0 underruns, largest correction 176 ppm; results-audio\final\audio-test-25-100-adversarial-12\audio.csv
+wrote results-audio\final\audio-test-25-100-adversarial-12/perf1-cuelog.json (8 swaps, 7 seeks, 8 restarts, 4 re-aims, 0 follower moves at cuts)
+[matroska,webm @ 000000000078e000] File is broken, keyframes not correctly marked!
+[matroska,webm @ 000000000078e000] File is broken, keyframes not correctly marked!
+[matroska,webm @ 000000000078e000] File is broken, keyframes not correctly marked!
+[matroska,webm @ 000000000078e000] File is broken, keyframes not correctly marked!
+[matroska,webm @ 000000000078e000] File is broken, keyframes not correctly marked!
+[matroska,webm @ 000000000078e000] File is broken, keyframes not correctly marked!
+[matroska,webm @ 000000000078e000] File is broken, keyframes not correctly marked!

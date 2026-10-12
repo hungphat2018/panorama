@@ -1,0 +1,3 @@
+[mov,mp4,m4a,3gp,3g2,mj2 @ 000000004908c000] moov atom not found
+perf0: avformat_open_input failed for 'C:/Users/tamla/Downloads/Telegram Desktop/panorama/spikes/file-matrix/media/truncated-mp4-no-moov.mp4'
+perf0: ERROR: decoder_open failed

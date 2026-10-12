@@ -1,0 +1,29 @@
+run.cmd : [matroska,webm @ 0000000048170100] Could not find codec parameters for stream 10 (Attachment: none): unknown 
+codec
+At C:\Users\tamla\AppData\Local\Temp\claude\C--Users-tamla-Downloads-Telegram-Desktop-panorama\09c6efa0-da3b-48c3-a962-
+a803096ff593\scratchpad\run-perf1-smoke.ps1:11 char:1
++ & .\bin\run.cmd perf1-lgpl.exe --file $File --windowed --mode nearest ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ([matroska,webm ...: unknown codec:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Consider increasing the value for the 'analyzeduration' (0) and 'probesize' (5000000) options
+[matroska,webm @ 0000000048170100] Could not find codec parameters for stream 11 (Attachment: none): unknown codec
+Consider increasing the value for the 'analyzeduration' (0) and 'probesize' (5000000) options
+[matroska,webm @ 0000000048170100] Could not find codec parameters for stream 12 (Attachment: none): unknown codec
+Consider increasing the value for the 'analyzeduration' (0) and 'probesize' (5000000) options
+monitor 0 DISPLAY1: 2560x1600 at (0,0), window/swapchain 1280x800, refresh 239.9975 Hz, 344x215 mm at 0 mm
+monitor 1 DISPLAY2: 1920x1080 at (2560,0), window/swapchain 960x540, refresh 100.0011 Hz, 476x268 mm at 364 mm
+  DISPLAY1: signal 2720x1800 total, line 2.3148 us, scan 3.7037 ms, blank 0.4630 ms; scan grid 258 of 259 samples, residual p50 1.36 us; top row 0.311 ms after the vblank wake-up; height 215.0 mm, top 0.0 mm, lag 0.00 ms
+  DISPLAY2: signal 2000x1115 total, line 8.9686 us, scan 9.6861 ms, blank 0.3139 ms; scan grid 242 of 247 samples, residual p50 2.71 us; top row 0.216 ms after the vblank wake-up; height 268.0 mm, top 0.0 mm, lag 0.00 ms
+aim row 107.5 mm; shared height 0.0..215.0 mm
+film 23.9760 fps; master DISPLAY2 100.0011 Hz; speed NOT locked (plays at 1.0) (speed 1.0427 if locked, hold 4 refreshes)
+film starts 1 master refreshes later; aim row 107.5 mm
+predicted seam offset DISPLAY2 - DISPLAY1, in light: top row (0.0 mm) -2.38 ms, aim row -0.34 ms, bottom row (215.0 mm) +1.69 ms
+picture 382.2 x 215.0 mm (aspect 1.7778) at x 162.9..545.1 mm; DISPLAY1: shows part DISPLAY2: shows part 
+DISPLAY1: top-row grid at film start vs end, at the film's end: +1.4 us (end fit: 2525 of 2600 samples, residual p50 1.14 us, p95 6.75 us; the film followed a grid refitted 16 times); vblank wake-up to top row 0.311 ms at film start, 0.269 ms at the end
+DISPLAY1: 3003 presents, render cpu p50 0.034 / p99 0.481 ms, gpu p50 0.103 / p99 0.598 ms, queue_more 0, empty 0
+wrote C:\Users\tamla\Downloads\Telegram Desktop\panorama\spikes\performer-p1\results-2026-10-11\windowed-rowtiming-judas/monitor-0-nearest.json
+DISPLAY2: top-row grid at film start vs end, at the film's end: +14.1 us (end fit: 2565 of 2644 samples, residual p50 2.44 us, p95 7.92 us; the film followed a grid refitted 16 times); vblank wake-up to top row 0.216 ms at film start, 0.197 ms at the end
+DISPLAY2: 3006 presents, render cpu p50 0.029 / p99 0.189 ms, gpu p50 0.006 / p99 0.250 ms, queue_more 0, empty 0
+wrote C:\Users\tamla\Downloads\Telegram Desktop\panorama\spikes\performer-p1\results-2026-10-11\windowed-rowtiming-judas/monitor-1-nearest.json

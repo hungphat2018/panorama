@@ -1,0 +1,6 @@
+[h264 @ 000000004905f500] gray chroma
+[h264 @ 000000004905f500] error while decoding MB 10 12, bytestream 937
+perf0: decoder does not offer d3d11 for this stream
+[h264 @ 000000004905f500] no frame!
+perf0: avcodec_send_packet: Invalid data found when processing input
+perf0: ERROR: no frames decoded

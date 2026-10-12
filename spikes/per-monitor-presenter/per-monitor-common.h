@@ -86,6 +86,12 @@ public:
         std::lock_guard<std::mutex> lock(mutex_);
         return base_ + double(i) * period_;
     }
+    // The fitted line as a whole, read under one lock: refresh index i starts at base + i * period.
+    void line(double* base, double* period) {
+        std::lock_guard<std::mutex> lock(mutex_);
+        *base = base_;
+        *period = period_;
+    }
     std::vector<double> log() { std::lock_guard<std::mutex> lock(mutex_); return log_; }
 
 private:

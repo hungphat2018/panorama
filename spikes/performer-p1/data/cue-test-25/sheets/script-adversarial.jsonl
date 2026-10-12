@@ -1,0 +1,13 @@
+{"after": 3.341, "cmd": "load", "file": "C:/Users/tamla/Downloads/Telegram Desktop/panorama/spikes/performer-p1/data/cue-test-25/sheets/cues-v2.json"}
+{"after": 0.001, "cmd": "seek", "t": 12.352}
+{"after": 2.192, "cmd": "load", "file": "C:/Users/tamla/Downloads/Telegram Desktop/panorama/spikes/performer-p1/data/cue-test-25/sheets/cues-v3.json"}
+{"after": 0.077, "cmd": "seek", "t": 36.223}
+{"after": 3.372, "cmd": "seek", "t": 17.486}
+{"after": 0.044, "cmd": "load", "file": "C:/Users/tamla/Downloads/Telegram Desktop/panorama/spikes/performer-p1/data/cue-test-25/sheets/cues-v4.json"}
+{"after": 2.889, "cmd": "load", "file": "C:/Users/tamla/Downloads/Telegram Desktop/panorama/spikes/performer-p1/data/cue-test-25/sheets/cues-v5.json"}
+{"after": 0.0, "cmd": "seek", "t": 17.565}
+{"after": 3.6, "cmd": "load", "file": "C:/Users/tamla/Downloads/Telegram Desktop/panorama/spikes/performer-p1/data/cue-test-25/sheets/cues-v6.json"}
+{"after": 0.092, "cmd": "seek", "t": 23.017}
+{"after": 2.557, "cmd": "load", "file": "C:/Users/tamla/Downloads/Telegram Desktop/panorama/spikes/performer-p1/data/cue-test-25/sheets/cues-v7.json"}
+{"after": 0.1, "cmd": "seek", "t": 12.327}
+{"after": 1.0, "cmd": "status"}

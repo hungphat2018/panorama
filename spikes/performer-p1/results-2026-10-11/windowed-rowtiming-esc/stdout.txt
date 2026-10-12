@@ -1,0 +1,15 @@
+monitor 0 DISPLAY1: 2560x1600 at (0,0), window/swapchain 1280x800, refresh 240.0142 Hz, 344x215 mm at 0 mm
+monitor 1 DISPLAY2: 1920x1080 at (2560,0), window/swapchain 960x540, refresh 100.0010 Hz, 476x268 mm at 364 mm
+  DISPLAY1: signal 2720x1800 total, line 2.3148 us, scan 3.7037 ms, blank 0.4630 ms; scan grid 529 of 536 samples, residual p50 2.99 us; top row 0.400 ms after the vblank wake-up; height 215.0 mm, top 0.0 mm, lag 0.00 ms
+  DISPLAY2: signal 2000x1115 total, line 8.9686 us, scan 9.6861 ms, blank 0.3139 ms; scan grid 530 of 531 samples, residual p50 4.67 us; top row 0.215 ms after the vblank wake-up; height 268.0 mm, top 0.0 mm, lag 0.00 ms
+aim row 107.5 mm; shared height 0.0..215.0 mm
+film 23.9760 fps; master DISPLAY2 100.0010 Hz; speed NOT locked (plays at 1.0) (speed 1.0427 if locked, hold 4 refreshes)
+film starts 3 master refreshes later; aim row 107.5 mm
+predicted seam offset DISPLAY2 - DISPLAY1, in light: top row (0.0 mm) -1.71 ms, aim row +0.32 ms, bottom row (215.0 mm) +2.35 ms
+picture 382.2 x 215.0 mm (aspect 1.7778) at x 162.9..545.1 mm; DISPLAY1: shows part DISPLAY2: shows part 
+DISPLAY1: top-row grid at film start vs end, at the film's end: -7.6 us (end fit: 1948 of 2037 samples, residual p50 1.78 us, p95 9.46 us; the film followed a grid refitted 11 times); vblank wake-up to top row 0.400 ms at film start, 0.031 ms at the end
+DISPLAY1: 1735 presents, render cpu p50 0.022 / p99 0.349 ms, gpu p50 0.017 / p99 0.727 ms, queue_more 0, empty 0
+wrote C:\Users\tamla\Downloads\Telegram Desktop\panorama\spikes\performer-p1\results-2026-10-11\windowed-rowtiming-esc/monitor-0-nearest.json
+DISPLAY2: top-row grid at film start vs end, at the film's end: +27.0 us (end fit: 1791 of 1801 samples, residual p50 3.56 us, p95 10.08 us; the film followed a grid refitted 11 times); vblank wake-up to top row 0.215 ms at film start, 0.149 ms at the end
+DISPLAY2: 1736 presents, render cpu p50 0.016 / p99 0.113 ms, gpu p50 0.006 / p99 0.368 ms, queue_more 0, empty 0
+wrote C:\Users\tamla\Downloads\Telegram Desktop\panorama\spikes\performer-p1\results-2026-10-11\windowed-rowtiming-esc/monitor-1-nearest.json

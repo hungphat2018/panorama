@@ -1,0 +1,30 @@
+{
+  "run_id": "truncated-mkv-sw",
+  "status": "ok",
+  "error": "",
+  "config": {"file": "C:/Users/tamla/Downloads/Telegram Desktop/panorama/spikes/file-matrix/media/truncated.mkv", "backend": "d3d11", "decode": "sw", "preset": "default", "window": [1920, 1080], "seconds": 10.0, "loop": false, "worst_case_no_frame_cache": false, "sync_render": false, "pl_cache_file": false, "vk_swapchain_depth": 3, "own_present": false, "deinterlace": "bwdif", "rotation": true, "sw_fallback": true, "skip_bad_packets": true, "synth_pts": true, "sd_passthrough": true},
+  "env": {"libplacebo_api": 375, "ffmpeg": "9.0.2", "libavutil": "61.1.102", "gpu": "NVIDIA GeForce RTX 5070 Ti Laptop GPU", "monitor": {"device": "\\\\.\\DISPLAY1", "hz": 240, "size": [2560, 1600]}},
+  "media": {"codec": "h264", "pix_fmt": "yuv420p", "hw_fmt": "", "size": [1920, 1080], "fps": 23.9760, "duration_s": 10.02},
+  "startup_ms_since_process_creation": {"main_entered": 12.1, "window_created": 23.7, "gpu_ready": 219.9, "file_opened": 228.3, "codec_opened": 229.5, "first_frame_decoded": 250.7, "first_render_done": 412.1, "first_present": 413.3},
+  "first_frame_ms": {"from_process_creation": 413.3, "from_main": 401.1, "from_gpu_ready": 193.3},
+  "playback": {"measured_s": 5.462, "refreshes_rendered": 1287, "refresh_rate_measured_hz": 235.545, "film_frames_front_changes": 130, "queue_estimated_fps": 23.9700, "queue_estimated_display_fps": 13623.9782, "eof": true},
+  "counts": {"decoded": 131, "mapped": 130, "dropped_by_queue": 1, "queue_stalls": 0, "queue_stall_ms": 0.0, "late_refreshes_over_1p5x_steady": 203, "late_refreshes_over_2p5x_steady": 192, "steady_refreshes": 813, "nominal_interval_ms": 4.2455, "skipped_refreshes_estimate": 13.4, "hitches_over_50ms_steady": 1, "max_message_pump_ms": 0.01},
+  "refreshes_per_film_frame": {"1": 1, "5": 1, "7": 2, "8": 34, "9": 25, "10": 6, "11": 26, "12": 34},
+  "dxgi_refreshes_between_presents": {"1": 456, "2": 1, "3": 1, "7+": 1},
+  "timings_ms": {
+    "render_cpu_all": {"n": 1287, "min": 0.0096, "mean": 0.0399, "p50": 0.0235, "p90": 0.0852, "p99": 0.1527, "p999": 0.3219, "max": 0.3484},
+    "render_cpu_steady": {"n": 813, "min": 0.0102, "mean": 0.0403, "p50": 0.0237, "p90": 0.0878, "p99": 0.1487, "p999": 0.1677, "max": 0.1677},
+    "render_cpu_steady_new_film_frame": {"n": 81, "min": 0.0704, "mean": 0.1258, "p50": 0.1330, "p90": 0.1487, "p99": 0.1677, "p999": 0.1677, "max": 0.1677},
+    "render_cpu_steady_repeated_frame": {"n": 732, "min": 0.0102, "mean": 0.0308, "p50": 0.0231, "p90": 0.0588, "p99": 0.0745, "p999": 0.1032, "max": 0.1032},
+    "gpu_pass_sum_steady": {"n": 813, "min": 0.0148, "mean": 0.0551, "p50": 0.0357, "p90": 0.0712, "p99": 0.2492, "p999": 0.2581, "max": 0.2581},
+    "gpu_pass_sum_steady_new_film_frame": {"n": 81, "min": 0.0405, "mean": 0.2352, "p50": 0.2423, "p90": 0.2492, "p99": 0.2581, "p999": 0.2581, "max": 0.2581},
+    "gpu_pass_sum_steady_repeated_frame": {"n": 732, "min": 0.0148, "mean": 0.0352, "p50": 0.0340, "p90": 0.0404, "p99": 0.0459, "p999": 0.0895, "max": 0.0895},
+    "queue_update_steady": {"n": 813, "min": 0.0004, "mean": 0.0309, "p50": 0.0051, "p90": 0.0525, "p99": 0.2733, "p999": 0.5961, "max": 0.5961},
+    "acquire_steady": {"n": 813, "min": 0.0075, "mean": 0.0203, "p50": 0.0152, "p90": 0.0364, "p99": 0.0472, "p999": 0.0920, "max": 0.0920},
+    "submit_steady": {"n": 813, "min": 0.0010, "mean": 0.0029, "p50": 0.0026, "p90": 0.0046, "p99": 0.0066, "p999": 0.0109, "max": 0.0109},
+    "swap_steady": {"n": 813, "min": 0.0323, "mean": 4.0622, "p50": 0.6032, "p90": 13.0606, "p99": 15.3497, "p999": 15.9287, "max": 15.9287},
+    "present_interval_all": {"n": 1279, "min": 0.0961, "mean": 4.2384, "p50": 0.7234, "p90": 14.6300, "p99": 15.6686, "p999": 16.4230, "max": 69.6843},
+    "present_interval_steady": {"n": 813, "min": 0.1230, "mean": 4.2455, "p50": 0.6844, "p90": 13.1233, "p99": 15.4293, "p999": 69.6843, "max": 69.6843}
+  },
+  "process": {"cpu_s": 3.672, "cpu_pct_of_one_core": 67.2, "cpu_pct_of_all_threads": 2.10, "logical_cpus": 32, "render_thread_cpu_pct": 52.9, "decode_thread_busy_s_in_libav_calls": 0.027, "decode_thread_cpu_s": 0.000, "peak_working_set_mb": 231, "peak_pagefile_mb": 310}
+}

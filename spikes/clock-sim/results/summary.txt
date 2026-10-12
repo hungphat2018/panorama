@@ -1,0 +1,297 @@
+clock-sim summary (2.0 h x 8 seeds per variant unless noted)
+
+Scenario 1: 23.976 fps on 240 + 96 Hz (speed +0.1 %)
+----------------------------------------------------
+variant | follower pace | slips/h mid-shot, at cuts | flip-flops/h | master re-aims/h | offset top | aim | bottom (p5..p95, max |x|)
+perf1-as-built | 9x195 10x1381602 11x203 | 24.57, 0.31 | 22.63 | 0.00 | -1.67..+2.13 (max 2.32) | +0.36..+4.17 (max 4.36) | +2.40..+6.21 (max 6.40)
+perf1-with-row-timing | 10x1381704 11x8 | 0.50, 0.00 | 0.00 | 0.00 | -3.94..-0.13 (max 4.12) | -1.90..+1.90 (max 2.08) | +0.13..+3.94 (max 4.12)
+nearest-no-aim | 9x175 10x1381643 11x182 | 22.01, 0.31 | 20.13 | 0.00 | -3.92..-0.14 (max 4.13) | -1.88..+1.90 (max 2.09) | +0.16..+3.94 (max 4.13)
+nearest-aimed | 9x196 10x1381600 11x204 | 24.63, 0.38 | 22.01 | 0.00 | -3.94..-0.14 (max 4.13) | -1.90..+1.90 (max 2.10) | +0.13..+3.94 (max 4.13)
+recommended | 8x5 10x1381987 13x8 | 0.00, 0.81 | 0.00 | 0.81 | -2.94..-1.08 (max 3.06) | -0.91..+0.96 (max 1.07) | +1.13..+2.99 (max 3.11)
+recommended/scan-fit | 8x5 10x1381699 13x8 | 0.00, 0.81 | 0.00 | 0.81 | -2.94..-1.08 (max 3.06) | -0.91..+0.96 (max 1.07) | +1.13..+2.99 (max 3.11)
+blend/wake-corrected | (blend) | - | - | 0.00 | -0.01..+0.01 (max 0.02) | -0.01..+0.01 (max 0.02) | -0.01..+0.01 (max 0.02) | blend err us p50 2.45 p95 7.14 max 20.3; rows mixed 0.960; mixed refreshes/change 1.93; share p5/p50/p95 [0.0498, 0.5006, 0.9499]
+blend/scan-fit | (blend) | - | - | 0.00 | -0.00..+0.00 (max 0.00) | -0.00..+0.00 (max 0.00) | -0.00..+0.00 (max 0.00) | blend err us p50 0.052 p95 0.153 max 0.665; rows mixed 0.960; mixed refreshes/change 1.93; share p5/p50/p95 [0.0499, 0.4994, 0.9501]
+frozen-aimed | 10x1382000 | 0.00, 0.00 | 0.00 | 0.00 | -2.27..+1.70 (max 2.83) | -0.23..+3.73 (max 4.45) | +1.81..+5.77 (max 6.49)
+hyst-anytime | 10x1381992 11x8 | 0.44, 0.06 | 0.00 | 0.00 | -3.92..-0.12 (max 4.10) | -1.89..+1.92 (max 2.10) | +0.15..+3.96 (max 4.14)
+hyst-cuts | 10x1381992 11x8 | 0.00, 0.50 | 0.00 | 0.00 | -3.92..-0.11 (max 4.10) | -1.88..+1.93 (max 2.11) | +0.16..+3.96 (max 4.15)
+recommended/eta-0.3ms | 8x5 10x1381987 13x8 | 0.00, 0.81 | 0.00 | 0.81 | -2.82..-0.96 (max 2.93) | -0.78..+1.08 (max 1.19) | +1.26..+3.12 (max 3.23)
+nearest-aimed/log-jitter | 9x239 10x1381514 11x247 | 30.20, 0.19 | 27.20 | 0.00 | -3.94..-0.14 (max 4.13) | -1.90..+1.90 (max 2.10) | +0.13..+3.94 (max 4.13)
+recommended/log-jitter | 8x6 10x1381987 13x7 | 0.00, 0.81 | 0.00 | 0.81 | -2.95..-1.08 (max 3.06) | -0.91..+0.95 (max 1.07) | +1.13..+2.99 (max 3.11)
+blend/perf1-wake-times | (blend) | - | - | 0.00 | +0.22..+0.23 (max 0.25) | +0.22..+0.23 (max 0.25) | +0.22..+0.23 (max 0.25) | blend err us p50 228 p95 234 max 249; rows mixed 0.960; mixed refreshes/change 1.94; share p5/p50/p95 [0.0501, 0.5009, 0.9501]
+blend/exact | (blend) | - | - | 0.00 | -0.00..+0.00 (max 0.00) | -0.00..+0.00 (max 0.00) | -0.00..+0.00 (max 0.00) | blend err us p50 0 p95 1e-06 max 9.09e-07; rows mixed 0.960; mixed refreshes/change 1.93; share p5/p50/p95 [0.0498, 0.5006, 0.9499]
+blend/wake-corrected/log-jitter | (blend) | - | - | 0.00 | -0.01..+0.01 (max 0.02) | -0.01..+0.01 (max 0.02) | -0.01..+0.01 (max 0.02) | blend err us p50 2.95 p95 8.67 max 24.4; rows mixed 0.960; mixed refreshes/change 1.93; share p5/p50/p95 [0.0498, 0.5005, 0.9498]
+
+Scenario 1, drift 2 ppm
+-----------------------
+variant | follower pace | slips/h mid-shot, at cuts | flip-flops/h | master re-aims/h | offset top | aim | bottom (p5..p95, max |x|)
+perf1-with-row-timing | 10x690844 11x12 | 1.50, 0.00 | 0.00 | 0.00 | -3.88..-0.19 (max 4.12) | -1.84..+1.85 (max 2.08) | +0.19..+3.88 (max 4.12)
+nearest-no-aim | 9x88 10x690811 11x101 | 23.51, 0.12 | 21.01 | 0.00 | -3.90..-0.17 (max 4.13) | -1.86..+1.86 (max 2.09) | +0.18..+3.90 (max 4.13)
+nearest-aimed | 9x78 10x690832 11x90 | 20.88, 0.12 | 18.76 | 0.00 | -3.88..-0.19 (max 4.13) | -1.84..+1.85 (max 2.09) | +0.20..+3.89 (max 4.13)
+recommended | 8x13 10x690972 13x15 | 0.00, 3.50 | 0.00 | 3.50 | -2.95..-1.07 (max 3.07) | -0.91..+0.96 (max 1.08) | +1.12..+3.00 (max 3.11)
+
+Scenario 1, drift 5 ppm
+-----------------------
+variant | follower pace | slips/h mid-shot, at cuts | flip-flops/h | master re-aims/h | offset top | aim | bottom (p5..p95, max |x|)
+perf1-with-row-timing | 10x690818 11x34 | 4.00, 0.25 | 0.00 | 0.00 | -3.91..-0.16 (max 4.12) | -1.87..+1.88 (max 2.08) | +0.17..+3.92 (max 4.12)
+nearest-no-aim | 9x84 10x690797 11x119 | 25.01, 0.38 | 20.26 | 0.00 | -3.92..-0.16 (max 4.13) | -1.88..+1.88 (max 2.10) | +0.16..+3.92 (max 4.13)
+nearest-aimed | 9x82 10x690802 11x116 | 24.26, 0.50 | 19.51 | 0.00 | -3.91..-0.16 (max 4.13) | -1.87..+1.88 (max 2.10) | +0.17..+3.92 (max 4.13)
+recommended | 8x32 10x690932 13x36 | 0.00, 8.50 | 0.00 | 8.50 | -2.95..-1.08 (max 3.07) | -0.91..+0.96 (max 1.08) | +1.13..+3.00 (max 3.12)
+
+Scenario 1, forced boundary crossings: per crossing (mid-shot slips, at-cut slips, flip-flops)
+  wake/probe | eta 0 ms/anytime | 57.31 | 0.31 | 53.31
+  wake/probe | eta 0 ms/cuts | 0.00 | 1.62 | 0.00
+  wake/probe | eta 0.002 ms/anytime | 26.56 | 0.19 | 23.00
+  wake/probe | eta 0.002 ms/cuts | 0.00 | 1.25 | 0.00
+  wake/probe | eta 0.005 ms/anytime | 14.12 | 0.12 | 10.62
+  wake/probe | eta 0.005 ms/cuts | 0.00 | 1.00 | 0.00
+  wake/probe | eta 0.01 ms/anytime | 5.12 | 0.00 | 2.81
+  wake/probe | eta 0.01 ms/cuts | 0.00 | 1.00 | 0.00
+  wake/probe | eta 0.02 ms/anytime | 1.19 | 0.06 | 0.06
+  wake/probe | eta 0.02 ms/cuts | 0.00 | 1.00 | 0.00
+  wake/probe | eta 0.05 ms/anytime | 1.00 | 0.00 | 0.00
+  wake/probe | eta 0.05 ms/cuts | 0.00 | 1.00 | 0.00
+  wake/probe | eta 0.1 ms/anytime | 1.00 | 0.00 | 0.00
+  wake/probe | eta 0.1 ms/cuts | 0.00 | 1.00 | 0.00
+  wake/probe | eta 0.3 ms/anytime | 0.00 | 0.00 | 0.00
+  wake/probe | eta 0.3 ms/cuts | 0.00 | 0.00 | 0.00
+  wake-corrected/probe | eta 0 ms/anytime | 57.19 | 0.69 | 52.50
+  wake-corrected/probe | eta 0 ms/cuts | 0.00 | 2.12 | 0.00
+  wake-corrected/probe | eta 0.002 ms/anytime | 27.12 | 0.25 | 23.56
+  wake-corrected/probe | eta 0.002 ms/cuts | 0.00 | 1.25 | 0.00
+  wake-corrected/probe | eta 0.005 ms/anytime | 14.06 | 0.06 | 10.56
+  wake-corrected/probe | eta 0.005 ms/cuts | 0.00 | 1.00 | 0.00
+  wake-corrected/probe | eta 0.01 ms/anytime | 5.25 | 0.00 | 2.88
+  wake-corrected/probe | eta 0.01 ms/cuts | 0.00 | 1.00 | 0.00
+  wake-corrected/probe | eta 0.02 ms/anytime | 1.19 | 0.06 | 0.12
+  wake-corrected/probe | eta 0.02 ms/cuts | 0.00 | 1.00 | 0.00
+  wake-corrected/probe | eta 0.05 ms/anytime | 1.00 | 0.00 | 0.00
+  wake-corrected/probe | eta 0.05 ms/cuts | 0.00 | 1.00 | 0.00
+  wake-corrected/probe | eta 0.1 ms/anytime | 1.00 | 0.00 | 0.00
+  wake-corrected/probe | eta 0.1 ms/cuts | 0.00 | 1.00 | 0.00
+  wake-corrected/probe | eta 0.3 ms/anytime | 0.00 | 0.00 | 0.00
+  wake-corrected/probe | eta 0.3 ms/cuts | 0.00 | 0.00 | 0.00
+  wake-corrected/log | eta 0 ms/anytime | 58.75 | 0.25 | 53.44
+  wake-corrected/log | eta 0 ms/cuts | 0.00 | 2.00 | 0.00
+  wake-corrected/log | eta 0.002 ms/anytime | 32.12 | 0.25 | 27.25
+  wake-corrected/log | eta 0.002 ms/cuts | 0.00 | 1.50 | 0.00
+  wake-corrected/log | eta 0.005 ms/anytime | 17.06 | 0.19 | 12.94
+  wake-corrected/log | eta 0.005 ms/cuts | 0.00 | 1.12 | 0.00
+  wake-corrected/log | eta 0.01 ms/anytime | 6.94 | 0.06 | 4.19
+  wake-corrected/log | eta 0.01 ms/cuts | 0.00 | 1.00 | 0.00
+  wake-corrected/log | eta 0.02 ms/anytime | 1.50 | 0.00 | 0.12
+  wake-corrected/log | eta 0.02 ms/cuts | 0.00 | 1.00 | 0.00
+  wake-corrected/log | eta 0.05 ms/anytime | 1.00 | 0.00 | 0.00
+  wake-corrected/log | eta 0.05 ms/cuts | 0.00 | 1.00 | 0.00
+  wake-corrected/log | eta 0.1 ms/anytime | 1.00 | 0.00 | 0.00
+  wake-corrected/log | eta 0.1 ms/cuts | 0.00 | 1.00 | 0.00
+  wake-corrected/log | eta 0.3 ms/anytime | 0.00 | 0.00 | 0.00
+  wake-corrected/log | eta 0.3 ms/cuts | 0.00 | 0.00 | 0.00
+  scan/probe | eta 0 ms/anytime | 1.00 | 0.00 | 0.00
+  scan/probe | eta 0 ms/cuts | 0.00 | 1.00 | 0.00
+  scan/probe | eta 0.002 ms/anytime | 1.00 | 0.00 | 0.00
+  scan/probe | eta 0.002 ms/cuts | 0.00 | 1.00 | 0.00
+  scan/probe | eta 0.005 ms/anytime | 1.00 | 0.00 | 0.00
+  scan/probe | eta 0.005 ms/cuts | 0.00 | 1.00 | 0.00
+  scan/probe | eta 0.01 ms/anytime | 1.00 | 0.00 | 0.00
+  scan/probe | eta 0.01 ms/cuts | 0.00 | 1.00 | 0.00
+  scan/probe | eta 0.02 ms/anytime | 1.00 | 0.00 | 0.00
+  scan/probe | eta 0.02 ms/cuts | 0.00 | 1.00 | 0.00
+  scan/probe | eta 0.05 ms/anytime | 1.00 | 0.00 | 0.00
+  scan/probe | eta 0.05 ms/cuts | 0.00 | 1.00 | 0.00
+  scan/probe | eta 0.1 ms/anytime | 1.00 | 0.00 | 0.00
+  scan/probe | eta 0.1 ms/cuts | 0.00 | 1.00 | 0.00
+  scan/probe | eta 0.3 ms/anytime | 0.00 | 0.00 | 0.00
+  scan/probe | eta 0.3 ms/cuts | 0.00 | 0.00 | 0.00
+Zero drift, offset parked on the boundary: per 5-min run (mid-shot slips, at-cut slips, flip-flops)
+  scan/probe | eta 0 ms/anytime | 40.50 | 0.06 | 11.88
+  scan/probe | eta 0 ms/cuts | 0.00 | 22.19 | 0.00
+  scan/probe | eta 0.05 ms/anytime | 0.00 | 0.00 | 0.00
+  scan/probe | eta 0.05 ms/cuts | 0.00 | 0.00 | 0.00
+  wake-corrected/probe | eta 0 ms/anytime | 885.06 | 7.50 | 870.38
+  wake-corrected/probe | eta 0 ms/cuts | 0.00 | 28.81 | 0.00
+  wake-corrected/probe | eta 0.05 ms/anytime | 0.00 | 0.00 | 0.00
+  wake-corrected/probe | eta 0.05 ms/cuts | 0.00 | 0.00 | 0.00
+
+Scenario 2: 23.976 fps on 240 + 72 Hz
+-------------------------------------
+variant | follower pace | slips/h mid-shot, at cuts | flip-flops/h | master re-aims/h | offset top | aim | bottom (p5..p95, max |x|)
+perf1-as-built | 9x222 10x1381540 11x230 | 28.01, 0.25 | 25.76 | 0.00 | +1.79..+5.59 (max 5.78) | +3.83..+7.64 (max 7.83) | +5.87..+9.68 (max 9.87)
+perf1-with-row-timing | 10x1381695 11x8 | 0.50, 0.00 | 0.00 | 0.00 | -3.95..-0.14 (max 4.13) | -1.90..+1.90 (max 2.08) | +0.14..+3.95 (max 4.13)
+nearest-no-aim | 9x242 10x1381500 11x250 | 30.26, 0.50 | 27.70 | 0.00 | -3.95..-0.14 (max 4.14) | -1.90..+1.90 (max 2.09) | +0.14..+3.95 (max 4.13)
+nearest-aimed | 9x194 10x1381596 11x202 | 24.63, 0.12 | 22.32 | 0.00 | -3.95..-0.14 (max 4.14) | -1.90..+1.90 (max 2.09) | +0.14..+3.95 (max 4.13)
+recommended | 7x12 10x1381972 17x8 | 0.00, 1.25 | 0.00 | 1.25 | -2.64..-1.39 (max 2.71) | -0.60..+0.65 (max 0.72) | +1.45..+2.69 (max 2.76)
+recommended/scan-fit | 7x12 10x1381683 17x8 | 0.00, 1.25 | 0.00 | 1.25 | -2.64..-1.40 (max 2.71) | -0.60..+0.65 (max 0.72) | +1.45..+2.69 (max 2.76)
+blend/wake-corrected | (blend) | - | - | 0.00 | -0.01..+0.01 (max 0.02) | -0.01..+0.01 (max 0.02) | -0.01..+0.01 (max 0.02) | blend err us p50 2.45 p95 7.13 max 17.2; rows mixed 0.960; mixed refreshes/change 1.93; share p5/p50/p95 [0.0501, 0.501, 0.9501]
+blend/scan-fit | (blend) | - | - | 0.00 | -0.00..+0.00 (max 0.00) | -0.00..+0.00 (max 0.00) | -0.00..+0.00 (max 0.00) | blend err us p50 0.0595 p95 0.175 max 0.764; rows mixed 0.960; mixed refreshes/change 1.94; share p5/p50/p95 [0.0503, 0.5009, 0.95]
+
+Scenario 2: 25 fps ladder on Setup A (master 100 Hz, hold 4)
+------------------------------------------------------------
+variant | follower pace | slips/h mid-shot, at cuts | flip-flops/h | master re-aims/h | offset top | aim | bottom (p5..p95, max |x|)
+0 nearest (perf1 as built) | 9x575823 10x863753 | 0.00, 0.00 | 0.00 | 0.00 | -2.05..+1.70 (max 2.27) | -0.01..+3.73 (max 3.95) | +2.02..+5.77 (max 5.98)
+0 nearest (ADR time model) | 9x575824 10x863752 | 0.00, 0.00 | 0.00 | 0.00 | -3.87..-0.12 (max 4.10) | -1.84..+1.91 (max 2.18) | +0.20..+3.95 (max 4.21)
+2 VRR on the laptop (not available on Setup A) | (vrr) | - | - | 0.00 | -2.04..-2.03 (max 2.05) | -0.00..+0.00 (max 0.01) | +2.03..+2.04 (max 2.04)
+4a rolling blend on the laptop | (blend) | - | - | 0.00 | -0.01..+0.01 (max 0.02) | -0.01..+0.01 (max 0.02) | -0.01..+0.01 (max 0.02) | blend err us p50 2.45 p95 7.14 max 18.1; rows mixed 0.960; mixed refreshes/change 1.93; share p5/p50/p95 [0.05, 0.5, 0.95]
+4a rolling blend, scan-line fit | (blend) | - | - | 0.00 | -0.00..+0.00 (max 0.00) | -0.00..+0.00 (max 0.00) | -0.00..+0.00 (max 0.00) | blend err us p50 0.051 p95 0.15 max 0.646; rows mixed 0.960; mixed refreshes/change 1.93; share p5/p50/p95 [0.05, 0.5, 0.95]
+4a rolling blend, exact timing | (blend) | - | - | 0.00 | -0.00..+0.00 (max 0.00) | -0.00..+0.00 (max 0.00) | -0.00..+0.00 (max 0.00) | blend err us p50 0 p95 1e-06 max 9.09e-07; rows mixed 0.960; mixed refreshes/change 1.93; share p5/p50/p95 [0.05, 0.5, 0.95]
+4b uniform blend (one share per refresh, aimed row) | (uniform-blend) | - | - | 0.00 | -2.04..-2.03 (max 2.05) | -0.01..+0.01 (max 0.02) | +2.03..+2.04 (max 2.05) | blend err us p50 1.02e+03 p95 2.03e+03 max 2.05e+03; rows mixed 0.969; mixed refreshes/change 0.97; share p5/p50/p95 [0.0488, 0.4976, 0.9474]
+5 picture off the laptop | master pace 4x1439592 | (no seam)
+1a laptop custom 200 Hz (8 per frame) | 8x1439587 9x5 | 0.00, 0.31 | 0.00 | 0.00 | -4.12..+0.18 (max 4.51) | -2.09..+2.21 (max 2.53) | -0.05..+4.25 (max 4.56)
+1b laptop custom 150 Hz (6 per frame) | 5x5 6x1439575 8x4 | 0.00, 0.56 | 0.00 | 0.56 | -3.50..-0.49 (max 3.68) | -1.47..+1.55 (max 1.69) | +0.57..+3.58 (max 3.73)
+
+speed nudges within 1 %: {'240 Hz': [], '100 Hz': [(4, 1.0)]}; nearest whole counts and speed change needed: {'240 Hz': [(9, 0.06666666666666665), (10, -0.040000000000000036)], '100 Hz': [(4, 0.0), (4, 0.0)]}
+
+Scenario 3: rolling blend
+  24p on 240+96 | blend/wake-corrected: err us p50 2.45 p95 7.14 p99.9 12 max 20.3; lw frame duration err max 8 us; rows mixed 0.960; mixed refreshes/change 1.93 {1: 1062, 2: 14938}; share p5/p50/p95 [0.0498, 0.5006, 0.9499]
+  24p on 240+96 | blend/scan-fit: err us p50 0.052 p95 0.153 p99.9 0.259 max 0.665; lw frame duration err max 0.752 us; rows mixed 0.960; mixed refreshes/change 1.93 {1: 1139, 2: 14861}; share p5/p50/p95 [0.0499, 0.4994, 0.9501]
+  24p on 240+96 | blend/perf1-wake-times: err us p50 228 p95 234 p99.9 240 max 249; lw frame duration err max 8 us; rows mixed 0.960; mixed refreshes/change 1.94 {1: 959, 2: 15041}; share p5/p50/p95 [0.0501, 0.5009, 0.9501]
+  24p on 240+96 | blend/exact: err us p50 0 p95 1e-06 p99.9 1e-06 max 9.09e-07; lw frame duration err max 1.82e-06 us; rows mixed 0.960; mixed refreshes/change 1.93 {1: 1057, 2: 14943}; share p5/p50/p95 [0.0498, 0.5006, 0.9499]
+  24p on 240+96 | blend/wake-corrected/log-jitter: err us p50 2.95 p95 8.67 p99.9 15 max 24.4; lw frame duration err max 15.8 us; rows mixed 0.960; mixed refreshes/change 1.93 {1: 1053, 2: 14947}; share p5/p50/p95 [0.0498, 0.5005, 0.9498]
+  24p on 240+72 | blend/wake-corrected: err us p50 2.45 p95 7.13 p99.9 12 max 17.2; lw frame duration err max 7.68 us; rows mixed 0.960; mixed refreshes/change 1.93 {1: 1112, 2: 14888}; share p5/p50/p95 [0.0501, 0.501, 0.9501]
+  24p on 240+72 | blend/scan-fit: err us p50 0.0595 p95 0.175 p99.9 0.297 max 0.764; lw frame duration err max 0.845 us; rows mixed 0.960; mixed refreshes/change 1.94 {1: 943, 2: 15057}; share p5/p50/p95 [0.0503, 0.5009, 0.95]
+  25p on 240+100 (laptop not a whole multiple) | 4a rolling blend on the laptop: err us p50 2.45 p95 7.14 p99.9 12.1 max 18.1; lw frame duration err max 7.61 us; rows mixed 0.960; mixed refreshes/change 1.93 {1: 1092, 2: 14908}; share p5/p50/p95 [0.05, 0.5, 0.95]
+  25p on 240+100 (laptop not a whole multiple) | 4a rolling blend, scan-line fit: err us p50 0.051 p95 0.15 p99.9 0.254 max 0.646; lw frame duration err max 0.735 us; rows mixed 0.960; mixed refreshes/change 1.93 {1: 1047, 2: 14953}; share p5/p50/p95 [0.05, 0.5, 0.95]
+  25p on 240+100 (laptop not a whole multiple) | 4a rolling blend, exact timing: err us p50 0 p95 1e-06 p99.9 1e-06 max 9.09e-07; lw frame duration err max 1.82e-06 us; rows mixed 0.960; mixed refreshes/change 1.93 {1: 1087, 2: 14913}; share p5/p50/p95 [0.05, 0.5, 0.95]
+  25p on 240+100 (laptop not a whole multiple) | 4b uniform blend (one share per refresh, aimed row): err us p50 1.02e+03 p95 2.03e+03 p99.9 2.04e+03 max 2.05e+03; lw frame duration err max 7.58 us; rows mixed 0.969; mixed refreshes/change 0.97 {0: 496, 1: 15504}; share p5/p50/p95 [0.0488, 0.4976, 0.9474]
+
+Scenario 4: frames picked by timestamp (wrong-refresh fraction; start error ms p5/p50/p95/max)
+  anime mkv (real, ms timestamps) on 96 Hz: hold 4, speed 1.001, stored-true ms [-0.5, 0.0, 0.458]
+    due: wrong 0.0000; start err [0.0, 0.0, 0.0, 0.0]; pace 4x34045 
+    strict: wrong 0.1146; start err [0.0, 0.0, 10.427, 10.427]; pace 3x9930 4x14185 5x9930 
+    pl_queue: wrong 0.0000; start err [0.0, 0.0, 0.0, 0.0]; pace 4x34045 
+  anime mkv (real) on 72 Hz: hold 3, speed 1.001, stored-true ms [-0.5, 0.0, 0.458]
+    due: wrong 0.0000; start err [0.0, 0.0, 0.0, 0.0]; pace 3x34045 
+    strict: wrong 0.1528; start err [0.0, 0.0, 13.903, 13.903]; pace 2x9930 3x14185 4x9930 
+    pl_queue: wrong 0.0000; start err [0.0, 0.0, 0.0, 0.0]; pace 3x34045 
+  25 fps mp4 (real) on 100 Hz: hold 4, speed 1.0, stored-true ms [-0.0, 0.0, 0.0]
+    due: wrong 0.0000; start err [0.0, 0.0, 0.0, 0.0]; pace 4x1565 
+    strict: wrong 0.0000; start err [0.0, 0.0, 0.0, 0.0]; pace 4x1565 
+    pl_queue: wrong 0.0000; start err [0.0, 0.0, 0.0, 0.0]; pace 4x1565 
+  synthetic VFR 24/30/60 on 96 Hz: hold 4, speed 1.001, stored-true ms [-0.5, 0.0, 0.5]
+    due: wrong 0.0000; start err [-4.171, -0.0, 4.171, 4.171]; pace 1x22493 2x33733 3x30001 4x128227 {'23.976': 0.0, '29.970': 0.0, '59.940': 0.0}
+    strict: wrong 0.1499; start err [-0.0, 4.171, 10.427, 10.427]; pace 1x22488 2x33738 3x34056 4x120121 5x4051 {'23.976': 0.1182, '29.970': 0.1561, '59.940': 0.3119}
+    pl_queue: wrong 0.1190; start err [-4.171, 2.085, 16.683, 16.683]; pace 1x22482 2x33737 3x30026 4x128209 {'23.976': 0.0, '29.970': 0.125, '59.940': 0.7498}
+  synthetic VFR 24/30/60 on 72 Hz: hold 3, speed 1.001, stored-true ms [-0.5, 0.0, 0.5]
+    due: wrong 0.0000; start err [-5.561, -0.0, 5.561, 5.561]; pace 1x44981 2x33747 3x135725 {'23.976': 0.0, '29.970': 0.0, '59.940': 0.0}
+    strict: wrong 0.2278; start err [-0.0, 8.342, 13.903, 13.903]; pace 1x44981 2x37798 3x127623 4x4051 {'23.976': 0.1977, '29.970': 0.2081, '59.940': 0.4159}
+    pl_queue: wrong 0.1197; start err [-5.561, 2.781, 16.683, 19.464]; pace 1x44967 2x33775 3x135711 {'23.976': 0.0001, '29.970': 0.1257, '59.940': 0.7541}
+Scenario 4: seam with VFR content on 240 + 96
+---------------------------------------------
+variant | follower pace | slips/h mid-shot, at cuts | flip-flops/h | master re-aims/h | offset top | aim | bottom (p5..p95, max |x|)
+aimed start only (no re-aim) | 2x44988 3x44984 5x134931 6x1 7x60000 8x60004 10x511037 11x3 | 0.00, 0.50 | 0.00 | 0.00 | -3.93..-0.15 (max 4.11) | -1.89..+1.89 (max 2.21) | +0.15..+3.93 (max 4.24)
+recommended (re-aim at cuts) | 2x44979 3x44992 5x134932 6x1 7x60031 8x60023 10x510943 12x24 13x23 | 0.00, 12.25 | 0.00 | 12.25 | -3.66..-0.30 (max 4.11) | -1.63..+1.74 (max 2.15) | +0.41..+3.78 (max 4.19)
+perf1 as built | 2x44962 3x44966 4x24 5x134897 6x27 7x60059 8x60045 9x126 10x510710 11x132 | 37.89, 0.75 | 31.26 | 0.00 | -1.71..+2.14 (max 2.32) | +0.33..+4.18 (max 4.36) | +2.37..+6.22 (max 6.40)
+perf1 with row timing (scan-line grid, no hysteresis) | 2x44963 3x44965 5x134948 7x60052 8x60052 10x510818 11x3 | 0.25, 0.13 | 0.00 | 0.00 | -3.94..-0.16 (max 4.12) | -1.91..+1.87 (max 2.08) | +0.13..+3.91 (max 4.12)
+rolling blend | (blend) | - | - | 0.00 | -0.01..+0.01 (max 0.02) | -0.01..+0.01 (max 0.02) | -0.01..+0.01 (max 0.02) | blend err us p50 2.45 p95 7.11 max 17.1; rows mixed 0.960; mixed refreshes/change 1.94; share p5/p50/p95 [0.0495, 0.499, 0.9491]
+
+Scenario 5: breaks (naive restart vs ADR restart)
+  240+96, one-refresh leads (perf1) | seek | naive: {'follower_late_fraction': 0.0, 'follower_late_refreshes_max': 0, 'master_late_fraction': 0.0, 'first_frame_offset_aim_ms_p50_p95_max': [1.0387, 1.9804, 2.0915], 'first_frame_follower_pace': {9: 13, 10: 19984, 11: 3}, 'class_worse_than_best_ms_p95_max': [1.8775, 2.0829], 'break_to_first_frame_ms_p50_max': [106.934, 172.309]}
+  240+96, one-refresh leads (perf1) | seek | adr: {'follower_late_fraction': 0.0, 'follower_late_refreshes_max': 0, 'master_late_fraction': 0.0, 'first_frame_offset_aim_ms_p50_p95_max': [0.5175, 0.9862, 1.0514], 'first_frame_follower_pace': {10: 20000}, 'class_worse_than_best_ms_p95_max': [0.0, 0.0194], 'break_to_first_frame_ms_p50_max': [112.401, 182.528]}
+  240+96, one-refresh leads (perf1) | seek | even follower pace 10.0; master fit error us p95/max [4.883, 11.722]
+  240+96, one-refresh leads (perf1) | resume | naive: {'follower_late_fraction': 0.0, 'follower_late_refreshes_max': 0, 'master_late_fraction': 0.0, 'first_frame_offset_aim_ms_p50_p95_max': [1.0281, 1.9783, 2.0897], 'first_frame_follower_pace': {9: 7, 10: 19990, 11: 3}, 'class_worse_than_best_ms_p95_max': [1.8733, 2.0832], 'break_to_first_frame_ms_p50_max': [17.477, 22.658]}
+  240+96, one-refresh leads (perf1) | resume | adr: {'follower_late_fraction': 0.0, 'follower_late_refreshes_max': 0, 'master_late_fraction': 0.0, 'first_frame_offset_aim_ms_p50_p95_max': [0.5174, 0.9869, 1.0477], 'first_frame_follower_pace': {10: 20000}, 'class_worse_than_best_ms_p95_max': [0.0, 0.0121], 'break_to_first_frame_ms_p50_max': [22.537, 33.074]}
+  240+96, one-refresh leads (perf1) | resume | even follower pace 10.0; master fit error us p95/max [4.678, 9.645]
+  240+96, one-refresh leads (perf1) | mode change, settle 32 wake-ups | naive: {'follower_late_fraction': 0.0, 'follower_late_refreshes_max': 0, 'master_late_fraction': 0.0, 'first_frame_offset_aim_ms_p50_p95_max': [1.0431, 1.9821, 2.0988], 'first_frame_follower_pace': {9: 13, 10: 19968, 11: 19}, 'class_worse_than_best_ms_p95_max': [1.8809, 2.083], 'break_to_first_frame_ms_p50_max': [348.982, 354.165]}
+  240+96, one-refresh leads (perf1) | mode change, settle 32 wake-ups | adr: {'follower_late_fraction': 0.0, 'follower_late_refreshes_max': 0, 'master_late_fraction': 0.0, 'first_frame_offset_aim_ms_p50_p95_max': [0.5155, 0.9879, 1.066], 'first_frame_follower_pace': {10: 20000}, 'class_worse_than_best_ms_p95_max': [0.0, 0.0488], 'break_to_first_frame_ms_p50_max': [354.168, 364.58]}
+  240+96, one-refresh leads (perf1) | mode change, settle 32 wake-ups | even follower pace 10.0; master fit error us p95/max [13.265, 33.506]
+  240+96, one-refresh leads (perf1) | mode change, settle 64 wake-ups | naive: {'follower_late_fraction': 0.0, 'follower_late_refreshes_max': 0, 'master_late_fraction': 0.0, 'first_frame_offset_aim_ms_p50_p95_max': [1.049, 1.9783, 2.0997], 'first_frame_follower_pace': {9: 11, 10: 19978, 11: 11}, 'class_worse_than_best_ms_p95_max': [1.8733, 2.0833], 'break_to_first_frame_ms_p50_max': [682.248, 687.494]}
+  240+96, one-refresh leads (perf1) | mode change, settle 64 wake-ups | adr: {'follower_late_fraction': 0.0, 'follower_late_refreshes_max': 0, 'master_late_fraction': 0.0, 'first_frame_offset_aim_ms_p50_p95_max': [0.5247, 0.9899, 1.0545], 'first_frame_follower_pace': {10: 20000}, 'class_worse_than_best_ms_p95_max': [0.0, 0.0256], 'break_to_first_frame_ms_p50_max': [687.567, 697.91]}
+  240+96, one-refresh leads (perf1) | mode change, settle 64 wake-ups | even follower pace 10.0; master fit error us p95/max [9.108, 22.436]
+  240+96, one-refresh leads (perf1) | mode change, settle 120 wake-ups | naive: {'follower_late_fraction': 0.0, 'follower_late_refreshes_max': 0, 'master_late_fraction': 0.0, 'first_frame_offset_aim_ms_p50_p95_max': [1.0372, 1.9819, 2.0907], 'first_frame_follower_pace': {9: 7, 10: 19982, 11: 11}, 'class_worse_than_best_ms_p95_max': [1.8806, 2.0833], 'break_to_first_frame_ms_p50_max': [1265.613, 1270.827]}
+  240+96, one-refresh leads (perf1) | mode change, settle 120 wake-ups | adr: {'follower_late_fraction': 0.0, 'follower_late_refreshes_max': 0, 'master_late_fraction': 0.0, 'first_frame_offset_aim_ms_p50_p95_max': [0.5187, 0.9904, 1.0505], 'first_frame_follower_pace': {10: 20000}, 'class_worse_than_best_ms_p95_max': [0.0, 0.0176], 'break_to_first_frame_ms_p50_max': [1270.785, 1281.244]}
+  240+96, one-refresh leads (perf1) | mode change, settle 120 wake-ups | even follower pace 10.0; master fit error us p95/max [6.476, 16.079]
+  240+96, one-refresh leads (perf1) | mode change, settle 240 wake-ups | naive: {'follower_late_fraction': 0.0, 'follower_late_refreshes_max': 0, 'master_late_fraction': 0.0, 'first_frame_offset_aim_ms_p50_p95_max': [1.0418, 1.9815, 2.0882], 'first_frame_follower_pace': {9: 7, 10: 19984, 11: 9}, 'class_worse_than_best_ms_p95_max': [1.8796, 2.0832], 'break_to_first_frame_ms_p50_max': [2515.636, 2520.822]}
+  240+96, one-refresh leads (perf1) | mode change, settle 240 wake-ups | adr: {'follower_late_fraction': 0.0, 'follower_late_refreshes_max': 0, 'master_late_fraction': 0.0, 'first_frame_offset_aim_ms_p50_p95_max': [0.5271, 0.9886, 1.0485], 'first_frame_follower_pace': {10: 20000}, 'class_worse_than_best_ms_p95_max': [0.0, 0.0136], 'break_to_first_frame_ms_p50_max': [2520.829, 2531.239]}
+  240+96, one-refresh leads (perf1) | mode change, settle 240 wake-ups | even follower pace 10.0; master fit error us p95/max [4.615, 11.793]
+  240+96, laptop queued two refreshes ahead | seek | naive: {'follower_late_fraction': 0.0, 'follower_late_refreshes_max': 0, 'master_late_fraction': 0.0, 'first_frame_offset_aim_ms_p50_p95_max': [1.0452, 1.9828, 2.0913], 'first_frame_follower_pace': {9: 11, 10: 19980, 11: 9}, 'class_worse_than_best_ms_p95_max': [1.8823, 2.0833], 'break_to_first_frame_ms_p50_max': [107.219, 172.384]}
+  240+96, laptop queued two refreshes ahead | seek | adr: {'follower_late_fraction': 0.0, 'follower_late_refreshes_max': 0, 'master_late_fraction': 0.0, 'first_frame_offset_aim_ms_p50_p95_max': [0.5199, 0.9913, 1.05], 'first_frame_follower_pace': {10: 20000}, 'class_worse_than_best_ms_p95_max': [0.0, 0.0167], 'break_to_first_frame_ms_p50_max': [112.188, 182.406]}
+  240+96, laptop queued two refreshes ahead | seek | even follower pace 10.0; master fit error us p95/max [4.845, 9.635]
+  240+96, laptop queued two refreshes ahead | resume | naive: {'follower_late_fraction': 0.0, 'follower_late_refreshes_max': 0, 'master_late_fraction': 0.0, 'first_frame_offset_aim_ms_p50_p95_max': [1.0273, 1.9815, 2.0895], 'first_frame_follower_pace': {9: 11, 10: 19980, 11: 9}, 'class_worse_than_best_ms_p95_max': [1.8797, 2.0832], 'break_to_first_frame_ms_p50_max': [17.438, 22.66]}
+  240+96, laptop queued two refreshes ahead | resume | adr: {'follower_late_fraction': 0.0, 'follower_late_refreshes_max': 0, 'master_late_fraction': 0.0, 'first_frame_offset_aim_ms_p50_p95_max': [0.5277, 0.9879, 1.0472], 'first_frame_follower_pace': {10: 20000}, 'class_worse_than_best_ms_p95_max': [0.0, 0.0111], 'break_to_first_frame_ms_p50_max': [22.535, 33.073]}
+  240+96, laptop queued two refreshes ahead | resume | even follower pace 10.0; master fit error us p95/max [4.619, 9.623]
+  240+96, laptop queued two refreshes ahead | mode change, settle 32 wake-ups | naive: {'follower_late_fraction': 0.0, 'follower_late_refreshes_max': 0, 'master_late_fraction': 0.0, 'first_frame_offset_aim_ms_p50_p95_max': [1.0408, 1.983, 2.0947], 'first_frame_follower_pace': {9: 16, 10: 19970, 11: 14}, 'class_worse_than_best_ms_p95_max': [1.8828, 2.0831], 'break_to_first_frame_ms_p50_max': [348.931, 354.164]}
+  240+96, laptop queued two refreshes ahead | mode change, settle 32 wake-ups | adr: {'follower_late_fraction': 0.0, 'follower_late_refreshes_max': 0, 'master_late_fraction': 0.0, 'first_frame_offset_aim_ms_p50_p95_max': [0.5182, 0.991, 1.0592], 'first_frame_follower_pace': {10: 20000}, 'class_worse_than_best_ms_p95_max': [0.0, 0.035], 'break_to_first_frame_ms_p50_max': [354.154, 364.58]}
+  240+96, laptop queued two refreshes ahead | mode change, settle 32 wake-ups | even follower pace 10.0; master fit error us p95/max [13.271, 31.534]
+  240+72, one-refresh leads | seek | naive: {'follower_late_fraction': 0.0, 'follower_late_refreshes_max': 0, 'master_late_fraction': 0.0, 'first_frame_offset_aim_ms_p50_p95_max': [1.0366, 1.9769, 2.0923], 'first_frame_follower_pace': {9: 3, 10: 19987, 11: 10}, 'class_worse_than_best_ms_p95_max': [1.3889, 1.3889], 'break_to_first_frame_ms_p50_max': [116.144, 182.98]}
+  240+72, one-refresh leads | seek | adr: {'follower_late_fraction': 0.0, 'follower_late_refreshes_max': 0, 'master_late_fraction': 0.0, 'first_frame_offset_aim_ms_p50_p95_max': [0.3477, 0.6591, 0.707], 'first_frame_follower_pace': {10: 20000}, 'class_worse_than_best_ms_p95_max': [0.0, 0.0251], 'break_to_first_frame_ms_p50_max': [129.877, 210.757]}
+  240+72, one-refresh leads | seek | even follower pace 10.0; master fit error us p95/max [4.863, 10.109]
+  240+72, one-refresh leads | resume | naive: {'follower_late_fraction': 0.0, 'follower_late_refreshes_max': 0, 'master_late_fraction': 0.0, 'first_frame_offset_aim_ms_p50_p95_max': [1.0529, 1.9763, 2.0912], 'first_frame_follower_pace': {9: 8, 10: 19988, 11: 4}, 'class_worse_than_best_ms_p95_max': [1.3889, 1.3889], 'break_to_first_frame_ms_p50_max': [26.151, 33.066]}
+  240+72, one-refresh leads | resume | adr: {'follower_late_fraction': 0.0, 'follower_late_refreshes_max': 0, 'master_late_fraction': 0.0, 'first_frame_offset_aim_ms_p50_p95_max': [0.3455, 0.6596, 0.7023], 'first_frame_follower_pace': {10: 20000}, 'class_worse_than_best_ms_p95_max': [0.0, 0.0158], 'break_to_first_frame_ms_p50_max': [40.193, 60.843]}
+  240+72, one-refresh leads | resume | even follower pace 10.0; master fit error us p95/max [4.698, 9.224]
+  240+72, one-refresh leads | mode change, settle 32 wake-ups | naive: {'follower_late_fraction': 0.0, 'follower_late_refreshes_max': 0, 'master_late_fraction': 0.0, 'first_frame_offset_aim_ms_p50_p95_max': [1.0376, 1.9791, 2.095], 'first_frame_follower_pace': {9: 13, 10: 19971, 11: 16}, 'class_worse_than_best_ms_p95_max': [1.3889, 1.3889], 'break_to_first_frame_ms_p50_max': [465.275, 472.22]}
+  240+72, one-refresh leads | mode change, settle 32 wake-ups | adr: {'follower_late_fraction': 0.0, 'follower_late_refreshes_max': 0, 'master_late_fraction': 0.0, 'first_frame_offset_aim_ms_p50_p95_max': [0.3509, 0.6592, 0.7204], 'first_frame_follower_pace': {10: 20000}, 'class_worse_than_best_ms_p95_max': [0.0, 0.0518], 'break_to_first_frame_ms_p50_max': [479.153, 499.998]}
+  240+72, one-refresh leads | mode change, settle 32 wake-ups | even follower pace 10.0; master fit error us p95/max [13.347, 39.888]
+  Setup B native: LG 60 Hz following the 144 Hz master (assumed timings) | seek | naive: {'follower_late_fraction': 0.9961, 'follower_late_refreshes_max': 2, 'master_late_fraction': 0.0, 'first_frame_offset_aim_ms_p50_p95_max': [19.2992, 27.6001, 30.9324], 'first_frame_follower_pace': {1: 13094, 2: 6906}, 'class_worse_than_best_ms_p95_max': [7.5064, 8.3333], 'break_to_first_frame_ms_p50_max': [101.755, 164.923]}
+  Setup B native: LG 60 Hz following the 144 Hz master (assumed timings) | seek | adr: {'follower_late_fraction': 0.0, 'follower_late_refreshes_max': 0, 'master_late_fraction': 0.0, 'first_frame_offset_aim_ms_p50_p95_max': [0.3471, 0.6597, 0.7], 'first_frame_follower_pace': {2: 10096, 3: 9904}, 'class_worse_than_best_ms_p95_max': [0.0, 0.0112], 'break_to_first_frame_ms_p50_max': [154.359, 255.155]}
+  Setup B native: LG 60 Hz following the 144 Hz master (assumed timings) | seek | even follower pace 2.5; master fit error us p95/max [5.021, 11.137]
+  Setup B native: LG 60 Hz following the 144 Hz master (assumed timings) | resume | naive: {'follower_late_fraction': 0.9961, 'follower_late_refreshes_max': 2, 'master_late_fraction': 0.0, 'first_frame_offset_aim_ms_p50_p95_max': [19.2061, 27.5669, 30.9366], 'first_frame_follower_pace': {1: 13020, 2: 6980}, 'class_worse_than_best_ms_p95_max': [7.4878, 8.3318], 'break_to_first_frame_ms_p50_max': [11.694, 15.191]}
+  Setup B native: LG 60 Hz following the 144 Hz master (assumed timings) | resume | adr: {'follower_late_fraction': 0.0, 'follower_late_refreshes_max': 0, 'master_late_fraction': 0.0, 'first_frame_offset_aim_ms_p50_p95_max': [0.3422, 0.6601, 0.7015], 'first_frame_follower_pace': {2: 10102, 3: 9898}, 'class_worse_than_best_ms_p95_max': [0.0, 0.0142], 'break_to_first_frame_ms_p50_max': [64.758, 106.969]}
+  Setup B native: LG 60 Hz following the 144 Hz master (assumed timings) | resume | even follower pace 2.5; master fit error us p95/max [4.611, 9.547]
+  Setup B native: LG 60 Hz following the 144 Hz master (assumed timings) | mode change, settle 32 wake-ups | naive: {'follower_late_fraction': 1.0, 'follower_late_refreshes_max': 2, 'master_late_fraction': 0.0, 'first_frame_offset_aim_ms_p50_p95_max': [17.0789, 24.7078, 25.5691], 'first_frame_follower_pace': {1: 10527, 2: 9473}, 'class_worse_than_best_ms_p95_max': [7.5182, 8.3327], 'break_to_first_frame_ms_p50_max': [232.636, 236.11]}
+  Setup B native: LG 60 Hz following the 144 Hz master (assumed timings) | mode change, settle 32 wake-ups | adr: {'follower_late_fraction': 0.0, 'follower_late_refreshes_max': 0, 'master_late_fraction': 0.0, 'first_frame_offset_aim_ms_p50_p95_max': [0.345, 0.6588, 0.7197], 'first_frame_follower_pace': {2: 9973, 3: 10027}, 'class_worse_than_best_ms_p95_max': [0.0, 0.0505], 'break_to_first_frame_ms_p50_max': [284.343, 326.387]}
+  Setup B native: LG 60 Hz following the 144 Hz master (assumed timings) | mode change, settle 32 wake-ups | even follower pace 2.5; master fit error us p95/max [13.259, 29.765]
+
+Scenario 6: 48 Hz custom on both 60 Hz screens (master LG, centre) - seam of other
+----------------------------------------------------------------------------------
+variant | follower pace | slips/h mid-shot, at cuts | flip-flops/h | master re-aims/h | offset top | aim | bottom (p5..p95, max |x|)
+other crisp | 144 crisp | 1x1 2x690995 | 0.00, 0.12 | 0.00 | 0.00 | -8.96..+10.43 (max 11.15) | -9.72..+9.67 (max 10.44) | -10.49..+8.91 (max 11.21)
+other crisp | 144 VRR | 1x1 2x690995 | 0.00, 0.12 | 0.00 | 0.00 | -8.96..+10.43 (max 11.15) | -9.72..+9.67 (max 10.44) | -10.49..+8.91 (max 11.21)
+other crisp | 144 rolling blend | 1x1 2x690995 | 0.00, 0.12 | 0.00 | 0.00 | -8.96..+10.43 (max 11.15) | -9.72..+9.67 (max 10.44) | -10.49..+8.91 (max 11.21)
+other rolling blend (20.8 ms mixes) | 144 rolling blend | (blend) | - | - | 0.00 | -0.01..+0.01 (max 0.06) | -0.01..+0.01 (max 0.05) | -0.01..+0.01 (max 0.05) | blend err us p50 2.21 p95 6.43 max 55; rows mixed 0.903; mixed refreshes/change 1.09; share p5/p50/p95 [0.5527, 0.6408, 0.7288]
+
+Scenario 6: 48 Hz custom on both 60 Hz screens (master LG, centre) - seam of fast-144
+-------------------------------------------------------------------------------------
+variant | follower pace | slips/h mid-shot, at cuts | flip-flops/h | master re-aims/h | offset top | aim | bottom (p5..p95, max |x|)
+other crisp | 144 crisp | 6x690994 7x2 | 0.00, 0.25 | 0.00 | 0.00 | -7.90..-1.67 (max 8.26) | -3.09..+3.13 (max 3.50) | +1.72..+7.94 (max 8.30)
+other crisp | 144 VRR | (vrr) | - | - | 0.00 | -4.81..-4.80 (max 4.82) | -0.00..+0.00 (max 0.01) | +4.80..+4.81 (max 4.82)
+other crisp | 144 rolling blend | (blend) | - | - | 0.00 | -0.01..+0.01 (max 0.02) | -0.01..+0.01 (max 0.02) | -0.01..+0.01 (max 0.02) | blend err us p50 2.2 p95 6.41 max 15.7; rows mixed 0.960; mixed refreshes/change 2.33; share p5/p50/p95 [0.0458, 0.5767, 0.9567]
+other rolling blend (20.8 ms mixes) | 144 rolling blend | (blend) | - | - | 0.00 | -0.01..+0.01 (max 0.02) | -0.01..+0.01 (max 0.02) | -0.01..+0.01 (max 0.02) | blend err us p50 2.2 p95 6.41 max 15.7; rows mixed 0.960; mixed refreshes/change 2.33; share p5/p50/p95 [0.0458, 0.5767, 0.9567]
+
+Scenario 6: 48 Hz custom, screens on independent clocks (+-20 ppm, assumed) - seam of other
+-------------------------------------------------------------------------------------------
+variant | follower pace | slips/h mid-shot, at cuts | flip-flops/h | master re-aims/h | offset top | aim | bottom (p5..p95, max |x|)
+other crisp | 144 crisp | 1x27 2x690969 | 0.00, 3.38 | 0.00 | 0.00 | -8.67..+10.05 (max 11.15) | -9.43..+9.28 (max 10.56) | -10.19..+8.52 (max 11.33)
+other rolling blend | 144 rolling blend | (blend) | - | - | 0.00 | -0.01..+0.01 (max 0.06) | -0.01..+0.01 (max 0.05) | -0.01..+0.01 (max 0.05) | blend err us p50 2.2 p95 6.43 max 55; rows mixed 0.960; mixed refreshes/change 1.03; share p5/p50/p95 [0.0494, 0.4982, 0.9506]
+
+Scenario 6: 48 Hz custom, screens on independent clocks (+-20 ppm, assumed) - seam of fast-144
+----------------------------------------------------------------------------------------------
+variant | follower pace | slips/h mid-shot, at cuts | flip-flops/h | master re-aims/h | offset top | aim | bottom (p5..p95, max |x|)
+other crisp | 144 crisp | 6x690913 7x83 | 0.00, 10.38 | 0.00 | 0.00 | -7.84..-1.60 (max 8.25) | -3.04..+3.21 (max 3.63) | +1.77..+8.01 (max 8.44)
+other rolling blend | 144 rolling blend | (blend) | - | - | 0.00 | -0.01..+0.01 (max 0.02) | -0.01..+0.01 (max 0.02) | -0.01..+0.01 (max 0.02) | blend err us p50 2.19 p95 6.43 max 15.7; rows mixed 0.960; mixed refreshes/change 2.34; share p5/p50/p95 [0.05, 0.5016, 0.9501]
+
+Scenario 6: LG 48 Hz, other 72 Hz (if accepted) - seam of other
+---------------------------------------------------------------
+variant | follower pace | slips/h mid-shot, at cuts | flip-flops/h | master re-aims/h | offset top | aim | bottom (p5..p95, max |x|)
+other crisp | 144 crisp | 1x3 3x690989 | 0.00, 0.38 | 0.00 | 0.38 | -3.87..+2.60 (max 4.10) | -3.26..+3.21 (max 3.50) | -2.66..+3.81 (max 4.06)
+other rolling blend (13.9 ms mixes) | 144 rolling blend | (blend) | - | - | 0.00 | -0.01..+0.01 (max 0.02) | -0.01..+0.01 (max 0.02) | -0.01..+0.01 (max 0.02) | blend err us p50 2.19 p95 6.39 max 15.1; rows mixed 0.966; mixed refreshes/change 1.04; share p5/p50/p95 [0.0154, 0.1322, 0.9799]
+
+Scenario 6: LG 48 Hz, other 72 Hz (if accepted) - seam of fast-144
+------------------------------------------------------------------
+variant | follower pace | slips/h mid-shot, at cuts | flip-flops/h | master re-aims/h | offset top | aim | bottom (p5..p95, max |x|)
+other crisp | 144 crisp | 3x3 6x690987 7x2 | 0.00, 0.63 | 0.00 | 0.38 | -7.90..-1.67 (max 8.26) | -3.09..+3.13 (max 3.50) | +1.72..+7.94 (max 8.30)
+other rolling blend (13.9 ms mixes) | 144 rolling blend | (blend) | - | - | 0.00 | -0.01..+0.01 (max 0.02) | -0.01..+0.01 (max 0.02) | -0.01..+0.01 (max 0.02) | blend err us p50 2.2 p95 6.41 max 15.7; rows mixed 0.960; mixed refreshes/change 2.33; share p5/p50/p95 [0.0458, 0.5767, 0.9567]
+
+Scenario 6: native 60 Hz (master = the 144 Hz screen, the only whole multiple) - seam of other
+----------------------------------------------------------------------------------------------
+variant | follower pace | slips/h mid-shot, at cuts | flip-flops/h | master re-aims/h | offset top | aim | bottom (p5..p95, max |x|)
+LG crisp | other crisp (chain) | 1x68 2x345427 3x345426 4x67 | 0.00, 0.00 | 0.00 | 0.50 | -6.75..+8.48 (max 9.20) | -7.64..+7.59 (max 8.36) | -8.52..+6.70 (max 9.25)
+LG rolling blend (16.7 ms mixes) | other rolling blend | (blend) | - | - | 0.00 | -0.01..+0.01 (max 0.01) | -0.01..+0.01 (max 0.01) | -0.01..+0.01 (max 0.01) | blend err us p50 2.24 p95 6.47 max 14.6; rows mixed 0.961; mixed refreshes/change 1.56; share p5/p50/p95 [0.0498, 0.5, 0.9455]
+
+Scenario 6: native 60 Hz (master = the 144 Hz screen, the only whole multiple) - seam of lg-4k
+----------------------------------------------------------------------------------------------
+variant | follower pace | slips/h mid-shot, at cuts | flip-flops/h | master re-aims/h | offset top | aim | bottom (p5..p95, max |x|)
+LG crisp | other crisp (chain) | 2x345495 3x345493 | 0.00, 0.00 | 0.00 | 0.50 | -1.54..+10.43 (max 11.54) | -6.17..+5.81 (max 7.16) | -10.79..+1.18 (max 11.79)
+LG rolling blend (16.7 ms mixes) | other rolling blend | (blend) | - | - | 0.00 | -0.01..+0.01 (max 0.02) | -0.01..+0.01 (max 0.02) | -0.01..+0.01 (max 0.02) | blend err us p50 2.23 p95 6.49 max 16.1; rows mixed 0.958; mixed refreshes/change 1.53; share p5/p50/p95 [0.0429, 0.5, 0.9572]
+
+Scenario 6: chain layout LG 48 | 144 | other 48 - seam of other
+---------------------------------------------------------------
+variant | follower pace | slips/h mid-shot, at cuts | flip-flops/h | master re-aims/h | offset top | aim | bottom (p5..p95, max |x|)
+144 crisp | other crisp follows the 144's chosen refresh | 1x1 2x690994 3x1 | 0.00, 0.25 | 0.00 | 0.00 | -1.27..+14.35 (max 15.42) | -6.30..+9.31 (max 10.45) | -11.34..+4.28 (max 15.48)
+144 rolling blend | other crisp follows the wave | 2x690996 | 0.00, 0.00 | 0.00 | 0.00 | -2.66..+9.51 (max 10.23) | -3.43..+8.75 (max 9.47) | -4.19..+7.98 (max 8.70)
+
+Scenario 6: chain layout LG 48 | 144 | other 48 - seam of fast-144
+------------------------------------------------------------------
+variant | follower pace | slips/h mid-shot, at cuts | flip-flops/h | master re-aims/h | offset top | aim | bottom (p5..p95, max |x|)
+144 crisp | other crisp follows the 144's chosen refresh | 6x690993 7x3 | 0.00, 0.38 | 0.00 | 0.00 | -7.98..-1.55 (max 8.25) | -3.17..+3.26 (max 3.50) | +1.63..+8.06 (max 8.30)
+144 rolling blend | other crisp follows the wave | (blend) | - | - | 0.00 | -0.01..+0.01 (max 0.04) | -0.01..+0.01 (max 0.04) | -0.01..+0.01 (max 0.04) | blend err us p50 2.19 p95 6.41 max 44.8; rows mixed 0.957; mixed refreshes/change 2.43; share p5/p50/p95 [0.0396, 0.5286, 0.9609]
+
+Self-check: {'limit_us': 0.01, 'unit_check_max_us': 9.094947017729282e-07, 'timeline_exact_max_us': 9.094947017729282e-07, 'pass': True}

@@ -1,0 +1,4 @@
+plain  : frames, fps = (300, '29.97')
+ivtc   : frames, fps = (240, '23.98')  -> fieldmatch,yadif=deint=interlaced,decimate
+comb score % of five consecutive frames, plain : [0.176, 0.176, 0.798, 0.863, 0.16]
+comb score % of five consecutive frames, ivtc  : [0.176, 0.176, 0.165, 0.16, 0.148]

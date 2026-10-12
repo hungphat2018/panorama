@@ -1,0 +1,16 @@
+monitor 0 DISPLAY1: 2560x1600 at (0,0), window/swapchain 2560x1600, refresh 239.9992 Hz, 344x215 mm at 0 mm
+monitor 1 DISPLAY2: 1920x1080 at (2560,0), window/swapchain 1920x1080, refresh 100.0009 Hz, 476x268 mm at 364 mm
+  DISPLAY1: signal 2720x1800 total, line 2.3148 us, scan 3.7037 ms, blank 0.4630 ms; scan grid 317 of 328 samples, residual p50 1.53 us; top row 0.388 ms after the vblank wake-up; height 215.0 mm, top 0.0 mm, lag 0.00 ms
+  DISPLAY2: signal 2000x1115 total, line 8.9686 us, scan 9.6861 ms, blank 0.3139 ms; scan grid 378 of 393 samples, residual p50 2.40 us; top row 0.215 ms after the vblank wake-up; height 268.0 mm, top 0.0 mm, lag 0.00 ms
+aim row 107.5 mm; shared height 0.0..215.0 mm
+film 23.9760 fps; master DISPLAY2 100.0009 Hz; speed NOT locked (plays at 1.0) (speed 1.0427 if locked, hold 4 refreshes)
+film starts 3 master refreshes later; aim row 107.5 mm
+predicted seam offset DISPLAY2 - DISPLAY1, in light: top row (0.0 mm) -2.03 ms, aim row +0.01 ms, bottom row (215.0 mm) +2.04 ms
+picture 382.2 x 215.0 mm (aspect 1.7778) at x 162.9..545.1 mm; DISPLAY1: shows part DISPLAY2: shows part 
+DISPLAY1: top-row grid at film start vs end, at the film's end: +3.8 us (end fit: 2135 of 2178 samples, residual p50 1.46 us, p95 5.39 us; the film followed a grid refitted 12 times); vblank wake-up to top row 0.388 ms at film start, 0.388 ms at the end
+DISPLAY1: 2051 presents, render cpu p50 0.134 / p99 1.146 ms, gpu p50 0.029 / p99 0.248 ms, queue_more 0, empty 0, swapchain rgb10a2 opaque (1 distinct images), swap_begin failures 0
+wrote results-2026-10-11/selftest-headless-vkdecode/monitor-0-nearest.json
+DISPLAY2: top-row grid at film start vs end, at the film's end: -0.9 us (end fit: 2386 of 2425 samples, residual p50 2.44 us, p95 6.86 us; the film followed a grid refitted 12 times); vblank wake-up to top row 0.215 ms at film start, 0.203 ms at the end
+DISPLAY2: 855 presents, render cpu p50 0.138 / p99 1.004 ms, gpu p50 0.014 / p99 0.148 ms, queue_more 0, empty 0, swapchain rgb10a2 opaque (1 distinct images), swap_begin failures 0
+wrote results-2026-10-11/selftest-headless-vkdecode/monitor-1-nearest.json
+wrote results-2026-10-11/selftest-headless-vkdecode/events.json (110 events)

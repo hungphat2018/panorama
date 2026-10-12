@@ -1,0 +1,30 @@
+{"after": 2.639, "cmd": "load", "file": "C:/Users/tamla/Downloads/Telegram Desktop/panorama/spikes/performer-p1/data/cue-test/sheets/cues-v2.json"}
+{"after": 0.043, "cmd": "pause"}
+{"after": 0.943, "cmd": "resume"}
+{"after": 2.447, "cmd": "load", "file": "C:/Users/tamla/Downloads/Telegram Desktop/panorama/spikes/performer-p1/data/cue-test/sheets/cues-v3.json"}
+{"after": 0.117, "cmd": "pause"}
+{"after": 0.363, "cmd": "seek", "t": 37.279}
+{"after": 1.141, "cmd": "resume"}
+{"after": 2.178, "cmd": "load", "file": "C:/Users/tamla/Downloads/Telegram Desktop/panorama/spikes/performer-p1/data/cue-test/sheets/cues-v4.json"}
+{"after": 0.057, "cmd": "pause"}
+{"after": 0.564, "cmd": "seek", "t": 54.255}
+{"after": 1.143, "cmd": "resume"}
+{"after": 2.101, "cmd": "load", "file": "C:/Users/tamla/Downloads/Telegram Desktop/panorama/spikes/performer-p1/data/cue-test/sheets/cues-v5.json"}
+{"after": 0.079, "cmd": "pause"}
+{"after": 1.137, "cmd": "resume"}
+{"after": 3.766, "cmd": "load", "file": "C:/Users/tamla/Downloads/Telegram Desktop/panorama/spikes/performer-p1/data/cue-test/sheets/cues-v6.json"}
+{"after": 0.049, "cmd": "pause"}
+{"after": 0.712, "cmd": "resume"}
+{"after": 2.546, "cmd": "load", "file": "C:/Users/tamla/Downloads/Telegram Desktop/panorama/spikes/performer-p1/data/cue-test/sheets/cues-v7.json"}
+{"after": 0.1, "cmd": "pause"}
+{"after": 0.609, "cmd": "resume"}
+{"after": 2.082, "cmd": "load", "file": "C:/Users/tamla/Downloads/Telegram Desktop/panorama/spikes/performer-p1/data/cue-test/sheets/cues-v8.json"}
+{"after": 0.088, "cmd": "pause"}
+{"after": 1.191, "cmd": "resume"}
+{"after": 3.64, "cmd": "load", "file": "C:/Users/tamla/Downloads/Telegram Desktop/panorama/spikes/performer-p1/data/cue-test/sheets/cues-v9.json"}
+{"after": 0.076, "cmd": "pause"}
+{"after": 1.012, "cmd": "resume"}
+{"after": 3.935, "cmd": "load", "file": "C:/Users/tamla/Downloads/Telegram Desktop/panorama/spikes/performer-p1/data/cue-test/sheets/cues-v10.json"}
+{"after": 0.013, "cmd": "pause"}
+{"after": 1.004, "cmd": "resume"}
+{"after": 1.0, "cmd": "status"}

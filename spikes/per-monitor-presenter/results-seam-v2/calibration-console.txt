@@ -1,0 +1,6 @@
+\\.\DISPLAY2 switched to 96 Hz for this run
+DISPLAY1: 344 x 215 mm, 240.001 Hz, line 2.315 us, scan 3.704 ms, blank 0.463 ms; scan-line fit residual p50 2.3 us p95 10.8 us (824 samples)
+DISPLAY2: 476 x 268 mm, 96.000 Hz, line 8.980 us, scan 9.698 ms, blank 0.718 ms; scan-line fit residual p50 3.4 us p95 11.1 us (758 samples)  [reference: slowest]
+no parameter finished: settings not written
+DISPLAY1: presents reaching the predicted refresh: 1499 late, 0 early of 30508
+DISPLAY2: presents reaching the predicted refresh: 7 late, 0 early of 12801

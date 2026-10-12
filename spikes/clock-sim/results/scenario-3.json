@@ -1,0 +1,268 @@
+{
+ "rows": {
+  "24p on 240+96 | blend/wake-corrected": {
+   "err_us_p50": 2.45217,
+   "err_us_p95": 7.13625,
+   "err_us_p999": 11.9887,
+   "err_us_max": 20.2839,
+   "err_us_max_top_mid_bottom": [
+    20.2031,
+    20.2435,
+    20.2839
+   ],
+   "lw_frame_duration_err_us_max": 7.99789,
+   "share_new_p5_p50_p95": [
+    0.0498,
+    0.5006,
+    0.9499
+   ],
+   "rows_mixed_fraction": 0.960055,
+   "mixed_refreshes_per_change_mean": 1.93362,
+   "mixed_refreshes_per_change_hist": {
+    "1": 1062,
+    "2": 14938
+   }
+  },
+  "24p on 240+96 | blend/scan-fit": {
+   "err_us_p50": 0.052027,
+   "err_us_p95": 0.152835,
+   "err_us_p999": 0.259188,
+   "err_us_max": 0.664748,
+   "err_us_max_top_mid_bottom": [
+    0.664748,
+    0.664737,
+    0.664726
+   ],
+   "lw_frame_duration_err_us_max": 0.7521,
+   "share_new_p5_p50_p95": [
+    0.0499,
+    0.4994,
+    0.9501
+   ],
+   "rows_mixed_fraction": 0.960135,
+   "mixed_refreshes_per_change_mean": 1.92881,
+   "mixed_refreshes_per_change_hist": {
+    "1": 1139,
+    "2": 14861
+   }
+  },
+  "24p on 240+96 | blend/perf1-wake-times": {
+   "err_us_p50": 228.437,
+   "err_us_p95": 234.417,
+   "err_us_p999": 239.765,
+   "err_us_max": 248.709,
+   "err_us_max_top_mid_bottom": [
+    248.628,
+    248.669,
+    248.709
+   ],
+   "lw_frame_duration_err_us_max": 7.99561,
+   "share_new_p5_p50_p95": [
+    0.0501,
+    0.5009,
+    0.9501
+   ],
+   "rows_mixed_fraction": 0.959989,
+   "mixed_refreshes_per_change_mean": 1.94006,
+   "mixed_refreshes_per_change_hist": {
+    "1": 959,
+    "2": 15041
+   }
+  },
+  "24p on 240+96 | blend/exact": {
+   "err_us_p50": 0.0,
+   "err_us_p95": 1e-06,
+   "err_us_p999": 1e-06,
+   "err_us_max": 9.09495e-07,
+   "err_us_max_top_mid_bottom": [
+    9.09495e-07,
+    9.09495e-07,
+    9.09495e-07
+   ],
+   "lw_frame_duration_err_us_max": 1.81899e-06,
+   "share_new_p5_p50_p95": [
+    0.0498,
+    0.5006,
+    0.9499
+   ],
+   "rows_mixed_fraction": 0.960056,
+   "mixed_refreshes_per_change_mean": 1.93394,
+   "mixed_refreshes_per_change_hist": {
+    "1": 1057,
+    "2": 14943
+   }
+  },
+  "24p on 240+96 | blend/wake-corrected/log-jitter": {
+   "err_us_p50": 2.95303,
+   "err_us_p95": 8.67259,
+   "err_us_p999": 15.0252,
+   "err_us_max": 24.4077,
+   "err_us_max_top_mid_bottom": [
+    24.3107,
+    24.3592,
+    24.4077
+   ],
+   "lw_frame_duration_err_us_max": 15.767,
+   "share_new_p5_p50_p95": [
+    0.0498,
+    0.5005,
+    0.9498
+   ],
+   "rows_mixed_fraction": 0.960058,
+   "mixed_refreshes_per_change_mean": 1.93419,
+   "mixed_refreshes_per_change_hist": {
+    "1": 1053,
+    "2": 14947
+   }
+  },
+  "24p on 240+72 | blend/wake-corrected": {
+   "err_us_p50": 2.45351,
+   "err_us_p95": 7.12868,
+   "err_us_p999": 12.0029,
+   "err_us_max": 17.2176,
+   "err_us_max_top_mid_bottom": [
+    17.1788,
+    17.1982,
+    17.2176
+   ],
+   "lw_frame_duration_err_us_max": 7.67953,
+   "share_new_p5_p50_p95": [
+    0.0501,
+    0.501,
+    0.9501
+   ],
+   "rows_mixed_fraction": 0.960123,
+   "mixed_refreshes_per_change_mean": 1.9305,
+   "mixed_refreshes_per_change_hist": {
+    "1": 1112,
+    "2": 14888
+   }
+  },
+  "24p on 240+72 | blend/scan-fit": {
+   "err_us_p50": 0.059466,
+   "err_us_p95": 0.174821,
+   "err_us_p999": 0.296593,
+   "err_us_max": 0.763504,
+   "err_us_max_top_mid_bottom": [
+    0.763504,
+    0.763493,
+    0.763482
+   ],
+   "lw_frame_duration_err_us_max": 0.844555,
+   "share_new_p5_p50_p95": [
+    0.0503,
+    0.5009,
+    0.95
+   ],
+   "rows_mixed_fraction": 0.960002,
+   "mixed_refreshes_per_change_mean": 1.94106,
+   "mixed_refreshes_per_change_hist": {
+    "1": 943,
+    "2": 15057
+   }
+  },
+  "25p on 240+100 (laptop not a whole multiple) | 4a rolling blend on the laptop": {
+   "err_us_p50": 2.45241,
+   "err_us_p95": 7.13664,
+   "err_us_p999": 12.0603,
+   "err_us_max": 18.1387,
+   "err_us_max_top_mid_bottom": [
+    18.0643,
+    18.1015,
+    18.1387
+   ],
+   "lw_frame_duration_err_us_max": 7.60554,
+   "share_new_p5_p50_p95": [
+    0.05,
+    0.5,
+    0.95
+   ],
+   "rows_mixed_fraction": 0.959905,
+   "mixed_refreshes_per_change_mean": 1.93175,
+   "mixed_refreshes_per_change_hist": {
+    "1": 1092,
+    "2": 14908
+   }
+  },
+  "25p on 240+100 (laptop not a whole multiple) | 4a rolling blend, scan-line fit": {
+   "err_us_p50": 0.051043,
+   "err_us_p95": 0.149968,
+   "err_us_p999": 0.254408,
+   "err_us_max": 0.646483,
+   "err_us_max_top_mid_bottom": [
+    0.646483,
+    0.646472,
+    0.646461
+   ],
+   "lw_frame_duration_err_us_max": 0.734596,
+   "share_new_p5_p50_p95": [
+    0.05,
+    0.5,
+    0.95
+   ],
+   "rows_mixed_fraction": 0.96002,
+   "mixed_refreshes_per_change_mean": 1.93456,
+   "mixed_refreshes_per_change_hist": {
+    "1": 1047,
+    "2": 14953
+   }
+  },
+  "25p on 240+100 (laptop not a whole multiple) | 4a rolling blend, exact timing": {
+   "err_us_p50": 0.0,
+   "err_us_p95": 1e-06,
+   "err_us_p999": 1e-06,
+   "err_us_max": 9.09495e-07,
+   "err_us_max_top_mid_bottom": [
+    9.09495e-07,
+    9.09495e-07,
+    9.09495e-07
+   ],
+   "lw_frame_duration_err_us_max": 1.81899e-06,
+   "share_new_p5_p50_p95": [
+    0.05,
+    0.5,
+    0.95
+   ],
+   "rows_mixed_fraction": 0.959907,
+   "mixed_refreshes_per_change_mean": 1.93206,
+   "mixed_refreshes_per_change_hist": {
+    "1": 1087,
+    "2": 14913
+   }
+  },
+  "25p on 240+100 (laptop not a whole multiple) | 4b uniform blend (one share per refresh, aimed row)": {
+   "err_us_p50": 1019.17,
+   "err_us_p95": 2030.04,
+   "err_us_p999": 2041.21,
+   "err_us_max": 2051.54,
+   "err_us_max_top_mid_bottom": [
+    2051.28,
+    18.1015,
+    2051.54
+   ],
+   "lw_frame_duration_err_us_max": 7.5815,
+   "share_new_p5_p50_p95": [
+    0.0488,
+    0.4976,
+    0.9474
+   ],
+   "rows_mixed_fraction": 0.969,
+   "mixed_refreshes_per_change_mean": 0.969,
+   "mixed_refreshes_per_change_hist": {
+    "0": 496,
+    "1": 15504
+   }
+  }
+ },
+ "unit_exactness_check_us": 9.09495e-07,
+ "timeline_exact_max_us": 9.09495e-07,
+ "meta": {
+  "hours_per_seed": 2.0,
+  "seeds": 8,
+  "wake_pool_sizes": {
+   "laptop": 21139,
+   "external": 8019
+  },
+  "seconds_to_run": 0.7
+ }
+}

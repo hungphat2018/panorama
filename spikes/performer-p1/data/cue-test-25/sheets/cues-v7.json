@@ -1,0 +1,137 @@
+{
+ "schema": "panorama.cues/1",
+ "version": 7,
+ "file_hash": "test-clip",
+ "room_signature": "setup-a",
+ "preferences_hash": "default",
+ "shots": [
+  {
+   "start": 0.0,
+   "crop": [
+    192,
+    108,
+    1728,
+    972
+   ],
+   "placement": {
+    "center_mm": [
+     366.0,
+     107.5
+    ],
+    "height_mm": 215.0
+   }
+  },
+  {
+   "start": 3.26,
+   "crop": [
+    96,
+    54,
+    1824,
+    1026
+   ],
+   "placement": {
+    "center_mm": [
+     342.0,
+     107.5
+    ],
+    "height_mm": 215.0
+   }
+  },
+  {
+   "start": 9.18,
+   "crop": [
+    96,
+    54,
+    1824,
+    1026
+   ]
+  },
+  {
+   "start": 12.42,
+   "crop": [
+    192,
+    108,
+    1728,
+    972
+   ],
+   "placement": {
+    "center_mm": [
+     379.0,
+     107.5
+    ],
+    "height_mm": 205.0
+   }
+  },
+  {
+   "start": 17.54,
+   "placement": {
+    "center_mm": [
+     354.0,
+     107.5
+    ],
+    "height_mm": 195.0
+   }
+  },
+  {
+   "start": 22.98,
+   "placement": {
+    "center_mm": [
+     366.0,
+     107.5
+    ],
+    "height_mm": 195.0
+   }
+  },
+  {
+   "start": 26.54,
+   "crop": [
+    96,
+    54,
+    1824,
+    1026
+   ],
+   "placement": {
+    "center_mm": [
+     366.0,
+     107.5
+    ],
+    "height_mm": 205.0
+   }
+  },
+  {
+   "start": 30.259999999999998,
+   "placement": {
+    "center_mm": [
+     329.0,
+     107.5
+    ],
+    "height_mm": 205.0
+   }
+  },
+  {
+   "start": 33.739999999999995,
+   "crop": [
+    96,
+    54,
+    1824,
+    1026
+   ],
+   "placement": {
+    "center_mm": [
+     366.0,
+     107.5
+    ],
+    "height_mm": 195.0
+   }
+  },
+  {
+   "start": 36.14,
+   "crop": [
+    192,
+    108,
+    1728,
+    972
+   ]
+  }
+ ]
+}

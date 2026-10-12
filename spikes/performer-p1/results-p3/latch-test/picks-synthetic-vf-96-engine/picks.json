@@ -1,0 +1,1 @@
+{"scenario":"picks","trace":"synthetic-vfr","setup":96,"frame_dur_s":0.041708333,"step_s":0.010427083,"hold":4,"exact_truth":true,"fault":0,"master_refreshes_checked":28750,"wrong":0,"wrong_fraction":0.000000,"showing_an_earlier_frame":0,"worst_late_ms":0.000}

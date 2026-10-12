@@ -1,6 +1,6 @@
 # 0021. One window per monitor, one film clock
 
-- **Status:** Accepted
+- **Status:** Accepted — refined by [0025](0025-refresh-times-come-from-the-scan-line.md)
 - **Date:** 2026-10-11
 - **Refines:** [0014](0014-architecture-plan-ahead-into-a-cue-sheet-perform-live.md), [0016](0016-camera-slides-play-smooth.md)
 
@@ -33,3 +33,4 @@ With one borderless window and swapchain per monitor in one process, both screen
 - When no picture monitor's rate is a whole multiple of the playback rate (25 fps on Setup A, a 60 Hz screen), a ladder applies: custom mode, variable refresh, a speed nudge of at most 1%, then blending frames on that monitor or keeping the picture off it (ADR 0015). Which rung comes first is a what-you-see choice for the user.
 - With three screens, followers chain: each switches on its refresh nearest its neighbour's chosen refresh, aimed at the row where things cross that seam.
 - Custom modes keep the monitor's native pixel clock and lengthen the vertical blank, so the scan stays as fast as at the native rate.
+- A simulation with the measured jitter and drift confirms these rules ([clock simulation](../../plans/reports/sim-261011-1912-film-clock-rules.md), 2026-10-11). It sets the values: a hysteresis of 0.05 ms per alignment class; a re-aim at cuts that never shortens the frame before a cut below one refresh; frames picked as the last one due, with half a master refresh of tolerance. With a variable frame rate, frame changes land on every alignment class, so the aimed start can't help there.

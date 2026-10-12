@@ -1,0 +1,30 @@
+{
+  "run_id": "mpeg4-asp-480p25-avi-sw",
+  "status": "ok",
+  "error": "",
+  "config": {"file": "C:/Users/tamla/Downloads/Telegram Desktop/panorama/spikes/file-matrix/media/mpeg4-asp-480p25.avi", "backend": "d3d11", "decode": "sw", "preset": "default", "window": [1920, 1080], "seconds": 8.0, "loop": false, "worst_case_no_frame_cache": false, "sync_render": false, "pl_cache_file": false, "vk_swapchain_depth": 3, "own_present": false},
+  "env": {"libplacebo_api": 375, "ffmpeg": "9.0.2", "libavutil": "61.1.102", "gpu": "NVIDIA GeForce RTX 5070 Ti Laptop GPU", "monitor": {"device": "\\\\.\\DISPLAY1", "hz": 240, "size": [2560, 1600]}},
+  "media": {"codec": "mpeg4", "pix_fmt": "yuv420p", "hw_fmt": "", "size": [640, 480], "fps": 25.0000, "duration_s": 10.04},
+  "startup_ms_since_process_creation": {"main_entered": 10.8, "window_created": 20.7, "gpu_ready": 196.7, "file_opened": 199.2, "codec_opened": 199.5, "first_frame_decoded": 205.2, "first_render_done": 399.0, "first_present": 400.0},
+  "first_frame_ms": {"from_process_creation": 400.0, "from_main": 389.2, "from_gpu_ready": 203.3},
+  "playback": {"measured_s": 8.003, "refreshes_rendered": 1908, "refresh_rate_measured_hz": 238.160, "film_frames_front_changes": 203, "queue_estimated_fps": 25.0000, "queue_estimated_display_fps": 235.9200, "eof": false},
+  "counts": {"decoded": 205, "mapped": 202, "dropped_by_queue": 1, "queue_stalls": 0, "queue_stall_ms": 0.0, "late_refreshes_over_1p5x_steady": 8, "late_refreshes_over_2p5x_steady": 1, "steady_refreshes": 1429, "nominal_interval_ms": 4.1989, "skipped_refreshes_estimate": 11.1, "hitches_over_50ms_steady": 1, "max_message_pump_ms": 0.01},
+  "refreshes_per_film_frame": {"1": 1, "2": 1, "7": 3, "9": 88, "10": 108, "11": 1},
+  "dxgi_refreshes_between_presents": {"1": 1882, "3": 1, "7+": 2},
+  "timings_ms": {
+    "render_cpu_all": {"n": 1908, "min": 0.0128, "mean": 0.0501, "p50": 0.0260, "p90": 0.0905, "p99": 0.1598, "p999": 0.4335, "max": 23.8741},
+    "render_cpu_steady": {"n": 1429, "min": 0.0144, "mean": 0.0371, "p50": 0.0262, "p90": 0.0905, "p99": 0.1569, "p999": 0.2274, "max": 0.2572},
+    "render_cpu_steady_new_film_frame": {"n": 151, "min": 0.0181, "mean": 0.0670, "p50": 0.0308, "p90": 0.1343, "p99": 0.2245, "p999": 0.2274, "max": 0.2274},
+    "render_cpu_steady_repeated_frame": {"n": 1278, "min": 0.0144, "mean": 0.0336, "p50": 0.0259, "p90": 0.0393, "p99": 0.1516, "p999": 0.1840, "max": 0.2572},
+    "gpu_pass_sum_steady": {"n": 1429, "min": 0.0222, "mean": 0.1874, "p50": 0.0252, "p90": 0.2130, "p99": 4.0968, "p999": 4.1788, "max": 4.2053},
+    "gpu_pass_sum_steady_new_film_frame": {"n": 151, "min": 0.0240, "mean": 0.1337, "p50": 0.0318, "p90": 0.2289, "p99": 0.2445, "p999": 4.0187, "max": 4.0187},
+    "gpu_pass_sum_steady_repeated_frame": {"n": 1278, "min": 0.0222, "mean": 0.1938, "p50": 0.0252, "p90": 0.0372, "p99": 4.1070, "p999": 4.1788, "max": 4.2053},
+    "queue_update_steady": {"n": 1429, "min": 0.0027, "mean": 0.0100, "p50": 0.0049, "p90": 0.0383, "p99": 0.0675, "p999": 0.0876, "max": 0.0969},
+    "acquire_steady": {"n": 1429, "min": 0.0083, "mean": 0.0159, "p50": 0.0150, "p90": 0.0184, "p99": 0.0294, "p999": 0.0858, "max": 0.1137},
+    "submit_steady": {"n": 1429, "min": 0.0011, "mean": 0.0028, "p50": 0.0027, "p90": 0.0036, "p99": 0.0048, "p999": 0.0103, "max": 0.0126},
+    "swap_steady": {"n": 1429, "min": 0.0798, "mean": 4.0900, "p50": 4.1128, "p90": 4.2943, "p99": 5.2699, "p999": 8.9574, "max": 9.2510},
+    "present_interval_all": {"n": 1900, "min": 0.2079, "mean": 4.1974, "p50": 4.1678, "p90": 4.3146, "p99": 5.2992, "p999": 23.9693, "max": 58.0046},
+    "present_interval_steady": {"n": 1429, "min": 0.2286, "mean": 4.1989, "p50": 4.1683, "p90": 4.3509, "p99": 5.3308, "p999": 9.2988, "max": 58.0046}
+  },
+  "process": {"cpu_s": 1.625, "cpu_pct_of_one_core": 20.3, "cpu_pct_of_all_threads": 0.63, "logical_cpus": 32, "render_thread_cpu_pct": 3.9, "decode_thread_busy_s_in_libav_calls": 0.008, "decode_thread_cpu_s": 0.016, "peak_working_set_mb": 131, "peak_pagefile_mb": 192}
+}

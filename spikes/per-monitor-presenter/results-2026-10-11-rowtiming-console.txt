@@ -1,0 +1,60 @@
+===== 96 Hz
+--- mode nearest
+\\.\DISPLAY2 switched to 96 Hz for this run
+monitor 0 \\.\DISPLAY1: 2560x1600 at (0,0), refresh 240.0414 Hz
+  signal 2720x1800 total, line 2.3148 us, scan 3.7037 ms, blank 0.4630 ms; scan grid 382 of 397 samples, residual p50 2.12 us; top row 0.390 ms after the vblank wake-up
+  height 215.0 mm, top 0.0 mm, lag 0.00 ms
+monitor 1 \\.\DISPLAY2: 1920x1080 at (2560,0), refresh 96.0066 Hz (master)
+  signal 2000x1160 total, line 8.9799 us, scan 9.6983 ms, blank 0.7184 ms; scan grid 410 of 425 samples, residual p50 2.87 us; top row 0.629 ms after the vblank wake-up
+  height 268.0 mm, top 0.0 mm, lag 0.00 ms
+aim row 107.5 mm; shared height 0.0..215.0 mm
+film starts 1 master refreshes later; aim row 107.5 mm
+predicted seam offset DISPLAY2 - DISPLAY1, in light: top row (0.0 mm) -1.64 ms, aim row +0.40 ms, bottom row (215.0 mm) +2.44 ms
+film clock locked to the master: 4 refreshes per frame, 24.00164 fps
+DISPLAY1: top-row grid at film start vs end, at the film's end: -7.3 us (end fit: 5761 of 6170 samples, residual p50 2.13 us, p95 10.93 us; the film followed a grid refitted 24 times); vblank wake-up to top row 0.390 ms at film start, 0.387 ms at the end
+DISPLAY2: top-row grid at film start vs end, at the film's end: -14.4 us (end fit: 6004 of 6182 samples, residual p50 3.10 us, p95 11.50 us; the film followed a grid refitted 24 times); vblank wake-up to top row 0.629 ms at film start, 0.611 ms at the end
+wrote C:\Users\tamla\Downloads\Telegram Desktop\panorama\spikes\per-monitor-presenter\results-2026-10-11-rowtiming-24fps-96hz\monitor-0-nearest.json
+wrote C:\Users\tamla\Downloads\Telegram Desktop\panorama\spikes\per-monitor-presenter\results-2026-10-11-rowtiming-24fps-96hz\monitor-1-nearest.json
+
+== mode nearest, film 24.002 fps, master monitor 1
+DISPLAY1: 240.0038 Hz, 4560 presents (0 timed by fallback), refreshes per frame {9: 1, 10: 455}, frames skipped 0, composition {'overlay (independent flip / MPO)': 4871, 'none': 3}
+DISPLAY2: 96.0034 Hz, 1825 presents (1 timed by fallback), refreshes per frame {3: 1, 4: 455}, frames skipped 0, composition {'overlay (independent flip / MPO)': 1947, 'none': 5}
+blank-start frame-change offset DISPLAY2 - DISPLAY1 (ms): {'frames': 457, 'min': -1.87, 'p5': -1.87, 'median': -1.86, 'p95': -1.84, 'max': 4.38}
+row-light seam offset DISPLAY2 - DISPLAY1 (ms), master monitor 1; frames paired: 456
+  top    row (   0.0 mm): median -1.63  p5 -1.64  p95 -1.62  min -1.64  max -1.61   predicted -1.64
+  aim    row ( 107.5 mm): median +0.41  p5 +0.40  p95 +0.42  min +0.40  max +0.42   predicted +0.40
+  bottom row ( 215.0 mm): median +2.45  p5 +2.44  p95 +2.46  min +2.44  max +2.46   predicted +2.44
+  DISPLAY1: DXGI SyncQPCTime to next top row 0.427 ms (min 0.405, max 0.443); vblank wake-up to top row 0.3904 ms at film start, 0.3869 at the end (median over the run's wake-ups 0.385); start-fit grid vs end-fit grid at the last present -7.3 us, the film followed a grid refitted 24 times
+  DISPLAY2: DXGI SyncQPCTime to next top row 0.654 ms (min 0.646, max 0.668); vblank wake-up to top row 0.629 ms at film start, 0.6115 at the end (median over the run's wake-ups 0.612); start-fit grid vs end-fit grid at the last present -14.4 us, the film followed a grid refitted 24 times
+
+wrote results-2026-10-11-rowtiming-24fps-96hz\pacing-summary.json
+===== 72 Hz
+--- mode nearest
+\\.\DISPLAY2 switched to 72 Hz for this run
+monitor 0 \\.\DISPLAY1: 2560x1600 at (0,0), refresh 240.0257 Hz
+  signal 2720x1800 total, line 2.3148 us, scan 3.7037 ms, blank 0.4630 ms; scan grid 372 of 372 samples, residual p50 2.93 us; top row 0.396 ms after the vblank wake-up
+  height 215.0 mm, top 0.0 mm, lag 0.00 ms
+monitor 1 \\.\DISPLAY2: 1920x1080 at (2560,0), refresh 72.0024 Hz (master)
+  signal 2000x1545 total, line 8.9896 us, scan 9.7087 ms, blank 4.1802 ms; scan grid 319 of 332 samples, residual p50 2.72 us; top row 4.088 ms after the vblank wake-up
+  height 268.0 mm, top 0.0 mm, lag 0.00 ms
+aim row 107.5 mm; shared height 0.0..215.0 mm
+film starts 1 master refreshes later; aim row 107.5 mm
+predicted seam offset DISPLAY2 - DISPLAY1, in light: top row (0.0 mm) -1.70 ms, aim row +0.34 ms, bottom row (215.0 mm) +2.38 ms
+film clock locked to the master: 3 refreshes per frame, 24.00078 fps
+DISPLAY1: top-row grid at film start vs end, at the film's end: +4133.9 us (end fit: 5241 of 5862 samples, residual p50 1.56 us, p95 11.66 us; the film followed a grid refitted 24 times); vblank wake-up to top row 0.396 ms at film start, 0.387 ms at the end
+DISPLAY2: top-row grid at film start vs end, at the film's end: +3.6 us (end fit: 4520 of 4653 samples, residual p50 3.11 us, p95 11.59 us; the film followed a grid refitted 24 times); vblank wake-up to top row 4.088 ms at film start, 4.076 ms at the end
+wrote C:\Users\tamla\Downloads\Telegram Desktop\panorama\spikes\per-monitor-presenter\results-2026-10-11-rowtiming-24fps-72hz\monitor-0-nearest.json
+wrote C:\Users\tamla\Downloads\Telegram Desktop\panorama\spikes\per-monitor-presenter\results-2026-10-11-rowtiming-24fps-72hz\monitor-1-nearest.json
+
+== mode nearest, film 24.001 fps, master monitor 1
+DISPLAY1: 240.0154 Hz, 4343 presents (0 timed by fallback), refreshes per frame {9: 57, 10: 341, 11: 57}, frames skipped 0, composition {'overlay (independent flip / MPO)': 4656, 'none': 3}
+DISPLAY2: 71.9958 Hz, 1369 presents (1 timed by fallback), refreshes per frame {2: 1, 3: 455}, frames skipped 0, composition {'overlay (independent flip / MPO)': 1460, 'none': 5}
+blank-start frame-change offset DISPLAY2 - DISPLAY1 (ms): {'frames': 456, 'min': -9.56, 'p5': -9.53, 'median': -5.37, 'p95': -5.33, 'max': 8.49}
+row-light seam offset DISPLAY2 - DISPLAY1 (ms), master monitor 1; frames paired: 455
+  top    row (   0.0 mm): median -1.67  p5 -5.83  p95 -1.63  min -5.86  max -1.63   predicted -1.70
+  aim    row ( 107.5 mm): median +0.37  p5 -3.79  p95 +0.41  min -3.82  max +0.41   predicted +0.34
+  bottom row ( 215.0 mm): median +2.41  p5 -1.75  p95 +2.45  min -1.77  max +2.45   predicted +2.38
+  DISPLAY1: DXGI SyncQPCTime to next top row 0.429 ms (min 0.418, max 0.44); vblank wake-up to top row 0.3957 ms at film start, 0.3873 at the end (median over the run's wake-ups 0.387); start-fit grid vs end-fit grid at the last present -32.7 us, the film followed a grid refitted 24 times
+  DISPLAY2: DXGI SyncQPCTime to next top row 4.122 ms (min 4.116, max 4.134); vblank wake-up to top row 4.0879 ms at film start, 4.0764 at the end (median over the run's wake-ups 4.083); start-fit grid vs end-fit grid at the last present +3.6 us, the film followed a grid refitted 24 times
+
+wrote results-2026-10-11-rowtiming-24fps-72hz\pacing-summary.json

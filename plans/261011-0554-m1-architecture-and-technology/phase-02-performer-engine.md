@@ -34,6 +34,9 @@ The performer plays any local file (hardware decode, audio in sync, subtitles, s
 | R5 | One resample per monitor with the geometry warp in it; per-monitor color last, then dither; surround; crisp subtitles inside one monitor | phase 03 |
 | R6 | Hardware decode, audio + A/V sync, libass subtitles, seeking, rate locking | basics |
 | R7 | Process or library boundary that keeps our code's license open | ADR 0014 |
+| R8 | Per-row frame weights in one pass (rolling blend) and per-row slide offsets inside the one resample | [zero-delay research](../reports/research-261011-1523-zero-delay-across-scan-speeds.md) §5.5, design §5 |
+| R9 | Present timing per monitor: each refresh's top-row time known, and control of which refresh a present lands on | [ADR 0025](../../docs/adr/0025-refresh-times-come-from-the-scan-line.md) |
+| R10 | One rendering device per graphics adapter; monitors on two adapters; decode shared | ADR 0021, Setup B |
 
 ## Options
 
@@ -47,16 +50,16 @@ Hard to change: the engine, the language, the process boundary, license exposure
 
 ## Implementation Steps
 
-1. Read the engine research; fill the requirement × option matrix with evidence.
+1. Done 2026-10-11: [requirement matrix](../reports/researcher-261011-1900-performer-requirement-matrix.md), R1–R10 × A, B, B2, C, D, E plus E2 (libmpv with the unmerged D3D11 render API, mpv#17764) and F (VLC `wall`), every cell cited. Ranking holds: C, then B2 as fallback. R8–R10 need our own code (or the same libplacebo patch) in both C and B2, and rule out A, D, E, E2 and F. FFmpeg 9.0.2 drops MKV ordered chapters and linked segments (`matroskadec.c`), so the per-file mpv fallback is required until our performer has its own timeline layer. Weak cells: B2 is derived only (P7 not run); C's R1/R9 wait for the full-screen P1 run; R10 can't be tested on Setup A (the Radeon 610M has no outputs).
 2. Decided: [ADR 0022](../../docs/adr/0022-own-performer-on-libplacebo-and-ffmpeg.md) (own C11 performer; mpv core + own video output as fallback; stock mpv as baseline and per-file fallback).
-3. **P0** (done 2026-10-11, [report](../reports/spike-261011-1247-performer-toolchain-p0.md)): MSYS2 UCRT64 under the user's profile; libplacebo master and plplay build; LGPL FFmpeg 9.0.2 built from source; `perf0` (plplay-derived, C11) plays on D3D11 (software and D3D11VA, our own `Present`: 0 late, 0 skipped) and Vulkan (jittery, unexplained hitches). Still to do: the supported-file smoke test (ordered chapters, interlaced, PGS, variable frame rate).
+3. **P0** (done 2026-10-11, [report](../reports/spike-261011-1247-performer-toolchain-p0.md)): MSYS2 UCRT64 under the user's profile; libplacebo master and plplay build; LGPL FFmpeg 9.0.2 built from source; `perf0` (plplay-derived, C11) plays on D3D11 (software and D3D11VA, our own `Present`: 0 late, 0 skipped) and Vulkan (jittery, unexplained hitches). Supported-file smoke test done 2026-10-11 ([file matrix](../reports/spike-261011-1955-supported-file-matrix.md), 53 cases on perf0 and stock mpv, `spikes/file-matrix/`): no library-level blocker; deinterlacing, rotation and SD colour fixed in perf0 with 81 lines behind switches. Close before the concept demo: text subtitles, software-decode fallback (D3D11VA refuses Hi10P, 4:2:2, 4:4:4, MPEG-4 ASP), a deliberate colour policy for SD and HDR-to-SDR (what you see: the user's call), raw-stream timestamps. Stays on the mpv per-file fallback until built: ordered chapters, PGS, Dolby Vision 5/8.1, IVTC, audio passthrough, HDR output.
 4. **P1**: the two-window presenter on libplacebo, on both D3D11 and Vulkan, plus one run with a monitor on the other graphics adapter; same measurements as the raw spike (overlay state, refreshes per frame, seam offset).
 5. **P2–P6** in the order of the engine research section 6: pan mode per refresh (row-aware), cues and seek latch, picture path quality and cost, audio sync (audio follows the master display), subtitles.
 6. Keep the supported-file matrix; judge the fallback against it.
 
 ## Success Criteria
 
-- [ ] Requirement × option matrix with evidence for every cell (source line, doc, or measurement).
+- [x] Requirement × option matrix with evidence for every cell (source line, doc, or measurement): [matrix](../reports/researcher-261011-1900-performer-requirement-matrix.md); the cells resting on derivation or windowed runs are listed there.
 - [ ] ADR for the performer engine, language and boundary.
 - [ ] If the engine is new: a skeleton plays the anime test episode on both monitors for 5 min with 0 dropped frames, audio in sync, and seeks work.
 

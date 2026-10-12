@@ -24,12 +24,13 @@ Prove the chosen pieces together: a thin prototype on Setup A, rough quality all
 2. Measure exact frames: barcode or frame-index capture harness from the earlier spikes, adapted to the chosen presentation. Pass: every cue lands on its frame, 0 wrong frames.
 3. Measure pace: per-monitor flip timing logs. Pass: every frame stays up equally long on the screens carrying the picture; seam offset at the aimed row within the bound of the presentation in use (half the faster monitor's refresh on fixed rates, about zero with variable refresh), with the tuned lag applied.
 4. By eye, anchored: a slow pan across the bezel, and something moving across it on its own. Pass: no flicker, no stumble, no felt delay ([ADR 0020](../../docs/adr/0020-motion-crosses-a-bezel-with-no-delay.md)).
-5. Update the roadmap status and the PRD "Current approach"; mark M1 done.
+5. By eye, anchored, the picture-path checks moved here from [phase 3](./phase-03-picture-path.md): a diagonal line across the real bezel (pass: no step at the right gap value, a step seen at 5 mm off); a 0–10% near-black ramp, corrected next to uncorrected (pass: no bands); grey bars across the bezel (pass: the user can't say which side is brighter); the surround at 10 consecutive hard cuts (pass: no flicker seen).
+6. Update the roadmap status and the PRD "Current approach"; mark M1 done.
 
 ## Success Criteria
 
 - [ ] Exact-frame and pace measurements pass.
-- [ ] By-eye pan check passes.
+- [ ] By-eye pan check and picture-path checks pass.
 - [ ] Roadmap and PRD updated; every M1 choice has an ADR.
 
 ## Risk Assessment

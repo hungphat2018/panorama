@@ -1,0 +1,14 @@
+monitor 0 \\.\DISPLAY1: 2560x1600 at (0,0), refresh 239.9667 Hz
+  signal 2720x1800 total, line 2.3148 us, scan 3.7037 ms, blank 0.4630 ms; scan grid 389 of 421 samples, residual p50 1.94 us; top row 0.261 ms after the vblank wake-up
+  height 215.0 mm, top 10.0 mm, lag 0.50 ms
+monitor 1 \\.\DISPLAY2: 1920x1080 at (2560,0), refresh 99.9996 Hz (master)
+  signal 2000x1115 total, line 8.9686 us, scan 9.6861 ms, blank 0.3139 ms; scan grid 435 of 447 samples, residual p50 3.14 us; top row 0.215 ms after the vblank wake-up
+  height 268.0 mm, top 0.0 mm, lag 2.50 ms
+aim row 100.0 mm; shared height 10.0..225.0 mm
+film starts 0 master refreshes later; aim row 100.0 mm
+predicted seam offset DISPLAY2 - DISPLAY1, in light: top row (10.0 mm) -1.70 ms, aim row -0.00 ms, bottom row (225.0 mm) +2.36 ms
+film clock locked to the master: 5 refreshes per frame, 19.99992 fps
+DISPLAY1: top-row grid at film start vs end, at the film's end: +3.2 us (end fit: 2479 of 2670 samples, residual p50 1.30 us, p95 11.66 us; the film followed a grid refitted 12 times); vblank wake-up to top row 0.261 ms at film start, 0.325 ms at the end
+DISPLAY2: top-row grid at film start vs end, at the film's end: +6.4 us (end fit: 2598 of 2729 samples, residual p50 2.83 us, p95 11.38 us; the film followed a grid refitted 12 times); vblank wake-up to top row 0.215 ms at film start, 0.231 ms at the end
+wrote C:\Users\tamla\Downloads\Telegram Desktop\panorama\spikes\per-monitor-presenter\results-2026-10-11\windowed-rowtiming-options\monitor-0-nearest.json
+wrote C:\Users\tamla\Downloads\Telegram Desktop\panorama\spikes\per-monitor-presenter\results-2026-10-11\windowed-rowtiming-options\monitor-1-nearest.json

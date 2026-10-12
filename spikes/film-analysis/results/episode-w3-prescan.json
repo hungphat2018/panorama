@@ -1,0 +1,43 @@
+{
+ "name": "episode-w3",
+ "mode": "prescan",
+ "file": "C:/Users/tamla/Downloads/[Judas] Nama-Anaru - S01E02.mkv",
+ "workers": 3,
+ "from_s": 0.0,
+ "segment_seconds": 45.0,
+ "decode_path": "auto",
+ "exit": 0,
+ "wall_s": 5.93,
+ "first_usable_result_s": null,
+ "prescan_s": 5.485,
+ "worker": {
+  "content": "C:\\Users\\tamla\\AppData\\Local\\Temp\\claude\\C--Users-tamla-Downloads-Telegram-Desktop-panorama\\2069b31a-b850-4507-8935-25f6ab90abf8\\scratchpad\\film-analysis\\content\\episode-w3\\content.json",
+  "prescan_s": 5.485,
+  "wall_s": 5.67,
+  "job": {
+   "active": true,
+   "error": null,
+   "cpu": {
+    "user_s": 5.328125,
+    "kernel_s": 6.1875,
+    "processes": 17
+   },
+   "peak_memory_bytes": 1791483904
+  }
+ },
+ "scan": {},
+ "samples": {
+  "gpu_error": "mean requires at least one data point",
+  "cpu_total": {
+   "samples": 9,
+   "mean_pct": 55.8,
+   "max_pct": 71.2
+  }
+ },
+ "stderr_tail": [
+  "[prescan] C:\\Users\\tamla\\Downloads\\[Judas] Nama-Anaru - S01E02.mkv",
+  "[prescan] done in 5.49 s: 34047 frames, 306 keyframes, decode path cuda, black level 20.0"
+ ],
+ "cpu_seconds_total": 11.5,
+ "cpu_core_equivalents_mean": 1.94
+}

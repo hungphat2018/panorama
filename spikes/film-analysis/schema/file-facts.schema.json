@@ -1,0 +1,169 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://panorama.invalid/schema/content/0/file-facts.schema.json",
+  "title": "file-facts.json: what the file is (panorama.content/0)",
+  "description": "Facts about one video file: streams, the timeline rule and frame rate, colour and HDR, Dolby Vision, chapters, the black level, the crop vocabulary and text found in the bars. Written by the pre-scan (everything except the parts marked as filled by the full scan) and updated when the scan has been through the film.",
+  "type": "object",
+  "required": ["schema", "file", "video", "timeline", "streams", "chapters"],
+  "properties": {
+    "schema": {"const": "panorama.content.file-facts/0"},
+    "file": {
+      "type": "object", "required": ["key"],
+      "properties": {
+        "key": {"$ref": "common.schema.json#/$defs/file_key"},
+        "name": {"type": "string"},
+        "container": {"type": ["string", "null"], "description": "ffprobe format name, for example matroska,webm."},
+        "container_duration_s": {"type": ["number", "null"]},
+        "bit_rate": {"type": ["integer", "null"]}
+      }
+    },
+    "video": {
+      "description": "The video stream the performer decodes (the one libavformat's best-stream choice picks).",
+      "type": "object",
+      "required": ["stream_index", "width", "height", "pix_fmt", "sample_aspect_ratio", "hdr"],
+      "properties": {
+        "stream_index": {"type": "integer", "description": "Absolute stream index in the container."},
+        "codec": {"type": ["string", "null"]}, "profile": {"type": ["string", "null"]}, "level": {"type": ["integer", "null"]},
+        "pix_fmt": {"type": "string"},
+        "bit_depth": {"type": ["integer", "null"]},
+        "chroma": {"type": ["string", "null"], "description": "4:2:0, 4:2:2, 4:4:4 ..."},
+        "width": {"type": "integer", "minimum": 1, "description": "Stored width in pixels (the decoder's output, not the displayed width)."},
+        "height": {"type": "integer", "minimum": 1},
+        "coded_width": {"type": ["integer", "null"]}, "coded_height": {"type": ["integer", "null"]},
+        "sample_aspect_ratio": {"$ref": "common.schema.json#/$defs/rational", "description": "Width of a stored pixel over its height; displayed width = width * sar. Positions in the model are in stored pixels, so the planner applies this."},
+        "display_aspect_ratio": {"type": ["string", "null"]},
+        "rotation_deg": {"type": "integer", "description": "Display-matrix rotation from the container; positions are in the unrotated stored frame."},
+        "field_order": {"type": "string"},
+        "color_range": {"type": ["string", "null"], "description": "tv (limited, 16-235) or pc (full). Luma columns of signals.bin keep the stream's own code values."},
+        "color_space": {"type": ["string", "null"]},
+        "chroma_location": {"type": ["string", "null"]},
+        "bit_rate": {"type": ["integer", "null"]},
+        "hdr": {
+          "type": "object", "required": ["kind"],
+          "properties": {
+            "kind": {"enum": ["sdr", "hdr10", "hdr10plus", "hlg", "dolby-vision"]},
+            "transfer": {"type": ["string", "null"]}, "primaries": {"type": ["string", "null"]},
+            "mastering_display": {"type": ["object", "null"], "description": "SMPTE ST 2086 values as the file states them, luminance in cd/m2 (nits)."},
+            "max_content_light_level": {"type": ["integer", "null"], "description": "MaxCLL in nits."},
+            "max_frame_average_light_level": {"type": ["integer", "null"], "description": "MaxFALL in nits."}
+          }
+        },
+        "dolby_vision": {
+          "description": "Null when the stream has no Dolby Vision configuration record. Level 5 (active area) and level 1 (brightness) blocks are frame side data that FFmpeg's libavutil delivers through av_dovi_find_level; ffprobe and showinfo print scene_refresh_flag but not those blocks.",
+          "type": ["object", "null"],
+          "properties": {
+            "profile": {"type": "integer"}, "level": {"type": "integer"}, "rpu_present": {"type": "boolean"},
+            "enhancement_layer_present": {"type": "boolean"}, "base_layer_present": {"type": "boolean"},
+            "bl_signal_compatibility_id": {"type": "integer"},
+            "first_frame_rpu": {"type": ["object", "null"]},
+            "level5_active_area": {"type": ["object", "array", "null"], "description": "Active-area offsets in pixels (left, right, top, bottom) when sampled; null when not sampled."},
+            "level5_note": {"type": "string"}
+          }
+        }
+      }
+    },
+    "timeline": {
+      "description": "The timeline convention made concrete for this file: the time base, the first frame's timestamp, the frame count and rate. The frame table itself is the columns pts and key of signals.bin.",
+      "type": "object",
+      "required": ["kind", "rule", "time_base", "first_pts_ticks", "frames", "duration_s", "frame_rate", "frame_table_source"],
+      "properties": {
+        "kind": {"enum": ["linear"], "description": "linear: the file's own timeline as FFmpeg demuxes it. MKV ordered chapters and segment links are not followed (FFmpeg ignores them); a file that uses them is described as its plain linear timeline."},
+        "rule": {"type": "string", "description": "The exact rule, in words, turning pts ticks into seconds; same as common.schema.json."},
+        "time_base": {"$ref": "common.schema.json#/$defs/rational"},
+        "first_pts_ticks": {"type": "integer", "description": "pts of frame 0 in ticks; time zero. May be negative or large (MP4 empty edits, MKV starting at 10 s): the rebasing removes it."},
+        "first_pts_s_abs": {"type": "number", "description": "pts[0] * tb in seconds on the container's own timeline; subtitle and chapter times are converted to the rebased timeline by subtracting it."},
+        "frames": {"type": "integer", "minimum": 1},
+        "duration_s": {"type": "number", "description": "From frame 0's time to the end of the last frame."},
+        "last_frame_duration_s": {"type": "number"},
+        "last_duration_ticks": {"type": ["integer", "null"]},
+        "frame_rate": {
+          "type": "object",
+          "properties": {
+            "container_avg_frame_rate": {"type": ["array", "null"], "items": {"type": "integer"}},
+            "container_r_frame_rate": {"type": ["array", "null"], "items": {"type": "integer"}},
+            "fps_avg": {"type": ["number", "null"], "description": "(frames - 1) / (time of last frame - time of first frame)."},
+            "nominal_rate": {"type": ["array", "null"], "items": {"type": "integer"}, "description": "The standard rate (24000/1001, 25, ...) within 1% of fps_avg (or 0.5% of the median step); null when none fits."},
+            "vfr": {"type": "boolean", "description":"True when more than 0.5% of the frames lie off the regular grid of the nominal rate by more than max(1.5 ms, 2 ticks) (a dropped frame or a 30 / 60 fps stretch moves everything after it off the grid; timestamps rounded to a millisecond do not); without a nominal rate, when more than 0.5% of the steps differ from the median step by more than 1.5 ticks."},
+            "vfr_share": {"type": "number"},
+            "step_histogram": {"type": "array", "description": "The most common steps between consecutive frames, in ticks and ms, with counts.", "items": {"type": "object"}},
+            "step_ms_min": {"type": "number"}, "step_ms_max": {"type": "number"}
+          }
+        },
+        "frame_table_source": {"enum": ["packets", "synthetic"], "description": "packets: built from the container's packet list (no decoding) and verified against the performer's decoder path; synthetic: the stream has no timestamps (raw .264 / .hevc), frames are numbered at the stream's rate and the performer would show one frame."},
+        "frame_table_stats": {"type": "object", "description": "Packets seen, packets dropped (flagged to be discarded by an edit list, without a timestamp, or repeating one), frames kept."},
+        "keyframes": {"type": "integer"},
+        "ordered_chapters": {
+          "description": "Matroska only: whether the file asks for a timeline other than its own (ordered chapter editions, chapters that link other files). Null for other containers. Neither FFmpeg nor this model follows them.",
+          "type": ["object", "null"],
+          "properties": {"present": {"type": "boolean"}, "editions": {"type": "integer"}, "ordered_editions": {"type": "integer"}, "atoms": {"type": "integer"}, "atoms_linking_other_segments": {"type": "integer"}}
+        },
+        "notes": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "streams": {
+      "description": "Every stream of the container, summarised. Subtitle streams carry subtitle_kind: text (parsed and rendered) or bitmap.",
+      "type": "array",
+      "items": {
+        "type": "object", "required": ["index", "type"],
+        "properties": {
+          "index": {"type": "integer"}, "type": {"type": "string"}, "codec": {"type": ["string", "null"]},
+          "language": {"type": ["string", "null"]}, "title": {"type": ["string", "null"]},
+          "default": {"type": "boolean"}, "forced": {"type": "boolean"}, "hearing_impaired": {"type": "boolean"},
+          "attached_pic": {"type": "boolean"}, "subtitle_kind": {"enum": ["text", "bitmap", "unknown"]},
+          "channels": {"type": ["integer", "null"]}, "sample_rate": {"type": ["string", "null"]}
+        }
+      }
+    },
+    "chapters": {
+      "type": "array",
+      "items": {
+        "type": "object", "required": ["start_s", "end_s", "title", "kind_guess"],
+        "properties": {"start_s": {"type": "number"}, "end_s": {"type": "number"}, "title": {"type": "string"},
+                       "kind_guess": {"enum": ["op", "ed", "credits", "preview", "normal"], "description": "Guessed from the title only."}}
+      }
+    },
+    "decode_path": {"enum": ["cuda", "d3d11va", "software"]},
+    "analyzer_versions": {"type": "object", "description": "Versions of the signal groups and tables this folder was made with."},
+    "black_level": {
+      "description": "What the bars of this file are made of, estimated from the keyframes (research: the cropdetect threshold must sit just above it). Values are 8-bit code values of the decoded stream.",
+      "type": ["object", "null"],
+      "properties": {
+        "nominal": {"type": "integer", "description": "16 for video range, 0 for full range."},
+        "bar_level": {"type": "number", "description": "Median of the flat dark edges found; the nominal level when none."},
+        "bar_like_edge_samples": {"type": "integer"}, "edge_samples": {"type": "integer"}, "keyframes_used": {"type": "integer"},
+        "cropdetect_limit": {"type": "number", "description": "(bar_level + 3) / 255, kept between (nominal + 3) / 255 and 24/255."},
+        "bright_threshold": {"type": "integer", "description": "bar_level + 40: a pixel at or above it in a bar is text or a logo."},
+        "source": {"type": "string"}, "unit": {"type": "string"}
+      }
+    },
+    "crop_vocabulary": {
+      "description": "The file's few real picture rectangles (research: one to three modes) with their share of the evidence. From keyframes after the pre-scan, from every shot after the scan.",
+      "type": ["object", "null"],
+      "properties": {
+        "source": {"enum": ["keyframes", "scan"]},
+        "keyframes_used": {"type": "integer"},
+        "modes": {"type": "array", "items": {"type": "object", "required": ["rect", "share"], "properties": {
+          "id": {"type": "integer"}, "rect": {"$ref": "common.schema.json#/$defs/rect"}, "share": {"type": "number"}, "source": {"type": "string"}}}}
+      }
+    },
+    "text_in_bars": {
+      "description": "Per side, how much burned-in text or logo was found in the bars (filled by the full scan): frames that had a bar on that side, frames with text, their share, and the largest extension of the crop that was needed to keep the text.",
+      "type": ["object", "null"],
+      "properties": {
+        "source": {"enum": ["scan", "none"]},
+        "per_side": {"type": "object", "properties": {
+          "top": {"$ref": "#/$defs/side"}, "bottom": {"$ref": "#/$defs/side"}, "left": {"$ref": "#/$defs/side"}, "right": {"$ref": "#/$defs/side"}}}
+      }
+    },
+    "slide_region_of_interest": {
+      "description": "The part of the picture used to measure camera slides: the intersection of the picture rectangles of the main crop modes, in the 480x270 analysis grid (the whole grid when the file has no bars).",
+      "type": "object", "properties": {"grid_px": {"type": "array", "items": {"type": "integer"}, "minItems": 4, "maxItems": 4}, "grid": {"type": "array", "items": {"type": "integer"}}}
+    }
+  },
+  "$defs": {
+    "side": {
+      "type": "object",
+      "properties": {"bar_frames": {"type": "integer"}, "frames_with_text": {"type": "integer"}, "share": {"type": ["number", "null"]}, "max_extension_px": {"type": "integer"}}
+    }
+  }
+}

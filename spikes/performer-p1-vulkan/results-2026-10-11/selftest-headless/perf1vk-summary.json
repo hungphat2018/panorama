@@ -1,0 +1,329 @@
+{
+ "mode": "nearest",
+ "monitors": [
+  {
+   "name": "DISPLAY1",
+   "refresh_hz": 240.0211,
+   "presents": 1668,
+   "fallback_times": 1668,
+   "refreshes_per_frame": {
+    "7": 1,
+    "8": 23,
+    "9": 36,
+    "10": 51,
+    "11": 29,
+    "12": 23,
+    "13": 4
+   },
+   "skipped_frames": 0,
+   "composition": {},
+   "error": "",
+   "vk": {
+    "backend": "libplacebo",
+    "headless": true,
+    "present_mode": "fifo",
+    "depth": 1,
+    "images": 0,
+    "alpha": "opaque",
+    "format": "rgb10a2",
+    "device": "NVIDIA GeForce RTX 5070 Ti Laptop GPU",
+    "layers_off": "none"
+   },
+   "loop": {
+    "loops": 1668,
+    "refresh_hz": 240.021,
+    "present_interval_ms": {
+     "n": 1667,
+     "p50": 4.17,
+     "p99": 7.457,
+     "max": 9.057
+    },
+    "acquire_interval_ms": {
+     "n": 1667,
+     "p50": 4.167,
+     "p99": 7.505,
+     "max": 9.411
+    },
+    "acquire_gap_refreshes": {
+     "0": 71,
+     "1": 1512,
+     "2": 84
+    },
+    "missed_refreshes_inferred": 84,
+    "loops_over_1_5_refreshes": 84,
+    "phase_ms": {
+     "acquire": {
+      "n": 1668,
+      "p50": 3.785,
+      "p99": 4.007,
+      "max": 4.372
+     },
+     "pick": {
+      "n": 1668,
+      "p50": 0.008,
+      "p99": 0.098,
+      "max": 0.392
+     },
+     "render": {
+      "n": 1668,
+      "p50": 0.183,
+      "p99": 1.128,
+      "max": 3.247
+     },
+     "gap": {
+      "n": 1668,
+      "p50": 0.0,
+      "p99": 0.0,
+      "max": 0.0
+     },
+     "present": {
+      "n": 1668,
+      "p50": 0.093,
+      "p99": 7.018,
+      "max": 8.384
+     },
+     "swap": {
+      "n": 1668,
+      "p50": 0.0,
+      "p99": 0.0,
+      "max": 0.0
+     }
+    },
+    "lead_before_target_ms": {
+     "n": 1668,
+     "p50": 3.762,
+     "p99": 3.87,
+     "max": 4.315
+    }
+   },
+   "landing": null,
+   "render": {
+    "render_cpu_ms_all": {
+     "n": 1668,
+     "p50": 0.183,
+     "p99": 1.128,
+     "max": 3.247
+    },
+    "render_cpu_ms_new_frame": {
+     "n": 167,
+     "p50": 0.862,
+     "p99": 2.997,
+     "max": 3.247
+    },
+    "render_gpu_ms_all": {
+     "n": 1668,
+     "p50": 0.028,
+     "p99": 0.252,
+     "max": 7.603
+    },
+    "render_gpu_ms_new_frame": {
+     "n": 167,
+     "p50": 0.225,
+     "p99": 0.394,
+     "max": 0.529
+    },
+    "queue_more": 0,
+    "empty_mix": 0,
+    "render_failed": 0,
+    "swap_begin_failures": 0,
+    "distinct_swapchain_images": 1
+   }
+  },
+  {
+   "name": "DISPLAY2",
+   "refresh_hz": 99.992,
+   "presents": 701,
+   "fallback_times": 701,
+   "refreshes_per_frame": {
+    "3": 1,
+    "4": 138,
+    "5": 29
+   },
+   "skipped_frames": 0,
+   "composition": {},
+   "error": "",
+   "vk": {
+    "backend": "libplacebo",
+    "headless": true,
+    "present_mode": "fifo",
+    "depth": 1,
+    "images": 0,
+    "alpha": "opaque",
+    "format": "rgb10a2",
+    "device": "NVIDIA GeForce RTX 5070 Ti Laptop GPU",
+    "layers_off": "none"
+   },
+   "loop": {
+    "loops": 701,
+    "refresh_hz": 99.992,
+    "present_interval_ms": {
+     "n": 700,
+     "p50": 10.002,
+     "p99": 11.098,
+     "max": 13.17
+    },
+    "acquire_interval_ms": {
+     "n": 700,
+     "p50": 10.0,
+     "p99": 10.004,
+     "max": 10.095
+    },
+    "acquire_gap_refreshes": {
+     "1": 700
+    },
+    "missed_refreshes_inferred": 0,
+    "loops_over_1_5_refreshes": 0,
+    "phase_ms": {
+     "acquire": {
+      "n": 701,
+      "p50": 9.208,
+      "p99": 9.836,
+      "max": 9.883
+     },
+     "pick": {
+      "n": 701,
+      "p50": 0.004,
+      "p99": 0.136,
+      "max": 0.382
+     },
+     "render": {
+      "n": 701,
+      "p50": 0.199,
+      "p99": 1.165,
+      "max": 3.221
+     },
+     "gap": {
+      "n": 701,
+      "p50": 0.0,
+      "p99": 0.0,
+      "max": 0.0
+     },
+     "present": {
+      "n": 701,
+      "p50": 0.078,
+      "p99": 6.93,
+      "max": 7.961
+     },
+     "swap": {
+      "n": 701,
+      "p50": 0.0,
+      "p99": 0.0,
+      "max": 0.0
+     }
+    },
+    "lead_before_target_ms": {
+     "n": 701,
+     "p50": 9.594,
+     "p99": 9.697,
+     "max": 9.706
+    }
+   },
+   "landing": null,
+   "render": {
+    "render_cpu_ms_all": {
+     "n": 701,
+     "p50": 0.199,
+     "p99": 1.165,
+     "max": 3.221
+    },
+    "render_cpu_ms_new_frame": {
+     "n": 168,
+     "p50": 0.739,
+     "p99": 1.727,
+     "max": 3.221
+    },
+    "render_gpu_ms_all": {
+     "n": 701,
+     "p50": 0.014,
+     "p99": 0.157,
+     "max": 0.163
+    },
+    "render_gpu_ms_new_frame": {
+     "n": 168,
+     "p50": 0.135,
+     "p99": 0.161,
+     "max": 0.163
+    },
+    "queue_more": 0,
+    "empty_mix": 0,
+    "render_failed": 0,
+    "swap_begin_failures": 0,
+    "distinct_swapchain_images": 1
+   }
+  }
+ ],
+ "hitches": {
+  "DISPLAY1": [],
+  "DISPLAY2": []
+ },
+ "film": {
+  "fps": 23.976024,
+  "locked": false,
+  "windowed": false
+ },
+ "blank_start_offset_ms": {
+  "frames": 168,
+  "min": -10.63,
+  "median": -2.29,
+  "p95": 0.19,
+  "max": 4.36
+ },
+ "row_offsets": {
+  "second": "DISPLAY2",
+  "first": "DISPLAY1",
+  "master": 1,
+  "heights_mm": {
+   "top": 0.0,
+   "aim": 107.5,
+   "bottom": 215.0
+  },
+  "offset_ms": {
+   "top": {
+    "frames": 167,
+    "min": -10.84,
+    "p5": -7.5,
+    "median": -2.5,
+    "p95": -0.0,
+    "max": 5.83
+   },
+   "aim": {
+    "frames": 167,
+    "min": -8.8,
+    "p5": -5.47,
+    "median": -0.47,
+    "p95": 2.03,
+    "max": 7.87
+   },
+   "bottom": {
+    "frames": 167,
+    "min": -6.77,
+    "p5": -3.44,
+    "median": 1.57,
+    "p95": 4.07,
+    "max": 9.9
+   }
+  },
+  "windowed": false,
+  "checks": {
+   "DISPLAY1": {
+    "wake_median_to_top_ms": 0.388,
+    "wake_to_top_ms": 0.3799,
+    "wake_to_top_end_ms": 0.3745,
+    "live_refits": 12,
+    "grid_drift_us": 4.7
+   },
+   "DISPLAY2": {
+    "wake_median_to_top_ms": 0.205,
+    "wake_to_top_ms": 0.2056,
+    "wake_to_top_end_ms": 0.195,
+    "live_refits": 12,
+    "grid_drift_us": -4.9
+   }
+  },
+  "predicted_ms": {
+   "top": -1.6729,
+   "aim": 0.3606,
+   "bottom": 2.394
+  }
+ }
+}

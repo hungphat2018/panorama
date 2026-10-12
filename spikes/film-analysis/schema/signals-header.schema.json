@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://panorama.invalid/schema/content/0/signals-header.schema.json",
+  "title": "signals.json: header of signals.bin, the raw per-frame signals (layer L0 of panorama.content/0)",
+  "description": "signals.bin is one flat binary file of columns, each n_frames values long (rows of `width` values for vector columns), little-endian, each column starting at its `offset` (a multiple of 8) and packed without gaps inside. Row i is frame i of the frame table in presentation order; the columns pts and key ARE the frame table (see common.schema.json for the rule that turns pts into seconds). The file is created at its final size by the pre-scan and filled by the scan; the column `scanned` is 1 on a frame once the scan has written its signals (everything else is zero until then). A pair signal at row i (motion group) describes the step from frame i-1 to frame i; row 0 holds zeros. Per-frame cost is about 55 bytes. KNOWN COLUMNS (group): pts i8 ticks, key u1 (frame-table); scanned u1 (scan); tn_single f2, tn_many f2 (shots: TransNetV2 single-frame and many-hot head probabilities); scd f2, luma_mean u1, luma_p95 u1, luma_std u1, pc_peak u1, dx f4, dy f4, diff_before f2, diff_after f2, explained u1, static u1, other u1 (motion: camera-slide measurement of the step, brightness of the 480x270 luma, scdet-like cut score; luma values are the stream's own 8-bit code values, HDR is not converted, so a planner converts code values to nits with the transfer function in file-facts.json); crop_rect i2[4], bars_valid u1 (crop: cropdetect's first and last non-black column and row of the full-size frame, valid on every scanned frame and on the keyframes of the pre-scan); edge_top, edge_bottom, edge_left, edge_right u2 (bars-text: distance in source pixels from each frame edge to the first line holding two bright pixels; the scan depth, a quarter of the dimension, when none); dv_scene_refresh u1 (dolby-vision, only for Dolby Vision files).",
+  "type": "object",
+  "required": ["schema", "n_frames", "byte_order", "file", "columns", "groups"],
+  "properties": {
+    "schema": {"const": "panorama.content.signals/0"},
+    "n_frames": {"type": "integer", "minimum": 1},
+    "byte_order": {"const": "little"},
+    "file": {"const": "signals.bin"},
+    "columns": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "dtype", "width", "offset", "group", "unit", "description"],
+        "properties": {
+          "name": {"type": "string"},
+          "dtype": {"type": "string", "description": "numpy dtype string: <i8, u1, <f2 (IEEE half), <f4, <i2, <u2."},
+          "width": {"type": "integer", "minimum": 1, "description": "Values per frame; more than 1 for vector columns (crop_rect has 4)."},
+          "offset": {"type": "integer", "minimum": 0, "description": "Byte offset of the column in signals.bin; n_frames * width * itemsize bytes follow."},
+          "group": {"type": "string"},
+          "unit": {"type": "string"},
+          "description": {"type": "string"}
+        }
+      }
+    },
+    "groups": {
+      "description": "Analyzer version of each signal group. A stored file is reused only when the columns and these versions match the current analyzer's.",
+      "type": "object",
+      "additionalProperties": {"type": "object", "required": ["version"], "properties": {"version": {"$ref": "common.schema.json#/$defs/analyzer_version"}}}
+    }
+  }
+}

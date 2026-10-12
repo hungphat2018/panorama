@@ -1,0 +1,45 @@
+fold   ran 6 s
+   external  fold, domain linear, slide no, blend no | interior: n=150944 max 0.111 p99 0.049 p99.9 0.079 mean 0.0089 (>1: 0) | flat max 0.012 | edge max 0.111 | alpha err 0.0e+00
+   laptop    fold, domain linear, slide no, blend no | interior: n=533600 max 0.269 p99 0.055 p99.9 0.080 mean 0.0079 (>1: 0) | flat max 0.012 | edge max 0.269 | alpha err 4.9e-04
+   external  covered n=466980: max |error| 1.000, p99 0.864, mean |error| 0.110, mean error -0.0003 codes; leftover area max code 0
+   laptop    covered n=1615200: max |error| 1.000, p99 0.816, mean |error| 0.071, mean error -0.0000 codes; leftover area max code 0
+curve  ran 6 s
+   external  curve, domain linear, slide no, blend no | interior: n=156015 max 0.162 p99 0.053 p99.9 0.101 mean 0.0087 (>1: 0) | flat max 0.012 | edge max 0.162 | alpha err 0.0e+00
+   laptop    curve, domain linear, slide no, blend no | interior: n=548800 max 0.463 p99 0.057 p99.9 0.082 mean 0.0080 (>1: 0) | flat max 0.012 | edge max 0.463 | alpha err 0.0e+00
+   external  covered n=482646: max |error| 1.000, p99 0.864, mean |error| 0.105, mean error -0.0005 codes; leftover area max code 0
+   laptop    covered n=1660800: max |error| 1.000, p99 0.816, mean |error| 0.069, mean error -0.0002 codes; leftover area max code 0
+crop   ran 6 s
+   external  fold, domain linear, slide no, blend no | interior: n=150944 max 0.243 p99 0.062 p99.9 0.091 mean 0.0087 (>1: 0) | flat max 0.012 | edge max 0.243 | alpha err 0.0e+00
+   laptop    fold, domain sigmoid, slide no, blend no | interior: n=533600 max 0.264 p99 0.136 p99.9 0.167 mean 0.0292 (>1: 0) | flat max 0.030 | edge max 0.264 | alpha err 4.9e-04
+   external  covered n=466980: max |error| 1.000, p99 0.828, mean |error| 0.072, mean error +0.0000 codes; leftover area max code 0
+   laptop    covered n=1615200: max |error| 1.000, p99 0.977, mean |error| 0.104, mean error +0.0000 codes; leftover area max code 0
+slide  ran 6 s
+   external  fold, domain linear, slide yes, blend no | interior: n=150944 max 0.133 p99 0.057 p99.9 0.089 mean 0.0088 (>1: 0) | flat max 0.055 | edge max 0.133 | alpha err 0.0e+00
+   laptop    fold, domain linear, slide yes, blend no | interior: n=533600 max 0.095 p99 0.055 p99.9 0.055 mean 0.0042 (>1: 0) | flat max 0.055 | edge max 0.095 | alpha err 0.0e+00
+   external  covered n=466980: max |error| 1.000, p99 0.864, mean |error| 0.102, mean error -0.0006 codes; leftover area max code 0
+   laptop    covered n=1615200: max |error| 1.000, p99 0.430, mean |error| 0.013, mean error -0.0004 codes; leftover area max code 0
+blend  ran 6 s
+   external  fold, domain linear, slide no, blend no | interior: n=150944 max 0.111 p99 0.049 p99.9 0.079 mean 0.0089 (>1: 0) | flat max 0.012 | edge max 0.111 | alpha err 0.0e+00
+   laptop    fold, domain linear/linear, slide no, blend -1 (a 12 b 13, crops [0.0, 0.0, 1920.0, 1080.0] / [0.0, 0.0, 1920.0, 1080.0]) | interior: n=533600 max 0.227 p99 0.117 p99.9 0.117 mean 0.0335 (>1: 0) | flat max 0.118 | edge max 0.227 | alpha 
+   external  covered n=466980: max |error| 1.000, p99 0.864, mean |error| 0.110, mean error -0.0003 codes; leftover area max code 0
+   laptop    covered n=1615200: max |error| 0.997, p99 0.956, mean |error| 0.135, mean error -0.0000 codes; leftover area max code 0
+glow   ran 6 s
+   external  covered n=466980: max |error| 1.000, p99 0.828, mean |error| 0.072, mean error +0.0000 codes; leftover area max code 51
+   laptop    covered n=1615200: max |error| 1.000, p99 0.977, mean |error| 0.104, mean error +0.0000 codes; leftover area max code 53
+cutblend ran 6 s
+   external  fold, domain linear, slide no, blend no | interior: n=150944 max 0.136 p99 0.049 p99.9 0.079 mean 0.0088 (>1: 0) | flat max 0.012 | edge max 0.136 | alpha err 0.0e+00
+   laptop    fold, domain linear/sigmoid, slide no, blend -1 (a 23 b 24, crops [0.0, 0.0, 1920.0, 1080.0] / [480.0, 270.0, 1440.0, 810.0]) | interior: n=533600 max 0.264 p99 0.128 p99.9 0.157 mean 0.0308 (>1: 0) | flat max 0.089 | edge max 0.264 | al
+   external  covered n=466980: max |error| 1.000, p99 0.864, mean |error| 0.110, mean error -0.0001 codes; leftover area max code 0
+   laptop    covered n=1615200: max |error| 1.000, p99 0.941, mean |error| 0.240, mean error -0.0002 codes; leftover area max code 0
+ramp   ran 6 s
+   external  bands found [8, 10, 16, 32, 64, 128, 255]; worst difference 0.019 code
+   laptop    bands found [0, 1, 2, 3, 4, 6, 8]; worst difference 0.005 code
+   external  covered n=466980: max |error| 1.000, p99 0.956, mean |error| 0.050, mean error -0.0001 codes; leftover area max code 0
+   laptop    covered n=1615200: max |error| 1.000, p99 0.197, mean |error| 0.009, mean error -0.0001 codes; leftover area max code 0
+colour ran 6 s
+   external  covered n=466980: max |error| 1.000, p99 0.859, mean |error| 0.227, mean error -0.0002 codes; leftover area max code 0
+   laptop    covered n=1615200: max |error| 0.996, p99 0.776, mean |error| 0.376, mean error +0.0004 codes; leftover area max code 0
+subs   ran 6 s
+   external  text pixels 3184 (x 291..669, y 496..521) of 960x540
+   laptop    text pixels 0 (none) of 1280x800
+RESULT: PASS

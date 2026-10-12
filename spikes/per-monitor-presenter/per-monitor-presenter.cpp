@@ -5,25 +5,45 @@
 // the main display (spike 261011-1034). Here each monitor has its own swapchain and render thread, and a
 // scheduling mode decides on which refresh each monitor shows each film frame:
 //   own      each monitor switches on its first refresh at or after the film frame's start time
-//   nearest  the master monitor's refresh carries each frame change; every other monitor switches on its
-//            own refresh nearest to that moment (offset bounded by half the other monitor's period)
+//   nearest  the master monitor's refresh carries each frame change; every other monitor switches on the
+//            refresh that lights the aim row nearest to the moment the master lights it (offset at the aim
+//            row bounded by half the other monitor's period)
 //   follow   the follower presents at the master's refresh times with tearing allowed, so a VRR panel
 //            refreshes in step with the master (falls back to tearing if VRR is not active)
 // The film clock runs at --fps (default 20: 240 Hz = 12 refreshes per frame and 100 Hz = 5, even on both
 // native rates of Setup A). Each monitor draws white bars moving along one physical path across the gap,
 // and a barcode of the film frame number along its top edge.
 //
+// Rows, not blanks. WaitForVBlank and DXGI frame statistics mark the start of the vertical blank, just after a
+// refresh's bottom row; the picture's top row comes one blank later (0.4 ms on the laptop, 0.2 to 4 ms on the
+// external, by mode) and each row a scan-time fraction after that, at a different speed on each screen. So
+// "nearest" and the aimed start compare when the monitors light up the row at one physical height (the aim
+// height), not when their blanks start. Each monitor has its exact signal timing, a scan-line sampler that fits
+// a grid of its top-row times, a height and top on the shared vertical axis and a panel lag (row-timing.h has
+// the formula).
+//
 // Logs per monitor (JSON): refresh times (IDXGIOutput::WaitForVBlank), every present (film frame, present
 // id, call time), DXGI frame statistics (when each present reached the screen) and the composition mode
-// reported by IDXGISwapChainMedia (composed vs overlay / independent flip). analyze-per-monitor-pacing.py
-// turns them into refreshes per frame and the frame-change offset between monitors.
+// reported by IDXGISwapChainMedia (composed vs overlay / independent flip); plus the row-timing fields
+// (timing, scan_grid, scan_grid_at_start, wake_to_top_ms, wake_to_top_end_ms, geometry, aim_mm, shared_mm,
+// predicted_ms).
+// analyze-per-monitor-pacing.py turns them into refreshes per frame, the frame-change offset between monitors
+// at the blank start, and the offset at the top, aim and bottom rows of the shared height.
 //
 // Usage: per-monitor-presenter.exe [--mode own|nearest|follow] [--fps 20] [--seconds 20]
 //                                  [--master N] [--out DIR] [--gap-mm 20] [--refresh DISPLAYn=HZ]
+//                                  [--lag-ms DISPLAYn=X] [--height-offset-mm X] [--aim-mm X]
+//                                  [--windowed [--window-scale 0.5]]
 // --refresh switches that display for the run with CDS_FULLSCREEN (Windows restores it when the process ends).
-// Esc stops early. Takes over every monitor of the adapter that drives them for the run.
+// --lag-ms (repeatable) is that panel's lag: its light comes X ms after the signal (default 0).
+// --height-offset-mm is how far the follower's top is below the master's top (default 0, tops level).
+// --aim-mm is the height, from the master's top, where "nearest" and the aimed start make the screens agree
+// (default: the middle of the height both screens share).
+// --windowed is a smoke test: smaller windows, not topmost, no focus steal; refused together with --refresh.
+// Esc stops early. Without --windowed it takes over every monitor of the adapter that drives them for the run.
 #define _CRT_SECURE_NO_WARNINGS
 #include "per-monitor-common.h"
+#include "row-timing.h"
 #include <avrt.h>
 #include <timeapi.h>
 #include <d3d11_1.h>
@@ -36,6 +56,7 @@
 #include <map>
 #include <string>
 #include <thread>
+#include <utility>
 
 #pragma comment(lib, "d3d11.lib")
 #pragma comment(lib, "dxgi.lib")
@@ -54,10 +75,12 @@ struct Monitor {
     int index = 0;
     std::wstring name;
     RECT rect{};
-    double width_mm = 0, left_mm = 0;   // physical span along the shared path
+    double width_mm = 0, height_mm = 0, left_mm = 0;   // physical size; left edge along the shared path
     IDXGIOutput* output = nullptr;
     HWND hwnd = nullptr;
+    int sc_w = 0, sc_h = 0;             // swapchain size in pixels (the window's client area)
     VblankClock clock;
+    row_mon row{};                      // signal timing, scan-line grid, place on the shared vertical axis
     std::vector<PresentRecord> presents;
     std::vector<StatRecord> stats;
     std::map<int, int> composition_modes;  // DXGI_FRAME_PRESENTATION_MODE -> count of polls
@@ -71,6 +94,11 @@ struct Settings {
     std::wstring out = L".";
     std::wstring refresh_device;  // --refresh DISPLAYn=HZ: switch that display for the run
     int refresh_hz = 0;
+    std::vector<std::pair<std::wstring, double>> lag_ms;  // --lag-ms DISPLAYn=X, one entry per option
+    double height_offset_mm = 0;  // follower's top below the master's top
+    double aim_mm = NAN;          // NaN: the middle of the height both screens share
+    bool windowed = false;        // smoke test: smaller windows, not topmost, no focus steal
+    double window_scale = 0.5;
 };
 
 Settings g_cfg;
@@ -79,23 +107,50 @@ std::vector<Monitor*> g_monitors;
 // film frame n starts on master refresh index g_first + g_hold * n, i.e. at g_t0 + n * g_frame_s.
 double g_t0 = 0, g_frame_s = 0.05;
 int64_t g_first = 0, g_hold = 5;
+// Where the screens agree: the aim height and the band of height both the master and the follower cover
+// (millimetres on the shared vertical axis, from the master's top). g_predicted holds the offsets the model
+// predicts for the chosen start, second monitor minus first, at the band's top, the aim and the band's bottom.
+double g_aim_mm = 0, g_band_top_mm = 0, g_band_bottom_mm = 0;
+double g_predicted_ms[3] = {0, 0, 0};
+bool g_predicted_valid = false;
 
-// Physical widths of Setup A's panels (EDID / ruler); others fall back to 0.25 mm per pixel.
+// Physical sizes of Setup A's panels (EDID / ruler); others fall back to 0.25 mm per pixel.
 double panel_width_mm(int width_px) {
     if (width_px == 2560) return 344.0;
     if (width_px == 1920) return 476.0;
     return width_px * 0.25;
+}
+double panel_height_mm(int width_px, int height_px) {
+    if (width_px == 2560 && height_px == 1600) return 215.0;
+    if (width_px == 1920 && height_px == 1080) return 268.0;
+    return height_px * 0.25;
 }
 
 // Film frame due at time t (own mode: a monitor switches on its first refresh at or after the frame start).
 // Half a millisecond of slack keeps a refresh that lands exactly on a boundary from flip-flopping.
 int64_t frame_at(double t) { return int64_t(std::floor((t - g_t0) / g_frame_s + 0.5e-3 / g_frame_s)); }
 
-// Moment the master's screen switches to frame n: master refresh index g_first + g_hold * n.
-double master_switch(int64_t n) { return g_monitors[g_cfg.master]->clock.time_of(g_first + g_hold * n); }
+// A monitor's refresh grid as it is now (row-timing.h works on snapshots, so the maths needs no lock).
+row_vgrid grid_of(Monitor& m) {
+    row_vgrid g{};
+    m.clock.line(&g.base, &g.period);
+    return g;
+}
+
+// Master refresh index on which film frame n switches on the master's screen.
+int64_t master_refresh(int64_t n) { return g_first + g_hold * n; }
+
+// Time of the follower's refresh that carries film frame n: the one whose picture is lit nearest, at the aim
+// height, to the moment the master's screen lights it.
+double follower_switch(Monitor& f, int64_t n) {
+    Monitor& master = *g_monitors[g_cfg.master];
+    row_vgrid mg = grid_of(master), fg = grid_of(f);
+    return row_vgrid_time(&fg, row_follower_refresh(&master.row, &mg, &f.row, &fg, master_refresh(n), g_aim_mm));
+}
 
 // Film frame a monitor shows on its refresh at time v, for the "nearest" mode: the master counts its
-// own refreshes; every other monitor switches on its refresh nearest to the master's switch.
+// own refreshes; every other monitor switches on the refresh whose light at the aim height is nearest
+// to the master's.
 int64_t frame_nearest(Monitor& m, double v) {
     if (m.index == g_cfg.master) {
         int64_t k = m.clock.index_near(v) - g_first;
@@ -104,7 +159,7 @@ int64_t frame_nearest(Monitor& m, double v) {
     int64_t guess = frame_at(v);
     int64_t best = guess - 2;
     for (int64_t n = guess - 2; n <= guess + 2; ++n)
-        if (m.clock.nearest(master_switch(n)) <= v + 1e-4) best = n;
+        if (follower_switch(m, n) <= v + 1e-4) best = n;
     return best;
 }
 
@@ -123,7 +178,7 @@ void fill(ID3D11DeviceContext1* ctx, ID3D11RenderTargetView* rtv, const std::vec
 }
 
 void draw(ID3D11DeviceContext1* ctx, ID3D11RenderTargetView* rtv, const Monitor& m, int64_t frame) {
-    const LONG w = m.rect.right - m.rect.left, h = m.rect.bottom - m.rect.top;
+    const LONG w = m.sc_w, h = m.sc_h;
     const float bg[4] = {0.12f, 0.12f, 0.12f, 1.0f};
     ctx->ClearView(rtv, bg, nullptr, 0);
     // Bars every 150 mm along one physical path through both screens, moving 150 mm/s in film-frame steps.
@@ -164,8 +219,8 @@ void render_thread(Monitor* m, IDXGIAdapter1* adapter) {
     BOOL tearing = FALSE;
     factory->CheckFeatureSupport(DXGI_FEATURE_PRESENT_ALLOW_TEARING, &tearing, sizeof(tearing));
     DXGI_SWAP_CHAIN_DESC1 desc{};
-    desc.Width = UINT(m->rect.right - m->rect.left);
-    desc.Height = UINT(m->rect.bottom - m->rect.top);
+    desc.Width = UINT(m->sc_w);
+    desc.Height = UINT(m->sc_h);
     desc.Format = DXGI_FORMAT_B8G8R8A8_UNORM;
     desc.SampleDesc.Count = 1;
     desc.BufferUsage = DXGI_USAGE_RENDER_TARGET_OUTPUT;
@@ -229,7 +284,7 @@ void render_thread(Monitor* m, IDXGIAdapter1* adapter) {
 
 LRESULT CALLBACK window_proc(HWND hwnd, UINT msg, WPARAM wp, LPARAM lp) {
     if (msg == WM_KEYDOWN && wp == VK_ESCAPE) { g_stop = true; return 0; }
-    if (msg == WM_SETCURSOR) { SetCursor(nullptr); return TRUE; }
+    if (msg == WM_SETCURSOR && !g_cfg.windowed) { SetCursor(nullptr); return TRUE; }
     if (msg == WM_ERASEBKGND) return 1;
     return DefWindowProcW(hwnd, msg, wp, lp);
 }
@@ -264,29 +319,77 @@ void write_log(const Monitor& m) {
         const auto& s = m.stats[i];
         fprintf(f, "%s[%u,%u,%u,%.7f,%.7f]", i ? "," : "", s.present_count, s.present_refresh, s.sync_refresh, s.sync_qpc, s.polled);
     }
-    fprintf(f, "]}\n");
+    fprintf(f, "],\"windowed\":%s", g_cfg.windowed ? "true" : "false");
+    rowmon_write_json(&m.row, f);
+    fprintf(f, ",\"aim_mm\":%.3f,\"shared_mm\":[%.3f,%.3f]", g_aim_mm, g_band_top_mm, g_band_bottom_mm);
+    if (g_predicted_valid)
+        fprintf(f, ",\"predicted_ms\":{\"top\":%.4f,\"aim\":%.4f,\"bottom\":%.4f}", g_predicted_ms[0], g_predicted_ms[1], g_predicted_ms[2]);
+    fprintf(f, "}\n");
     fclose(f);
     wprintf(L"wrote %s\n", path.c_str());
 }
 
-void parse_args(int argc, wchar_t** argv) {
-    for (int i = 1; i + 1 < argc; i += 2) {
-        std::wstring k = argv[i], v = argv[i + 1];
-        if (k == L"--mode") g_cfg.mode = std::string(v.begin(), v.end());
+// "DISPLAYn=value" (the \\.\ prefix is optional). False if there is no '=' or the value is not a number.
+bool parse_device_value(const std::wstring& arg, std::wstring* device, double* value) {
+    size_t eq = arg.find(L'=');
+    if (eq == std::wstring::npos || eq == 0) return false;
+    const wchar_t* num = arg.c_str() + eq + 1;
+    wchar_t* end = nullptr;
+    *value = std::wcstod(num, &end);
+    if (end == num || *end != L'\0') return false;
+    *device = arg.substr(0, eq);
+    if (device->rfind(L"\\\\.\\", 0) != 0) *device = L"\\\\.\\" + *device;
+    return true;
+}
+
+bool parse_args(int argc, wchar_t** argv) {
+    for (int i = 1; i < argc; ++i) {
+        std::wstring k = argv[i];
+        if (k == L"--windowed") { g_cfg.windowed = true; continue; }
+        if (i + 1 >= argc) { fwprintf(stderr, L"%s needs a value\n", k.c_str()); return false; }
+        std::wstring v = argv[++i];
+        double refresh_value = 0;
+        if (k == L"--mode") g_cfg.mode = utf8(v);
         else if (k == L"--fps") g_cfg.fps = _wtof(v.c_str());
         else if (k == L"--seconds") g_cfg.seconds = _wtof(v.c_str());
         else if (k == L"--master") g_cfg.master = _wtoi(v.c_str());
         else if (k == L"--out") g_cfg.out = v;
         else if (k == L"--gap-mm") g_cfg.gap_mm = _wtof(v.c_str());
+        else if (k == L"--height-offset-mm") g_cfg.height_offset_mm = _wtof(v.c_str());
+        else if (k == L"--aim-mm") g_cfg.aim_mm = _wtof(v.c_str());
+        else if (k == L"--window-scale") g_cfg.window_scale = _wtof(v.c_str());
         else if (k == L"--refresh") {
-            size_t eq = v.find(L'=');
-            if (eq != std::wstring::npos) {
-                g_cfg.refresh_device = v.substr(0, eq);
-                if (g_cfg.refresh_device.rfind(L"\\\\.\\", 0) != 0) g_cfg.refresh_device = L"\\\\.\\" + g_cfg.refresh_device;
-                g_cfg.refresh_hz = _wtoi(v.c_str() + eq + 1);
+            if (!parse_device_value(v, &g_cfg.refresh_device, &refresh_value) || refresh_value < 1) {
+                fwprintf(stderr, L"--refresh wants DISPLAYn=HZ, got %s\n", v.c_str());
+                return false;
             }
+            g_cfg.refresh_hz = int(refresh_value);
+        } else if (k == L"--lag-ms") {
+            std::wstring device;
+            double ms = 0;
+            if (!parse_device_value(v, &device, &ms)) {
+                fwprintf(stderr, L"--lag-ms wants DISPLAYn=MS, got %s\n", v.c_str());
+                return false;
+            }
+            g_cfg.lag_ms.emplace_back(device, ms);
+        } else {
+            fwprintf(stderr, L"unknown option %s\n", k.c_str());
+            return false;
         }
     }
+    if (g_cfg.mode != "own" && g_cfg.mode != "nearest" && g_cfg.mode != "follow") {
+        fwprintf(stderr, L"unknown --mode\n");
+        return false;
+    }
+    if (!(g_cfg.fps > 0) || !(g_cfg.seconds > 0) || !(g_cfg.window_scale > 0.05 && g_cfg.window_scale <= 1.0)) {
+        fwprintf(stderr, L"--fps and --seconds must be positive, --window-scale in (0.05, 1]\n");
+        return false;
+    }
+    if (g_cfg.windowed && g_cfg.refresh_hz > 0) {
+        fwprintf(stderr, L"--refresh is for full-screen trials; refusing to combine it with --windowed\n");
+        return false;
+    }
+    return true;
 }
 
 // Switch one display's refresh for this run, held by this process (CDS_FULLSCREEN): Windows puts the saved
@@ -303,14 +406,114 @@ bool switch_refresh(const std::wstring& device, int hz) {
     return true;
 }
 
+// One window per monitor. Full screen: a topmost popup exactly covering the monitor. Windowed (smoke test): a
+// smaller popup centred on its monitor, never topmost, never activated. The swapchain takes the client size.
+bool create_windows() {
+    WNDCLASSW wc{};
+    wc.lpfnWndProc = window_proc;
+    wc.hInstance = GetModuleHandleW(nullptr);
+    wc.lpszClassName = L"panorama-per-monitor-presenter";
+    RegisterClassW(&wc);
+    for (auto* m : g_monitors) {
+        const LONG mw = m->rect.right - m->rect.left, mh = m->rect.bottom - m->rect.top;
+        LONG x = m->rect.left, y = m->rect.top, w = mw, h = mh;
+        DWORD ex_style = WS_EX_TOPMOST;
+        if (g_cfg.windowed) {
+            w = LONG(std::lround(double(mw) * g_cfg.window_scale));
+            h = LONG(std::lround(double(mh) * g_cfg.window_scale));
+            x = m->rect.left + (mw - w) / 2;
+            y = m->rect.top + (mh - h) / 2;
+            ex_style = WS_EX_NOACTIVATE;
+        }
+        m->hwnd = CreateWindowExW(ex_style, wc.lpszClassName, L"panorama per-monitor presenter", WS_POPUP, x, y, w, h,
+                                  nullptr, nullptr, wc.hInstance, nullptr);
+        if (!m->hwnd) {
+            fwprintf(stderr, L"CreateWindowEx failed for %s\n", m->name.c_str());
+            return false;
+        }
+        ShowWindow(m->hwnd, g_cfg.windowed ? SW_SHOWNOACTIVATE : SW_SHOW);
+        RECT rc;
+        GetClientRect(m->hwnd, &rc);
+        m->sc_w = int(rc.right - rc.left);
+        m->sc_h = int(rc.bottom - rc.top);
+    }
+    if (!g_cfg.windowed) SetForegroundWindow(g_monitors.front()->hwnd);
+    return true;
+}
+
+// Places the monitors on the shared vertical axis (the master's top is 0; the follower's top is
+// --height-offset-mm lower), applies --lag-ms, and works out the band of height the master and the follower
+// share and the aim height inside it.
+bool assign_geometry() {
+    Monitor& master = *g_monitors[g_cfg.master];
+    Monitor* follower = g_monitors.size() > 1 ? g_monitors[g_cfg.master == 0 ? 1 : 0] : nullptr;
+    for (auto* m : g_monitors) m->row.top_mm = (m == follower) ? g_cfg.height_offset_mm : 0.0;
+    for (const auto& lag : g_cfg.lag_ms) {
+        Monitor* target = nullptr;
+        for (auto* m : g_monitors)
+            if (_wcsicmp(m->name.c_str(), lag.first.c_str()) == 0) target = m;
+        if (!target) {
+            fwprintf(stderr, L"--lag-ms: no monitor named %s\n", lag.first.c_str());
+            return false;
+        }
+        target->row.lag_s = lag.second * 1e-3;
+    }
+    g_band_top_mm = master.row.top_mm;
+    g_band_bottom_mm = master.row.top_mm + master.row.height_mm;
+    if (follower && !rowmon_shared_band(&master.row, &follower->row, &g_band_top_mm, &g_band_bottom_mm)) {
+        fwprintf(stderr, L"the master and the follower share no height with --height-offset-mm %.1f\n", g_cfg.height_offset_mm);
+        return false;
+    }
+    g_aim_mm = std::isnan(g_cfg.aim_mm) ? 0.5 * (g_band_top_mm + g_band_bottom_mm) : g_cfg.aim_mm;
+    if (g_aim_mm < g_band_top_mm || g_aim_mm > g_band_bottom_mm) {
+        fwprintf(stderr, L"--aim-mm %.1f is outside the shared height %.1f..%.1f mm\n", g_aim_mm, g_band_top_mm, g_band_bottom_mm);
+        return false;
+    }
+    return true;
+}
+
+// Locks the film clock to the master (frames hold a whole number of master refreshes) and, in "nearest" mode
+// with a follower, picks the aimed start.
+void choose_film_start() {
+    Monitor& master = *g_monitors[g_cfg.master];
+    VblankClock& mc = master.clock;
+    g_hold = std::max<int64_t>(1, std::llround(1.0 / (g_cfg.fps * mc.period())));
+    g_first = mc.index_near(mc.next_after(now_s() + 0.5));
+    if (g_cfg.mode == "nearest" && g_monitors.size() > 1) {
+        // The heads' clocks keep a fixed ratio, so master refreshes fall into a few alignment classes against
+        // the follower's grid. Start the film on the candidate whose follower refresh lights the aim row
+        // closest to the moment the master lights it; every later frame start (g_hold master refreshes apart)
+        // keeps that class while the ratio holds.
+        Monitor* follower = g_monitors[g_cfg.master == 0 ? 1 : 0];
+        row_vgrid mg = grid_of(master), fg = grid_of(*follower);
+        int64_t base = g_first;
+        double err_s = 0;
+        g_first = row_aim_start(&master.row, &mg, &follower->row, &fg, base, 24, g_aim_mm, &err_s);
+        // What the model predicts for this start: second monitor minus first (by output index), in light.
+        int64_t kf = row_follower_refresh(&master.row, &mg, &follower->row, &fg, g_first, g_aim_mm);
+        const double heights[3] = {g_band_top_mm, g_aim_mm, g_band_bottom_mm};
+        const double sign = follower->index > master.index ? 1.0 : -1.0;
+        for (int i = 0; i < 3; ++i)
+            g_predicted_ms[i] = sign * (rowmon_light_at(&follower->row, &fg, kf, heights[i]) -
+                                        rowmon_light_at(&master.row, &mg, g_first, heights[i])) * 1e3;
+        g_predicted_valid = true;
+        const Monitor& second = follower->index > master.index ? *follower : master;
+        const Monitor& first = follower->index > master.index ? master : *follower;
+        wprintf(L"film starts %lld master refreshes later; aim row %.1f mm\n", (long long)(g_first - base), g_aim_mm);
+        wprintf(L"predicted seam offset %s - %s, in light: top row (%.1f mm) %+.2f ms, aim row %+.2f ms, bottom row (%.1f mm) %+.2f ms\n",
+                second.name.c_str() + 4, first.name.c_str() + 4, g_band_top_mm, g_predicted_ms[0], g_predicted_ms[1],
+                g_band_bottom_mm, g_predicted_ms[2]);
+    }
+    g_t0 = mc.time_of(g_first);
+    g_frame_s = double(g_hold) * mc.period();
+    g_cfg.fps = 1.0 / g_frame_s;
+    wprintf(L"film clock locked to the master: %lld refreshes per frame, %.5f fps\n", (long long)g_hold, g_cfg.fps);
+}
+
 }  // namespace
 
 int wmain(int argc, wchar_t** argv) {
-    parse_args(argc, argv);
-    if (g_cfg.mode != "own" && g_cfg.mode != "nearest" && g_cfg.mode != "follow") {
-        fwprintf(stderr, L"unknown --mode\n");
-        return 2;
-    }
+    if (!parse_args(argc, argv)) return 2;
     SetProcessDpiAwarenessContext(DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE_V2);
     timeBeginPeriod(1);
     if (g_cfg.refresh_hz > 0) {
@@ -342,6 +545,11 @@ int wmain(int argc, wchar_t** argv) {
         m->rect = od.DesktopCoordinates;
         m->output = output;
         m->width_mm = panel_width_mm(m->rect.right - m->rect.left);
+        m->height_mm = panel_height_mm(m->rect.right - m->rect.left, m->rect.bottom - m->rect.top);
+        if (!rowmon_open(&m->row, m->name.c_str(), m->height_mm)) {
+            fwprintf(stderr, L"%s: cannot read its signal timing or scan line (QueryDisplayConfig, D3DKMT)\n", m->name.c_str());
+            return 1;
+        }
         g_monitors.push_back(m);
     }
     // Physical path: monitors left to right by desktop position, gap_mm apart.
@@ -350,77 +558,91 @@ int wmain(int argc, wchar_t** argv) {
     double x = 0;
     for (auto* m : order) { m->left_mm = x; x += m->width_mm + g_cfg.gap_mm; }
 
-    WNDCLASSW wc{};
-    wc.lpfnWndProc = window_proc;
-    wc.hInstance = GetModuleHandleW(nullptr);
-    wc.lpszClassName = L"panorama-per-monitor-presenter";
-    RegisterClassW(&wc);
-    for (auto* m : g_monitors) {
-        m->hwnd = CreateWindowExW(WS_EX_TOPMOST, wc.lpszClassName, L"panorama per-monitor presenter", WS_POPUP | WS_VISIBLE,
-                                  m->rect.left, m->rect.top, m->rect.right - m->rect.left, m->rect.bottom - m->rect.top,
-                                  nullptr, nullptr, wc.hInstance, nullptr);
-    }
-    SetForegroundWindow(g_monitors.front()->hwnd);
+    if (!create_windows()) return 1;
 
     std::vector<std::thread> vblank_threads, render_threads;
     for (auto* m : g_monitors) vblank_threads.emplace_back(vblank_thread, m);
-    // Let the refresh grids settle before the film starts.
+    for (auto* m : g_monitors)
+        if (!rowmon_start_sampler(&m->row)) m->error = "scan-line sampler thread failed to start";
+    // Let the refresh grids and the scan-line grids settle before the film starts.
     double settle_end = now_s() + 1.5;
     MSG msg;
     while (now_s() < settle_end) {
         while (PeekMessageW(&msg, nullptr, 0, 0, PM_REMOVE)) { TranslateMessage(&msg); DispatchMessageW(&msg); }
         Sleep(5);
     }
-    if (g_cfg.master < 0) {  // master: the slowest monitor
-        g_cfg.master = 0;
-        for (auto* m : g_monitors)
-            if (m->clock.period() > g_monitors[g_cfg.master]->clock.period()) g_cfg.master = m->index;
+    // Fit the scan-line grids; from here the film runs on them.
+    bool ready = true, film_started = false;
+    for (auto* m : g_monitors) {
+        if (m->clock.period() <= 0) m->error = "no vblank grid after the settle";
+        else if (m->error.empty() && !rowmon_fit(&m->row, &m->row.fit_start))
+            m->error = "no scan-line fit at film start (" + std::to_string(m->row.fit_start.taken) + " samples)";
+        if (!m->error.empty()) ready = false;
     }
-    for (auto* m : g_monitors)
-        wprintf(L"monitor %d %s: %ldx%ld at (%ld,%ld), refresh %.4f Hz%s\n", m->index, m->name.c_str(),
-                m->rect.right - m->rect.left, m->rect.bottom - m->rect.top, m->rect.left, m->rect.top,
-                1.0 / m->clock.period(), m->index == g_cfg.master ? L" (master)" : L"");
-    {   // Lock the film clock to the master: frames hold a whole number of master refreshes.
-        VblankClock& mc = g_monitors[g_cfg.master]->clock;
-        g_hold = std::max<int64_t>(1, std::llround(1.0 / (g_cfg.fps * mc.period())));
-        g_first = mc.index_near(mc.next_after(now_s() + 0.5));
-        if (g_cfg.mode == "nearest" && g_monitors.size() > 1) {
-            // The heads' clocks keep a fixed ratio, so master refreshes fall into a few alignment classes against
-            // the follower's grid. Start the film on the candidate whose nearest follower refresh is closest; every
-            // later frame start (g_hold master refreshes apart) keeps that class while the ratio holds.
-            Monitor* follower = g_monitors[g_cfg.master == 0 ? 1 : 0];
-            int64_t base = g_first;
-            double best = 1e9;
-            for (int64_t k = base; k < base + 24; ++k) {
-                double t = mc.time_of(k);
-                double off = std::fabs(follower->clock.nearest(t) - t);
-                if (off < best - 1e-6) { best = off; g_first = k; }
-            }
-            wprintf(L"film starts %lld master refreshes later: predicted follower offset %.3f ms\n",
-                    (long long)(g_first - base), best * 1000);
+    if (ready) {
+        for (auto* m : g_monitors) {  // the constant gap between each monitor's wake-up grid and its top-row grid
+            row_vgrid g = grid_of(*m);
+            rowmon_set_wake_to_top(&m->row, &g, now_s());
         }
-        g_t0 = mc.time_of(g_first);
-        g_frame_s = double(g_hold) * mc.period();
-        g_cfg.fps = 1.0 / g_frame_s;
-        wprintf(L"film clock locked to the master: %lld refreshes per frame, %.5f fps\n", (long long)g_hold, g_cfg.fps);
+        if (g_cfg.master < 0) {  // master: the slowest monitor
+            g_cfg.master = 0;
+            for (auto* m : g_monitors)
+                if (m->clock.period() > g_monitors[g_cfg.master]->clock.period()) g_cfg.master = m->index;
+        } else if (g_cfg.master >= int(g_monitors.size())) {
+            fwprintf(stderr, L"--master %d: only %d monitors\n", g_cfg.master, int(g_monitors.size()));
+            ready = false;
+        }
     }
-    for (auto* m : g_monitors) render_threads.emplace_back(render_thread, m, adapter);
-    while (!g_stop) {
-        while (PeekMessageW(&msg, nullptr, 0, 0, PM_REMOVE)) { TranslateMessage(&msg); DispatchMessageW(&msg); }
-        Sleep(5);
+    if (ready) ready = assign_geometry();
+    if (ready) {
+        for (auto* m : g_monitors) {
+            const scan_timing& t = m->row.timing;
+            wprintf(L"monitor %d %s: %ldx%ld at (%ld,%ld), refresh %.4f Hz%s\n", m->index, m->name.c_str(),
+                    m->rect.right - m->rect.left, m->rect.bottom - m->rect.top, m->rect.left, m->rect.top,
+                    1.0 / m->clock.period(), m->index == g_cfg.master ? L" (master)" : L"");
+            wprintf(L"  signal %ux%u total, line %.4f us, scan %.4f ms, blank %.4f ms; scan grid %zu of %zu samples, residual p50 %.2f us; "
+                    L"top row %.3f ms after the vblank wake-up\n", t.total_w, t.total_h, t.line_s * 1e6, t.scan_s * 1e3, t.blank_s * 1e3,
+                    m->row.fit_start.samples, m->row.fit_start.taken, m->row.fit_start.resid_p50_us, m->row.wake_to_top_s * 1e3);
+            wprintf(L"  height %.1f mm, top %.1f mm, lag %.2f ms\n", m->row.height_mm, m->row.top_mm, m->row.lag_s * 1e3);
+        }
+        wprintf(L"aim row %.1f mm; shared height %.1f..%.1f mm\n", g_aim_mm, g_band_top_mm, g_band_bottom_mm);
+        choose_film_start();
+        film_started = true;
+        for (auto* m : g_monitors) render_threads.emplace_back(render_thread, m, adapter);
+        while (!g_stop) {
+            while (PeekMessageW(&msg, nullptr, 0, 0, PM_REMOVE)) { TranslateMessage(&msg); DispatchMessageW(&msg); }
+            if (GetAsyncKeyState(VK_ESCAPE) & 0x8000) g_stop = true;  // also without focus (windowed runs)
+            Sleep(5);
+        }
     }
+    g_stop = true;
     for (auto& t : render_threads) t.join();
     for (auto& t : vblank_threads) t.join();
-    CreateDirectoryW(g_cfg.out.c_str(), nullptr);
+    // The samplers ran through the whole film, so the end-of-run fit scores it.
     for (auto* m : g_monitors) {
-        if (!m->error.empty()) fwprintf(stderr, L"monitor %d: %hs\n", m->index, m->error.c_str());
-        write_log(*m);
+        rowmon_stop_sampler(&m->row);
+        if (!film_started) continue;
+        if (!rowmon_fit(&m->row, &m->row.fit_end)) m->error += (m->error.empty() ? "" : "; ") + std::string("no scan-line fit at the end");
+        row_vgrid g = grid_of(*m);
+        rowmon_set_wake_to_top_end(&m->row, &g, now_s());
+        double drift = rowmon_grid_drift_s(&m->row, now_s());
+        wprintf(L"%s: top-row grid at film start vs end, at the film's end: %+.1f us (end fit: %zu of %zu samples, residual p50 %.2f us, p95 %.2f us; "
+                L"the film followed a grid refitted %u times); vblank wake-up to top row %.3f ms at film start, %.3f ms at the end\n",
+                m->name.c_str() + 4, drift * 1e6, m->row.fit_end.samples, m->row.fit_end.taken, m->row.fit_end.resid_p50_us,
+                m->row.fit_end.resid_p95_us, m->row.refits, m->row.wake_to_top_s * 1e3, m->row.wake_to_top_end_s * 1e3);
+    }
+    if (film_started) CreateDirectoryW(g_cfg.out.c_str(), nullptr);
+    int rc = ready ? 0 : 1;
+    for (auto* m : g_monitors) {
+        if (!m->error.empty()) { fwprintf(stderr, L"monitor %d: %hs\n", m->index, m->error.c_str()); rc = 1; }
+        if (film_started) write_log(*m);  // a run that never started has nothing to log
         DestroyWindow(m->hwnd);
         m->output->Release();
+        rowmon_close(&m->row);
     }
     adapter->Release();
     factory->Release();
     if (g_cfg.refresh_hz > 0) ChangeDisplaySettingsExW(g_cfg.refresh_device.c_str(), nullptr, nullptr, 0, nullptr);
     timeEndPeriod(1);
-    return 0;
+    return rc;
 }

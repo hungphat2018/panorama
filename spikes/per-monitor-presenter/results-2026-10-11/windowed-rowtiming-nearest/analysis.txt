@@ -1,0 +1,15 @@
+
+== mode nearest, film 20.000 fps, master monitor 1
+DISPLAY1: 240.0096 Hz, 2640 presents (1 timed by fallback), refreshes per frame {11: 2, 12: 217, 13: 1}, frames skipped 0, composition {'overlay (independent flip / MPO)': 2953, 'none': 3}
+DISPLAY2: 99.98 Hz, 2639 presents (2056 timed by fallback), refreshes per frame {4: 1, 5: 218, 6: 1}, frames skipped 0, composition {'composed': 2955, 'none': 7}
+blank-start frame-change offset DISPLAY2 - DISPLAY1 (ms): {'frames': 221, 'min': -4.17, 'p5': -2.32, 'median': -2.3, 'p95': 0.0, 'max': 4.17}
+row-light seam offset DISPLAY2 - DISPLAY1 (ms), master monitor 1; frames paired: 220
+  top    row (   0.0 mm): median -2.42  p5 -2.43  p95 +7.58  min -2.43  max +7.58   predicted -2.43
+  aim    row ( 107.5 mm): median -0.39  p5 -0.39  p95 +9.61  min -0.39  max +9.61   predicted -0.40
+  bottom row ( 215.0 mm): median +1.64  p5 +1.64  p95 +11.64  min +1.64  max +11.64   predicted +1.64
+  DISPLAY1: DXGI SyncQPCTime to next top row 0.352 ms (min 0.333, max 0.438); vblank wake-up to top row 0.3509 ms at film start, 0.2045 at the end (median over the run's wake-ups 0.223); start-fit grid vs end-fit grid at the last present +5.4 us, the film followed a grid refitted 16 times
+  DISPLAY2: DXGI SyncQPCTime to next top row 4.65 ms (min 0.412, max 9.653); vblank wake-up to top row 0.2312 ms at film start, 0.1829 at the end (median over the run's wake-ups 0.22); start-fit grid vs end-fit grid at the last present +3.9 us, the film followed a grid refitted 16 times
+  WARNING DISPLAY2: only 6% of DXGI's times sit within this monitor's blank before a top row (a composed window?): its row-light offsets are not meaningful
+  (windowed run: a composed window is presented on the main display's clock, so the second monitor's pacing and these offsets only check the plumbing)
+
+wrote results-2026-10-11\windowed-rowtiming-nearest\pacing-summary.json

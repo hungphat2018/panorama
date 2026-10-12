@@ -1,0 +1,94 @@
+{
+  "schema": "panorama.models-manifest/0",
+  "description": "Every model file the film-analysis worker loads. Files live in tools/models/ (git-ignored, copied or downloaded from source_url); this manifest is committed. 'path' is relative to tools/models/. The worker refuses a model whose size differs and verifies sha256 with --verify-models. 'upstream_check' says how the hash was compared with the publisher's own record on 2026-10-12.",
+  "checked_on": "2026-10-12",
+  "models": [
+    {
+      "id": "transnetv2",
+      "role": "shot boundaries: per-frame probability that a cut lies between this frame and the next (single-frame head) and that the frame is inside a transition (many-hot head)",
+      "path": "transnetv2/transnetv2.onnx",
+      "sha256": "43d4e5c404c8ae06f8cb5a196c13bebf739381d432ddb6bd2d9d3a488e77b436",
+      "size_bytes": 31254511,
+      "source_url": "https://github.com/compilons/videosteno-models/releases/download/transnetv2-v1/transnetv2.onnx",
+      "origin": "third-party ONNX re-export (release transnetv2-v1, 2026-06-01) of soCzech/TransNetV2 weights (commit 85cef72a); exporter's own parity record: probabilities differ from TensorFlow by at most 1.3e-7",
+      "upstream_check": "sha256 equals the GitHub release asset digest",
+      "license": "MIT",
+      "license_note": "upstream soCzech/TransNetV2 is MIT; the re-export repository itself carries no licence file. Re-export from upstream ourselves before shipping.",
+      "version": "transnetv2-v1",
+      "io": {
+        "input": "frames uint8 [1,100,27,48,3] RGB 0-255 (normalisation is inside the graph)",
+        "outputs": ["single_frame_predictions logits [1,100,1] (primary)", "all_frame_predictions logits [1,100,1] (many-hot)"]
+      },
+      "sidecar": "transnetv2/transnetv2.onnx.json (the exporter's record, sha256 5a7f8526ec4e53cec2c0b58d65379e3268fbcfc38551059d4650b8c49d8438d1)"
+    },
+    {
+      "id": "anime-face-v1.4s",
+      "role": "anime faces (class face)",
+      "path": "anime-face-v1.4s/model.onnx",
+      "sha256": "403b5bc93b6ff789b7d183418df4a1364049bac00c24acd927604a7ff6891483",
+      "size_bytes": 44583229,
+      "source_url": "https://huggingface.co/deepghs/anime_face_detection/resolve/main/face_detect_v1.4_s/model.onnx",
+      "origin": "deepghs/anime_face_detection, directory face_detect_v1.4_s (newest face model in the repository; repository last modified 2024-09-24)",
+      "upstream_check": "sha256 equals the Hugging Face LFS oid",
+      "license": "MIT",
+      "license_note": "weights are MIT; the network is a YOLOv8-class architecture (Ultralytics code is AGPL-3.0): matters when the project licence is chosen",
+      "version": "v1.4_s",
+      "threshold_file": "anime-face-v1.4s/threshold.json",
+      "threshold": 0.307,
+      "io": {"input": "images float32 [B,3,384,640] RGB 0-1, letterboxed (grey 114)", "outputs": ["[B,5,N] cx, cy, w, h, score; NMS IoU 0.7"]}
+    },
+    {
+      "id": "anime-head-v2.0s-yv11",
+      "role": "anime heads (class head)",
+      "path": "anime-head-v2.0s-yv11/model.onnx",
+      "sha256": "414cf265070fe150c5824c9ca48c2786e563865a65a5417e66362d4c84b77405",
+      "size_bytes": 37805003,
+      "source_url": "https://huggingface.co/deepghs/anime_head_detection/resolve/main/head_detect_v2.0_s_yv11/model.onnx",
+      "origin": "deepghs/anime_head_detection, directory head_detect_v2.0_s_yv11 (the repository also has larger v2.0 models m, l, x; last modified 2024-10-19)",
+      "upstream_check": "sha256 equals the Hugging Face LFS oid",
+      "license": "MIT",
+      "license_note": "weights are MIT; YOLO11-class architecture (Ultralytics code is AGPL-3.0)",
+      "version": "v2.0_s_yv11",
+      "threshold_file": "anime-head-v2.0s-yv11/threshold.json",
+      "threshold": 0.383,
+      "io": {"input": "images float32 [B,3,384,640] RGB 0-1, letterboxed (grey 114)", "outputs": ["[B,5,N] cx, cy, w, h, score; NMS IoU 0.7"]}
+    },
+    {
+      "id": "anime-person-v1.3s",
+      "role": "anime people (class person)",
+      "path": "anime-person-v1.3s/model.onnx",
+      "sha256": "6da88929438cd442e31e45ff4f934dd2d7eb9cf7a423c22885d650ee52550f90",
+      "size_bytes": 44583231,
+      "source_url": "https://huggingface.co/deepghs/anime_person_detection/resolve/main/person_detect_v1.3_s/model.onnx",
+      "origin": "deepghs/anime_person_detection, directory person_detect_v1.3_s (newest person model in the repository; last modified 2024-09-24)",
+      "upstream_check": "sha256 equals the Hugging Face LFS oid",
+      "license": "MIT",
+      "license_note": "weights are MIT; YOLOv8-class architecture (Ultralytics code is AGPL-3.0)",
+      "version": "v1.3_s",
+      "threshold_file": "anime-person-v1.3s/threshold.json",
+      "threshold": 0.324,
+      "io": {"input": "images float32 [B,3,384,640] RGB 0-1, letterboxed (grey 114)", "outputs": ["[B,5,N] cx, cy, w, h, score; NMS IoU 0.7"]}
+    },
+    {
+      "id": "yunet-2023mar",
+      "role": "faces in live action (class face), run through OpenCV's FaceDetectorYN on the CPU",
+      "path": "yunet-2023mar/yunet_2023mar.onnx",
+      "sha256": "8f2383e4dd3cfbb4553ea8718107fc0423210dc964f9f4280604804ed2552fa4",
+      "size_bytes": 232589,
+      "source_url": "https://raw.githubusercontent.com/opencv/opencv_zoo/main/models/face_detection_yunet/face_detection_yunet_2023mar.onnx",
+      "origin": "opencv/opencv_zoo, models/face_detection_yunet (repository pushed 2026-05-28); the newer face_detection_yunet_2026may.onnx is the same network with dynamic input size, not used because the measured runs used 2023mar with setInputSize",
+      "upstream_check": "sha256 equals the oid in the Git LFS pointer",
+      "license": "MIT",
+      "license_note": "YuNet is MIT (Shiqi Yu); copy of the licence text in tools/models/yunet-2023mar/LICENSE",
+      "version": "2023mar",
+      "threshold": 0.7,
+      "io": {"input": "cv2.FaceDetectorYN, BGR image at its own size (setInputSize)", "outputs": ["x, y, w, h, five landmarks, score"]}
+    }
+  ],
+  "not_included": [
+    {
+      "id": "omnishotcut-v1.5",
+      "reason": "PyTorch-only second opinion for shot types; the worker's hot path is ONNX only. Add it behind the same boundary table later if the shot bake-off asks for it."
+    }
+  ]
+}

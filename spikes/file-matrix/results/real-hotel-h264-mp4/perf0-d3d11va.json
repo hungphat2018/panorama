@@ -1,0 +1,30 @@
+{
+  "run_id": "real-hotel-h264-mp4-d3d11va",
+  "status": "ok",
+  "error": "",
+  "config": {"file": "C:/Users/tamla/Downloads/260723_HOTEL_AMAN_43_V3_MAIN_50s_MASTER_16x9_VA_H264.mp4", "backend": "d3d11", "decode": "d3d11va", "preset": "default", "window": [1920, 1080], "seconds": 8.0, "loop": false, "worst_case_no_frame_cache": false, "sync_render": false, "pl_cache_file": false, "vk_swapchain_depth": 3, "own_present": false},
+  "env": {"libplacebo_api": 375, "ffmpeg": "9.0.2", "libavutil": "61.1.102", "gpu": "NVIDIA GeForce RTX 5070 Ti Laptop GPU", "monitor": {"device": "\\\\.\\DISPLAY1", "hz": 240, "size": [2560, 1600]}},
+  "media": {"codec": "h264", "pix_fmt": "yuv420p", "hw_fmt": "d3d11/nv12", "size": [1920, 1080], "fps": 25.0000, "duration_s": 62.74},
+  "startup_ms_since_process_creation": {"main_entered": 11.2, "window_created": 21.5, "gpu_ready": 202.1, "file_opened": 226.5, "codec_opened": 227.3, "first_frame_decoded": 262.2, "first_render_done": 386.1, "first_present": 386.8},
+  "first_frame_ms": {"from_process_creation": 386.8, "from_main": 375.6, "from_gpu_ready": 184.6},
+  "playback": {"measured_s": 8.001, "refreshes_rendered": 1909, "refresh_rate_measured_hz": 238.159, "film_frames_front_changes": 202, "queue_estimated_fps": 25.0000, "queue_estimated_display_fps": 250.5279, "eof": false},
+  "counts": {"decoded": 206, "mapped": 203, "dropped_by_queue": 1, "queue_stalls": 0, "queue_stall_ms": 0.0, "late_refreshes_over_1p5x_steady": 1, "late_refreshes_over_2p5x_steady": 1, "steady_refreshes": 1429, "nominal_interval_ms": 4.1989, "skipped_refreshes_estimate": 11.1, "hitches_over_50ms_steady": 1, "max_message_pump_ms": 0.07},
+  "refreshes_per_film_frame": {"1": 1, "7": 2, "8": 1, "9": 90, "10": 106, "13": 1},
+  "dxgi_refreshes_between_presents": {"1": 1895, "2": 1, "7+": 2},
+  "timings_ms": {
+    "render_cpu_all": {"n": 1909, "min": 0.0130, "mean": 0.0572, "p50": 0.0239, "p90": 0.0935, "p99": 0.3165, "p999": 0.4848, "max": 18.4046},
+    "render_cpu_steady": {"n": 1429, "min": 0.0137, "mean": 0.0470, "p50": 0.0244, "p90": 0.0909, "p99": 0.3059, "p999": 0.4691, "max": 0.4848},
+    "render_cpu_steady_new_film_frame": {"n": 151, "min": 0.0158, "mean": 0.0877, "p50": 0.0291, "p90": 0.2699, "p99": 0.4301, "p999": 0.4691, "max": 0.4691},
+    "render_cpu_steady_repeated_frame": {"n": 1278, "min": 0.0137, "mean": 0.0422, "p50": 0.0240, "p90": 0.0850, "p99": 0.3036, "p999": 0.3469, "max": 0.4848},
+    "gpu_pass_sum_steady": {"n": 1429, "min": 0.0287, "mean": 0.0582, "p50": 0.0307, "p90": 0.2191, "p99": 0.2656, "p999": 0.5280, "max": 3.7496},
+    "gpu_pass_sum_steady_new_film_frame": {"n": 151, "min": 0.0290, "mean": 0.1212, "p50": 0.0428, "p90": 0.2321, "p99": 0.2618, "p999": 0.5280, "max": 0.5280},
+    "gpu_pass_sum_steady_repeated_frame": {"n": 1278, "min": 0.0287, "mean": 0.0507, "p50": 0.0305, "p90": 0.0511, "p99": 0.2658, "p999": 0.2753, "max": 3.7496},
+    "queue_update_steady": {"n": 1429, "min": 0.0007, "mean": 0.0062, "p50": 0.0045, "p90": 0.0143, "p99": 0.0277, "p999": 0.1406, "max": 0.1684},
+    "acquire_steady": {"n": 1429, "min": 0.0088, "mean": 0.0222, "p50": 0.0145, "p90": 0.0188, "p99": 0.1993, "p999": 0.2231, "max": 0.2950},
+    "submit_steady": {"n": 1429, "min": 0.0010, "mean": 0.0033, "p50": 0.0025, "p90": 0.0035, "p99": 0.0050, "p999": 0.1327, "max": 0.1383},
+    "swap_steady": {"n": 1429, "min": 0.0574, "mean": 4.0768, "p50": 4.1011, "p90": 4.2276, "p99": 5.5361, "p999": 5.6945, "max": 5.8303},
+    "present_interval_all": {"n": 1901, "min": 0.3584, "mean": 4.1952, "p50": 4.1656, "p90": 4.2732, "p99": 5.5697, "p999": 18.6161, "max": 58.4971},
+    "present_interval_steady": {"n": 1429, "min": 0.3584, "mean": 4.1989, "p50": 4.1657, "p90": 4.2849, "p99": 5.5829, "p999": 5.8843, "max": 58.4971}
+  },
+  "process": {"cpu_s": 0.422, "cpu_pct_of_one_core": 5.3, "cpu_pct_of_all_threads": 0.16, "logical_cpus": 32, "render_thread_cpu_pct": 2.7, "decode_thread_busy_s_in_libav_calls": 0.726, "decode_thread_cpu_s": 0.062, "peak_working_set_mb": 135, "peak_pagefile_mb": 205}
+}

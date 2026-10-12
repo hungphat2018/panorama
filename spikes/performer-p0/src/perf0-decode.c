@@ -5,6 +5,8 @@
 #define COBJMACROS
 #include "perf0.h"
 
+#include <math.h>
+
 #include <libavcodec/avcodec.h>
 #include <libavformat/avformat.h>
 #include <libavutil/cpu.h>
@@ -149,6 +151,15 @@ static bool map_frame(pl_gpu gpu, pl_tex *tex, const struct pl_source_frame *src
 
     atomic_fetch_add(&d->mapped, 1);
     pl_frame_copy_stream_props(out_frame, d->stream);
+    if (d->cfg->sd_passthrough) {
+        // libplacebo converts BT.601 primaries to the BT.709 display and gamut-maps the leftovers, which desaturates
+        // saturated SD colours; mpv's target-prim=auto passes them through. Untagged SD counts as BT.601 too.
+        struct pl_color_space *cs = &out_frame->color;
+        int h = (int) fabsf(out_frame->crop.y1 - out_frame->crop.y0), w = (int) fabsf(out_frame->crop.x1 - out_frame->crop.x0);
+        if (cs->primaries == PL_COLOR_PRIM_BT_601_525 || cs->primaries == PL_COLOR_PRIM_BT_601_625 ||
+            (cs->primaries == PL_COLOR_PRIM_UNKNOWN && w < 1280 && h <= 576))
+            cs->primaries = PL_COLOR_PRIM_BT_709;
+    }
     return true;
 }
 
@@ -214,6 +225,15 @@ static enum AVPixelFormat get_format_hw(AVCodecContext *ctx, const enum AVPixelF
         av_buffer_unref(&ctx->hw_frames_ctx);
         ctx->hw_frames_ctx = frames;
         return *p;
+    }
+    if (d->cfg->sw_fallback) {
+        // FFmpeg's default pick is the software format at the end of the list (the codec is already open with
+        // hardware settings, so frame threading is off and the fallback decodes on one thread).
+        enum AVPixelFormat sw = avcodec_default_get_format(ctx, fmts);
+        fprintf(stderr, "perf0: decoder does not offer %s for this stream, decoding in software (%s)\n",
+                av_get_pix_fmt_name(d->hw_pix_fmt), av_get_pix_fmt_name(sw));
+        snprintf(d->hw_fmt_name, sizeof(d->hw_fmt_name), "fallback/%s", av_get_pix_fmt_name(sw));
+        return sw;
     }
     fprintf(stderr, "perf0: decoder does not offer %s for this stream\n", av_get_pix_fmt_name(d->hw_pix_fmt));
     return AV_PIX_FMT_NONE;
@@ -377,6 +397,9 @@ static void push_frame(struct decoder *d, AVFrame *frame, double pts, double dur
         .unmap      = unmap_frame,
         .discard    = discard_frame,
         .frame_data = frame,
+
+        // lets libplacebo split an interlaced frame into two fields for its deinterlacer (see plplay.c)
+        .first_field = d->cfg->deinterlace ? pl_field_from_avframe(frame) : PL_FIELD_NONE,
     });
 }
 
@@ -394,6 +417,7 @@ static DWORD WINAPI decode_thread(LPVOID arg)
     double first_pts = 0.0, base_pts = 0.0, last_pts = 0.0;
     uint64_t num_frames = 0;
     bool flushing = false;
+    int bad_streak = 0; // consecutive AVERROR_INVALIDDATA skipped with --skip-bad-packets
 
     while (!atomic_load(&d->exit_thread)) {
         if (!flushing) {
@@ -412,10 +436,14 @@ static DWORD WINAPI decode_thread(LPVOID arg)
                 flushing = true;
             } else {
                 fprintf(stderr, "perf0: av_read_frame: %s\n", av_err2str(ret));
+                if (ret == AVERROR_INVALIDDATA && d->cfg->skip_bad_packets && ++bad_streak < 200)
+                    continue;
                 goto done;
             }
             if (ret < 0 && ret != AVERROR_EOF) {
                 fprintf(stderr, "perf0: avcodec_send_packet: %s\n", av_err2str(ret));
+                if (ret == AVERROR_INVALIDDATA && d->cfg->skip_bad_packets && ++bad_streak < 200)
+                    continue;
                 goto done;
             }
         }
@@ -428,12 +456,16 @@ static DWORD WINAPI decode_thread(LPVOID arg)
                 break;
 
             int64_t ts = frame->pts != AV_NOPTS_VALUE ? frame->pts : frame->best_effort_timestamp;
-            last_pts = ts * av_q2d(d->stream->time_base);
+            if (ts == AV_NOPTS_VALUE && d->cfg->synth_pts)
+                last_pts = (double) num_frames * frame_duration; // raw elementary stream: no timestamps at all
+            else
+                last_pts = ts * av_q2d(d->stream->time_base);
             if (num_frames++ == 0) {
                 first_pts = last_pts;
                 d->t_first_decoded_ms = process_age_ms();
             }
             atomic_fetch_add(&d->decoded, 1);
+            bad_streak = 0;
             push_frame(d, frame, last_pts - first_pts + base_pts, frame_duration);
             frame = av_frame_alloc();
             if (!frame)
@@ -455,6 +487,8 @@ static DWORD WINAPI decode_thread(LPVOID arg)
             continue;
         }
         fprintf(stderr, "perf0: avcodec_receive_frame: %s\n", av_err2str(ret));
+        if (ret == AVERROR_INVALIDDATA && d->cfg->skip_bad_packets && ++bad_streak < 200)
+            continue;
         goto done;
     }
 

@@ -1,0 +1,45 @@
+{
+  "schema": "panorama.room/1",
+  "name": "single-laptop",
+  "units": "mm, deg. Frame = seat",
+  "seat": {
+    "gaze_yaw_deg": 0,
+    "gaze_pitch_deg": 0,
+    "distance_mm": 700.0,
+    "source": "default"
+  },
+  "monitors": [
+    {
+      "id": "laptop",
+      "panel": {
+        "native_px": [
+          2560,
+          1600
+        ],
+        "active_area_mm": [
+          344.0,
+          215.0
+        ]
+      },
+      "pose": {
+        "centre_mm": [
+          0.0,
+          0.0,
+          700.0
+        ],
+        "yaw_deg": 0.0,
+        "pitch_deg": 0.0,
+        "roll_deg": 0.0
+      },
+      "timing": {
+        "refresh_hz": 240.001,
+        "scan_ms": 3.704,
+        "lag_ms": 0.0
+      }
+    }
+  ],
+  "derived": {
+    "seams": [],
+    "anchor": "the monitor's centre"
+  }
+}

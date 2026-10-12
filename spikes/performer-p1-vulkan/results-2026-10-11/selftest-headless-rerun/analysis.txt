@@ -1,0 +1,23 @@
+film 25.0000 fps, locked=True, windowed=False
+DISPLAY1: 240.0154 Hz, backend libplacebo (headless), present mode fifo, depth 1, rgb10a2 opaque, layers off: none; device NVIDIA GeForce RTX 5070 Ti Laptop GPU
+  loops 961: present interval {'n': 960, 'p50': 4.166, 'p99': 4.919, 'max': 6.774}; acquire interval {'n': 960, 'p50': 4.166, 'p99': 4.233, 'max': 4.313}
+  acquire gaps in refreshes {'1': 960}; missed refreshes (inferred) 0; loops over 1.5 refreshes 0
+  phases (ms): acquire p50 3.936 p99 4.063 max 4.106; pick p50 0.004 p99 0.031 max 0.052; render p50 0.078 p99 0.757 max 2.589; gap p50 0.0 p99 0.0 max 0.0; present p50 0.116 p99 0.474 max 0.946; swap p50 0.0 p99 0.0 max 0.0
+  render cpu {'n': 961, 'p50': 0.078, 'p99': 0.757, 'max': 2.589}, new frame {'n': 100, 'p50': 0.665, 'p99': 0.963, 'max': 2.589}; gpu {'n': 961, 'p50': 0.02, 'p99': 0.259, 'max': 0.278}; queue_more 0, empty_mix 0, render_failed 0, swap_begin failures 0, distinct swapchain images 1
+  refreshes per frame {9: 41, 10: 59}, skipped frames 0, 961 of 961 screen times inferred (no per-present report)
+  hitches (> threshold): 0
+DISPLAY2: 99.997 Hz, backend libplacebo (headless), present mode fifo, depth 1, rgb10a2 opaque, layers off: none; device NVIDIA GeForce RTX 5070 Ti Laptop GPU
+  loops 401: present interval {'n': 400, 'p50': 9.999, 'p99': 10.635, 'max': 12.623}; acquire interval {'n': 400, 'p50': 10.0, 'p99': 10.003, 'max': 10.041}
+  acquire gaps in refreshes {'1': 400}; missed refreshes (inferred) 0; loops over 1.5 refreshes 0
+  phases (ms): acquire p50 9.78 p99 9.884 max 9.888; pick p50 0.003 p99 0.05 max 0.075; render p50 0.088 p99 0.684 max 2.686; gap p50 0.0 p99 0.0 max 0.0; present p50 0.077 p99 0.319 max 0.471; swap p50 0.0 p99 0.0 max 0.0
+  render cpu {'n': 401, 'p50': 0.088, 'p99': 0.684, 'max': 2.686}, new frame {'n': 100, 'p50': 0.464, 'p99': 0.943, 'max': 2.686}; gpu {'n': 401, 'p50': 0.009, 'p99': 0.175, 'max': 0.187}; queue_more 0, empty_mix 0, render_failed 0, swap_begin failures 0, distinct swapchain images 1
+  refreshes per frame {3: 1, 4: 99}, skipped frames 0, 401 of 401 screen times inferred (no per-present report)
+  hitches (> threshold): 0
+blank-start frame-change offset ms (monitor1 - monitor0): {'frames': 101, 'min': -4.04, 'median': -2.29, 'p95': -0.61, 'max': 3.54}
+row-light seam offset DISPLAY2 - DISPLAY1 (ms), master monitor 1; frames paired: 100
+  top    row (   0.0 mm): median -2.44  p5 -4.11  p95 -0.78  min -4.11  max -0.78   predicted -2.44
+  aim    row ( 107.5 mm): median -0.41  p5 -2.08  p95 +1.26  min -2.08  max +1.26   predicted -0.41
+  bottom row ( 215.0 mm): median +1.62  p5 -0.04  p95 +3.29  min -0.04  max +3.29   predicted +1.63
+  DISPLAY1: vblank wake-up to top row 0.3507 ms at film start, 0.3718 at the end (median over the run's wake-ups 0.384); start-fit grid vs end-fit grid at the last present -10.3 us, the film followed a grid refitted 9 times
+  DISPLAY2: vblank wake-up to top row 0.2445 ms at film start, 0.2284 at the end (median over the run's wake-ups 0.238); start-fit grid vs end-fit grid at the last present +6.7 us, the film followed a grid refitted 9 times
+wrote C:\Users\tamla\AppData\Local\Temp\claude\C--Users-tamla-Downloads-Telegram-Desktop-panorama\09c6efa0-da3b-48c3-a962-a803096ff593\scratchpad\regress-headless\perf1vk-summary.json

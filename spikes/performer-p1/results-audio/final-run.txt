@@ -1,0 +1,83 @@
+1. audio-selftest ramp.nut: audio-selftest: 4482 checks, 0 failed
+1. audio-selftest ramp.mkv: audio-selftest: 4482 checks, 0 failed
+2. audio-analyze --selftest: audio-analyze selftest: PASS
+3. perf1-audio-lgpl.exe --headless --audio-null:
+   plain 60 s, 23.976 fps on 96 Hz (speed lock +0.1 %) (62 s)
+   results-audio\final\audio-test-24-96-plain-0\audio.csv
+     epochs 1, breaks 0, measurements 5993 (steady 5793)
+     placement max 0.002 ms; first second max 0.016 ms; steady |error| p50 0.038 p99 0.295 max 0.458 ms
+     resyncs 0, underruns 0, late starts 0 (max 0.0 ms skipped), largest correction 808 ppm, device clock spread 0.0067 ms
+     VERDICT: PASS
+   plain, 23.976 fps on 72 Hz (speed lock +0.1 %) (32 s)
+   results-audio\final\audio-test-24-72-plain-1\audio.csv
+     epochs 1, breaks 0, measurements 3002 (steady 2802)
+     placement max 0.002 ms; first second max 0.007 ms; steady |error| p50 0.020 p99 0.162 max 0.247 ms
+     resyncs 0, underruns 0, late starts 0 (max 0.0 ms skipped), largest correction 413 ppm, device clock spread 0.0067 ms
+     VERDICT: PASS
+   plain, speed not locked (--no-lock) (27 s)
+   results-audio\final\audio-test-24-96-plain-2\audio.csv
+     epochs 1, breaks 0, measurements 2502 (steady 2302)
+     placement max 0.009 ms; first second max 0.014 ms; steady |error| p50 0.023 p99 0.169 max 0.213 ms
+     resyncs 0, underruns 0, late starts 0 (max 0.0 ms skipped), largest correction 398 ppm, device clock spread 0.0066 ms
+     VERDICT: PASS
+   sound device clock 300 ppm fast (32 s)
+   results-audio\final\audio-test-24-96-plain-3\audio.csv
+     epochs 1, breaks 0, measurements 3004 (steady 2804)
+     placement max 0.154 ms; first second max 0.128 ms; steady |error| p50 0.032 p99 0.161 max 0.198 ms
+     resyncs 0, underruns 0, late starts 0 (max 0.0 ms skipped), largest correction 596 ppm, device clock spread 0.1125 ms
+     VERDICT: PASS
+   sound device clock 500 ppm slow (32 s)
+   results-audio\final\audio-test-24-96-plain-4\audio.csv
+     epochs 1, breaks 0, measurements 3003 (steady 2803)
+     placement max 0.245 ms; first second max 0.207 ms; steady |error| p50 0.036 p99 0.239 max 0.290 ms
+     resyncs 0, underruns 0, late starts 0 (max 0.0 ms skipped), largest correction 1003 ppm, device clock spread 0.1865 ms
+     VERDICT: PASS
+   seeks around cue swaps (adversarial), 96 Hz (29 s)
+   results-audio\final\audio-test-24-96-adversarial-5\audio.csv
+     epochs 8, breaks 7, measurements 2570 (steady 970)
+     placement max 0.011 ms; first second max 0.019 ms; steady |error| p50 0.006 p99 0.039 max 0.046 ms
+     resyncs 0, underruns 0, late starts 0 (max 0.0 ms skipped), largest correction 89 ppm, device clock spread 0.0066 ms
+     VERDICT: PASS
+   device with a 40 ms driver delay, seeks around cue swaps (29 s)
+   results-audio\final\audio-test-24-96-adversarial-6\audio.csv
+     epochs 8, breaks 7, measurements 2559 (steady 973)
+     placement max 0.011 ms; first second max 0.019 ms; steady |error| p50 0.008 p99 0.025 max 0.029 ms
+     resyncs 0, underruns 0, late starts 7 (max 26.5 ms skipped), largest correction 48 ppm, device clock spread 0.0064 ms
+     VERDICT: PASS
+   device with a 40 ms driver delay, scrub (17 s)
+   results-audio\final\audio-test-24-96-scrub-7\audio.csv
+     epochs 25, breaks 24, measurements 1213 (steady 412)
+     placement max 0.011 ms; first second max 0.022 ms; steady |error| p50 0.007 p99 0.021 max 0.023 ms
+     resyncs 0, underruns 0, late starts 24 (max 33.1 ms skipped), largest correction 40 ppm, device clock spread 0.0065 ms
+     VERDICT: PASS
+   pause, resume, seek while paused (breaks), 96 Hz (52 s)
+   results-audio\final\audio-test-24-96-breaks-8\audio.csv
+     epochs 8, breaks 16, measurements 4305 (steady 2706)
+     placement max 0.011 ms; first second max 0.021 ms; steady |error| p50 0.011 p99 0.066 max 0.088 ms
+     resyncs 0, underruns 0, late starts 0 (max 0.0 ms skipped), largest correction 137 ppm, device clock spread 0.0068 ms
+     VERDICT: PASS
+   scrub at 5 seeks per second, 96 Hz (17 s)
+   results-audio\final\audio-test-24-96-scrub-9\audio.csv
+     epochs 25, breaks 24, measurements 1264 (steady 417)
+     placement max 0.021 ms; first second max 0.022 ms; steady |error| p50 0.005 p99 0.023 max 0.028 ms
+     resyncs 0, underruns 0, late starts 0 (max 0.0 ms skipped), largest correction 62 ppm, device clock spread 0.0066 ms
+     VERDICT: PASS
+   20 seeks per second (stress), 96 Hz (32 s)
+   results-audio\final\audio-test-24-96-stress-10\audio.csv
+     epochs 85, breaks 484, measurements 16 (steady 0)
+     placement max 0.020 ms; first second max 0.019 ms; steady |error| p50 nan p99 nan max nan ms
+     resyncs 0, underruns 0, late starts 0 (max 0.0 ms skipped), largest correction 38 ppm, device clock spread 0.0061 ms
+     VERDICT: PASS
+   variable frame rate clip (24, 30, 60 fps sections), 96 Hz (13 s)
+   results-audio\final\audio-test-vfr-96-plain-11\audio.csv
+     epochs 1, breaks 0, measurements 1103 (steady 903)
+     placement max 0.005 ms; first second max 0.006 ms; steady |error| p50 0.011 p99 0.042 max 0.048 ms
+     resyncs 0, underruns 0, late starts 0 (max 0.0 ms skipped), largest correction 84 ppm, device clock spread 0.0065 ms
+     VERDICT: PASS
+   25 fps clip, 5.1 FLAC, 100 Hz, adversarial (38 s)
+   results-audio\final\audio-test-25-100-adversarial-12\audio.csv
+     epochs 8, breaks 7, measurements 3450 (steady 1850)
+     placement max 0.002 ms; first second max 0.019 ms; steady |error| p50 0.012 p99 0.082 max 0.121 ms
+     resyncs 0, underruns 0, late starts 0 (max 0.0 ms skipped), largest correction 176 ppm, device clock spread 0.0067 ms
+     VERDICT: PASS
+PASS; summary: results-audio\final\audio-summary.json

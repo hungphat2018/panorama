@@ -1,0 +1,37 @@
+{
+ "room": "room/setup-a-default.json",
+ "surface": {
+  "model": "fold"
+ },
+ "source": {
+  "file": "patterns/flat-a-1920x1080.ppm",
+  "width": 1920,
+  "height": 1080,
+  "sar": 1.0
+ },
+ "cue": {
+  "centre_mm": [
+   0.0,
+   0.0
+  ],
+  "height_mm": 215.0
+ },
+ "kernel": "ewa_lanczossharp",
+ "domain": "auto",
+ "source_b": {
+  "file": "patterns/flat-b-1920x1080.ppm",
+  "width": 1920,
+  "height": 1080,
+  "sar": 1.0
+ },
+ "blend": {
+  "laptop": {
+   "wa": 0.0,
+   "wb": 0.000625
+  },
+  "external": {
+   "wa": 0.0,
+   "wb": 0.0009259
+  }
+ }
+}

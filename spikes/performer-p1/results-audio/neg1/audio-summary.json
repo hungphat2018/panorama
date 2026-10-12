@@ -1,0 +1,30 @@
+{
+ "runs": [
+  {
+   "name": "device with a 40 ms driver delay, seeks around cue swaps",
+   "epochs": 8,
+   "breaks": 7,
+   "err_samples": 2561,
+   "steady_samples": 970,
+   "steady_p50_ms": 0.17135,
+   "steady_p99_ms": 1.3075620000000001,
+   "steady_max_ms": 1.4018,
+   "first_second_max_ms": 45504.5132,
+   "placement_max_ms": 0.0112,
+   "resyncs": 1,
+   "underruns": 0,
+   "late_starts": 7,
+   "late_max_ms": 30.26,
+   "comp_max_ppm": 5000.0,
+   "resid_max_ms": 0.0064,
+   "ok": false,
+   "fails": [
+    "R1 resyncs: a resync at t=9038.019 is not within 1.5 s after an epoch start (skip_ms=0.12)",
+    "R1 resyncs: 1 resyncs, at most 0 allowed"
+   ]
+  }
+ ],
+ "failures": [
+  "device with a 40 ms driver delay, seeks around cue swaps: R1 resyncs: a resync at t=9038.019 is not within 1.5 s after an epoch start (skip_ms=0.12); R1 resyncs: 1 resyncs, at most 0 allowed"
+ ]
+}

@@ -1,0 +1,30 @@
+{
+  "run_id": "vp9-1080p24-webm-d3d11va",
+  "status": "ok",
+  "error": "",
+  "config": {"file": "C:/Users/tamla/Downloads/Telegram Desktop/panorama/spikes/file-matrix/media/vp9-1080p24.webm", "backend": "d3d11", "decode": "d3d11va", "preset": "default", "window": [1920, 1080], "seconds": 8.0, "loop": false, "worst_case_no_frame_cache": false, "sync_render": false, "pl_cache_file": false, "vk_swapchain_depth": 3, "own_present": false},
+  "env": {"libplacebo_api": 375, "ffmpeg": "9.0.2", "libavutil": "61.1.102", "gpu": "NVIDIA GeForce RTX 5070 Ti Laptop GPU", "monitor": {"device": "\\\\.\\DISPLAY1", "hz": 240, "size": [2560, 1600]}},
+  "media": {"codec": "vp9", "pix_fmt": "yuv420p", "hw_fmt": "d3d11/nv12", "size": [1920, 1080], "fps": 23.9760, "duration_s": 10.01},
+  "startup_ms_since_process_creation": {"main_entered": 18.0, "window_created": 27.9, "gpu_ready": 210.1, "file_opened": 218.9, "codec_opened": 219.5, "first_frame_decoded": 250.8, "first_render_done": 376.5, "first_present": 377.2},
+  "first_frame_ms": {"from_process_creation": 377.2, "from_main": 359.2, "from_gpu_ready": 167.1},
+  "playback": {"measured_s": 8.002, "refreshes_rendered": 1910, "refresh_rate_measured_hz": 238.324, "film_frames_front_changes": 192, "queue_estimated_fps": 23.9880, "queue_estimated_display_fps": 239.9893, "eof": false},
+  "counts": {"decoded": 196, "mapped": 193, "dropped_by_queue": 1, "queue_stalls": 0, "queue_stall_ms": 0.0, "late_refreshes_over_1p5x_steady": 9, "late_refreshes_over_2p5x_steady": 1, "steady_refreshes": 1430, "nominal_interval_ms": 4.1960, "skipped_refreshes_estimate": 10.0, "hitches_over_50ms_steady": 1, "max_message_pump_ms": 0.01},
+  "refreshes_per_film_frame": {"1": 1, "7": 1, "9": 6, "10": 178, "11": 4, "14": 1},
+  "dxgi_refreshes_between_presents": {"1": 1880, "2": 1, "7+": 2},
+  "timings_ms": {
+    "render_cpu_all": {"n": 1910, "min": 0.0120, "mean": 0.0596, "p50": 0.0257, "p90": 0.1068, "p99": 0.3275, "p999": 0.4682, "max": 18.7707},
+    "render_cpu_steady": {"n": 1430, "min": 0.0130, "mean": 0.0492, "p50": 0.0258, "p90": 0.1068, "p99": 0.3159, "p999": 0.4204, "max": 0.4411},
+    "render_cpu_steady_new_film_frame": {"n": 144, "min": 0.0165, "mean": 0.0769, "p50": 0.0702, "p90": 0.1077, "p99": 0.3275, "p999": 0.4204, "max": 0.4204},
+    "render_cpu_steady_repeated_frame": {"n": 1286, "min": 0.0130, "mean": 0.0461, "p50": 0.0253, "p90": 0.1041, "p99": 0.3159, "p999": 0.3916, "max": 0.4411},
+    "gpu_pass_sum_steady": {"n": 1430, "min": 0.0283, "mean": 0.0558, "p50": 0.0304, "p90": 0.2179, "p99": 0.2595, "p999": 0.2807, "max": 4.0757},
+    "gpu_pass_sum_steady_new_film_frame": {"n": 144, "min": 0.0296, "mean": 0.1875, "p50": 0.2187, "p90": 0.2303, "p99": 0.2504, "p999": 4.0757, "max": 4.0757},
+    "gpu_pass_sum_steady_repeated_frame": {"n": 1286, "min": 0.0283, "mean": 0.0411, "p50": 0.0302, "p90": 0.0469, "p99": 0.2598, "p999": 0.2641, "max": 0.2807},
+    "queue_update_steady": {"n": 1430, "min": 0.0006, "mean": 0.0062, "p50": 0.0045, "p90": 0.0148, "p99": 0.0307, "p999": 0.0418, "max": 0.0763},
+    "acquire_steady": {"n": 1430, "min": 0.0071, "mean": 0.0202, "p50": 0.0148, "p90": 0.0195, "p99": 0.1597, "p999": 0.2401, "max": 0.3197},
+    "submit_steady": {"n": 1430, "min": 0.0010, "mean": 0.0039, "p50": 0.0025, "p90": 0.0036, "p99": 0.0088, "p999": 0.2192, "max": 0.2198},
+    "swap_steady": {"n": 1430, "min": 0.0715, "mean": 4.0740, "p50": 4.1030, "p90": 4.2008, "p99": 4.9093, "p999": 8.4160, "max": 8.4752},
+    "present_interval_all": {"n": 1902, "min": 0.1416, "mean": 4.1930, "p50": 4.1660, "p90": 4.2568, "p99": 4.9519, "p999": 19.0121, "max": 56.9878},
+    "present_interval_steady": {"n": 1430, "min": 0.1416, "mean": 4.1960, "p50": 4.1667, "p90": 4.2643, "p99": 4.9843, "p999": 8.6189, "max": 56.9878}
+  },
+  "process": {"cpu_s": 0.266, "cpu_pct_of_one_core": 3.3, "cpu_pct_of_all_threads": 0.10, "logical_cpus": 32, "render_thread_cpu_pct": 3.3, "decode_thread_busy_s_in_libav_calls": 0.777, "decode_thread_cpu_s": 0.031, "peak_working_set_mb": 126, "peak_pagefile_mb": 192}
+}

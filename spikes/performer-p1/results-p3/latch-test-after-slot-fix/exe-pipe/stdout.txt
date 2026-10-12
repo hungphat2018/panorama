@@ -1,0 +1,15 @@
+headless: DISPLAY1 240.0010 Hz (laptop) + DISPLAY2 96.0000 Hz (external), 0.50 ppm drift, dummy GPU
+perf1: cue sheet version 1 from C:\Users\tamla\Downloads\Telegram Desktop\panorama\spikes\performer-p1\data\cue-test\sheets\cues-v1.json, 16 shots
+perf1: control pipe \\.\pipe\perf1-pipe-test
+monitor 0 DISPLAY1: 2560x1600 at (0,0), window/swapchain 2560x1600, refresh 240.0010 Hz, 344x215 mm at 0 mm
+monitor 1 DISPLAY2: 1920x1080 at (2560,0), window/swapchain 1920x1080, refresh 95.9989 Hz, 476x268 mm at 364 mm
+aim row 107.5 mm; shared height 0.0..215.0 mm
+film 23.9760 fps; master DISPLAY2 95.9989 Hz; speed LOCKED to the master's refresh count (speed 1.0010 if locked, hold 4 refreshes)
+film starts on master refresh 193 (class chosen for the followers, seam error 0.600 ms at the aim row); aim row 107.5 mm
+predicted seam offset DISPLAY2 - DISPLAY1, in light: top row (0.0 mm) -1.44 ms, aim row +0.60 ms, bottom row (215.0 mm) +2.64 ms
+picture 382.2 x 215.0 mm at x 162.9..545.1 mm; DISPLAY1: shows part DISPLAY2: shows part 
+perf1: cue sheet C:/Users/tamla/Downloads/Telegram Desktop/panorama/spikes/performer-p1/data/cue-test/sheets/cues-v2.json refused: version 2 does not exceed the current version 2
+perf1: cannot open cue sheet C:/no/such/sheet.json
+perf1: shots[0].crop [0, 0, 5000, 5000] is outside the 1920x1080 source
+perf1: cue sheet version 2 published (C:/Users/tamla/Downloads/Telegram Desktop/panorama/spikes/performer-p1/data/cue-test/sheets/cues-v2.json, 16 shots)
+wrote results-p3\latch-test-after-slot-fix\exe-pipe/perf1-cuelog.json (2 swaps, 1 seeks, 3 restarts, 0 re-aims, 0 follower moves at cuts)

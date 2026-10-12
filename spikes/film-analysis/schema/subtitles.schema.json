@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://panorama.invalid/schema/content/0/subtitles.schema.json",
+  "title": "subtitles/track-N.json: events of one subtitle stream (panorama.content/0)",
+  "description": "One file per subtitle stream (N is the stream index in the container); every stream is analysed because the viewer may switch tracks. Times are seconds on the film's rebased timeline (container time minus the first video frame's time, see common.schema.json). Boxes come from libass itself: the track is drawn on a black canvas five times a second and the lit pixels are boxed; pixels are those of a canvas of the stored video size (the render may run at half size and is scaled back up). A plain SRT has no positions, so its width depends on the player's font; the box is for libass's default style and the planner should recompute the width with its own font. Classes: sign (a title, credit, note or explicitly placed text; the planner never moves it), dialogue (the speech the planner keeps inside one screen), unknown. The class rules are v0 heuristics; `features` holds their inputs so the labelled set can tune them.",
+  "type": "object",
+  "required": ["schema", "version", "track", "canvas", "counts", "events"],
+  "properties": {
+    "schema": {"const": "panorama.content.subtitles/0"},
+    "version": {"$ref": "common.schema.json#/$defs/analyzer_version"},
+    "track": {
+      "type": "object", "required": ["stream_index", "kind", "codec"],
+      "properties": {
+        "stream_index": {"type": "integer"}, "kind": {"enum": ["text", "bitmap"]}, "codec": {"type": ["string", "null"]},
+        "language": {"type": ["string", "null"]}, "title": {"type": ["string", "null"]},
+        "default": {"type": ["boolean", "null"]}, "forced": {"type": ["boolean", "null"]}, "hearing_impaired": {"type": ["boolean", "null"]}
+      }
+    },
+    "main_style": {"type": ["string", "null"], "description": "The style most events use (the track's dialogue style)."},
+    "canvas": {
+      "type": "object", "required": ["width", "height"],
+      "properties": {"width": {"type": "integer"}, "height": {"type": "integer"}, "render_width": {"type": "integer"}, "render_height": {"type": "integer"}, "render_fps": {"type": "integer"}}
+    },
+    "play_res": {"type": "array", "description": "PlayResX, PlayResY of an ASS/SSA script (the canvas its coordinates are written for)."},
+    "styles": {"type": "array", "items": {"type": "string"}},
+    "counts": {"type": "object", "description": "events, per class, and how many have a box."},
+    "events": {
+      "type": "array",
+      "items": {
+        "type": "object", "required": ["start_s", "end_s", "class", "confidence", "features"],
+        "properties": {
+          "start_s": {"type": "number"}, "end_s": {"type": "number"},
+          "text": {"type": "string", "description": "Plain text with override tags removed, at most 200 characters."},
+          "class": {"enum": ["dialogue", "sign", "unknown"]},
+          "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+          "rect_px": {"oneOf": [{"type": "null"}, {"$ref": "common.schema.json#/$defs/rect"}], "description": "Box of the rendered event on the canvas: [x0, y0, x1, y1), union over the render samples where only this event was on (rect_kind own), else over every sample while it was on (shared); null when it was too short to be sampled."},
+          "rect_kind": {"enum": ["own", "shared", null]},
+          "rendered_samples": {"type": "integer"},
+          "rect_width_share": {"type": "number", "description": "Box width over canvas width."},
+          "rect_center_x": {"type": "number"}, "rect_center_y": {"type": "number"},
+          "features": {
+            "type": "object",
+            "properties": {
+              "style": {"type": ["string", "null"]}, "layer": {"type": "integer"},
+              "alignment": {"type": "integer", "minimum": 1, "maximum": 9, "description": "Numpad alignment (1 bottom-left ... 8 top-centre ... 9 top-right) after \\an and \\a overrides."},
+              "style_alignment": {"type": "integer"},
+              "explicit": {"type": "boolean", "description": "libass's own 'positioned' test: \\pos, \\move, \\clip, \\iclip, \\org, \\pbo or a drawing."},
+              "effect_banner": {"type": "boolean"}, "effect": {"type": "string"},
+              "margin_l": {"type": "integer"}, "margin_r": {"type": "integer"}, "margin_v": {"type": "integer"},
+              "has_style_info": {"type": "boolean"},
+              "overlaps": {"type": "integer", "description": "Other events shown at the same time."},
+              "overlaps_bottom_dialogue": {"type": "boolean"},
+              "overlaps_center_dialogue": {"type": "boolean", "description": "A plain bottom-centre line is shown at the same time (another speaker's words)."}
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,178 @@
+{
+  "plan_format": "panorama-testset-real-clips/1",
+  "about": "Real footage in the test set: whole public films and windows already read by fetch-sources.py, plus the two local films. register-clips.py turns each entry into a manifest entry with the file's own facts (codec, frames, identity hash). To add the user's own library files, add an entry with source.kind = 'user-library' and an absolute path: nothing else changes.",
+  "clips": [
+    {
+      "id": "anime-nama-anaru-ep2",
+      "domain": "anime",
+      "path": "C:/Users/tamla/Downloads/[Judas] Nama-Anaru - S01E02.mkv",
+      "source": {
+        "kind": "local-file",
+        "licence": "private (all rights reserved by the rights holders); kept on this PC, never uploaded",
+        "origin": "the user's own download of a fansub-style HEVC release; HEVC Main10 1080p 23.976 fps, 24 min, no bars, 10 soft subtitle tracks (SRT en/zh/zh/id/th, ASS fr/de/pl)"
+      },
+      "tests": [
+        "shots",
+        "faces",
+        "slides",
+        "subtitles"
+      ],
+      "notes": "Whole episode. Cold open, opening (about 0:50-2:20), eyecatch at 13:20, dark night scenes 14:00-17:40, ending and next-episode card from 22:00."
+    },
+    {
+      "id": "hotel-aman-promo",
+      "domain": "live",
+      "path": "C:/Users/tamla/Downloads/260723_HOTEL_AMAN_43_V3_MAIN_50s_MASTER_16x9_VA_H264.mp4",
+      "source": {
+        "kind": "local-file",
+        "licence": "private (brand promo, all rights reserved); kept on this PC, never uploaded",
+        "origin": "the user's own promo file; H.264 1080p 25 fps, 62 s, 16:9, no bars"
+      },
+      "tests": [
+        "shots",
+        "faces",
+        "slides"
+      ],
+      "notes": "Whole file. Bodies, architecture, a bird; few faces."
+    },
+    {
+      "id": "tos-1080p",
+      "domain": "live",
+      "path": "downloads/tears-of-steel-1080p/extracted/tears_of_steel_1080p.mov",
+      "source": {
+        "kind": "public-download",
+        "source_id": "tears-of-steel-1080p"
+      },
+      "tests": [
+        "shots",
+        "faces",
+        "slides",
+        "subtitles"
+      ],
+      "notes": "Whole film: live action with VFX in a 1920x800 frame (2.4:1, no bars stored), 24 fps, dark interiors, end-credit roll. Subtitles: the 12 SRT files of tears-of-steel-subtitles."
+    },
+    {
+      "id": "meridian-4k",
+      "domain": "live",
+      "path": "downloads/meridian-uhd-4k5994/Meridian_UHD4k5994_HDR_P3PQ.mp4",
+      "source": {
+        "kind": "public-download",
+        "source_id": "meridian-uhd-4k5994"
+      },
+      "tests": [
+        "shots",
+        "faces",
+        "slides"
+      ],
+      "notes": "Whole film: dark noir live action, 3840x2160 at 59.94 fps, 16:9 full frame, title text inside the picture, end cards on black."
+    },
+    {
+      "id": "bbb-1080p30",
+      "domain": "cg",
+      "path": "downloads/big-buck-bunny-1080p30/extracted/bbb_sunflower_1080p_30fps_normal.mp4",
+      "source": {
+        "kind": "public-download",
+        "source_id": "big-buck-bunny-1080p30"
+      },
+      "tests": [
+        "shots",
+        "slides"
+      ],
+      "notes": "Whole film: bright CG, 1920x1080 at 30 fps, many camera moves with parallax."
+    },
+    {
+      "id": "sintel-w1",
+      "domain": "cg",
+      "path": "downloads/sintel-1080p-w1/sintel-1080p-w1.mkv",
+      "source": {
+        "kind": "public-download",
+        "source_id": "sintel-1080p-w1"
+      },
+      "tests": [
+        "shots",
+        "faces",
+        "slides",
+        "subtitles"
+      ],
+      "notes": "Sintel 0:03-0:53 (stream copy, starts at the keyframe at or before 3 s): title card text over snow, fight, close faces, 1920x818 frame, soft English SRT."
+    },
+    {
+      "id": "sintel-w2",
+      "domain": "cg",
+      "path": "downloads/sintel-1080p-w2/sintel-1080p-w2.mkv",
+      "source": {
+        "kind": "public-download",
+        "source_id": "sintel-1080p-w2"
+      },
+      "tests": [
+        "shots",
+        "faces",
+        "slides",
+        "subtitles"
+      ],
+      "notes": "Sintel 3:35-4:25: very dark cave and ruins next to a sunlit market; dark-scene stress test; soft English SRT."
+    },
+    {
+      "id": "sintel-w3",
+      "domain": "cg",
+      "path": "downloads/sintel-1080p-w3/sintel-1080p-w3.mkv",
+      "source": {
+        "kind": "public-download",
+        "source_id": "sintel-1080p-w3"
+      },
+      "tests": [
+        "shots",
+        "faces",
+        "slides",
+        "subtitles"
+      ],
+      "notes": "Sintel 6:00-6:50: a dissolve between a face and a desert, snow mountain; soft English SRT."
+    },
+    {
+      "id": "sintel-w4",
+      "domain": "cg",
+      "path": "downloads/sintel-1080p-w4/sintel-1080p-w4.mkv",
+      "source": {
+        "kind": "public-download",
+        "source_id": "sintel-1080p-w4"
+      },
+      "tests": [
+        "shots",
+        "faces",
+        "slides",
+        "subtitles"
+      ],
+      "notes": "Sintel 8:35-9:25: night cave with a dragon silhouette, very dark; soft English SRT."
+    },
+    {
+      "id": "sol-levante-w1",
+      "domain": "anime",
+      "path": "downloads/sol-levante-w1/sol-levante-w1.mkv",
+      "source": {
+        "kind": "public-download",
+        "source_id": "sol-levante-w1"
+      },
+      "tests": [
+        "shots",
+        "faces",
+        "slides"
+      ],
+      "notes": "Sol Levante 0:11-0:18 (4K ProRes HQ master read by HTTP range, re-encoded to 1080p H.264 CRF 12): a blue mandala turning into a face in a mirror; painterly anime with heavy particle layers."
+    },
+    {
+      "id": "sol-levante-w2",
+      "domain": "anime",
+      "path": "downloads/sol-levante-w2/sol-levante-w2.mkv",
+      "source": {
+        "kind": "public-download",
+        "source_id": "sol-levante-w2"
+      },
+      "tests": [
+        "shots",
+        "faces",
+        "slides"
+      ],
+      "notes": "Sol Levante 2:53-3:00: a figure in a sunset sky and a close-up of a painted face with green eyes."
+    }
+  ]
+}

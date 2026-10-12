@@ -1,0 +1,10 @@
+\\.\DISPLAY2 switched to 96 Hz for this run
+DISPLAY1: 344 x 215 mm, 240.001 Hz, line 2.315 us, scan 3.704 ms, blank 0.463 ms; scan-line fit residual p50 3.2 us p95 9.4 us (886 samples)
+DISPLAY2: 476 x 268 mm, 96.000 Hz, line 8.980 us, scan 9.698 ms, blank 0.718 ms; scan-line fit residual p50 3.5 us p95 10.6 us (917 samples)  [reference: slowest]
+film clock: 24.000 fps (reference DISPLAY2: 4 refreshes per frame; laptop: 10)
+40 trials; answers go to spikes\per-monitor-presenter\results-seam-v2\seam-x2-answers-20261011-213832.jsonl
+trial 1/40  b at 300 mm/s: answered 1 (key), truth 2 -> wrong
+  b at 300 mm/s: 0 of 1 right
+1 of 40 trials answered; score with: python seam-score-x2-trials.py "spikes\per-monitor-presenter\results-seam-v2\seam-x2-answers-20261011-213832.jsonl"
+DISPLAY1: presents reaching the predicted refresh: 5 late, 0 early of 18558
+DISPLAY2: presents reaching the predicted refresh: 6 late, 0 early of 7423

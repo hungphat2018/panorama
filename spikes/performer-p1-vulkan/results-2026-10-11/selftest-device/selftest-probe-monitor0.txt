@@ -1,0 +1,3 @@
+device features: present_id 1, present_wait 1, present_id2 1, present_wait2 1, present_timing 1 (absolute 1, relative 1)
+device can calibrate (domains: DEVICE QUERY_PERFORMANCE_COUNTER PRESENT_STAGE_LOCAL): QueryPerformanceCounter against other clocks: yes
+selftest ok: NVIDIA GeForce RTX 5070 Ti Laptop GPU drives DISPLAY1; queue family 0; ids/waits v1 1/1, v2 1/1, timing 1, calibrate QPC 1, fse 1

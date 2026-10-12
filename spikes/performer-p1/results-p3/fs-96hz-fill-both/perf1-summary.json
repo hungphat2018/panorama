@@ -1,0 +1,46 @@
+[
+ {
+  "name": "DISPLAY1",
+  "refresh_hz": 240.0326,
+  "presents": 0,
+  "fallback_times": 0,
+  "refreshes_per_frame": {},
+  "skipped_frames": 0,
+  "composition": {},
+  "error": "",
+  "perf1": {
+   "render_cpu_ms_all": {},
+   "render_cpu_ms_new_frame": {},
+   "render_gpu_ms_all": {},
+   "render_gpu_ms_new_frame": {},
+   "lead_ms_before_target": {},
+   "present_calls_per_refresh": null,
+   "queue_more": 0,
+   "empty_mix": 0,
+   "render_failed": 0,
+   "screen_minus_target_ms": {}
+  }
+ },
+ {
+  "name": "DISPLAY2",
+  "refresh_hz": 96.0006,
+  "presents": 0,
+  "fallback_times": 0,
+  "refreshes_per_frame": {},
+  "skipped_frames": 0,
+  "composition": {},
+  "error": "",
+  "perf1": {
+   "render_cpu_ms_all": {},
+   "render_cpu_ms_new_frame": {},
+   "render_gpu_ms_all": {},
+   "render_gpu_ms_new_frame": {},
+   "lead_ms_before_target": {},
+   "present_calls_per_refresh": null,
+   "queue_more": 0,
+   "empty_mix": 0,
+   "render_failed": 0,
+   "screen_minus_target_ms": {}
+  }
+ }
+]

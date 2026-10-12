@@ -1,0 +1,43 @@
+{
+ "video": "cue-test.mkv",
+ "width": 1920,
+ "height": 1080,
+ "fps": "25",
+ "frames": 1000,
+ "shot_start_frames": [
+  0,
+  82,
+  230,
+  311,
+  439,
+  575,
+  664,
+  757,
+  844,
+  904
+ ],
+ "shot_start_seconds": [
+  0.0,
+  3.26,
+  9.18,
+  12.42,
+  17.54,
+  22.98,
+  26.54,
+  30.259999999999998,
+  33.739999999999995,
+  36.14
+ ],
+ "barcode": {
+  "block_px": 40,
+  "x0": 560,
+  "y0": 880,
+  "height": 50,
+  "bits": "1010 + 12 index bits + 4 check bits (popcount mod 16)"
+ },
+ "insets_percent": [
+  5,
+  10,
+  15
+ ]
+}

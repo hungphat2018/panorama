@@ -1,0 +1,10 @@
+file: C:/Users/tamla/Downloads/Telegram Desktop/panorama/spikes/file-matrix/media/anamorphic-sar-vui.mkv
+mean RGB of the six bars (red, green, yellow, blue, magenta, cyan-ish moving element)
+perf0 lgpl (libplacebo master 375)             [(245, 37, 1), (70, 249, 15), (251, 251, 21), (29, 40, 251), (247, 52, 252), (156, 196, 136)]
+perf0 packaged (libplacebo 7.360)              [(245, 37, 1), (70, 249, 15), (251, 251, 21), (29, 40, 252), (247, 52, 252), (156, 196, 136)]
+perf0 --sd-passthrough                         [(254, 0, 0), (0, 255, 0), (254, 255, 0), (0, 0, 255), (255, 0, 254), (120, 196, 135)]
+mpv default                                    [(254, 0, 0), (0, 255, 1), (254, 255, 0), (0, 0, 255), (255, 0, 254), (87, 213, 169)]
+mpv --gamut-mapping-mode=perceptual            [(254, 0, 0), (0, 255, 1), (254, 255, 0), (0, 0, 255), (255, 0, 254), (87, 213, 169)]
+mpv --gamut-mapping-mode=clip                  [(254, 0, 0), (0, 255, 1), (254, 255, 0), (0, 0, 255), (255, 0, 254), (87, 213, 169)]
+mpv --target-trc=srgb                          [(254, 0, 0), (0, 255, 0), (254, 255, 0), (0, 0, 255), (255, 0, 254), (87, 213, 168)]
+mpv --target-prim=bt.709 --target-trc=srgb     [(245, 37, 1), (70, 249, 15), (251, 251, 21), (29, 40, 252), (247, 52, 252), (133, 211, 169)]

@@ -1,0 +1,108 @@
+[
+ {
+  "name": "DISPLAY1",
+  "refresh_hz": 240.0211,
+  "presents": 1668,
+  "fallback_times": 1668,
+  "refreshes_per_frame": {
+   "7": 1,
+   "8": 23,
+   "9": 36,
+   "10": 51,
+   "11": 29,
+   "12": 23,
+   "13": 4
+  },
+  "skipped_frames": 0,
+  "composition": {},
+  "error": "",
+  "perf1": {
+   "render_cpu_ms_all": {
+    "n": 1668,
+    "p50": 0.183,
+    "p99": 1.128,
+    "max": 3.247
+   },
+   "render_cpu_ms_new_frame": {
+    "n": 167,
+    "p50": 0.862,
+    "p99": 2.997,
+    "max": 3.247
+   },
+   "render_gpu_ms_all": {
+    "n": 1668,
+    "p50": 0.028,
+    "p99": 0.252,
+    "max": 7.603
+   },
+   "render_gpu_ms_new_frame": {
+    "n": 167,
+    "p50": 0.225,
+    "p99": 0.394,
+    "max": 0.529
+   },
+   "lead_ms_before_target": {
+    "n": 1668,
+    "p50": 3.762,
+    "p99": 3.87,
+    "max": 4.315
+   },
+   "present_calls_per_refresh": 0.993,
+   "queue_more": 0,
+   "empty_mix": 0,
+   "render_failed": 0,
+   "screen_minus_target_ms": {}
+  }
+ },
+ {
+  "name": "DISPLAY2",
+  "refresh_hz": 99.992,
+  "presents": 701,
+  "fallback_times": 701,
+  "refreshes_per_frame": {
+   "3": 1,
+   "4": 138,
+   "5": 29
+  },
+  "skipped_frames": 0,
+  "composition": {},
+  "error": "",
+  "perf1": {
+   "render_cpu_ms_all": {
+    "n": 701,
+    "p50": 0.199,
+    "p99": 1.165,
+    "max": 3.221
+   },
+   "render_cpu_ms_new_frame": {
+    "n": 168,
+    "p50": 0.739,
+    "p99": 1.727,
+    "max": 3.221
+   },
+   "render_gpu_ms_all": {
+    "n": 701,
+    "p50": 0.014,
+    "p99": 0.157,
+    "max": 0.163
+   },
+   "render_gpu_ms_new_frame": {
+    "n": 168,
+    "p50": 0.135,
+    "p99": 0.161,
+    "max": 0.163
+   },
+   "lead_ms_before_target": {
+    "n": 701,
+    "p50": 9.594,
+    "p99": 9.697,
+    "max": 9.706
+   },
+   "present_calls_per_refresh": 1.001,
+   "queue_more": 0,
+   "empty_mix": 0,
+   "render_failed": 0,
+   "screen_minus_target_ms": {}
+  }
+ }
+]

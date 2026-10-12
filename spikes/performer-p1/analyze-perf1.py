@@ -2,6 +2,11 @@
 on top: render time per monitor (CPU call, libplacebo GPU pass timers, split by new film frame vs repeat),
 lateness of each present against its target refresh, missed refreshes, queue stalls.
 
+Two seam offsets are reported, both second monitor minus first (monitor-1 minus monitor-0 by output index):
+"blank-start" (the screen times as logged: DXGI marks the start of the vertical blank) and "row light" (each
+screen time snapped to the monitor's top-row grid and moved down to the row at one physical height, plus the
+panel lag) at the top, aim and bottom rows of the shared height. See analyze-per-monitor-pacing.py.
+
 Usage: python -I analyze-perf1.py LOG_DIR [--mode nearest|own] [--skip-seconds 1]
 """
 import argparse
@@ -82,13 +87,19 @@ def main():
     print(f"film {logs[0]['fps']:.4f} fps, locked={logs[0]['perf1']['locked']}, windowed={logs[0]['perf1']['windowed']}")
     for r in base:
         print(json.dumps(r))
+    result = None
     if len(pacing_first) >= 2:
         a0, b0 = pacing_first[0], pacing_first[1]
         off = sorted((b0[n] - a0[n]) * 1e3 for n in a0 if n in b0)
         if off:
-            print("frame-change offset ms (monitor1 - monitor0):", {"frames": len(off), "min": round(off[0], 2),
+            print("blank-start frame-change offset ms (monitor1 - monitor0):", {"frames": len(off), "min": round(off[0], 2),
                   "median": round(pct(off, .5), 2), "p95": round(pct(off, .95), 2), "max": round(off[-1], 2)})
+        result = pacing.row_offsets(logs, pacing_first)
+        for line in pacing.row_offset_lines(result):
+            print(line)
     (a.log_dir / "perf1-summary.json").write_text(json.dumps(base, indent=1))
+    if result is not None:  # a separate file, so perf1-summary.json keeps its list-of-monitors shape
+        (a.log_dir / "perf1-row-offsets.json").write_text(json.dumps(result, indent=1))
 
 
 if __name__ == "__main__":

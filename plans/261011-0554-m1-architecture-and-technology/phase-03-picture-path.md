@@ -1,7 +1,7 @@
 ---
 phase: 3
 title: "Picture path"
-status: pending
+status: completed
 priority: P1
 effort: "2d"
 dependencies: [2, 6]
@@ -49,11 +49,15 @@ Hard to change: the pass structure (per monitor vs one canvas), where per-shot v
 
 ## Success Criteria
 
-- [ ] Fold and curve both render from the same room model; measured: one resample per monitor; offline reference differs by ≤ 1 code value away from edges.
-- [ ] By eye, anchored: a diagonal line across the real bezel looks straight; pass: the user can't point to a step when the gap value is right, and sees one when it is 5 mm off.
-- [ ] Near-black ramp shows no banding after color correction (anchored: a 0–10% ramp next to the uncorrected one).
-- [ ] Surround shows no flicker at 10 consecutive hard cuts.
-- [ ] ADR for the picture path.
+- [x] Fold and curve both render from the same room model; measured: one resample per monitor; offline reference differs by ≤ 1 code value away from edges. (S2: worst 0.534 code, 0 pixels over 1, on both GPUs and backends; [pass-structure report](../reports/spike-261012-1041-picture-path-pass-structure.md) section 3.)
+- [ ] By eye, anchored: a diagonal line across the real bezel looks straight; pass: the user can't point to a step when the gap value is right, and sees one when it is 5 mm off. Moved to phase 8.
+- [ ] Near-black ramp shows no banding after color correction (anchored: a 0–10% ramp next to the uncorrected one). Moved to phase 8.
+- [ ] Surround shows no flicker at 10 consecutive hard cuts. Moved to phase 8.
+- [x] ADR for the picture path: [ADR 0026](../../docs/adr/0026-picture-path-one-resample-per-monitor.md).
+
+**Scope (user, 2026-10-12):** testing trimmed to what decides the pass structure: libplacebo drawing each monitor vs our own single resample, checked for correctness, sharpness and cost on both GPUs (step 2). Steps 3–5 (colour and dither, surround, subtitles) are tuning: their lasting choices (correction last over picture and surround, then dither, subtitles on top; who owns gamut under Windows ACM) go into the ADR from the research, and their checks (diagonal across the bezel, near-black ramp, surround at cuts) move to [phase 8](./phase-08-thin-prototype-and-exit.md), by eye on the real screens.
+
+**Closed 2026-10-12.** Pass structure settled: libplacebo prepares each frame once, our own single resample per monitor carries the geometry and the per-row timing ([pass-structure report](../reports/spike-261012-1041-picture-path-pass-structure.md), [ADR 0026](../../docs/adr/0026-picture-path-one-resample-per-monitor.md)). Passes 2 to 4 from the [finish report](../reports/spike-261012-1020-picture-path-finish-stopped.md). Open risk: our resample shader is too slow on the Radeon 610M as written (Setup B); fine on the RTX.
 
 ## Risk Assessment
 

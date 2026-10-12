@@ -1,0 +1,30 @@
+{
+  "run_id": "dl-hdr10-leopard-4k-d3d11va",
+  "status": "ok",
+  "error": "",
+  "config": {"file": "C:/Users/tamla/Downloads/Telegram Desktop/panorama/spikes/file-matrix/media/dl-hdr10-leopard-4k.mkv", "backend": "d3d11", "decode": "d3d11va", "preset": "default", "window": [1920, 1080], "seconds": 6.0, "loop": false, "worst_case_no_frame_cache": false, "sync_render": false, "pl_cache_file": false, "vk_swapchain_depth": 3, "own_present": false},
+  "env": {"libplacebo_api": 375, "ffmpeg": "9.0.2", "libavutil": "61.1.102", "gpu": "NVIDIA GeForce RTX 5070 Ti Laptop GPU", "monitor": {"device": "\\\\.\\DISPLAY1", "hz": 240, "size": [2560, 1600]}},
+  "media": {"codec": "hevc", "pix_fmt": "yuv420p10le", "hw_fmt": "d3d11/p010le", "size": [3840, 2160], "fps": 23.9760, "duration_s": 4.22},
+  "startup_ms_since_process_creation": {"main_entered": 12.3, "window_created": 22.4, "gpu_ready": 205.1, "file_opened": 209.9, "codec_opened": 210.6, "first_frame_decoded": 252.1, "first_render_done": 483.1, "first_present": 484.1},
+  "first_frame_ms": {"from_process_creation": 484.1, "from_main": 471.7, "from_gpu_ready": 279.0},
+  "playback": {"measured_s": 4.210, "refreshes_rendered": 997, "refresh_rate_measured_hz": 239.973, "film_frames_front_changes": 101, "queue_estimated_fps": 23.9880, "queue_estimated_display_fps": 239.8944, "eof": true},
+  "counts": {"decoded": 101, "mapped": 101, "dropped_by_queue": 0, "queue_stalls": 0, "queue_stall_ms": 0.0, "late_refreshes_over_1p5x_steady": 0, "late_refreshes_over_2p5x_steady": 0, "steady_refreshes": 530, "nominal_interval_ms": 4.1671, "skipped_refreshes_estimate": 0.1, "hitches_over_50ms_steady": 0, "max_message_pump_ms": 0.03},
+  "refreshes_per_film_frame": {"1": 1, "6": 1, "7": 1, "8": 1, "10": 95, "15": 1},
+  "dxgi_refreshes_between_presents": {"1": 981, "3": 1, "7+": 2},
+  "timings_ms": {
+    "render_cpu_all": {"n": 997, "min": 0.0121, "mean": 0.1970, "p50": 0.0247, "p90": 0.6969, "p99": 1.7842, "p999": 21.0689, "max": 21.0689},
+    "render_cpu_steady": {"n": 530, "min": 0.0157, "mean": 0.1776, "p50": 0.0250, "p90": 0.6969, "p99": 1.7760, "p999": 2.1328, "max": 2.1328},
+    "render_cpu_steady_new_film_frame": {"n": 53, "min": 0.0174, "mean": 1.0243, "p50": 1.2931, "p90": 1.7568, "p99": 2.1328, "p999": 2.1328, "max": 2.1328},
+    "render_cpu_steady_repeated_frame": {"n": 477, "min": 0.0157, "mean": 0.0836, "p50": 0.0248, "p90": 0.0425, "p99": 1.6211, "p999": 1.7835, "max": 1.7835},
+    "gpu_pass_sum_steady": {"n": 530, "min": 0.0145, "mean": 0.1028, "p50": 0.0183, "p90": 0.0524, "p99": 0.9271, "p999": 1.1545, "max": 1.1545},
+    "gpu_pass_sum_steady_new_film_frame": {"n": 53, "min": 0.0157, "mean": 0.5730, "p50": 0.7852, "p90": 0.8659, "p99": 1.0669, "p999": 1.0669, "max": 1.0669},
+    "gpu_pass_sum_steady_repeated_frame": {"n": 477, "min": 0.0145, "mean": 0.0505, "p50": 0.0181, "p90": 0.0256, "p99": 0.9070, "p999": 1.1545, "max": 1.1545},
+    "queue_update_steady": {"n": 530, "min": 0.0006, "mean": 0.0062, "p50": 0.0041, "p90": 0.0103, "p99": 0.0345, "p999": 0.0403, "max": 0.0403},
+    "acquire_steady": {"n": 530, "min": 0.0088, "mean": 0.0165, "p50": 0.0149, "p90": 0.0187, "p99": 0.0289, "p999": 0.3248, "max": 0.3248},
+    "submit_steady": {"n": 530, "min": 0.0014, "mean": 0.0044, "p50": 0.0024, "p90": 0.0032, "p99": 0.0067, "p999": 0.5976, "max": 0.5976},
+    "swap_steady": {"n": 530, "min": 1.7121, "mean": 3.9597, "p50": 4.1131, "p90": 4.3578, "p99": 4.6771, "p999": 5.2458, "max": 5.2458},
+    "present_interval_all": {"n": 989, "min": 0.2551, "mean": 4.2298, "p50": 4.1665, "p90": 4.3843, "p99": 4.7190, "p999": 62.5024, "max": 62.5024},
+    "present_interval_steady": {"n": 530, "min": 3.1932, "mean": 4.1671, "p50": 4.1681, "p90": 4.4093, "p99": 4.7190, "p999": 5.2923, "max": 5.2923}
+  },
+  "process": {"cpu_s": 0.797, "cpu_pct_of_one_core": 18.9, "cpu_pct_of_all_threads": 0.59, "logical_cpus": 32, "render_thread_cpu_pct": 3.0, "decode_thread_busy_s_in_libav_calls": 0.327, "decode_thread_cpu_s": 0.109, "peak_working_set_mb": 213, "peak_pagefile_mb": 446}
+}

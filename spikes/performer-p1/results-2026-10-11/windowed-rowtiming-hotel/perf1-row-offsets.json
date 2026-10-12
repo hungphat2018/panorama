@@ -1,0 +1,70 @@
+{
+ "second": "DISPLAY2",
+ "first": "DISPLAY1",
+ "master": 1,
+ "heights_mm": {
+  "top": 0.0,
+  "aim": 107.5,
+  "bottom": 215.0
+ },
+ "offset_ms": {
+  "top": {
+   "frames": 275,
+   "min": -16.53,
+   "p5": -13.19,
+   "median": -5.69,
+   "p95": 4.31,
+   "max": 5.14
+  },
+  "aim": {
+   "frames": 275,
+   "min": -14.49,
+   "p5": -11.16,
+   "median": -3.66,
+   "p95": 6.34,
+   "max": 7.17
+  },
+  "bottom": {
+   "frames": 275,
+   "min": -12.46,
+   "p5": -9.13,
+   "median": -1.63,
+   "p95": 8.37,
+   "max": 9.21
+  }
+ },
+ "windowed": true,
+ "checks": {
+  "DISPLAY1": {
+   "sync_to_top_ms": {
+    "median": 0.38,
+    "min": 0.357,
+    "max": 0.45
+   },
+   "sync_in_blank_fraction": 1.0,
+   "wake_median_to_top_ms": 0.179,
+   "wake_to_top_ms": 0.4146,
+   "wake_to_top_end_ms": 0.1438,
+   "live_refits": 16,
+   "grid_drift_us": -4.0
+  },
+  "DISPLAY2": {
+   "sync_to_top_ms": {
+    "median": 4.724,
+    "min": 0.499,
+    "max": 9.75
+   },
+   "sync_in_blank_fraction": 0.0,
+   "wake_median_to_top_ms": 0.217,
+   "wake_to_top_ms": 0.2366,
+   "wake_to_top_end_ms": 0.1845,
+   "live_refits": 16,
+   "grid_drift_us": -7.4
+  }
+ },
+ "predicted_ms": {
+  "top": -2.3656,
+  "aim": -0.3322,
+  "bottom": 1.7013
+ }
+}

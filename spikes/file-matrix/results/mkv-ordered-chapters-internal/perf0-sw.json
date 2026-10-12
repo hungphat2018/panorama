@@ -1,0 +1,30 @@
+{
+  "run_id": "mkv-ordered-chapters-internal-sw",
+  "status": "ok",
+  "error": "",
+  "config": {"file": "C:/Users/tamla/Downloads/Telegram Desktop/panorama/spikes/file-matrix/media/mkv-ordered-chapters-internal.mkv", "backend": "d3d11", "decode": "sw", "preset": "default", "window": [1920, 1080], "seconds": 12.0, "loop": false, "worst_case_no_frame_cache": false, "sync_render": false, "pl_cache_file": false, "vk_swapchain_depth": 3, "own_present": false},
+  "env": {"libplacebo_api": 375, "ffmpeg": "9.0.2", "libavutil": "61.1.102", "gpu": "NVIDIA GeForce RTX 5070 Ti Laptop GPU", "monitor": {"device": "\\\\.\\DISPLAY1", "hz": 240, "size": [2560, 1600]}},
+  "media": {"codec": "h264", "pix_fmt": "yuv420p", "hw_fmt": "", "size": [1280, 720], "fps": 24.0000, "duration_s": 15.00},
+  "startup_ms_since_process_creation": {"main_entered": 12.3, "window_created": 22.1, "gpu_ready": 205.9, "file_opened": 210.6, "codec_opened": 211.7, "first_frame_decoded": 221.9, "first_render_done": 394.4, "first_present": 395.1},
+  "first_frame_ms": {"from_process_creation": 395.1, "from_main": 382.8, "from_gpu_ready": 189.2},
+  "playback": {"measured_s": 12.001, "refreshes_rendered": 2862, "refresh_rate_measured_hz": 238.295, "film_frames_front_changes": 288, "queue_estimated_fps": 24.0060, "queue_estimated_display_fps": 240.1904, "eof": false},
+  "counts": {"decoded": 292, "mapped": 289, "dropped_by_queue": 1, "queue_stalls": 0, "queue_stall_ms": 0.0, "late_refreshes_over_1p5x_steady": 14, "late_refreshes_over_2p5x_steady": 4, "steady_refreshes": 2383, "nominal_interval_ms": 4.1965, "skipped_refreshes_estimate": 17.0, "hitches_over_50ms_steady": 1, "max_message_pump_ms": 0.18},
+  "refreshes_per_film_frame": {"1": 1, "7": 2, "8": 1, "9": 6, "10": 275, "11": 1, "14": 1},
+  "dxgi_refreshes_between_presents": {"1": 2825, "2": 4, "3": 1, "7+": 2},
+  "timings_ms": {
+    "render_cpu_all": {"n": 2862, "min": 0.0141, "mean": 0.0562, "p50": 0.0304, "p90": 0.1220, "p99": 0.2875, "p999": 0.5719, "max": 19.7281},
+    "render_cpu_steady": {"n": 2383, "min": 0.0141, "mean": 0.0507, "p50": 0.0306, "p90": 0.1266, "p99": 0.2962, "p999": 0.5517, "max": 0.8982},
+    "render_cpu_steady_new_film_frame": {"n": 240, "min": 0.0191, "mean": 0.1153, "p50": 0.1344, "p90": 0.1823, "p99": 0.2386, "p999": 0.3162, "max": 0.3162},
+    "render_cpu_steady_repeated_frame": {"n": 2143, "min": 0.0141, "mean": 0.0435, "p50": 0.0297, "p90": 0.0637, "p99": 0.2995, "p999": 0.5517, "max": 0.8982},
+    "gpu_pass_sum_steady": {"n": 2383, "min": 0.0142, "mean": 0.1810, "p50": 0.0296, "p90": 0.1756, "p99": 3.8870, "p999": 4.1362, "max": 11.6735},
+    "gpu_pass_sum_steady_new_film_frame": {"n": 240, "min": 0.0143, "mean": 1.4321, "p50": 0.3192, "p90": 3.8806, "p99": 4.1362, "p999": 11.6735, "max": 11.6735},
+    "gpu_pass_sum_steady_repeated_frame": {"n": 2143, "min": 0.0142, "mean": 0.0409, "p50": 0.0292, "p90": 0.0438, "p99": 0.3762, "p999": 0.6165, "max": 4.0617},
+    "queue_update_steady": {"n": 2383, "min": 0.0026, "mean": 0.0224, "p50": 0.0051, "p90": 0.1084, "p99": 0.2251, "p999": 0.5568, "max": 0.6147},
+    "acquire_steady": {"n": 2383, "min": 0.0073, "mean": 0.0220, "p50": 0.0169, "p90": 0.0340, "p99": 0.0796, "p999": 0.3083, "max": 0.4061},
+    "submit_steady": {"n": 2383, "min": 0.0010, "mean": 0.0034, "p50": 0.0026, "p90": 0.0037, "p99": 0.0064, "p999": 0.2385, "max": 0.2762},
+    "swap_steady": {"n": 2383, "min": 0.0465, "mean": 4.0670, "p50": 4.0953, "p90": 4.2452, "p99": 5.6173, "p999": 11.7417, "max": 12.9556},
+    "present_interval_all": {"n": 2854, "min": 0.1661, "mean": 4.1958, "p50": 4.1659, "p90": 4.3031, "p99": 5.6603, "p999": 13.0165, "max": 65.8053},
+    "present_interval_steady": {"n": 2383, "min": 0.1661, "mean": 4.1965, "p50": 4.1659, "p90": 4.3130, "p99": 5.7182, "p999": 12.2212, "max": 65.8053}
+  },
+  "process": {"cpu_s": 1.047, "cpu_pct_of_one_core": 8.7, "cpu_pct_of_all_threads": 0.27, "logical_cpus": 32, "render_thread_cpu_pct": 2.9, "decode_thread_busy_s_in_libav_calls": 0.021, "decode_thread_cpu_s": 0.000, "peak_working_set_mb": 163, "peak_pagefile_mb": 249}
+}

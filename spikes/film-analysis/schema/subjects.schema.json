@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://panorama.invalid/schema/content/0/subjects.schema.json",
+  "title": "subjects.json: faces, heads and people per shot, and the keep-clear map (layer L1 of panorama.content/0)",
+  "description": "Where the viewer looks, per shot: tracks of boxes of one class linked over the shot's sampled frames by overlap, and a 64x36 keep-clear map the planner uses to keep faces off bezels. Sampling: every Nth frame of the frame table (N = sample_stride in content.json, 12 by default, 0.5 s at 24 fps), so a shot shorter than N frames may have no sample and then says nothing (samples = 0); the planner must treat that as unknown, not as empty. Detectors: anime face v1.4_s, anime head v2.0_s_yv11, anime person v1.3_s (ONNX, GPU) and YuNet (OpenCV, CPU) all run on every sampled frame; there is no anime / live-action switch, the planner reads class, models and score. Boxes of the same class from different models on the same thing within one frame collapse to the best-scoring one that lists the models that agreed. The class `text` is reserved: no text detector runs in v0. Time and space conventions: common.schema.json.",
+  "type": "object",
+  "required": ["schema", "version", "state", "frame_count", "grid", "classes", "shots"],
+  "properties": {
+    "schema": {"const": "panorama.content.subjects/0"},
+    "version": {"$ref": "common.schema.json#/$defs/analyzer_version"},
+    "state": {"$ref": "common.schema.json#/$defs/table_state"},
+    "frame_count": {"type": "integer"},
+    "grid": {"type": "array", "items": {"type": "integer"}, "minItems": 2, "maxItems": 2, "description": "Keep-clear map size: columns, rows."},
+    "classes": {"type": "array", "items": {"enum": ["face", "head", "person", "text"]}},
+    "models": {"type": "array", "items": {"type": "string"}},
+    "sampled_frames": {"type": "integer"},
+    "shots": {
+      "type": "array",
+      "items": {
+        "type": "object", "required": ["shot", "samples", "tracks"],
+        "properties": {
+          "shot": {"type": "integer", "description": "Shot id in shots.json."},
+          "samples": {"type": "integer", "description": "Sampled frames inside the shot."},
+          "tracks": {
+            "type": "array",
+            "items": {
+              "type": "object", "required": ["class", "first_frame", "last_frame", "mean_score", "boxes"],
+              "properties": {
+                "class": {"enum": ["face", "head", "person", "text"]},
+                "first_frame": {"type": "integer"}, "last_frame": {"type": "integer"},
+                "mean_score": {"type": "number"},
+                "models": {"type": "array", "items": {"type": "string"}},
+                "boxes": {
+                  "type": "array",
+                  "items": {
+                    "allOf": [{"$ref": "common.schema.json#/$defs/box"}],
+                    "type": "object", "required": ["frame", "score"],
+                    "properties": {"frame": {"type": "integer"}, "score": {"type": "number"}, "models": {"type": "array", "items": {"type": "string"}}}
+                  }
+                }
+              }
+            }
+          },
+          "keepclear": {
+            "description": "36 strings of 64 hex digits, row 0 at the top: per cell of the 64x36 grid over the stored frame, the highest detection score (0-1 scaled to 1-15, one hex digit) of any box covering the cell, over every sampled frame of the shot; 0 where nothing was found. Null when the shot has no sample.",
+            "type": ["array", "null"], "items": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "minItems": 36, "maxItems": 36
+          }
+        }
+      }
+    }
+  }
+}

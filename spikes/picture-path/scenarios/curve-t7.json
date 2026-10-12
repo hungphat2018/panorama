@@ -1,0 +1,22 @@
+{
+ "room": "room/setup-a-default.json",
+ "surface": {
+  "model": "curve",
+  "curvature": 0.0014285714285714286
+ },
+ "source": {
+  "file": "patterns/t7-1920x1080.ppm",
+  "width": 1920,
+  "height": 1080,
+  "sar": 1.0
+ },
+ "cue": {
+  "centre_mm": [
+   0.0,
+   0.0
+  ],
+  "height_mm": 200.0
+ },
+ "kernel": "ewa_lanczossharp",
+ "domain": "auto"
+}

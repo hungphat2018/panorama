@@ -1,0 +1,20 @@
+{
+ "files": [
+  "results-seam-v2\\seam-x2-answers-20261011-213832.jsonl"
+ ],
+ "conditions": [
+  {
+   "comparison": "b",
+   "speed_mm_s": 300,
+   "answers": 1,
+   "right": 0,
+   "p_guessing": 1.0,
+   "verdict": "too few answers (need 10)",
+   "reversed": false
+  }
+ ],
+ "notes": [
+  "trials with a present that reached a different refresh than planned (rerun them if many; if it is every trial, the lead time is off: see --lead-ms): [1]"
+ ],
+ "replays": 1
+}

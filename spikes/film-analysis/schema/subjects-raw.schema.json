@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://panorama.invalid/schema/content/0/subjects-raw.schema.json",
+  "title": "subjects-raw.jsonl: one raw detection record per sampled frame (one JSON object per line)",
+  "description": "The raw layer under subjects.json: every box every detector reported on a sampled frame, before tracking and de-duplication. Lines are appended as segments finish, so they are in scan order, not frame order; a frame appears once. Re-deriving subjects.json from this file needs no decoding. Positions: pixels of the stored video frame.",
+  "type": "object",
+  "required": ["frame", "boxes"],
+  "properties": {
+    "frame": {"type": "integer", "minimum": 0, "description": "Index in the frame table."},
+    "boxes": {
+      "type": "array",
+      "items": {
+        "description": "[class, model, x, y, w, h, score]",
+        "type": "array", "minItems": 7, "maxItems": 7,
+        "prefixItems": [
+          {"enum": ["face", "head", "person", "text"]}, {"type": "string"},
+          {"type": "number"}, {"type": "number"}, {"type": "number"}, {"type": "number"}, {"type": "number"}
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,136 @@
+{
+ "label_format": "panorama-testset-labels/1",
+ "clip": "ctor-hardsub-tos-logo",
+ "field": "text_in_bars",
+ "status": "exact",
+ "proposed_by": "script",
+ "basis": "constructed: tos-1080p with a padded bar rectangle [0, 140, 1920, 940], subtitles burned in with libass (tos-en-tos-logo.srt, FontSize=28,Outline=2,Shadow=0); truth boxes are libass's own rendering on black (luma >= 48)",
+ "created": "2026-10-12",
+ "frame_count": 1440,
+ "fps": "24000/1001",
+ "storage": {
+  "w": 1920,
+  "h": 1080
+ },
+ "events": [
+  {
+   "frames": [
+    984,
+    1007
+   ],
+   "box": [
+    641,
+    954,
+    1274,
+    1043
+   ],
+   "kind": "subtitle"
+  },
+  {
+   "frames": [
+    1031,
+    1079
+   ],
+   "box": [
+    105,
+    954,
+    1811,
+    1043
+   ],
+   "kind": "subtitle"
+  },
+  {
+   "frames": [
+    1127,
+    1151
+   ],
+   "box": [
+    457,
+    954,
+    1466,
+    1043
+   ],
+   "kind": "subtitle"
+  },
+  {
+   "frames": [
+    1175,
+    1223
+   ],
+   "box": [
+    198,
+    955,
+    1715,
+    1024
+   ],
+   "kind": "subtitle"
+  },
+  {
+   "frames": [
+    1235,
+    1271
+   ],
+   "box": [
+    576,
+    954,
+    1337,
+    1042
+   ],
+   "kind": "subtitle"
+  },
+  {
+   "frames": [
+    1283,
+    1355
+   ],
+   "box": [
+    291,
+    850,
+    1622,
+    1043
+   ],
+   "kind": "subtitle"
+  },
+  {
+   "frames": [
+    1391,
+    1440
+   ],
+   "box": [
+    288,
+    954,
+    1629,
+    1043
+   ],
+   "kind": "subtitle"
+  },
+  {
+   "frames": [
+    0,
+    1440
+   ],
+   "box": [
+    70,
+    24,
+    331,
+    105
+   ],
+   "kind": "logo"
+  },
+  {
+   "frames": [
+    0,
+    1440
+   ],
+   "box": [
+    71,
+    1016,
+    272,
+    1040
+   ],
+   "kind": "timecode",
+   "note": "union box of all digit shapes; the digits themselves change every frame"
+  }
+ ],
+ "text_frames": 300
+}

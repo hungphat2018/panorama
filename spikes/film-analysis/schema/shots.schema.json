@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://panorama.invalid/schema/content/0/shots.schema.json",
+  "title": "shots.json: shots, boundaries, crops, text in the bars, motion and brightness (layer L1 of panorama.content/0)",
+  "description": "One entry per shot covering the whole film, first frame to last, in order. Derived from signals.bin in seconds: a policy change re-derives it without decoding. Stretches the full scan has not reached are cut at their keyframes and flagged provisional, with crops from the keyframes' own rectangles, so a planner can start from the pre-scan alone. `start_s` is the cue-sheet shot start (halfway between the last frame of the previous shot and the first frame of this one on the rebased timeline; 0 for the first shot), so a cue sheet can copy it. `end_s` is the next shot's start (for the last shot, the end of the last frame). The table points at no other table: slide-paths.json and subjects.json name their shot by id, so each of the three can be made again alone. Time and space conventions: common.schema.json.",
+  "type": "object",
+  "required": ["schema", "version", "state", "frame_count", "time_base", "coverage", "counts", "vocabulary", "shots"],
+  "properties": {
+    "schema": {"const": "panorama.content.shots/0"},
+    "version": {"$ref": "common.schema.json#/$defs/analyzer_version"},
+    "state": {"$ref": "common.schema.json#/$defs/table_state"},
+    "frame_count": {"type": "integer", "minimum": 1},
+    "time_base": {"$ref": "common.schema.json#/$defs/rational"},
+    "coverage": {"type": "object", "properties": {"scanned_frames": {"type": "integer"}, "scanned_intervals": {"type": "array", "items": {"$ref": "common.schema.json#/$defs/frame_interval"}}}},
+    "counts": {"type": "object", "description": "Shots, and the boundaries by source: TransNetV2 hard cuts, TransNetV2 gradual transitions, provisional keyframe boundaries."},
+    "params": {"type": "object", "description": "The thresholds and tolerances this derivation used (policy: cheap to change)."},
+    "vocabulary": {
+      "description": "The file's real picture rectangles. A shot's crop is the smallest mode that contains the shot's evidence.",
+      "type": "array",
+      "items": {"type": "object", "required": ["id", "rect", "share"], "properties": {
+        "id": {"type": "integer"}, "rect": {"$ref": "common.schema.json#/$defs/rect"}, "share": {"type": "number", "description": "Share of the evidence frames (shot lengths)."}, "source": {"enum": ["keyframes", "scan"]}}}
+    },
+    "shots": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "first_frame", "last_frame", "frames", "start_s", "end_s", "boundary_in", "layout_safe", "provisional", "crop", "bar_content"],
+        "properties": {
+          "id": {"type": "integer", "minimum": 0},
+          "first_frame": {"type": "integer", "minimum": 0}, "last_frame": {"type": "integer", "minimum": 0},
+          "frames": {"type": "integer", "minimum": 1},
+          "start_s": {"type": "number"}, "end_s": {"type": "number"},
+          "boundary_in": {
+            "description": "The boundary that starts this shot. kind: start (file start), hard (a cut), gradual (dissolve, fade, wipe: span is the transition's frame range), keyframe (provisional, unscanned stretch). Scores are TransNetV2's: p_single is the single-frame head's probability of a cut here, p_many the many-hot head's probability of a transition. keyframe_aligned: a keyframe lies within one frame (74% of the research episode's cuts do).",
+            "type": "object", "required": ["kind", "source"],
+            "properties": {
+              "kind": {"enum": ["start", "hard", "gradual", "keyframe"]},
+              "source": {"enum": ["file-start", "transnetv2", "transnetv2-many-hot", "keyframe"]},
+              "p_single": {"type": ["number", "null"]}, "p_many": {"type": ["number", "null"]},
+              "span": {"type": ["array", "null"], "items": {"type": "integer"}, "minItems": 2, "maxItems": 2},
+              "keyframe_aligned": {"type": "boolean"}
+            }
+          },
+          "layout_safe": {"type": "boolean", "description": "True where the picture may change layout unseen (a hard cut or a gradual transition found by the shot model). False for the first shot and for provisional keyframe boundaries."},
+          "provisional": {"type": "boolean", "description": "True when some frame of the shot is not scanned: the boundaries and crop come from keyframes only."},
+          "region": {"type": "object", "properties": {"kind": {"enum": ["normal", "op", "ed", "credits", "preview"]}, "source": {"enum": ["chapter", "none"]}}},
+          "crop": {
+            "description": "The picture rectangle of the shot. rect is null before any confident crop exists (nothing is cropped, ADR 0010). evidence: normal (at least half the frames gave a usable rectangle), dark (fewer), keyframe (provisional: only the keyframe's rectangle), no_valid_frames (none: the last confident crop is held, held_from_previous). A frame's rectangle is usable when it is bar-shaped: full width or full height within 12 px.",
+            "type": "object", "required": ["rect", "evidence"],
+            "properties": {
+              "rect": {"oneOf": [{"$ref": "common.schema.json#/$defs/rect"}, {"type": "null"}]},
+              "vocab_id": {"type": ["integer", "null"]},
+              "confidence": {"type": "number", "description": "Share of usable frames within 4 px of the shot's union, scaled down when fewer than 8 frames back it."},
+              "evidence": {"enum": ["normal", "dark", "keyframe", "no_valid_frames"]},
+              "held_from_previous": {"type": "boolean"},
+              "valid_frames": {"type": "integer"}, "agree": {"type": "number"}
+            }
+          },
+          "bar_content": {
+            "description": "Text or logos found inside the bars of this shot's crop. extend: how many pixels the crop must reach into each bar (from the picture edge outward) to keep the text, 0 when none; text_frames: frames of the shot with text on that side (runs of at least 3 frames; a bright line starts at least 8 px inside the bar). The planner's final crop is crop.rect extended by these amounts.",
+            "type": "object",
+            "properties": {
+              "extend": {"$ref": "#/$defs/sides"}, "text_frames": {"$ref": "#/$defs/sides"}
+            }
+          },
+          "luma": {"type": ["object", "null"], "description": "Brightness over the scanned frames of the shot, 8-bit code values of the stream (HDR code values are not nits): mean luma, the highest and the mean 95th percentile."},
+          "motion": {"type": ["object", "null"], "description": "Global picture motion over the shot's step pairs: held_share (steps that repeat the same drawing), speed_px_s_p50 / p90 (typical and fast shift speed of the non-held steps, source pixels per second), speed_picture_heights_s_p90 (the same divided by the stored height)."}
+        }
+      }
+    }
+  },
+  "$defs": {
+    "sides": {"type": "object", "properties": {"top": {"type": "integer"}, "bottom": {"type": "integer"}, "left": {"type": "integer"}, "right": {"type": "integer"}}}
+  }
+}

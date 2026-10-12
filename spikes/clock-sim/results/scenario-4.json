@@ -1,0 +1,670 @@
+{
+ "traces": {
+  "anime mkv (real, ms timestamps) on 96 Hz": {
+   "master_hz": 96.0,
+   "hold": 4,
+   "speed": 1.001,
+   "refreshes": 136182,
+   "frames": 34047,
+   "stored_minus_true_ms": [
+    -0.5,
+    0.0,
+    0.458
+   ],
+   "due": {
+    "wrong_refresh_fraction": 0.0,
+    "wrong_refreshes": 0,
+    "frames_never_shown": 0,
+    "start_error_ms_p5_p50_p95_maxabs": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "pace_hist": {
+     "4": 34045
+    }
+   },
+   "strict": {
+    "wrong_refresh_fraction": 0.114582,
+    "wrong_refreshes": 15604,
+    "frames_never_shown": 0,
+    "start_error_ms_p5_p50_p95_maxabs": [
+     0.0,
+     0.0,
+     10.427,
+     10.427
+    ],
+    "pace_hist": {
+     "3": 9930,
+     "4": 14185,
+     "5": 9930
+    }
+   },
+   "pl_queue": {
+    "wrong_refresh_fraction": 0.0,
+    "wrong_refreshes": 0,
+    "frames_never_shown": 0,
+    "start_error_ms_p5_p50_p95_maxabs": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "pace_hist": {
+     "4": 34045
+    }
+   },
+   "cfr_deviation_ms": [
+    -0.5,
+    0.458
+   ]
+  },
+  "anime mkv (real) on 72 Hz": {
+   "master_hz": 72.0,
+   "hold": 3,
+   "speed": 1.001,
+   "refreshes": 102136,
+   "frames": 34047,
+   "stored_minus_true_ms": [
+    -0.5,
+    0.0,
+    0.458
+   ],
+   "due": {
+    "wrong_refresh_fraction": 0.0,
+    "wrong_refreshes": 0,
+    "frames_never_shown": 0,
+    "start_error_ms_p5_p50_p95_maxabs": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "pace_hist": {
+     "3": 34045
+    }
+   },
+   "strict": {
+    "wrong_refresh_fraction": 0.152777,
+    "wrong_refreshes": 15604,
+    "frames_never_shown": 0,
+    "start_error_ms_p5_p50_p95_maxabs": [
+     0.0,
+     0.0,
+     13.903,
+     13.903
+    ],
+    "pace_hist": {
+     "2": 9930,
+     "3": 14185,
+     "4": 9930
+    }
+   },
+   "pl_queue": {
+    "wrong_refresh_fraction": 0.0,
+    "wrong_refreshes": 0,
+    "frames_never_shown": 0,
+    "start_error_ms_p5_p50_p95_maxabs": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "pace_hist": {
+     "3": 34045
+    }
+   }
+  },
+  "25 fps mp4 (real) on 100 Hz": {
+   "master_hz": 100.0,
+   "hold": 4,
+   "speed": 1.0,
+   "refreshes": 6262,
+   "frames": 1567,
+   "stored_minus_true_ms": [
+    -0.0,
+    0.0,
+    0.0
+   ],
+   "due": {
+    "wrong_refresh_fraction": 0.0,
+    "wrong_refreshes": 0,
+    "frames_never_shown": 0,
+    "start_error_ms_p5_p50_p95_maxabs": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "pace_hist": {
+     "4": 1565
+    }
+   },
+   "strict": {
+    "wrong_refresh_fraction": 0.0,
+    "wrong_refreshes": 0,
+    "frames_never_shown": 0,
+    "start_error_ms_p5_p50_p95_maxabs": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "pace_hist": {
+     "4": 1565
+    }
+   },
+   "pl_queue": {
+    "wrong_refresh_fraction": 0.0,
+    "wrong_refreshes": 0,
+    "frames_never_shown": 0,
+    "start_error_ms_p5_p50_p95_maxabs": [
+     0.0,
+     0.0,
+     0.0,
+     0.0
+    ],
+    "pace_hist": {
+     "4": 1565
+    }
+   }
+  },
+  "synthetic VFR 24/30/60 on 96 Hz": {
+   "master_hz": 96.0,
+   "hold": 4,
+   "speed": 1.001,
+   "refreshes": 692872,
+   "frames": 214456,
+   "stored_minus_true_ms": [
+    -0.5,
+    0.0,
+    0.5
+   ],
+   "due": {
+    "wrong_refresh_fraction": 0.0,
+    "wrong_refreshes": 0,
+    "frames_never_shown": 0,
+    "start_error_ms_p5_p50_p95_maxabs": [
+     -4.171,
+     -0.0,
+     4.171,
+     4.171
+    ],
+    "pace_hist": {
+     "1": 22493,
+     "2": 33733,
+     "3": 30001,
+     "4": 128227
+    },
+    "wrong_fraction_by_section_fps": {
+     "23.976": 0.0,
+     "29.970": 0.0,
+     "59.940": 0.0
+    }
+   },
+   "strict": {
+    "wrong_refresh_fraction": 0.149931,
+    "wrong_refreshes": 103883,
+    "frames_never_shown": 0,
+    "start_error_ms_p5_p50_p95_maxabs": [
+     -0.0,
+     4.171,
+     10.427,
+     10.427
+    ],
+    "pace_hist": {
+     "1": 22488,
+     "2": 33738,
+     "3": 34056,
+     "4": 120121,
+     "5": 4051
+    },
+    "wrong_fraction_by_section_fps": {
+     "23.976": 0.1182,
+     "29.970": 0.1561,
+     "59.940": 0.3119
+    }
+   },
+   "pl_queue": {
+    "wrong_refresh_fraction": 0.119035,
+    "wrong_refreshes": 82476,
+    "frames_never_shown": 0,
+    "start_error_ms_p5_p50_p95_maxabs": [
+     -4.171,
+     2.085,
+     16.683,
+     16.683
+    ],
+    "pace_hist": {
+     "1": 22482,
+     "2": 33737,
+     "3": 30026,
+     "4": 128209
+    },
+    "wrong_fraction_by_section_fps": {
+     "23.976": 0.0,
+     "29.970": 0.125,
+     "59.940": 0.7498
+    }
+   }
+  },
+  "synthetic VFR 24/30/60 on 72 Hz": {
+   "master_hz": 72.0,
+   "hold": 3,
+   "speed": 1.001,
+   "refreshes": 519653,
+   "frames": 214456,
+   "stored_minus_true_ms": [
+    -0.5,
+    0.0,
+    0.5
+   ],
+   "due": {
+    "wrong_refresh_fraction": 0.0,
+    "wrong_refreshes": 0,
+    "frames_never_shown": 0,
+    "start_error_ms_p5_p50_p95_maxabs": [
+     -5.561,
+     -0.0,
+     5.561,
+     5.561
+    ],
+    "pace_hist": {
+     "1": 44981,
+     "2": 33747,
+     "3": 135725
+    },
+    "wrong_fraction_by_section_fps": {
+     "23.976": 0.0,
+     "29.970": 0.0,
+     "59.940": 0.0
+    }
+   },
+   "strict": {
+    "wrong_refresh_fraction": 0.227837,
+    "wrong_refreshes": 118396,
+    "frames_never_shown": 0,
+    "start_error_ms_p5_p50_p95_maxabs": [
+     -0.0,
+     8.342,
+     13.903,
+     13.903
+    ],
+    "pace_hist": {
+     "1": 44981,
+     "2": 37798,
+     "3": 127623,
+     "4": 4051
+    },
+    "wrong_fraction_by_section_fps": {
+     "23.976": 0.1977,
+     "29.970": 0.2081,
+     "59.940": 0.4159
+    }
+   },
+   "pl_queue": {
+    "wrong_refresh_fraction": 0.119716,
+    "wrong_refreshes": 62211,
+    "frames_never_shown": 0,
+    "start_error_ms_p5_p50_p95_maxabs": [
+     -5.561,
+     2.781,
+     16.683,
+     19.464
+    ],
+    "pace_hist": {
+     "1": 44967,
+     "2": 33775,
+     "3": 135711
+    },
+    "wrong_fraction_by_section_fps": {
+     "23.976": 0.0001,
+     "29.970": 0.1257,
+     "59.940": 0.7541
+    }
+   }
+  }
+ },
+ "seam_with_vfr_on_240_96": {
+  "aimed start only (no re-aim)": {
+   "runs": 4,
+   "hours": 7.998,
+   "frames": 855952,
+   "hold": 4,
+   "speed": 1.001,
+   "locked": true,
+   "classes": 2,
+   "master_reaims_per_hour": 0.0,
+   "av_shift_refreshes": [
+    0,
+    0
+   ],
+   "skipped_frames": 0,
+   "master_pace": {
+    "1": 89972,
+    "2": 134932,
+    "3": 120004,
+    "4": 511040
+   },
+   "seams": {
+    "laptop": {
+     "kind": "crisp",
+     "reference": "external",
+     "offset_ms": {
+      "top": {
+       "p5": -3.9307,
+       "p50": -2.3028,
+       "p95": -0.1473,
+       "max_abs": 4.1132
+      },
+      "aim": {
+       "p5": -1.8924,
+       "p50": -0.2645,
+       "p95": 1.891,
+       "max_abs": 2.2053
+      },
+      "bottom": {
+       "p5": 0.1459,
+       "p50": 1.7738,
+       "p95": 3.9293,
+       "max_abs": 4.2436
+      }
+     },
+     "slips_at_cuts_per_hour": 0.5001,
+     "slips_at_cuts_total": 4,
+     "slips_mid_shot_per_hour": 0.0,
+     "slips_mid_shot_total": 0,
+     "flip_flops_per_hour": 0.0,
+     "flip_flops_total": 0,
+     "pace": {
+      "2": 44988,
+      "3": 44984,
+      "5": 134931,
+      "6": 1,
+      "7": 60000,
+      "8": 60004,
+      "10": 511037,
+      "11": 3
+     },
+     "whole_multiple": false
+    }
+   }
+  },
+  "recommended (re-aim at cuts)": {
+   "runs": 4,
+   "hours": 7.998,
+   "frames": 855952,
+   "hold": 4,
+   "speed": 1.001,
+   "locked": true,
+   "classes": 2,
+   "master_reaims_per_hour": 12.2536,
+   "av_shift_refreshes": [
+    -1,
+    1
+   ],
+   "skipped_frames": 0,
+   "master_pace": {
+    "1": 89971,
+    "2": 134933,
+    "3": 120054,
+    "4": 510943,
+    "5": 47
+   },
+   "seams": {
+    "laptop": {
+     "kind": "crisp",
+     "reference": "external",
+     "offset_ms": {
+      "top": {
+       "p5": -3.6646,
+       "p50": -1.9022,
+       "p95": -0.2992,
+       "max_abs": 4.1133
+      },
+      "aim": {
+       "p5": -1.6262,
+       "p50": 0.1361,
+       "p95": 1.7391,
+       "max_abs": 2.1497
+      },
+      "bottom": {
+       "p5": 0.4121,
+       "p50": 2.1744,
+       "p95": 3.7774,
+       "max_abs": 4.188
+      }
+     },
+     "slips_at_cuts_per_hour": 12.2536,
+     "slips_at_cuts_total": 98,
+     "slips_mid_shot_per_hour": 0.0,
+     "slips_mid_shot_total": 0,
+     "flip_flops_per_hour": 0.0,
+     "flip_flops_total": 0,
+     "pace": {
+      "2": 44979,
+      "3": 44992,
+      "5": 134932,
+      "6": 1,
+      "7": 60031,
+      "8": 60023,
+      "10": 510943,
+      "12": 24,
+      "13": 23
+     },
+     "whole_multiple": false
+    }
+   }
+  },
+  "perf1 as built": {
+   "runs": 4,
+   "hours": 7.998,
+   "frames": 855952,
+   "hold": 4,
+   "speed": 1.001,
+   "locked": true,
+   "classes": 2,
+   "master_reaims_per_hour": 0.0,
+   "av_shift_refreshes": [
+    0,
+    0
+   ],
+   "skipped_frames": 0,
+   "master_pace": {
+    "1": 89928,
+    "2": 134948,
+    "3": 120104,
+    "4": 510968
+   },
+   "seams": {
+    "laptop": {
+     "kind": "crisp",
+     "reference": "external",
+     "offset_ms": {
+      "top": {
+       "p5": -1.7109,
+       "p50": -0.0267,
+       "p95": 2.139,
+       "max_abs": 2.3215
+      },
+      "aim": {
+       "p5": 0.3274,
+       "p50": 2.0116,
+       "p95": 4.1773,
+       "max_abs": 4.3598
+      },
+      "bottom": {
+       "p5": 2.3657,
+       "p50": 4.05,
+       "p95": 6.2156,
+       "max_abs": 6.3981
+      }
+     },
+     "slips_at_cuts_per_hour": 0.7502,
+     "slips_at_cuts_total": 6,
+     "slips_mid_shot_per_hour": 37.886,
+     "slips_mid_shot_total": 303,
+     "flip_flops_per_hour": 31.2591,
+     "flip_flops_total": 250,
+     "pace": {
+      "2": 44962,
+      "3": 44966,
+      "4": 24,
+      "5": 134897,
+      "6": 27,
+      "7": 60059,
+      "8": 60045,
+      "9": 126,
+      "10": 510710,
+      "11": 132
+     },
+     "whole_multiple": false
+    }
+   }
+  },
+  "perf1 with row timing (scan-line grid, no hysteresis)": {
+   "runs": 4,
+   "hours": 7.996,
+   "frames": 855805,
+   "hold": 4,
+   "speed": 1.001,
+   "locked": true,
+   "classes": 2,
+   "master_reaims_per_hour": 0.0,
+   "av_shift_refreshes": [
+    0,
+    0
+   ],
+   "skipped_frames": 0,
+   "master_pace": {
+    "1": 89928,
+    "2": 134948,
+    "3": 120104,
+    "4": 510821
+   },
+   "seams": {
+    "laptop": {
+     "kind": "crisp",
+     "reference": "external",
+     "offset_ms": {
+      "top": {
+       "p5": -3.9436,
+       "p50": -2.3362,
+       "p95": -0.1643,
+       "max_abs": 4.1217
+      },
+      "aim": {
+       "p5": -1.9053,
+       "p50": -0.2978,
+       "p95": 1.874,
+       "max_abs": 2.0834
+      },
+      "bottom": {
+       "p5": 0.133,
+       "p50": 1.7405,
+       "p95": 3.9124,
+       "max_abs": 4.1217
+      }
+     },
+     "slips_at_cuts_per_hour": 0.1251,
+     "slips_at_cuts_total": 1,
+     "slips_mid_shot_per_hour": 0.2501,
+     "slips_mid_shot_total": 2,
+     "flip_flops_per_hour": 0.0,
+     "flip_flops_total": 0,
+     "pace": {
+      "2": 44963,
+      "3": 44965,
+      "5": 134948,
+      "7": 60052,
+      "8": 60052,
+      "10": 510818,
+      "11": 3
+     },
+     "whole_multiple": false
+    }
+   }
+  },
+  "rolling blend": {
+   "runs": 4,
+   "hours": 7.998,
+   "frames": 855952,
+   "hold": 4,
+   "speed": 1.001,
+   "locked": true,
+   "classes": 1,
+   "master_reaims_per_hour": 0.0,
+   "av_shift_refreshes": [
+    0,
+    0
+   ],
+   "skipped_frames": 0,
+   "master_pace": {
+    "1": 89972,
+    "2": 134932,
+    "3": 120004,
+    "4": 511040
+   },
+   "seams": {
+    "laptop": {
+     "kind": "blend",
+     "reference": "external",
+     "offset_ms": {
+      "top": {
+       "p5": -0.0059,
+       "p50": 0.0,
+       "p95": 0.006,
+       "max_abs": 0.017
+      },
+      "aim": {
+       "p5": -0.006,
+       "p50": 0.0,
+       "p95": 0.006,
+       "max_abs": 0.0171
+      },
+      "bottom": {
+       "p5": -0.006,
+       "p50": 0.0,
+       "p95": 0.006,
+       "max_abs": 0.0171
+      }
+     },
+     "blend": {
+      "err_us_p50": 2.45051,
+      "err_us_p95": 7.1147,
+      "err_us_p999": 11.8753,
+      "err_us_max": 17.097,
+      "err_us_max_top_mid_bottom": [
+       17.0367,
+       17.0669,
+       17.097
+      ],
+      "lw_frame_duration_err_us_max": 7.47461,
+      "share_new_p5_p50_p95": [
+       0.0495,
+       0.499,
+       0.9491
+      ],
+      "rows_mixed_fraction": 0.960081,
+      "mix_threshold": 0.02,
+      "mixed_refreshes_per_change_mean": 1.935,
+      "mixed_refreshes_per_change_hist": {
+       "1": 520,
+       "2": 7480
+      }
+     }
+    }
+   }
+  }
+ },
+ "meta": {
+  "hours_per_seed": 2.0,
+  "seeds": 8,
+  "wake_pool_sizes": {
+   "laptop": 21139,
+   "external": 8019
+  },
+  "seconds_to_run": 7.1
+ }
+}

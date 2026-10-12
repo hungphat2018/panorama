@@ -1,0 +1,24 @@
+
+\\.\DISPLAY1  2560x1600 active, 2720x1800 total, 1175.045 MHz pixel clock
+  refresh 240.001000 Hz (period 4.1666 ms); line 2.3148 us; scan 3.7037 ms; blank 0.4630 ms (200 lines)
+  check: total lines x line time = 4.1666 ms
+  dense fit: ok, 52186 of 52821 picture-row samples (56351 polls), residual p50 0.62 us, p95 1.90 us
+  sparse fit: ok, 561 of 563 samples, residual p50 1.26 us, p95 4.51 us
+  fitted period 4.166649 ms = signal rate -0.01 ppm
+  sparse vs dense top row at the dense window's middle: -3.40 us; period +0.03 ppm
+  721 wake-ups: top row comes 0.2872 ms after the wake-up (sd 0.0182, min 0.1498, max 0.3326)
+  so the wake-up comes 0.1735 ms after the blank starts (blank 0.4630 ms minus the above)
+  wake-up jitter around its own fit: sd 16.30 us, min -40.28, max 129.35
+  fitted wake grid -> top-row grid offset: 0.2973 ms (add this to WaitForVBlank-fitted times)
+
+\\.\DISPLAY2  1920x1080 active, 2000x1115 total, 223.000 MHz pixel clock
+  refresh 100.000000 Hz (period 10.0000 ms); line 8.9686 us; scan 9.6861 ms; blank 0.3139 ms (35 lines)
+  check: total lines x line time = 10.0000 ms
+  dense fit: ok, 46592 of 47229 picture-row samples (49503 polls), residual p50 2.30 us, p95 4.59 us
+  sparse fit: ok, 487 of 492 samples, residual p50 2.63 us, p95 8.05 us
+  fitted period 9.999964 ms = signal rate -3.57 ppm
+  sparse vs dense top row at the dense window's middle: -3.87 us; period +0.21 ppm
+  301 wake-ups: top row comes 0.2153 ms after the wake-up (sd 0.0230, min 0.1221, max 0.2577)
+  so the wake-up comes 0.0946 ms after the blank starts (blank 0.3139 ms minus the above)
+  wake-up jitter around its own fit: sd 23.03 us, min -42.03, max 93.74
+  fitted wake grid -> top-row grid offset: 0.2158 ms (add this to WaitForVBlank-fitted times)

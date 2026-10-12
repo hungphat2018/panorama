@@ -1,0 +1,66 @@
+===== 96 Hz
+[matroska,webm @ 00000000489bc300] Could not find codec parameters for stream 10 (Attachment: none): unknown codec
+Consider increasing the value for the 'analyzeduration' (0) and 'probesize' (5000000) options
+[matroska,webm @ 00000000489bc300] Could not find codec parameters for stream 11 (Attachment: none): unknown codec
+Consider increasing the value for the 'analyzeduration' (0) and 'probesize' (5000000) options
+[matroska,webm @ 00000000489bc300] Could not find codec parameters for stream 12 (Attachment: none): unknown codec
+Consider increasing the value for the 'analyzeduration' (0) and 'probesize' (5000000) options
+\\.\DISPLAY2 switched to 96 Hz for this run
+monitor 0 DISPLAY1: 2560x1600 at (0,0), window/swapchain 2560x1600, refresh 240.0046 Hz, 344x215 mm at 0 mm
+monitor 1 DISPLAY2: 1920x1080 at (2560,0), window/swapchain 1920x1080, refresh 96.0037 Hz, 476x268 mm at 364 mm
+  DISPLAY1: signal 2720x1800 total, line 2.3148 us, scan 3.7037 ms, blank 0.4630 ms; scan grid 384 of 421 samples, residual p50 1.69 us; top row 0.411 ms after the vblank wake-up; height 215.0 mm, top 0.0 mm, lag 0.00 ms
+  DISPLAY2: signal 2000x1160 total, line 8.9799 us, scan 9.6983 ms, blank 0.7184 ms; scan grid 426 of 432 samples, residual p50 3.38 us; top row 0.648 ms after the vblank wake-up; height 268.0 mm, top 0.0 mm, lag 0.00 ms
+aim row 107.5 mm; shared height 0.0..215.0 mm
+film 23.9760 fps; master DISPLAY2 96.0037 Hz; speed LOCKED to the master's refresh count (speed 1.0010 if locked, hold 4 refreshes)
+film starts 1 master refreshes later; aim row 107.5 mm
+predicted seam offset DISPLAY2 - DISPLAY1, in light: top row (0.0 mm) -1.73 ms, aim row +0.31 ms, bottom row (215.0 mm) +2.35 ms
+picture 382.2 x 215.0 mm (aspect 1.7778) at x 162.9..545.1 mm; DISPLAY1: shows part DISPLAY2: shows part 
+DISPLAY1: top-row grid at film start vs end, at the film's end: +26.5 us (end fit: 6594 of 6594 samples, residual p50 4.71 us, p95 9.18 us; the film followed a grid refitted 24 times); vblank wake-up to top row 0.411 ms at film start, 0.315 ms at the end
+DISPLAY1: 4923 presents, render cpu p50 0.023 / p99 0.284 ms, gpu p50 0.042 / p99 0.415 ms, queue_more 0, empty 0
+wrote .\results-2026-10-11\fs-rowtiming-96hz/monitor-0-nearest.json
+DISPLAY2: top-row grid at film start vs end, at the film's end: -22.4 us (end fit: 6942 of 7180 samples, residual p50 3.12 us, p95 11.61 us; the film followed a grid refitted 24 times); vblank wake-up to top row 0.648 ms at film start, 0.540 ms at the end
+DISPLAY2: 1972 presents, render cpu p50 0.024 / p99 0.133 ms, gpu p50 0.022 / p99 0.338 ms, queue_more 0, empty 0
+wrote .\results-2026-10-11\fs-rowtiming-96hz/monitor-1-nearest.json
+film 23.9760 fps, locked=True, windowed=False
+{"name": "DISPLAY1", "refresh_hz": 240.0096, "presents": 4560, "fallback_times": 2, "refreshes_per_frame": {"9": 2, "10": 454}, "skipped_frames": 0, "composition": {"overlay (independent flip / MPO)": 4923}, "error": "", "perf1": {"render_cpu_ms_all": {"n": 4560, "p50": 0.023, "p99": 0.28, "max": 0.479}, "render_cpu_ms_new_frame": {"n": 456, "p50": 0.22, "p99": 0.395, "max": 0.479}, "render_gpu_ms_all": {"n": 4560, "p50": 0.042, "p99": 0.414, "max": 0.79}, "render_gpu_ms_new_frame": {"n": 456, "p50": 0.389, "p99": 0.619, "max": 0.79}, "lead_ms_before_target": {"n": 4560, "p50": 4.059, "p99": 4.148, "max": 4.174}, "present_calls_per_refresh": 1.0, "queue_more": 0, "empty_mix": 0, "render_failed": 0, "screen_minus_target_ms": {"n": 4558, "p50": 4.053, "p99": 4.061, "max": 4.063}, "presents_with_stats": 4558, "landed_off_target_refresh": 0, "missed_refreshes_between_stat_presents": 0}}
+{"name": "DISPLAY2", "refresh_hz": 96.0131, "presents": 1825, "fallback_times": 2, "refreshes_per_frame": {"3": 2, "4": 454}, "skipped_frames": 0, "composition": {"overlay (independent flip / MPO)": 1969, "none": 3}, "error": "", "perf1": {"render_cpu_ms_all": {"n": 1825, "p50": 0.024, "p99": 0.12, "max": 0.241}, "render_cpu_ms_new_frame": {"n": 456, "p50": 0.072, "p99": 0.19, "max": 0.241}, "render_gpu_ms_all": {"n": 1825, "p50": 0.023, "p99": 0.334, "max": 0.615}, "render_gpu_ms_new_frame": {"n": 456, "p50": 0.213, "p99": 0.389, "max": 0.615}, "lead_ms_before_target": {"n": 1825, "p50": 10.296, "p99": 10.425, "max": 10.466}, "present_calls_per_refresh": 1.0, "queue_more": 0, "empty_mix": 0, "render_failed": 0, "screen_minus_target_ms": {"n": 1823, "p50": 10.286, "p99": 10.297, "max": 10.301}, "presents_with_stats": 1823, "landed_off_target_refresh": 0, "missed_refreshes_between_stat_presents": 0}}
+blank-start frame-change offset ms (monitor1 - monitor0): {'frames': 457, 'min': -1.94, 'median': 4.3, 'p95': 4.31, 'max': 10.54}
+row-light seam offset DISPLAY2 - DISPLAY1 (ms), master monitor 1; frames paired: 456
+  top    row (   0.0 mm): median +4.54  p5 +4.53  p95 +4.55  min -1.70  max +4.55   predicted -1.73
+  aim    row ( 107.5 mm): median +6.58  p5 +6.56  p95 +6.59  min +0.34  max +6.59   predicted +0.31
+  bottom row ( 215.0 mm): median +8.61  p5 +8.60  p95 +8.63  min +2.38  max +8.63   predicted +2.35
+  DISPLAY1: DXGI SyncQPCTime to next top row 0.427 ms (min 0.415, max 0.436); vblank wake-up to top row 0.4105 ms at film start, 0.3153 at the end (median over the run's wake-ups 0.324); start-fit grid vs end-fit grid at the last present +26.5 us, the film followed a grid refitted 24 times
+  DISPLAY2: DXGI SyncQPCTime to next top row 0.665 ms (min 0.65, max 4.958); vblank wake-up to top row 0.6484 ms at film start, 0.5395 at the end (median over the run's wake-ups 0.54); start-fit grid vs end-fit grid at the last present -22.4 us, the film followed a grid refitted 24 times
+===== 72 Hz
+[matroska,webm @ 00000000489e8c40] Could not find codec parameters for stream 10 (Attachment: none): unknown codec
+Consider increasing the value for the 'analyzeduration' (0) and 'probesize' (5000000) options
+[matroska,webm @ 00000000489e8c40] Could not find codec parameters for stream 11 (Attachment: none): unknown codec
+Consider increasing the value for the 'analyzeduration' (0) and 'probesize' (5000000) options
+[matroska,webm @ 00000000489e8c40] Could not find codec parameters for stream 12 (Attachment: none): unknown codec
+Consider increasing the value for the 'analyzeduration' (0) and 'probesize' (5000000) options
+\\.\DISPLAY2 switched to 72 Hz for this run
+monitor 0 DISPLAY1: 2560x1600 at (0,0), window/swapchain 2560x1600, refresh 240.0009 Hz, 344x215 mm at 0 mm
+monitor 1 DISPLAY2: 1920x1080 at (2560,0), window/swapchain 1920x1080, refresh 72.0021 Hz, 476x268 mm at 364 mm
+  DISPLAY1: signal 2720x1800 total, line 2.3148 us, scan 3.7037 ms, blank 0.4630 ms; scan grid 523 of 523 samples, residual p50 4.26 us; top row 0.410 ms after the vblank wake-up; height 215.0 mm, top 0.0 mm, lag 0.00 ms
+  DISPLAY2: signal 2000x1545 total, line 8.9896 us, scan 9.7087 ms, blank 4.1802 ms; scan grid 413 of 413 samples, residual p50 4.76 us; top row 4.118 ms after the vblank wake-up; height 268.0 mm, top 0.0 mm, lag 0.00 ms
+aim row 107.5 mm; shared height 0.0..215.0 mm
+film 23.9760 fps; master DISPLAY2 72.0021 Hz; speed LOCKED to the master's refresh count (speed 1.0010 if locked, hold 3 refreshes)
+film starts 0 master refreshes later; aim row 107.5 mm
+predicted seam offset DISPLAY2 - DISPLAY1, in light: top row (0.0 mm) -1.42 ms, aim row +0.62 ms, bottom row (215.0 mm) +2.67 ms
+picture 382.2 x 215.0 mm (aspect 1.7778) at x 162.9..545.1 mm; DISPLAY1: shows part DISPLAY2: shows part 
+DISPLAY1: top-row grid at film start vs end, at the film's end: +30.5 us (end fit: 6784 of 6784 samples, residual p50 4.30 us, p95 9.67 us; the film followed a grid refitted 24 times); vblank wake-up to top row 0.410 ms at film start, 0.301 ms at the end
+DISPLAY1: 4917 presents, render cpu p50 0.023 / p99 0.300 ms, gpu p50 0.042 / p99 0.425 ms, queue_more 0, empty 0
+wrote .\results-2026-10-11\fs-rowtiming-72hz/monitor-0-nearest.json
+DISPLAY2: top-row grid at film start vs end, at the film's end: -42.8 us (end fit: 5325 of 5326 samples, residual p50 4.76 us, p95 11.68 us; the film followed a grid refitted 24 times); vblank wake-up to top row 4.118 ms at film start, 3.989 ms at the end
+DISPLAY2: 1479 presents, render cpu p50 0.025 / p99 0.110 ms, gpu p50 0.059 / p99 0.308 ms, queue_more 0, empty 0
+wrote .\results-2026-10-11\fs-rowtiming-72hz/monitor-1-nearest.json
+film 23.9760 fps, locked=True, windowed=False
+{"name": "DISPLAY1", "refresh_hz": 240.0096, "presents": 4560, "fallback_times": 346, "refreshes_per_frame": {"9": 32, "10": 391, "11": 32}, "skipped_frames": 0, "composition": {"overlay (independent flip / MPO)": 4917}, "error": "", "perf1": {"render_cpu_ms_all": {"n": 4560, "p50": 0.022, "p99": 0.3, "max": 0.573}, "render_cpu_ms_new_frame": {"n": 456, "p50": 0.207, "p99": 0.498, "max": 0.573}, "render_gpu_ms_all": {"n": 4560, "p50": 0.043, "p99": 0.426, "max": 0.947}, "render_gpu_ms_new_frame": {"n": 456, "p50": 0.376, "p99": 0.612, "max": 0.947}, "lead_ms_before_target": {"n": 4560, "p50": 4.043, "p99": 4.147, "max": 4.378}, "present_calls_per_refresh": 1.0, "queue_more": 0, "empty_mix": 0, "render_failed": 0, "screen_minus_target_ms": {"n": 4214, "p50": 4.063, "p99": 4.07, "max": 4.072}, "presents_with_stats": 4214, "landed_off_target_refresh": 28, "missed_refreshes_between_stat_presents": 0}}
+{"name": "DISPLAY2", "refresh_hz": 71.9979, "presents": 1369, "fallback_times": 2, "refreshes_per_frame": {"2": 2, "3": 454}, "skipped_frames": 0, "composition": {"overlay (independent flip / MPO)": 1476, "none": 3}, "error": "", "perf1": {"render_cpu_ms_all": {"n": 1369, "p50": 0.025, "p99": 0.108, "max": 0.327}, "render_cpu_ms_new_frame": {"n": 456, "p50": 0.074, "p99": 0.136, "max": 0.327}, "render_gpu_ms_all": {"n": 1369, "p50": 0.059, "p99": 0.298, "max": 0.429}, "render_gpu_ms_new_frame": {"n": 456, "p50": 0.193, "p99": 0.323, "max": 0.358}, "lead_ms_before_target": {"n": 1369, "p50": 13.762, "p99": 13.874, "max": 13.896}, "present_calls_per_refresh": 1.001, "queue_more": 0, "empty_mix": 0, "render_failed": 0, "screen_minus_target_ms": {"n": 1367, "p50": 13.785, "p99": 13.791, "max": 13.791}, "presents_with_stats": 1367, "landed_off_target_refresh": 0, "missed_refreshes_between_stat_presents": 0}}
+blank-start frame-change offset ms (monitor1 - monitor0): {'frames': 456, 'min': 4.61, 'median': 4.66, 'p95': 8.7, 'max': 18.5}
+row-light seam offset DISPLAY2 - DISPLAY1 (ms), master monitor 1; frames paired: 455
+  top    row (   0.0 mm): median +8.35  p5 +8.31  p95 +12.51  min +8.31  max +12.55   predicted -1.42
+  aim    row ( 107.5 mm): median +10.40  p5 +10.36  p95 +14.55  min +10.35  max +14.60   predicted +0.62
+  bottom row ( 215.0 mm): median +12.44  p5 +12.40  p95 +16.59  min +12.40  max +16.64   predicted +2.67
+  DISPLAY1: DXGI SyncQPCTime to next top row 0.429 ms (min 0.416, max 0.437); vblank wake-up to top row 0.4101 ms at film start, 0.3012 at the end (median over the run's wake-ups 0.322); start-fit grid vs end-fit grid at the last present +30.5 us, the film followed a grid refitted 24 times
+  DISPLAY2: DXGI SyncQPCTime to next top row 4.121 ms (min 4.114, max 12.908); vblank wake-up to top row 4.1177 ms at film start, 3.9891 at the end (median over the run's wake-ups 4.022); start-fit grid vs end-fit grid at the last present -42.8 us, the film followed a grid refitted 24 times

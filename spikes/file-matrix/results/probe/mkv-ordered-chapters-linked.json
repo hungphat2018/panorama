@@ -1,0 +1,121 @@
+{
+ "streams": [
+  {
+   "index": 0,
+   "codec_name": "h264",
+   "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+   "profile": "High",
+   "codec_type": "video",
+   "codec_tag_string": "[0][0][0][0]",
+   "codec_tag": "0x0000",
+   "mime_codec_string": "avc1.64001f",
+   "width": 1280,
+   "height": 720,
+   "coded_width": 1280,
+   "coded_height": 720,
+   "has_b_frames": 2,
+   "sample_aspect_ratio": "1:1",
+   "display_aspect_ratio": "16:9",
+   "pix_fmt": "yuv420p",
+   "level": 31,
+   "color_range": "tv",
+   "color_space": "bt709",
+   "color_transfer": "bt709",
+   "color_primaries": "bt709",
+   "chroma_location": "left",
+   "field_order": "progressive",
+   "is_avc": "true",
+   "nal_length_size": "4",
+   "r_frame_rate": "24/1",
+   "avg_frame_rate": "24/1",
+   "time_base": "1/1000",
+   "start_pts": 0,
+   "start_time": "0.000000",
+   "bits_per_raw_sample": "8",
+   "extradata_size": 49,
+   "disposition": {
+    "default": 0,
+    "dub": 0,
+    "original": 0,
+    "comment": 0,
+    "lyrics": 0,
+    "karaoke": 0,
+    "forced": 0,
+    "hearing_impaired": 0,
+    "visual_impaired": 0,
+    "clean_effects": 0,
+    "attached_pic": 0,
+    "timed_thumbnails": 0,
+    "non_diegetic": 0,
+    "captions": 0,
+    "descriptions": 0,
+    "metadata": 0,
+    "dependent": 0,
+    "still_image": 0,
+    "multilayer": 0
+   },
+   "tags": {
+    "ENCODER": "Lavc63.1.102 libx264",
+    "BPS": "2583102",
+    "DURATION": "00:00:10.000000000",
+    "NUMBER_OF_FRAMES": "240",
+    "NUMBER_OF_BYTES": "3228878",
+    "_STATISTICS_WRITING_APP": "mkvmerge v102.0 ('Little Houses') 64-bit",
+    "_STATISTICS_WRITING_DATE_UTC": "2026-10-11 11:45:03",
+    "_STATISTICS_TAGS": "BPS DURATION NUMBER_OF_FRAMES NUMBER_OF_BYTES"
+   }
+  }
+ ],
+ "chapters": [
+  {
+   "id": -5955989001180034934,
+   "time_base": "1/1000000000",
+   "start": 0,
+   "start_time": "0.000000",
+   "end": 5000000000,
+   "end_time": "5.000000",
+   "tags": {
+    "title": "Opening"
+   }
+  },
+  {
+   "id": 8975059573043755007,
+   "time_base": "1/1000000000",
+   "start": 0,
+   "start_time": "0.000000",
+   "end": 10000000000,
+   "end_time": "10.000000",
+   "tags": {
+    "title": "Episode"
+   }
+  },
+  {
+   "id": 507883375272219832,
+   "time_base": "1/1000000000",
+   "start": 0,
+   "start_time": "0.000000",
+   "end": 5000000000,
+   "end_time": "5.000000",
+   "tags": {
+    "title": "Ending"
+   }
+  }
+ ],
+ "format": {
+  "filename": "C:\\Users\\tamla\\Downloads\\Telegram Desktop\\panorama\\spikes\\file-matrix\\media\\mkv-ordered-chapters-linked\\main.mkv",
+  "nb_streams": 1,
+  "nb_programs": 0,
+  "nb_stream_groups": 0,
+  "format_name": "matroska,webm",
+  "format_long_name": "Matroska / WebM",
+  "start_time": "0.000000",
+  "duration": "10.000000",
+  "size": "3237003",
+  "bit_rate": "2589602",
+  "probe_score": 100,
+  "tags": {
+   "creation_time": "2026-10-11T11:45:03.000000Z",
+   "ENCODER": "Lavf63.1.102"
+  }
+ }
+}

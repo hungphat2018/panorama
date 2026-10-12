@@ -1,6 +1,6 @@
 # 0022. Own performer on libplacebo and FFmpeg
 
-- **Status:** Accepted
+- **Status:** Accepted — refined by [0026](0026-picture-path-one-resample-per-monitor.md)
 - **Date:** 2026-10-11
 - **Refines:** [0012](0012-concept-demo-starting-scope.md), [0014](0014-architecture-plan-ahead-into-a-cue-sheet-perform-live.md)
 
@@ -28,3 +28,8 @@
 - Toolchain: MSYS2 UCRT64, self-contained under the user's profile; libplacebo master builds in seconds; FFmpeg 9.0.2 rebuilt as LGPL keeps D3D11VA, D3D12VA and Vulkan decoding, and libplacebo's FFmpeg helpers work with it. The first spike played the anime test episode on D3D11 with our own `Present`: 0 late, 0 skipped frames ([P0 spike](../../plans/reports/spike-261011-1247-performer-toolchain-p0.md)). Vulkan presenting was jittery there, so the performer starts on D3D11.
 - The cue sheet reaches the performer in process, so the per-shot latch (no shot changes on screen) lives in its render loop.
 - More code than stock mpv: the engine research estimates about 2.6k lines for the M1 prototype and 7.6k for the full performer.
+- Checked 2026-10-11:
+  - The [requirement matrix](../../plans/reports/researcher-261011-1900-performer-requirement-matrix.md) has a citation in every cell and keeps this ranking. Per-row mixing, per-monitor present timing and one device per adapter need our own code (or the same libplacebo patch) with mpv's core too.
+  - The [supported-file matrix](../../plans/reports/spike-261011-1955-supported-file-matrix.md) ran 53 cases and found no library-level blocker.
+  - FFmpeg drops MKV ordered chapters and linked segments, so the per-file fallback to stock mpv is required for those files until the performer has its own timeline layer. The same holds for PGS subtitles, Dolby Vision profiles 5 and 8.1, inverse telecine and audio passthrough.
+  - The fallback to mpv's core is reconsidered if the libass and PGS glue passes about 600 lines, or the timeline layer about 800.

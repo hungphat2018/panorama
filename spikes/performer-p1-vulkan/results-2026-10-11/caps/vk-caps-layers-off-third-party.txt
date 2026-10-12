@@ -1,0 +1,107 @@
+loader/instance version 1.4.341; VK_LOADER_LAYERS_DISABLE=VK_LAYER_RTSS,VK_LAYER_reshade,VK_LAYER_WEOBS_HOOK,VK_LAYER_VALVE_*,VK_LAYER_EOS_*,VK_LAYER_ROCKSTAR_*
+instance layers visible to the loader: 3
+  VK_LAYER_AMD_switchable_graphics         spec 1.4.315 impl 1  AMD switchable graphics layer
+  VK_LAYER_NV_optimus                      spec 1.4.351 impl 1  NVIDIA Optimus layer
+  VK_LAYER_NV_present                      spec 1.4.351 impl 1  NVIDIA Presentation Layer
+instance extensions: 20; watched: VK_KHR_surface yes, VK_KHR_win32_surface yes, VK_KHR_get_surface_capabilities2 yes, VK_KHR_surface_maintenance1 yes, VK_EXT_surface_maintenance1 yes, VK_EXT_swapchain_colorspace yes
+DXGI adapters: 3
+  0: NVIDIA GeForce RTX 5070 Ti Laptop GPU, LUID 00000000:00015887, 2 outputs attached to the desktop (2 in total)
+  1: AMD Radeon(TM) 610M, LUID 00000000:00017540, 0 outputs attached to the desktop (0 in total)
+  2: Microsoft Basic Render Driver, LUID 00000000:000174e4, 0 outputs attached to the desktop (0 in total)
+physical devices: 2
+
+== gpu 0: NVIDIA GeForce RTX 5070 Ti Laptop GPU
+type discrete, vendor 0x10de device 0x2f18, api 1.4.351, driver version 0x9a4a8000, driver "NVIDIA" "617.42"
+timestampPeriod 1.0000 ns, timestampComputeAndGraphics 1
+device LUID 00000000:00015887 (valid 1) = DXGI adapter "NVIDIA GeForce RTX 5070 Ti Laptop GPU": 2 outputs attached to the desktop (2 in total)
+queue family 0: x16 flags 0xf graphics compute transfer, timestampValidBits 64, Win32 presentation yes
+queue family 1: x2 flags 0xc transfer, timestampValidBits 64, Win32 presentation no
+queue family 2: x8 flags 0xe compute transfer, timestampValidBits 64, Win32 presentation yes
+queue family 3: x1 flags 0x2c transfer video-decode, timestampValidBits 32, Win32 presentation no
+queue family 4: x1 flags 0x4c transfer video-encode, timestampValidBits 32, Win32 presentation no
+queue family 5: x1 flags 0x10c transfer, timestampValidBits 64, Win32 presentation no
+device extensions: 291 in total; watched ones:
+  VK_KHR_swapchain                             yes (revision 70)
+  VK_KHR_swapchain_mutable_format              yes (revision 1)
+  VK_KHR_swapchain_maintenance1                yes (revision 1)
+  VK_EXT_swapchain_maintenance1                yes (revision 1)
+  VK_KHR_present_id                            yes (revision 1)
+  VK_KHR_present_id2                           yes (revision 1)
+  VK_KHR_present_wait                          yes (revision 1)
+  VK_KHR_present_wait2                         yes (revision 1)
+  VK_EXT_present_timing                        yes (revision 3)
+  VK_KHR_present_mode_fifo_latest_ready        yes (revision 1)
+  VK_KHR_calibrated_timestamps                 yes (revision 1)
+  VK_EXT_calibrated_timestamps                 yes (revision 2)
+  VK_EXT_full_screen_exclusive                 yes (revision 4)
+  VK_EXT_hdr_metadata                          yes (revision 3)
+  VK_KHR_incremental_present                   no
+  VK_GOOGLE_display_timing                     no
+  VK_EXT_display_control                       no
+  VK_KHR_timeline_semaphore                    yes (revision 2)
+  VK_KHR_synchronization2                      yes (revision 1)
+  VK_KHR_internally_synchronized_queues        yes (revision 1)
+  VK_KHR_external_semaphore_win32              yes (revision 1)
+  VK_KHR_external_fence_win32                  yes (revision 1)
+  VK_KHR_external_memory_win32                 yes (revision 1)
+  VK_KHR_video_queue                           yes (revision 8)
+  VK_KHR_video_decode_queue                    yes (revision 8)
+  VK_KHR_video_decode_h264                     yes (revision 9)
+  VK_KHR_video_decode_h265                     yes (revision 8)
+  VK_KHR_video_decode_av1                      yes (revision 1)
+  VK_KHR_video_maintenance1                    yes (revision 1)
+  VK_NV_low_latency2                           yes (revision 3)
+features: presentTiming 1 (absolute 1, relative 1), presentId 1, presentId2 1, presentWait 1, presentWait2 1, swapchainMaintenance1 1, presentModeFifoLatestReady 1
+calibrateable time domains (device level): DEVICE QUERY_PERFORMANCE_COUNTER PRESENT_STAGE_LOCAL
+vkCreateDevice with the present set (8 extensions): VK_KHR_swapchain VK_KHR_present_id2 VK_KHR_present_wait2 VK_EXT_present_timing VK_KHR_calibrated_timestamps VK_KHR_swapchain_maintenance1 VK_KHR_present_id VK_KHR_present_wait -> VK_SUCCESS (0)
+entry points: vkSetSwapchainPresentTimingQueueSizeEXT yes, vkGetSwapchainTimingPropertiesEXT yes, vkGetSwapchainTimeDomainPropertiesEXT yes, vkGetPastPresentationTimingEXT yes, vkWaitForPresent2KHR yes, vkGetCalibratedTimestampsKHR yes, vkCreateSwapchainKHR yes, vkQueuePresentKHR yes
+calibrated read (QPC, DEVICE): VK_SUCCESS, QPC ticks 149982693789 (QueryPerformanceCounter right after: 149982693822, 10.000 MHz), device ticks 1791727157490441312, max deviation 32 ns
+
+== gpu 1: AMD Radeon(TM) 610M
+type integrated, vendor 0x1002 device 0x164e, api 1.4.315, driver version 0x00800161, driver "AMD proprietary driver" "25.10.39.07 (AMD proprietary shader compiler)"
+timestampPeriod 10.0000 ns, timestampComputeAndGraphics 1
+device LUID 00000000:00017540 (valid 1) = DXGI adapter "AMD Radeon(TM) 610M": 0 outputs attached to the desktop (0 in total)
+queue family 0: x8 flags 0xf graphics compute transfer, timestampValidBits 64, Win32 presentation yes
+queue family 1: x4 flags 0xe compute transfer, timestampValidBits 64, Win32 presentation yes
+queue family 2: x1 flags 0xc transfer, timestampValidBits 64, Win32 presentation no
+queue family 3: x1 flags 0x40 video-encode, timestampValidBits 0, Win32 presentation no
+queue family 4: x1 flags 0x20 video-decode, timestampValidBits 0, Win32 presentation no
+device extensions: 197 in total; watched ones:
+  VK_KHR_swapchain                             yes (revision 70)
+  VK_KHR_swapchain_mutable_format              yes (revision 1)
+  VK_KHR_swapchain_maintenance1                no
+  VK_EXT_swapchain_maintenance1                no
+  VK_KHR_present_id                            no
+  VK_KHR_present_id2                           no
+  VK_KHR_present_wait                          no
+  VK_KHR_present_wait2                         no
+  VK_EXT_present_timing                        no
+  VK_KHR_present_mode_fifo_latest_ready        no
+  VK_KHR_calibrated_timestamps                 yes (revision 1)
+  VK_EXT_calibrated_timestamps                 yes (revision 2)
+  VK_EXT_full_screen_exclusive                 yes (revision 4)
+  VK_EXT_hdr_metadata                          yes (revision 3)
+  VK_KHR_incremental_present                   no
+  VK_GOOGLE_display_timing                     no
+  VK_EXT_display_control                       no
+  VK_KHR_timeline_semaphore                    yes (revision 2)
+  VK_KHR_synchronization2                      yes (revision 1)
+  VK_KHR_internally_synchronized_queues        no
+  VK_KHR_external_semaphore_win32              yes (revision 1)
+  VK_KHR_external_fence_win32                  yes (revision 1)
+  VK_KHR_external_memory_win32                 yes (revision 1)
+  VK_KHR_video_queue                           yes (revision 8)
+  VK_KHR_video_decode_queue                    yes (revision 8)
+  VK_KHR_video_decode_h264                     yes (revision 9)
+  VK_KHR_video_decode_h265                     yes (revision 8)
+  VK_KHR_video_decode_av1                      yes (revision 1)
+  VK_KHR_video_maintenance1                    yes (revision 1)
+  VK_NV_low_latency2                           no
+features: presentTiming 0 (absolute 0, relative 0), presentId 0, presentId2 0, presentWait 0, presentWait2 0, swapchainMaintenance1 0, presentModeFifoLatestReady 0
+calibrateable time domains (device level): DEVICE QUERY_PERFORMANCE_COUNTER
+vkCreateDevice with the present set (2 extensions): VK_KHR_swapchain VK_KHR_calibrated_timestamps -> VK_SUCCESS (0)
+entry points: vkSetSwapchainPresentTimingQueueSizeEXT NO, vkGetSwapchainTimingPropertiesEXT NO, vkGetSwapchainTimeDomainPropertiesEXT NO, vkGetPastPresentationTimingEXT NO, vkWaitForPresent2KHR NO, vkGetCalibratedTimestampsKHR yes, vkCreateSwapchainKHR yes, vkQueuePresentKHR yes
+calibrated read (QPC, DEVICE): VK_SUCCESS, QPC ticks 149982992078 (QueryPerformanceCounter right after: 149982992211, 10.000 MHz), device ticks 1498962614480, max deviation 124 ns
+
+modules loaded into this process from outside the Windows folder and the MSYS2 runtime (the layer and overlay DLLs the loader injected):
+  C:\Program Files\Windhawk\Engine\1.7.3\64\windhawk.dll

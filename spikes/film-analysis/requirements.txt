@@ -1,0 +1,29 @@
+# Film-analysis worker: everything pinned. Create the venv and install with
+#   python -m venv tools\venv-analysis
+#   tools\venv-analysis\Scripts\python.exe -I -m pip install -r spikes\film-analysis\requirements.txt
+# (tools\ is git-ignored by the repository's root .gitignore.)
+#
+# Versions are the ones measured in the film-analysis research and in the worker prototype (2026-10-11/12).
+# Only wheels from PyPI are installed; models are separate files listed in models-manifest.json.
+
+# --- arrays and image work -------------------------------------------------------------------------------------
+numpy==2.4.6
+# OpenCV for phase correlation, ECC, resizing, YuNet (cv2.FaceDetectorYN) and NMS. The headless wheel has no GUI code.
+opencv-python-headless==5.0.0.93
+
+# --- models: ONNX Runtime with the CUDA execution provider (falls back to CPU on its own) ---------------------------
+onnxruntime-gpu==1.31.0
+flatbuffers==25.12.19
+packaging==26.3
+protobuf==7.36.2
+# CUDA 13 / cuDNN 9 runtime libraries that onnxruntime-gpu loads (the "cuda" and "cudnn" extras, plus their dependencies)
+nvidia-cublas==13.8.0.4
+nvidia-cuda-nvrtc==13.4.92
+nvidia-cuda-runtime==13.4.92
+nvidia-cudnn-cu13==9.27.0.42
+nvidia-cufft==12.4.0.43
+nvidia-curand==10.4.4.72
+nvidia-nvjitlink==13.4.92
+
+# --- subtitles: ASS / SSA / SRT parsing --------------------------------------------------------------------------
+pysubs2==1.8.1

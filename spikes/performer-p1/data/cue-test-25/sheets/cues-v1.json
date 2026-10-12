@@ -1,0 +1,39 @@
+{
+ "schema": "panorama.cues/1",
+ "version": 1,
+ "file_hash": "test-clip",
+ "room_signature": "setup-a",
+ "preferences_hash": "default",
+ "shots": [
+  {
+   "start": 0.0
+  },
+  {
+   "start": 3.26
+  },
+  {
+   "start": 9.18
+  },
+  {
+   "start": 12.42
+  },
+  {
+   "start": 17.54
+  },
+  {
+   "start": 22.98
+  },
+  {
+   "start": 26.54
+  },
+  {
+   "start": 30.259999999999998
+  },
+  {
+   "start": 33.739999999999995
+  },
+  {
+   "start": 36.14
+  }
+ ]
+}

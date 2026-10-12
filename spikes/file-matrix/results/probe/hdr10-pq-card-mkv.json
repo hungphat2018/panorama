@@ -1,0 +1,102 @@
+{
+ "streams": [
+  {
+   "index": 0,
+   "codec_name": "hevc",
+   "codec_long_name": "H.265 / HEVC (High Efficiency Video Coding)",
+   "profile": "Main 10",
+   "codec_type": "video",
+   "codec_tag_string": "[0][0][0][0]",
+   "codec_tag": "0x0000",
+   "width": 1920,
+   "height": 1080,
+   "coded_width": 1920,
+   "coded_height": 1080,
+   "has_b_frames": 2,
+   "pix_fmt": "yuv420p10le",
+   "level": 120,
+   "color_range": "tv",
+   "color_space": "bt2020nc",
+   "color_transfer": "smpte2084",
+   "color_primaries": "bt2020",
+   "chroma_location": "left",
+   "view_ids_available": "",
+   "view_pos_available": "",
+   "r_frame_rate": "24000/1001",
+   "avg_frame_rate": "24000/1001",
+   "time_base": "1/1000",
+   "start_pts": 0,
+   "start_time": "0.000000",
+   "extradata_size": 2573,
+   "disposition": {
+    "default": 0,
+    "dub": 0,
+    "original": 0,
+    "comment": 0,
+    "lyrics": 0,
+    "karaoke": 0,
+    "forced": 0,
+    "hearing_impaired": 0,
+    "visual_impaired": 0,
+    "clean_effects": 0,
+    "attached_pic": 0,
+    "timed_thumbnails": 0,
+    "non_diegetic": 0,
+    "captions": 0,
+    "descriptions": 0,
+    "metadata": 0,
+    "dependent": 0,
+    "still_image": 0,
+    "multilayer": 0
+   },
+   "tags": {
+    "ENCODER": "Lavc63.1.102 libx265",
+    "BPS": "63654",
+    "DURATION": "00:00:10.010000000",
+    "NUMBER_OF_FRAMES": "240",
+    "NUMBER_OF_BYTES": "79648",
+    "_STATISTICS_WRITING_APP": "mkvmerge v102.0 ('Little Houses') 64-bit",
+    "_STATISTICS_WRITING_DATE_UTC": "2026-10-11 11:45:06",
+    "_STATISTICS_TAGS": "BPS DURATION NUMBER_OF_FRAMES NUMBER_OF_BYTES"
+   },
+   "side_data_list": [
+    {
+     "side_data_type": "Content light level metadata",
+     "max_content": 1000,
+     "max_average": 400
+    },
+    {
+     "side_data_type": "Mastering display metadata",
+     "red_x": "11408507/16777216",
+     "red_y": "5368709/16777216",
+     "green_x": "2222981/8388608",
+     "green_y": "11576279/16777216",
+     "blue_x": "5033165/33554432",
+     "blue_y": "16106127/268435456",
+     "white_point_x": "10492471/33554432",
+     "white_point_y": "689963/2097152",
+     "min_luminance": "209800/2098000053",
+     "max_luminance": "1000/1"
+    }
+   ]
+  }
+ ],
+ "chapters": [],
+ "format": {
+  "filename": "C:\\Users\\tamla\\Downloads\\Telegram Desktop\\panorama\\spikes\\file-matrix\\media\\hdr10-pq-card.mkv",
+  "nb_streams": 1,
+  "nb_programs": 0,
+  "nb_stream_groups": 0,
+  "format_name": "matroska,webm",
+  "format_long_name": "Matroska / WebM",
+  "start_time": "0.000000",
+  "duration": "10.010000",
+  "size": "90024",
+  "bit_rate": "71947",
+  "probe_score": 100,
+  "tags": {
+   "creation_time": "2026-10-11T11:45:06.000000Z",
+   "ENCODER": "Lavf63.1.102"
+  }
+ }
+}

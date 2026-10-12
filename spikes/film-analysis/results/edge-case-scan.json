@@ -1,0 +1,145 @@
+[
+ {
+  "file": "vfr-24-30-60",
+  "exit": 0,
+  "seconds": 11.3,
+  "scan_state": "complete",
+  "failed_segments": 0,
+  "segments_done": 1,
+  "frames": 456,
+  "validate": "21 of 21 checks passed",
+  "ok": true
+ },
+ {
+  "file": "mkv-start-10s",
+  "exit": 0,
+  "seconds": 8.6,
+  "scan_state": "complete",
+  "failed_segments": 0,
+  "segments_done": 1,
+  "frames": 240,
+  "validate": "21 of 21 checks passed",
+  "ok": true
+ },
+ {
+  "file": "mp4-empty-edit-1p5s",
+  "exit": 0,
+  "seconds": 8.6,
+  "scan_state": "complete",
+  "failed_segments": 0,
+  "segments_done": 1,
+  "frames": 240,
+  "validate": "21 of 21 checks passed",
+  "ok": true
+ },
+ {
+  "file": "mp4-negative-cts",
+  "exit": 0,
+  "seconds": 8.3,
+  "scan_state": "complete",
+  "failed_segments": 0,
+  "segments_done": 1,
+  "frames": 240,
+  "validate": "21 of 21 checks passed",
+  "ok": true
+ },
+ {
+  "file": "mp4-trimmed-edit-list",
+  "exit": 0,
+  "seconds": 7.0,
+  "scan_state": "complete",
+  "failed_segments": 0,
+  "segments_done": 1,
+  "frames": 160,
+  "validate": "21 of 21 checks passed",
+  "ok": true
+ },
+ {
+  "file": "dl-mov-neg-first-pts",
+  "exit": 0,
+  "seconds": 3.0,
+  "scan_state": "complete",
+  "failed_segments": 0,
+  "segments_done": 1,
+  "frames": 15,
+  "validate": "21 of 21 checks passed",
+  "ok": true
+ },
+ {
+  "file": "dl-mp4-empty-edit-5s",
+  "exit": 0,
+  "seconds": 3.6,
+  "scan_state": "complete",
+  "failed_segments": 0,
+  "segments_done": 1,
+  "frames": 100,
+  "validate": "21 of 21 checks passed",
+  "ok": true
+ },
+ {
+  "file": "mkv-ordered-chapters-internal",
+  "exit": 0,
+  "seconds": 9.2,
+  "scan_state": "complete",
+  "failed_segments": 0,
+  "segments_done": 1,
+  "frames": 360,
+  "validate": "21 of 21 checks passed",
+  "ok": true
+ },
+ {
+  "file": "ass-attached-fonts",
+  "exit": 0,
+  "seconds": 8.5,
+  "scan_state": "complete",
+  "failed_segments": 0,
+  "segments_done": 1,
+  "frames": 240,
+  "validate": "22 of 22 checks passed",
+  "ok": true
+ },
+ {
+  "file": "hevc-main10-1080p24",
+  "exit": 0,
+  "seconds": 9.6,
+  "scan_state": "complete",
+  "failed_segments": 0,
+  "segments_done": 1,
+  "frames": 240,
+  "validate": "21 of 21 checks passed",
+  "ok": true
+ },
+ {
+  "file": "srt",
+  "exit": 0,
+  "seconds": 8.9,
+  "scan_state": "complete",
+  "failed_segments": 0,
+  "segments_done": 1,
+  "frames": 240,
+  "validate": "22 of 22 checks passed",
+  "ok": true
+ },
+ {
+  "file": "h264-1080i-tff-mbaff",
+  "exit": 0,
+  "seconds": 9.9,
+  "scan_state": "complete",
+  "failed_segments": 0,
+  "segments_done": 1,
+  "frames": 250,
+  "validate": "21 of 21 checks passed",
+  "ok": true
+ },
+ {
+  "file": "dl-dovi-p81",
+  "exit": 0,
+  "seconds": 3.4,
+  "scan_state": "complete",
+  "failed_segments": 0,
+  "segments_done": 1,
+  "frames": 10,
+  "validate": "21 of 21 checks passed",
+  "ok": true
+ }
+]

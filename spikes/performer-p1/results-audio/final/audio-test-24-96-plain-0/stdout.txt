@@ -1,0 +1,16 @@
+headless: DISPLAY1 240.0010 Hz (laptop) + DISPLAY2 96.0000 Hz (external), 0.50 ppm drift, dummy GPU
+audio: track 0 of 1, stream 1: aac, 44100 Hz, 2 ch (stereo)
+audio: null "no device (stand-in clock, drift +0.0 ppm, latency 0.0 ms)", 48000 Hz, 2 ch, buffer 1920 frames, period 480, stream latency 0.0 ms
+subtitles: none (C:\Users\tamla\Downloads\Telegram Desktop\panorama\spikes\performer-p1\data\audio-test-24\cue-test.mkv has no text subtitle stream)
+monitor 0 DISPLAY1: 2560x1600 at (0,0), window/swapchain 2560x1600, refresh 239.9956 Hz, 344x215 mm at 0 mm
+monitor 1 DISPLAY2: 1920x1080 at (2560,0), window/swapchain 1920x1080, refresh 96.0016 Hz, 476x268 mm at 364 mm
+aim row 107.5 mm; shared height 0.0..215.0 mm
+film 23.9760 fps; master DISPLAY2 96.0016 Hz; speed LOCKED to the master's refresh count (speed 1.0010 if locked, hold 4 refreshes)
+film starts on master refresh 192 (class chosen for the followers, seam error 0.600 ms at the aim row); aim row 107.5 mm
+predicted seam offset DISPLAY2 - DISPLAY1, in light: top row (0.0 mm) -1.44 ms, aim row +0.60 ms, bottom row (215.0 mm) +2.64 ms
+picture 382.2 x 215.0 mm at x 162.9..545.1 mm; DISPLAY1: shows part DISPLAY2: shows part 
+perf1: the film has ended
+DISPLAY1 picture path, GPU ms p50 / p99: prepare 0.000 / 0.000; resample 0.000 / 0.000; surround 0.000 / 0.000; finish 0.000 / 0.000; subtitles 0.000 / 0.000; slide 0, blended 0 (partner gone 0), magnified 14459 of 14459 refreshes
+DISPLAY2 picture path, GPU ms p50 / p99: prepare 0.000 / 0.000; resample 0.000 / 0.000; surround 0.000 / 0.000; finish 0.000 / 0.000; subtitles 0.000 / 0.000; slide 0, blended 0 (partner gone 0), magnified 0 of 5784 refreshes
+audio: null, 1 epochs played, |error| p50 0.036 ms p99 0.294 ms max 0.458 ms over 5993 measurements, 0 resyncs, 0 underruns, largest correction 808 ppm; results-audio\final\audio-test-24-96-plain-0\audio.csv
+wrote results-audio\final\audio-test-24-96-plain-0/perf1-cuelog.json (0 swaps, 0 seeks, 1 restarts, 0 re-aims, 0 follower moves at cuts)

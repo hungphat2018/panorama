@@ -1,0 +1,32 @@
+{
+ "room": "room/setup-a-default.json",
+ "surface": {
+  "model": "fold"
+ },
+ "source": {
+  "file": "patterns/shear-1920x1080.ppm",
+  "width": 1920,
+  "height": 1080,
+  "sar": 1.0
+ },
+ "cue": {
+  "centre_mm": [
+   0.0,
+   0.0
+  ],
+  "height_mm": 215.0
+ },
+ "kernel": "ewa_lanczossharp",
+ "domain": "auto",
+ "slide": {
+  "velocity_mm_s": [
+   300.0,
+   0.0
+  ],
+  "t_ref_ms": 0.0,
+  "t_top_ms": {
+   "laptop": 0.0,
+   "external": 0.0
+  }
+ }
+}

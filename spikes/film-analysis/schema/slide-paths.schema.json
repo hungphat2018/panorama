@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://panorama.invalid/schema/content/0/slide-paths.schema.json",
+  "title": "slide-paths.json: camera slides with every frame's position (layer L1 of panorama.content/0)",
+  "description": "A camera slide is a stretch of at least one second in which the whole picture moves together in one direction (a pan or tilt). Each run lists the position of the picture content at every frame of the run as cumulative shifts in source pixels, a per-frame confidence, and whether the frame is a new drawing (anime repeats a drawing for 2-3 frames; held frames add no new position). Positions are measured with phase correlation then ECC translation on a 480x270 grid (0.039 px median error on known shifts after re-encoding in the research) and stored as measured, never smoothed: smoothing is the performer's policy. Wrongly smoothing a layered shot smears characters, so `purity` says whether the single shift explains the picture; a planner should treat only `pure` runs as smooth-able. Arrays have one entry per frame from first_frame to last_frame inclusive. Time and space conventions: common.schema.json.",
+  "type": "object",
+  "required": ["schema", "version", "state", "frame_count", "params", "runs"],
+  "properties": {
+    "schema": {"const": "panorama.content.slide-paths/0"},
+    "version": {"$ref": "common.schema.json#/$defs/analyzer_version"},
+    "state": {"$ref": "common.schema.json#/$defs/table_state"},
+    "frame_count": {"type": "integer"},
+    "coverage": {"type": "object", "properties": {"scanned_frames": {"type": "integer"}}},
+    "params": {"type": "object", "description": "min_run_seconds, min_shift_grid_px, held_below (mean difference under which two frames show the same drawing), the per-pair gate, the purity limits (pure / layered: explained, static, other), the unit of the positions."},
+    "runs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "shot", "first_frame", "last_frame", "start_s", "end_s", "seconds", "direction", "speed_px_s", "purity", "x", "y", "new_drawing", "conf"],
+        "properties": {
+          "id": {"type": "integer"},
+          "shot": {"type": "integer", "description": "Id of the shot the run starts in (a run never crosses a cut)."},
+          "first_frame": {"type": "integer", "description": "The frame before the first moving step: the run's origin, position (0, 0)."},
+          "last_frame": {"type": "integer"},
+          "start_s": {"type": "number"}, "end_s": {"type": "number"}, "seconds": {"type": "number"},
+          "direction": {"enum": ["horizontal", "vertical", "diagonal"]},
+          "speed_px_s": {"type": "number", "description": "Net shift over the run divided by its duration, source pixels per second."},
+          "moving_share": {"type": "number", "description": "Share of the run's steps that move at least 0.8 px (1080p scale) rather than being held."},
+          "purity": {
+            "type": "object", "required": ["label", "explained", "static", "other"],
+            "properties": {
+              "label": {"enum": ["pure", "layered", "unknown"], "description": "pure: one rigid sheet (explained >= 0.85, static <= 0.02, other <= 0.08); layered: characters or plates over the slide (explained < 0.70 or static > 0.10 or other > 0.15). v0 heuristics read off the research's 12 inspected runs."},
+              "explained": {"type": "number", "description": "Median share of textured pixels the single shift explains."},
+              "static": {"type": "number", "description": "Median share of textured pixels that did not move although the picture slid."},
+              "other": {"type": "number", "description": "Median share explained neither by the shift nor by standing still."}
+            }
+          },
+          "gate_ok_share": {"type": "number", "description": "Share of steps that pass the per-pair gate (after <= max(1.0, 0.35 * before))."},
+          "x": {"type": "array", "items": {"type": "number"}, "description": "Cumulative horizontal shift of the picture content since the run's first frame, source pixels, right positive."},
+          "y": {"type": "array", "items": {"type": "number"}, "description": "Cumulative vertical shift, down positive."},
+          "new_drawing": {"type": "array", "items": {"type": "boolean"}, "description": "False on frames that repeat the previous drawing."},
+          "conf": {"type": "array", "items": {"type": "number", "minimum": 0, "maximum": 1}, "description": "Trust in the step that ends at this frame: 0 when the per-pair gate fails (the shift did not make the frames agree), else how much of the difference the shift removed. The first entry is 1."}
+        }
+      }
+    }
+  }
+}

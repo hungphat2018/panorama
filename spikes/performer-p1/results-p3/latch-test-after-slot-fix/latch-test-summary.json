@@ -1,0 +1,515 @@
+{
+ "started": "2026-10-11 21:55:20",
+ "ok": true,
+ "selftest": "cue-selftest: 155 checks, 0 failed",
+ "analyzer_tests": "33 tests, 0 failed",
+ "families": [
+  {
+   "swaps": 56,
+   "seeks": 193,
+   "adversarial": 52,
+   "pauses": 8,
+   "restarts": 199,
+   "refreshes": 42580,
+   "wrong": 0,
+   "changed": 0,
+   "breaks": 0,
+   "clock": 0,
+   "late": 0,
+   "runs": 2,
+   "name": "23.976 fps (anime episode), 240+96 Hz",
+   "seam_max_ms": 0.42573300000015024,
+   "verdicts": [
+    "PASS",
+    "PASS"
+   ],
+   "counts_ok": true
+  },
+  {
+   "swaps": 40,
+   "seeks": 177,
+   "adversarial": 39,
+   "pauses": 2,
+   "restarts": 170,
+   "refreshes": 29265,
+   "wrong": 0,
+   "changed": 0,
+   "breaks": 0,
+   "clock": 0,
+   "late": 0,
+   "runs": 2,
+   "name": "23.976 fps (anime episode), 240+72 Hz",
+   "seam_max_ms": 0.7160880000043335,
+   "verdicts": [
+    "PASS",
+    "PASS"
+   ],
+   "counts_ok": true
+  },
+  {
+   "swaps": 54,
+   "seeks": 187,
+   "adversarial": 49,
+   "pauses": 4,
+   "restarts": 186,
+   "refreshes": 44060,
+   "wrong": 0,
+   "changed": 0,
+   "breaks": 0,
+   "clock": 0,
+   "late": 0,
+   "runs": 2,
+   "name": "25 fps (hotel film), 240+100 Hz",
+   "seam_max_ms": 2.079849000011791,
+   "verdicts": [
+    "PASS",
+    "PASS"
+   ],
+   "counts_ok": true
+  },
+  {
+   "swaps": 54,
+   "seeks": 189,
+   "adversarial": 51,
+   "pauses": 4,
+   "restarts": 188,
+   "refreshes": 45071,
+   "wrong": 0,
+   "changed": 0,
+   "breaks": 0,
+   "clock": 0,
+   "late": 0,
+   "runs": 2,
+   "name": "variable rate (synthetic 24/30/60), 240+96 Hz",
+   "seam_max_ms": 1.5260829999874659,
+   "verdicts": [
+    "PASS",
+    "PASS"
+   ],
+   "counts_ok": true
+  },
+  {
+   "swaps": 41,
+   "seeks": 178,
+   "adversarial": 37,
+   "pauses": 3,
+   "restarts": 176,
+   "refreshes": 28950,
+   "wrong": 0,
+   "changed": 0,
+   "breaks": 0,
+   "clock": 0,
+   "late": 0,
+   "runs": 2,
+   "name": "variable rate (synthetic 24/30/60), 240+72 Hz",
+   "seam_max_ms": 1.7519759999942153,
+   "verdicts": [
+    "PASS",
+    "PASS"
+   ],
+   "counts_ok": true
+  },
+  {
+   "swaps": 43,
+   "seeks": 201,
+   "adversarial": 45,
+   "pauses": 1,
+   "restarts": 195,
+   "refreshes": 38151,
+   "wrong": 0,
+   "changed": 0,
+   "breaks": 0,
+   "clock": 0,
+   "late": 0,
+   "runs": 2,
+   "name": "variable rate (real 12 s clip 24/30/60), 240+96 Hz",
+   "seam_max_ms": 2.119097000004899,
+   "verdicts": [
+    "PASS",
+    "PASS"
+   ],
+   "counts_ok": true
+  }
+ ],
+ "functional_total": {
+  "swaps": 288,
+  "seeks": 1125,
+  "adversarial": 273,
+  "restarts": 1114,
+  "refreshes": 228077,
+  "wrong": 0,
+  "changed": 0,
+  "breaks": 0,
+  "clock": 0,
+  "late": 0
+ },
+ "picks": [
+  {
+   "name": "23.976 fps (anime episode), 240+96 Hz",
+   "engine": {
+    "scenario": "picks",
+    "trace": "C:/Users/tamla/Downloads/Telegram Desktop/panorama/spikes/clock",
+    "setup": 96,
+    "frame_dur_s": 0.041708336,
+    "step_s": 0.010427084,
+    "hold": 4,
+    "exact_truth": true,
+    "fault": 0,
+    "master_refreshes_checked": 5710,
+    "wrong": 0,
+    "wrong_fraction": 0.0,
+    "showing_an_earlier_frame": 0,
+    "worst_late_ms": 0.0
+   },
+   "shortcut": {
+    "scenario": "picks",
+    "trace": "C:/Users/tamla/Downloads/Telegram Desktop/panorama/spikes/clock",
+    "setup": 96,
+    "frame_dur_s": 0.041708336,
+    "step_s": 0.010427084,
+    "hold": 4,
+    "exact_truth": true,
+    "fault": 8,
+    "master_refreshes_checked": 5710,
+    "wrong": 0,
+    "wrong_fraction": 0.0,
+    "showing_an_earlier_frame": 0,
+    "worst_late_ms": 0.0
+   }
+  },
+  {
+   "name": "23.976 fps (anime episode), 240+72 Hz",
+   "engine": {
+    "scenario": "picks",
+    "trace": "C:/Users/tamla/Downloads/Telegram Desktop/panorama/spikes/clock",
+    "setup": 72,
+    "frame_dur_s": 0.041708336,
+    "step_s": 0.013902779,
+    "hold": 3,
+    "exact_truth": true,
+    "fault": 0,
+    "master_refreshes_checked": 4281,
+    "wrong": 0,
+    "wrong_fraction": 0.0,
+    "showing_an_earlier_frame": 0,
+    "worst_late_ms": 0.0
+   },
+   "shortcut": {
+    "scenario": "picks",
+    "trace": "C:/Users/tamla/Downloads/Telegram Desktop/panorama/spikes/clock",
+    "setup": 72,
+    "frame_dur_s": 0.041708336,
+    "step_s": 0.013902779,
+    "hold": 3,
+    "exact_truth": true,
+    "fault": 8,
+    "master_refreshes_checked": 4281,
+    "wrong": 0,
+    "wrong_fraction": 0.0,
+    "showing_an_earlier_frame": 0,
+    "worst_late_ms": 0.0
+   }
+  },
+  {
+   "name": "25 fps (hotel film), 240+100 Hz",
+   "engine": {
+    "scenario": "picks",
+    "trace": "C:/Users/tamla/Downloads/Telegram Desktop/panorama/spikes/clock",
+    "setup": 100,
+    "frame_dur_s": 0.04,
+    "step_s": 0.01,
+    "hold": 4,
+    "exact_truth": true,
+    "fault": 0,
+    "master_refreshes_checked": 5945,
+    "wrong": 0,
+    "wrong_fraction": 0.0,
+    "showing_an_earlier_frame": 0,
+    "worst_late_ms": 0.0
+   },
+   "shortcut": {
+    "scenario": "picks",
+    "trace": "C:/Users/tamla/Downloads/Telegram Desktop/panorama/spikes/clock",
+    "setup": 100,
+    "frame_dur_s": 0.04,
+    "step_s": 0.01,
+    "hold": 4,
+    "exact_truth": true,
+    "fault": 8,
+    "master_refreshes_checked": 5945,
+    "wrong": 0,
+    "wrong_fraction": 0.0,
+    "showing_an_earlier_frame": 0,
+    "worst_late_ms": 0.0
+   }
+  },
+  {
+   "name": "variable rate (synthetic 24/30/60), 240+96 Hz",
+   "engine": {
+    "scenario": "picks",
+    "trace": "synthetic-vfr",
+    "setup": 96,
+    "frame_dur_s": 0.041708333,
+    "step_s": 0.010427083,
+    "hold": 4,
+    "exact_truth": true,
+    "fault": 0,
+    "master_refreshes_checked": 5710,
+    "wrong": 0,
+    "wrong_fraction": 0.0,
+    "showing_an_earlier_frame": 0,
+    "worst_late_ms": 0.0
+   },
+   "shortcut": {
+    "scenario": "picks",
+    "trace": "synthetic-vfr",
+    "setup": 96,
+    "frame_dur_s": 0.041708333,
+    "step_s": 0.010427083,
+    "hold": 4,
+    "exact_truth": true,
+    "fault": 8,
+    "master_refreshes_checked": 5710,
+    "wrong": 370,
+    "wrong_fraction": 0.064799,
+    "showing_an_earlier_frame": 370,
+    "worst_late_ms": 33.367
+   }
+  },
+  {
+   "name": "variable rate (synthetic 24/30/60), 240+72 Hz",
+   "engine": {
+    "scenario": "picks",
+    "trace": "synthetic-vfr",
+    "setup": 72,
+    "frame_dur_s": 0.041708333,
+    "step_s": 0.013902778,
+    "hold": 3,
+    "exact_truth": true,
+    "fault": 0,
+    "master_refreshes_checked": 4281,
+    "wrong": 0,
+    "wrong_fraction": 0.0,
+    "showing_an_earlier_frame": 0,
+    "worst_late_ms": 0.0
+   },
+   "shortcut": {
+    "scenario": "picks",
+    "trace": "synthetic-vfr",
+    "setup": 72,
+    "frame_dur_s": 0.041708333,
+    "step_s": 0.013902778,
+    "hold": 3,
+    "exact_truth": true,
+    "fault": 8,
+    "master_refreshes_checked": 4281,
+    "wrong": 277,
+    "wrong_fraction": 0.064705,
+    "showing_an_earlier_frame": 277,
+    "worst_late_ms": 33.367
+   }
+  }
+ ],
+ "negative_controls": {
+  "no-latch": {
+   "flagged": [
+    "C4",
+    "C4b"
+   ],
+   "expected": [
+    "C4"
+   ],
+   "caught": true,
+   "counts": {
+    "C4": 22105,
+    "C4b": 93
+   }
+  },
+  "lookup-by-clock": {
+   "flagged": [
+    "C2",
+    "C4",
+    "C4b"
+   ],
+   "expected": [
+    "C2"
+   ],
+   "caught": true,
+   "counts": {
+    "C2": 97,
+    "C4": 34,
+    "C4b": 97
+   }
+  },
+  "keep-latch": {
+   "flagged": [
+    "C6"
+   ],
+   "expected": [
+    "C6"
+   ],
+   "caught": true,
+   "counts": {
+    "C6": 20893
+   }
+  },
+  "pl-queue-pick": {
+   "flagged": [
+    "C1b"
+   ],
+   "expected": [
+    "C1b"
+   ],
+   "caught": true,
+   "counts": {
+    "C1b": 4435
+   }
+  },
+  "independent-start": {
+   "flagged": [
+    "C11",
+    "C7b",
+    "C9"
+   ],
+   "expected": [
+    "C7b"
+   ],
+   "caught": true,
+   "counts": {
+    "C11": 189,
+    "C7b": 63,
+    "C9": 35
+   }
+  },
+  "no-hold": {
+   "flagged": [
+    "C4",
+    "C4b",
+    "C6",
+    "C6b",
+    "C8"
+   ],
+   "expected": [
+    "C8"
+   ],
+   "caught": true,
+   "counts": {
+    "C4": 138,
+    "C4b": 39,
+    "C6": 14,
+    "C6b": 7805,
+    "C8": 128
+   }
+  },
+  "no-reaim-guard": {
+   "flagged": [
+    "C10"
+   ],
+   "expected": [
+    "C10"
+   ],
+   "caught": true,
+   "counts": {
+    "C10": 3
+   }
+  }
+ },
+ "exe_runs": [
+  {
+   "name": "23.976 fps clip, 240+96 Hz, a seek -50..+150 ms around each swap",
+   "swaps": 7,
+   "seeks": 6,
+   "pauses": 0,
+   "restarts": 7,
+   "refreshes": 6633,
+   "wrong": 0,
+   "changed": 0,
+   "breaks": 0,
+   "clock": 0,
+   "late": 0,
+   "verdict": "PASS",
+   "seconds": 22.1
+  },
+  {
+   "name": "23.976 fps clip, 240+96 Hz, scrub at 5 seeks/s",
+   "swaps": 4,
+   "seeks": 38,
+   "pauses": 0,
+   "restarts": 39,
+   "refreshes": 6242,
+   "wrong": 0,
+   "changed": 0,
+   "breaks": 0,
+   "clock": 0,
+   "late": 0,
+   "verdict": "PASS",
+   "seconds": 22.1
+  },
+  {
+   "name": "23.976 fps clip, 240+96 Hz, pause, resume, seek while paused",
+   "swaps": 6,
+   "seeks": 2,
+   "pauses": 5,
+   "restarts": 8,
+   "refreshes": 4622,
+   "wrong": 0,
+   "changed": 0,
+   "breaks": 0,
+   "clock": 0,
+   "late": 0,
+   "verdict": "PASS",
+   "seconds": 22.0
+  },
+  {
+   "name": "23.976 fps clip, 240+96 Hz, 20 seeks/s",
+   "swaps": 2,
+   "seeks": 308,
+   "pauses": 0,
+   "restarts": 308,
+   "refreshes": 1572,
+   "wrong": 0,
+   "changed": 0,
+   "breaks": 0,
+   "clock": 0,
+   "late": 0,
+   "verdict": "PASS",
+   "seconds": 18.1
+  },
+  {
+   "name": "23.976 fps clip, 240+72 Hz, speed not locked",
+   "swaps": 4,
+   "seeks": 3,
+   "pauses": 0,
+   "restarts": 4,
+   "refreshes": 3065,
+   "wrong": 0,
+   "changed": 0,
+   "breaks": 0,
+   "clock": 0,
+   "late": 0,
+   "verdict": "PASS",
+   "seconds": 12.1
+  },
+  {
+   "name": "25 fps clip, 240+100 Hz",
+   "swaps": 5,
+   "seeks": 4,
+   "pauses": 0,
+   "restarts": 5,
+   "refreshes": 4008,
+   "wrong": 0,
+   "changed": 0,
+   "breaks": 0,
+   "clock": 0,
+   "late": 0,
+   "verdict": "PASS",
+   "seconds": 14.1
+  },
+  {
+   "name": "named pipe",
+   "result": "17 checks, 0 failed"
+  }
+ ],
+ "failures": [],
+ "seconds": 121.8
+}

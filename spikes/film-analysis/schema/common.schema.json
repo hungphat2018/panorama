@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://panorama.invalid/schema/content/0/common.schema.json",
+  "title": "panorama.content/0 shared definitions",
+  "description": "Definitions every file of the content model uses. The content model (panorama.content/0) is one folder per video file: content.json is its index; file-facts.json, signals.bin with signals.json, shots.json, slide-paths.json, subjects.json with subjects-raw.jsonl, and subtitles/track-N.json are the tables. It is made from the file alone and knows nothing about monitors. TIMELINE CONVENTION (the same for every table): a frame is identified by its index in the frame table, the list of frames the performer presents in presentation order (columns pts and key of signals.bin); its pts is the presentation timestamp in ticks of the video stream's time base tb = tb_num / tb_den (file-facts.json timeline.time_base). The first frame is time zero. The time of frame i in seconds is t[i] = pts[i] * (tb_num / tb_den) - pts[0] * (tb_num / tb_den), evaluated in IEEE double precision exactly like the performer (one double division for tb, then one multiply and one subtract); t[0] is exactly 0. The cue sheet's shot start for a shot whose first frame is a > 0 is (t[a-1] + t[a]) / 2, halfway between the frames; the first shot starts at 0. Every *_s field of the content model is such a time in seconds on this rebased timeline. SPACE CONVENTION: positions are pixels of the stored (decoded, uncropped, unscaled) video frame, origin top-left, x to the right, y down, independent of any crop, sample aspect ratio or rotation; rectangles are half-open [x0, y0, x1, y1) like the cue sheet's crop, so the width is x1 - x0.",
+  "$defs": {
+    "rational": {
+      "description": "A fraction as [numerator, denominator], denominator positive.",
+      "type": "array", "items": {"type": "integer"}, "minItems": 2, "maxItems": 2
+    },
+    "rect": {
+      "description": "Half-open rectangle [x0, y0, x1, y1) in pixels of the stored video frame: x0 and y0 are the first pixel column and row inside, x1 and y1 the first outside.",
+      "type": "array", "items": {"type": "integer", "minimum": 0}, "minItems": 4, "maxItems": 4
+    },
+    "frame_interval": {
+      "description": "Half-open interval [first, end) of frame-table indices.",
+      "type": "array", "items": {"type": "integer", "minimum": 0}, "minItems": 2, "maxItems": 2
+    },
+    "sha256": {
+      "description": "Lower-case hexadecimal SHA-256.",
+      "type": "string", "pattern": "^[0-9a-f]{64}$"
+    },
+    "file_key": {
+      "description": "File identity, the cache key of the model. Scheme size+3x1MiB/sha256/0: SHA-256 over the bytes 'panorama.filekey/0' + NUL, the size as 8 bytes little-endian, and either the whole file (3 MiB or less) or three 1 MiB blocks read at offset 0, at size/2 - 512 KiB and at size - 1 MiB. The name, folder and modification time are not part of the key, so a moved or renamed copy keeps its model; a remux is a new file. The full hash (every byte) is optional and slower.",
+      "type": "object",
+      "required": ["scheme", "size_bytes", "sample_sha256"],
+      "properties": {
+        "scheme": {"type": "string"},
+        "size_bytes": {"type": "integer", "minimum": 0},
+        "sample_sha256": {"$ref": "#/$defs/sha256"},
+        "full_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "table_state": {
+      "description": "provisional: made from the pre-scan alone (keyframes); partial: some frames scanned; complete: every frame scanned.",
+      "type": "string", "enum": ["provisional", "partial", "complete"]
+    },
+    "analyzer_version": {
+      "description": "Version of the analyzer that produced a table or signal group; a stored table is reused only when this equals the current analyzer's version.",
+      "type": "string"
+    },
+    "box": {
+      "description": "A detected box: x, y of the top-left corner, width and height, in pixels of the stored video frame.",
+      "type": "object",
+      "required": ["x", "y", "w", "h"],
+      "properties": {"x": {"type": "number"}, "y": {"type": "number"}, "w": {"type": "number"}, "h": {"type": "number"}}
+    }
+  }
+}
