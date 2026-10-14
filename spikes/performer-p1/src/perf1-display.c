@@ -1,6 +1,7 @@
 // The real displays: adapter, monitors, one borderless window and one flip-model swapchain per monitor, the
 // libplacebo D3D11 device. (Virtual displays for --headless are in perf1-headless.c.)
 #include "perf1-app.h"
+#include "perf1-gpu-share.h"
 #include "perf1-picture.h"
 
 #include <ctype.h>
@@ -165,8 +166,9 @@ bool display_create_windows(void)
     return true;
 }
 
-// Our own flip-model swapchain with the frame-latency waitable object and a maximum latency of one frame,
-// to be wrapped by libplacebo while Present1 stays ours. Returns an IDXGISwapChain reference for wrapping.
+// Our own flip-model swapchain with the frame-latency waitable object and a maximum latency of one frame (or
+// --frame-latency N, perf1-gpu-share.h), to be wrapped by libplacebo while Present1 stays ours. Returns an
+// IDXGISwapChain reference for wrapping.
 static IDXGISwapChain *create_swapchain(struct monitor *m)
 {
     ID3D11Device *dev = A.gpu.d3d11->device;
@@ -190,7 +192,7 @@ static IDXGISwapChain *create_swapchain(struct monitor *m)
         .Format = A.cfg.rgb10 ? DXGI_FORMAT_R10G10B10A2_UNORM : DXGI_FORMAT_B8G8R8A8_UNORM,
         .SampleDesc.Count = 1,
         .BufferUsage = DXGI_USAGE_SHADER_INPUT | DXGI_USAGE_RENDER_TARGET_OUTPUT | DXGI_USAGE_UNORDERED_ACCESS,
-        .BufferCount = 3,
+        .BufferCount = gpu_share_buffer_count(3), // 3, or N + 1 for a deeper --frame-latency
         .SwapEffect = DXGI_SWAP_EFFECT_FLIP_DISCARD,
         .Flags = DXGI_SWAP_CHAIN_FLAG_FRAME_LATENCY_WAITABLE_OBJECT,
     };
@@ -205,7 +207,7 @@ static IDXGISwapChain *create_swapchain(struct monitor *m)
         fail(m, "IDXGISwapChain2 not available");
         goto done;
     }
-    IDXGISwapChain2_SetMaximumFrameLatency(sc2, 1);
+    gpu_share_frame_latency(sc2, m->name); // SetMaximumFrameLatency: 1, or --frame-latency N; recorded for the report
     m->waitable = IDXGISwapChain2_GetFrameLatencyWaitableObject(sc2);
     IDXGISwapChain1_QueryInterface(m->sc, &IID_IDXGISwapChainMedia, (void **) &m->media); // optional
     IDXGISwapChain1_QueryInterface(m->sc, &IID_IDXGISwapChain, (void **) &out);
@@ -224,6 +226,7 @@ done:
 
 bool display_init_gpu(IDXGIAdapter1 *adapter)
 {
+    gpu_share_before_device(); // --gpu-priority high: the process's GPU scheduling class, before its first device
     A.gpu.log = pl_log_create(PL_API_VER, pl_log_params(.log_cb = pl_log_simple, .log_level = A.cfg.log_level));
     A.gpu.d3d11 = pl_d3d11_create(A.gpu.log, pl_d3d11_params(
         .adapter = (IDXGIAdapter *) adapter,
@@ -259,6 +262,7 @@ bool display_init_gpu(IDXGIAdapter1 *adapter)
             return false;
         }
     }
+    gpu_share_after_device(A.gpu.d3d11->device, A.cfg.out_dir); // the device's GPU thread priority; prints + gpu-share.json
     return true;
 }
 

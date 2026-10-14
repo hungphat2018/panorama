@@ -117,3 +117,7 @@ Built: `bin/perf1-audio-lgpl.exe`, `bin/audio-selftest.exe`; `bin/perf1-p3-lgpl.
 Status: DONE_WITH_CONCERNS
 Summary: Sound is built (own demux/decode, WASAPI sink, film-clock sync with soft correction, breaks, headless `--audio-null`) and passes its own automated checks on 13 headless runs and the real device (p99 error 0.3 ms or less against 2 ms).
 Concerns: step 7 of run-latch-test fails on the known late-first-refresh issue (same with `--no-audio`); real-device runs were four, not one; the first 25 ms of sound after a seek is lost on this device; absolute lip sync unmeasured.
+
+## Follow-up, 2026-10-12 (controller)
+
+Unresolved question 1 resolved: each restart is now planned far enough ahead for the sound. The audio thread measures its lead (queue left from a break + one wake-up + what the device holds beyond its buffer) and `perf1-main.c` raises the engine's restart margin to it (`audio_start_lead_s`). Real device, same seek/pause/resume script: margin 78.8 ms (was 3.0); `skipped_ms` 0.00 at both restarts (was 24.85 / 24.88), placement max 0.027 ms, steady p99 0.038 ms, 0 resyncs, 0 underruns (`results-audio/wasapi-seek-margin/`). The analyzer's verdict there is FAIL on E2 only (137 steady measurements in a 9 s run with two breaks, it wants 300). Full `audio-run-tests.py --wasapi` and `run-latch-test.py --skip-exe` pass after the change. Cost: a seek restarts about 76 ms later.

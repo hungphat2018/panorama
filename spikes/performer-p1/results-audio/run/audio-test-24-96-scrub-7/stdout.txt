@@ -1,0 +1,71 @@
+headless: DISPLAY1 240.0010 Hz (laptop) + DISPLAY2 96.0000 Hz (external), 0.50 ppm drift, dummy GPU
+audio: track 0 of 1, stream 1: aac, 44100 Hz, 2 ch (stereo)
+audio: null "no device (stand-in clock, drift +0.0 ppm, latency 40.0 ms)", 48000 Hz, 2 ch, buffer 1920 frames, period 480, stream latency 40.0 ms
+audio: restart margin 80.0 ms (the sound's measured lead), was 3.0 ms
+perf1: cue sheet version 1 from C:\Users\tamla\Downloads\Telegram Desktop\panorama\spikes\performer-p1\data\audio-test-24\sheets\cues-v1.json, 16 shots
+perf1: control script C:\Users\tamla\Downloads\Telegram Desktop\panorama\spikes\performer-p1\data\audio-test-24\sheets\script-scrub.jsonl: 83 commands
+subtitles: none (C:\Users\tamla\Downloads\Telegram Desktop\panorama\spikes\performer-p1\data\audio-test-24\cue-test.mkv has no text subtitle stream)
+monitor 0 DISPLAY1: 2560x1600 at (0,0), window/swapchain 2560x1600, refresh 240.0010 Hz, 344x215 mm at 0 mm
+monitor 1 DISPLAY2: 1920x1080 at (2560,0), window/swapchain 1920x1080, refresh 96.0011 Hz, 476x268 mm at 364 mm
+aim row 107.5 mm; shared height 0.0..215.0 mm
+film 23.9760 fps; master DISPLAY2 96.0011 Hz; speed LOCKED to the master's refresh count (speed 1.0010 if locked, hold 4 refreshes)
+film starts on master refresh 201 (class chosen for the followers, seam error 0.600 ms at the aim row); aim row 107.5 mm
+predicted seam offset DISPLAY2 - DISPLAY1, in light: top row (0.0 mm) -1.44 ms, aim row +0.60 ms, bottom row (215.0 mm) +2.64 ms
+picture 382.2 x 215.0 mm at x 162.9..545.1 mm; DISPLAY1: shows part DISPLAY2: shows part 
+perf1: cue sheet version 2 published (C:/Users/tamla/Downloads/Telegram Desktop/panorama/spikes/performer-p1/data/audio-test-24/sheets/cues-v2.json, 16 shots)
+perf1: script line 1 at 3.543 s: {"ok":true,"version":2,"shots":16}
+perf1: script line 2 at 0.221 s: {"ok":true}
+perf1: script line 3 at 0.200 s: {"ok":true}
+perf1: script line 4 at 0.208 s: {"ok":true}
+perf1: script line 5 at 0.206 s: {"ok":true}
+perf1: script line 6 at 0.190 s: {"ok":true}
+perf1: script line 7 at 0.208 s: {"ok":true}
+perf1: script line 8 at 0.183 s: {"ok":true}
+perf1: script line 9 at 0.217 s: {"ok":true}
+perf1: script line 10 at 0.196 s: {"ok":true}
+perf1: script line 11 at 0.216 s: {"ok":true}
+perf1: cue sheet version 3 published (C:/Users/tamla/Downloads/Telegram Desktop/panorama/spikes/performer-p1/data/audio-test-24/sheets/cues-v3.json, 16 shots)
+perf1: script line 12 at 3.050 s: {"ok":true,"version":3,"shots":16}
+perf1: script line 13 at 0.215 s: {"ok":true}
+perf1: script line 14 at 0.214 s: {"ok":true}
+perf1: script line 15 at 0.188 s: {"ok":true}
+perf1: script line 16 at 0.200 s: {"ok":true}
+perf1: script line 17 at 0.220 s: {"ok":true}
+perf1: script line 18 at 0.219 s: {"ok":true}
+perf1: script line 19 at 0.208 s: {"ok":true}
+perf1: script line 20 at 0.210 s: {"ok":true}
+perf1: script line 21 at 0.217 s: {"ok":true}
+perf1: script line 22 at 0.219 s: {"ok":true}
+perf1: script line 23 at 0.206 s: {"ok":true}
+perf1: script line 24 at 0.210 s: {"ok":true}
+perf1: script line 25 at 0.189 s: {"ok":true}
+perf1: script line 26 at 0.206 s: {"ok":true}
+perf1: the film has ended
+DISPLAY1 picture path, GPU ms p50 / p99: prepare 0.000 / 0.000; resample 0.000 / 0.000; surround 0.000 / 0.000; finish 0.000 / 0.000; subtitles 0.000 / 0.000; slide 0, blended 0 (partner gone 0), magnified 2766 of 2766 refreshes
+DISPLAY2 picture path, GPU ms p50 / p99: prepare 0.000 / 0.000; resample 0.000 / 0.000; surround 0.000 / 0.000; finish 0.000 / 0.000; subtitles 0.000 / 0.000; slide 0, blended 0 (partner gone 0), magnified 314 of 1127 refreshes
+audio: null, 25 epochs played, |error| p50 0.007 ms p99 0.028 ms max 0.036 ms over 1102 measurements, 0 resyncs, 0 underruns, largest correction 73 ppm; C:\Users\tamla\Downloads\Telegram Desktop\panorama\spikes\performer-p1\results-audio\run\audio-test-24-96-scrub-7\audio.csv
+wrote C:\Users\tamla\Downloads\Telegram Desktop\panorama\spikes\performer-p1\results-audio\run\audio-test-24-96-scrub-7/perf1-cuelog.json (3 swaps, 24 seeks, 25 restarts, 0 re-aims, 0 follower moves at cuts)
+[matroska,webm @ 00000000006d5f80] File is broken, keyframes not correctly marked!
+[matroska,webm @ 00000000006d5f80] File is broken, keyframes not correctly marked!
+[matroska,webm @ 00000000006d5f80] File is broken, keyframes not correctly marked!
+[matroska,webm @ 00000000006d5f80] File is broken, keyframes not correctly marked!
+[matroska,webm @ 00000000006d5f80] File is broken, keyframes not correctly marked!
+[matroska,webm @ 00000000006d5f80] File is broken, keyframes not correctly marked!
+[matroska,webm @ 00000000006d5f80] File is broken, keyframes not correctly marked!
+[matroska,webm @ 00000000006d5f80] File is broken, keyframes not correctly marked!
+[matroska,webm @ 00000000006d5f80] File is broken, keyframes not correctly marked!
+[matroska,webm @ 00000000006d5f80] File is broken, keyframes not correctly marked!
+[matroska,webm @ 00000000006d5f80] File is broken, keyframes not correctly marked!
+[matroska,webm @ 00000000006d5f80] File is broken, keyframes not correctly marked!
+[matroska,webm @ 00000000006d5f80] File is broken, keyframes not correctly marked!
+[matroska,webm @ 00000000006d5f80] File is broken, keyframes not correctly marked!
+[matroska,webm @ 00000000006d5f80] File is broken, keyframes not correctly marked!
+[matroska,webm @ 00000000006d5f80] File is broken, keyframes not correctly marked!
+[matroska,webm @ 00000000006d5f80] File is broken, keyframes not correctly marked!
+[matroska,webm @ 00000000006d5f80] File is broken, keyframes not correctly marked!
+[matroska,webm @ 00000000006d5f80] File is broken, keyframes not correctly marked!
+[matroska,webm @ 00000000006d5f80] File is broken, keyframes not correctly marked!
+[matroska,webm @ 00000000006d5f80] File is broken, keyframes not correctly marked!
+[matroska,webm @ 00000000006d5f80] File is broken, keyframes not correctly marked!
+[matroska,webm @ 00000000006d5f80] File is broken, keyframes not correctly marked!
+[matroska,webm @ 00000000006d5f80] File is broken, keyframes not correctly marked!

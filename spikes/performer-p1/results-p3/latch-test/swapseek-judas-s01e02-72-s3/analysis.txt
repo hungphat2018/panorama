@@ -1,4 +1,4 @@
-perf1 cue log results-p3\latch-test\swapseek-judas-s01e02-72-s3\cuelog.json
+perf1 cue log C:\Users\tamla\Downloads\Telegram Desktop\panorama\spikes\performer-p1\results-p3\latch-test\swapseek-judas-s01e02-72-s3\cuelog.json
   monitors: DISPLAY1 240.001 Hz [10 per 3 master refreshes], DISPLAY2 72.000 Hz (master)
   clock: step 13.9028 ms per master refresh, hysteresis True, re-aim True, eta 0.050 ms
   run: swaps 100, swap_failures 0, seeks 128, resume_seeks 5, pauses 4, resumes 5, restarts 132, epochs 132, versions 101, shots_latched 203, decided_frames 6861, reaims 0, adversarial_seeks 79

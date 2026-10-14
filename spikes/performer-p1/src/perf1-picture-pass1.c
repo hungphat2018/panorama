@@ -135,11 +135,11 @@ bool pic_pass1_init(struct pic_pass1 *p, pl_gpu gpu, const char *kernel)
     }
     p->dummy = pl_tex_create(gpu, pl_tex_params(.w = 1, .h = 1, .format = f16, .sampleable = true, .host_writable = true,
                                                 .debug_tag = PL_DEBUG_TAG));
-    size_t n = strlen(pic_glsl_common) + strlen(pic_glsl_resample) + 2;
+    size_t n = strlen(pic_glsl_common) + strlen(pic_glsl_geometry) + strlen(pic_glsl_resample) + 3;
     p->header = malloc(n);
     if (!p->dummy || !p->header)
         return false;
-    snprintf(p->header, n, "%s\n%s", pic_glsl_common, pic_glsl_resample);
+    snprintf(p->header, n, "%s\n%s\n%s", pic_glsl_common, pic_glsl_geometry, pic_glsl_resample);
     return make_lut(p, kernel);
 }
 

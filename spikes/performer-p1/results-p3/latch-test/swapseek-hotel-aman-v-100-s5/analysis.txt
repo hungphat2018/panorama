@@ -1,4 +1,4 @@
-perf1 cue log results-p3\latch-test\swapseek-hotel-aman-v-100-s5\cuelog.json
+perf1 cue log C:\Users\tamla\Downloads\Telegram Desktop\panorama\spikes\performer-p1\results-p3\latch-test\swapseek-hotel-aman-v-100-s5\cuelog.json
   monitors: DISPLAY1 240.001 Hz [12 per 5 master refreshes], DISPLAY2 100.000 Hz (master)
   clock: step 10.0000 ms per master refresh, hysteresis True, re-aim True, eta 0.050 ms
   run: swaps 127, swap_failures 0, seeks 151, resume_seeks 14, pauses 7, resumes 14, restarts 164, epochs 164, versions 128, shots_latched 249, decided_frames 9346, reaims 0, adversarial_seeks 104

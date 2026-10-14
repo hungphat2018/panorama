@@ -1,4 +1,4 @@
-perf1 cue log results-p3\latch-test\scrub-synthetic-vf-96-s8\cuelog.json
+perf1 cue log C:\Users\tamla\Downloads\Telegram Desktop\panorama\spikes\performer-p1\results-p3\latch-test\scrub-synthetic-vf-96-s8\cuelog.json
   monitors: DISPLAY1 240.001 Hz [5 per 2 master refreshes], DISPLAY2 96.000 Hz (master)
   clock: step 10.4271 ms per master refresh, hysteresis True, re-aim True, eta 0.050 ms
   run: swaps 139, swap_failures 0, seeks 752, resume_seeks 13, pauses 12, resumes 13, restarts 724, epochs 724, versions 140, shots_latched 786, decided_frames 8047, reaims 0, adversarial_seeks 151

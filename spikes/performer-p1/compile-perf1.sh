@@ -9,6 +9,7 @@
 #            latch-test      bin/latch-sim.exe and bin/cue-selftest.exe, the headless test (no libplacebo, no FFmpeg)
 #            audio-test      bin/audio-selftest.exe, the sound's decoder and converter against a ramp clip (FFmpeg only)
 #            picture-test    bin/picture-selftest.exe, the picture path's CPU maths (room, map, slide, blend, colour; no GPU)
+#            ai-sides-test   bin/ai-sides-selftest.exe, the AI sides' store reader (no GPU; run by live-store-selftest.py)
 #   OUTPUT_NAME  p3 only: another file name inside bin/ (default perf1-p3-FLAVOR.exe)
 #
 # bin/perf1-lgpl.exe, the first P1 binary, is never written by this script: its sources are frozen in
@@ -42,6 +43,10 @@ PICTURE=("${PICTURE_MATH[@]}" "$HERE/src/perf1-picture-shader.c" "$HERE/src/perf
          "$HERE/src/perf1-finish-common.c" "$HERE/src/perf1-finish-surround.c" "$HERE/src/perf1-finish-color.c"
          "$HERE/src/perf1-finish-subs.c")
 
+# The AI sides of the live path (perf1-ai-sides.h): the side store, the canvases on the GPU, the fill and seam shaders.
+AI_SIDES=("$HERE/src/perf1-ai-sides.c" "$HERE/src/perf1-ai-sides-record.c" "$HERE/src/perf1-ai-sides-upload.c" "$HERE/src/perf1-ai-sides-store.c"
+          "$HERE/src/perf1-ai-sides-patches.c" "$HERE/src/perf1-finish-surround-ai.c")
+
 case "$PROGRAM" in
 audio-test)
     # bin/audio-selftest.exe: the sound's decoder and converter against a clip with a known ramp (needs FFmpeg's DLLs on PATH to run)
@@ -60,6 +65,11 @@ picture-test)
         "$HERE/src/perf1-json.c" "$HERE/src/perf1-cue-sheet.c" "$HERE/src/perf1-picture-look.c" "${PICTURE_MATH[@]}" \
         $(pkg-config --cflags libplacebo) -lm
     echo "compiled $HERE/bin/picture-selftest.exe"
+    ;;
+ai-sides-test)
+    # bin/ai-sides-selftest.exe: the side store's player end against stores the Python worker end writes; no GPU
+    gcc "${CFLAGS[@]}" -o "$HERE/bin/ai-sides-selftest.exe" "$HERE/ai-sides-selftest.c" "$HERE/src/perf1-ai-sides-store.c"
+    echo "compiled $HERE/bin/ai-sides-selftest.exe"
     ;;
 latch-test)
     # The engine is compiled with ENGINE_FAULTS here only: the deliberate defects of the negative controls.
@@ -83,7 +93,9 @@ p3)
     gcc "${CFLAGS[@]}" "${SHARED[@]}" -o "$HERE/bin/$OUT_NAME" \
         "$HERE/src/perf1-main.c" "$HERE/src/perf1-args.c" "$HERE/src/perf1-display.c" "$HERE/src/perf1-render.c" \
         "$HERE/src/perf1-headless.c" "$HERE/src/perf1-control.c" "$HERE/src/perf1-layout.c" "$HERE/src/perf1-log.c" \
-        "$HERE/src/perf1-decode.c" "$HERE/src/perf1-clock.c" "$HERE/src/perf1-stats.c" "${CORE[@]}" "${AUDIO[@]}" "${PICTURE[@]}" \
+        "$HERE/src/perf1-decode.c" "$HERE/src/perf1-clock.c" "$HERE/src/perf1-stats.c" "$HERE/src/perf1-gpu-share.c" \
+        "${AI_SIDES[@]}" \
+        "${CORE[@]}" "${AUDIO[@]}" "${PICTURE[@]}" \
         $(pkg-config --cflags $PKGS) $(pkg-config --libs $PKGS) \
         -ld3d11 -ldxgi -ldxguid -lavrt -lwinmm -luser32 -lole32 -lm
     echo "compiled $HERE/bin/$OUT_NAME against libplacebo $(pkg-config --modversion libplacebo), libavcodec $(pkg-config --modversion libavcodec)"

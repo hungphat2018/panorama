@@ -25,6 +25,8 @@ struct fp_surround {
     struct fp_surround_clock clock;
     bool ready;               // update() has run at least once
     char prelude[96];
+    bool (*ai_fill)(void *priv, pl_shader sh); // the AI sides under the picture, before the glow (fp_surround_set_ai_fill)
+    void *ai_priv;
 };
 
 // ---- shader text ----------------------------------------------------------------------------------------------
@@ -249,8 +251,17 @@ bool fp_surround_update(struct fp_surround *s, pl_tex canvas, const struct fp_su
 
 // ---- the fill -------------------------------------------------------------------------------------------------
 
+void fp_surround_set_ai_fill(struct fp_surround *s, bool (*fill)(void *priv, pl_shader sh), void *priv)
+{
+    s->ai_fill = fill;
+    s->ai_priv = priv;
+}
+
 bool fp_surround_append_fill(struct fp_surround *s, pl_shader sh, const struct fp_surround_look *look)
 {
+    // AI sides first: they composite under the picture and raise the coverage, so the glow fills only what they leave
+    if (look->mode == FP_SURROUND_GLOW && look->premultiplied_alpha && s->ai_fill && !s->ai_fill(s->ai_priv, sh))
+        return false;
     bool glow = look->mode == FP_SURROUND_GLOW && s->ready;
     float f_glow = glow ? 1.0f : 0.0f;
     float gain = look->gain, sat = look->saturation, maxlevel = look->max_level > 0 ? look->max_level : 1.0f;

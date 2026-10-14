@@ -1,0 +1,16 @@
+headless: DISPLAY1 240.0010 Hz (laptop) + DISPLAY2 96.0000 Hz (external), 0.50 ppm drift, dummy GPU
+audio: track 0 of 1, stream 1: aac, 44100 Hz, 2 ch (stereo)
+audio: wasapi "FxSound Speakers (FxSound Audio Enhancer)", 48000 Hz, 2 ch, buffer 1920 frames, period 480, stream latency 0.0 ms
+audio: restart margin 40.4 ms (the sound's measured lead), was 3.0 ms
+subtitles: none (C:\Users\tamla\Downloads\Telegram Desktop\panorama\spikes\performer-p1\data\audio-test-24\cue-test.mkv has no text subtitle stream)
+monitor 0 DISPLAY1: 2560x1600 at (0,0), window/swapchain 2560x1600, refresh 240.0059 Hz, 344x215 mm at 0 mm
+monitor 1 DISPLAY2: 1920x1080 at (2560,0), window/swapchain 1920x1080, refresh 95.9992 Hz, 476x268 mm at 364 mm
+aim row 107.5 mm; shared height 0.0..215.0 mm
+film 23.9760 fps; master DISPLAY2 95.9992 Hz; speed LOCKED to the master's refresh count (speed 1.0010 if locked, hold 4 refreshes)
+film starts on master refresh 197 (class chosen for the followers, seam error 0.600 ms at the aim row); aim row 107.5 mm
+predicted seam offset DISPLAY2 - DISPLAY1, in light: top row (0.0 mm) -1.44 ms, aim row +0.60 ms, bottom row (215.0 mm) +2.64 ms
+picture 382.2 x 215.0 mm at x 162.9..545.1 mm; DISPLAY1: shows part DISPLAY2: shows part 
+DISPLAY1 picture path, GPU ms p50 / p99: prepare 0.000 / 0.000; resample 0.000 / 0.000; surround 0.000 / 0.000; finish 0.000 / 0.000; subtitles 0.000 / 0.000; slide 0, blended 0 (partner gone 0), magnified 1922 of 1922 refreshes
+DISPLAY2 picture path, GPU ms p50 / p99: prepare 0.000 / 0.000; resample 0.000 / 0.000; surround 0.000 / 0.000; finish 0.000 / 0.000; subtitles 0.000 / 0.000; slide 0, blended 0 (partner gone 0), magnified 0 of 770 refreshes
+audio: wasapi, 1 epochs played, |error| p50 0.026 ms p99 0.085 ms max 0.094 ms over 802 measurements, 0 resyncs, 0 underruns, largest correction 165 ppm; C:\Users\tamla\Downloads\Telegram Desktop\panorama\spikes\performer-p1\results-audio\run\wasapi\audio.csv
+wrote C:\Users\tamla\Downloads\Telegram Desktop\panorama\spikes\performer-p1\results-audio\run\wasapi/perf1-cuelog.json (0 swaps, 0 seeks, 1 restarts, 0 re-aims, 0 follower moves at cuts)

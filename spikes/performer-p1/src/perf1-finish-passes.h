@@ -125,6 +125,11 @@ bool fp_surround_update(struct fp_surround *s, pl_tex canvas, const struct fp_su
 // fp_finish_run_fused(). In FP_SURROUND_BLACK mode it composites over black.
 bool fp_surround_append_fill(struct fp_surround *s, pl_shader sh, const struct fp_surround_look *look);
 
+// The AI sides (perf1-ai-sides.c): `fill` appends, before the glow, a fragment that composites the AI canvas under the
+// picture in `color` (premultiplied) and raises color.a by what it covers, so the glow fills only the rest. Called by
+// fp_surround_append_fill in glow mode on a premultiplied canvas; it may append nothing (no AI picture ready). NULL removes it.
+void fp_surround_set_ai_fill(struct fp_surround *s, bool (*fill)(void *priv, pl_shader sh), void *priv);
+
 // Stand-alone pass 2: update + fill. `out` is a canvas-sized RGBA16F render target (it may not be `canvas`).
 bool fp_surround_apply(struct fp_surround *s, pl_tex canvas, pl_tex out, const struct fp_surround_look *look,
                        const struct fp_surround_time *time, const struct fp_surround_frame *frame);

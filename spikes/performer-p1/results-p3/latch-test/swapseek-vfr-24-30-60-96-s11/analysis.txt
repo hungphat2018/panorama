@@ -1,4 +1,4 @@
-perf1 cue log results-p3\latch-test\swapseek-vfr-24-30-60-96-s11\cuelog.json
+perf1 cue log C:\Users\tamla\Downloads\Telegram Desktop\panorama\spikes\performer-p1\results-p3\latch-test\swapseek-vfr-24-30-60-96-s11\cuelog.json
   monitors: DISPLAY1 240.001 Hz [5 per 2 master refreshes], DISPLAY2 96.000 Hz (master)
   clock: step 10.4167 ms per master refresh, hysteresis True, re-aim True, eta 0.050 ms
   run: swaps 133, swap_failures 0, seeks 201, resume_seeks 20, pauses 17, resumes 20, restarts 217, epochs 217, versions 134, shots_latched 317, decided_frames 13284, reaims 0, adversarial_seeks 104

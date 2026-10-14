@@ -1,4 +1,4 @@
-perf1 cue log results-p3\latch-test\scrub-hotel-aman-v-100-s6\cuelog.json
+perf1 cue log C:\Users\tamla\Downloads\Telegram Desktop\panorama\spikes\performer-p1\results-p3\latch-test\scrub-hotel-aman-v-100-s6\cuelog.json
   monitors: DISPLAY1 240.001 Hz [12 per 5 master refreshes], DISPLAY2 100.000 Hz (master)
   clock: step 10.0000 ms per master refresh, hysteresis True, re-aim True, eta 0.050 ms
   run: swaps 132, swap_failures 0, seeks 743, resume_seeks 12, pauses 10, resumes 12, restarts 730, epochs 730, versions 133, shots_latched 795, decided_frames 8114, reaims 0, adversarial_seeks 138

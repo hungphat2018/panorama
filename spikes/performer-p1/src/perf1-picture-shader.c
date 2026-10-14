@@ -49,7 +49,9 @@ const char pic_glsl_common[] = GLSL(
     }
 );
 
-const char pic_glsl_resample[] = GLSL(
+// The map from an output pixel to the source (pic_surface, pic_map): uses only u_mon, u_cen, u_ex, u_ey, u_srf, so the AI
+// sides' fill (perf1-finish-surround-ai.c) puts the leftover pixels on the source the same way pass 1 does.
+const char pic_glsl_geometry[] = GLSL(
     // atan2(y, x) for x > 0 to about 1e-8: the GPU's own atan is good to only about 1e-5 rad (0.04 source pixel at 700 mm),
     // too coarse for lines that must meet across a seam. Two half-angle steps bring the argument under 0.2, then a series.
     float pic_atan2(float y, float x)
@@ -96,7 +98,9 @@ const char pic_glsl_resample[] = GLSL(
         vec2 k = (crop.zw - crop.xy) / (pic.zw - pic.xy);
         return vec4(crop.xy + (uvs - pic.xy) * k, crop.xy + (uv - pic.xy) * k);
     }
+);
 
+const char pic_glsl_resample[] = GLSL(
     float pic_kernel(float q)
     {
         int n = textureSize(u_lut, 0).x;

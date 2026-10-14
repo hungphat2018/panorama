@@ -231,6 +231,14 @@ struct audio *audio_open(const struct cfg *cfg)
     return a;
 }
 
+double audio_start_lead_s(struct audio *a, double wait_s)
+{
+    double until = now_s() + wait_s, lead;
+    while ((lead = atomic_load(&a->lead_s)) <= 0.0 && now_s() < until)
+        Sleep(5);
+    return lead;
+}
+
 void audio_close(struct audio **ap, const char *dir)
 {
     struct audio *a = *ap;

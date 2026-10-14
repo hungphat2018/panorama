@@ -1,7 +1,7 @@
 ---
 phase: 2
 title: "Performer engine"
-status: in-progress
+status: completed
 priority: P1
 effort: "2d"
 dependencies: [1]
@@ -53,15 +53,21 @@ Hard to change: the engine, the language, the process boundary, license exposure
 1. Done 2026-10-11: [requirement matrix](../reports/researcher-261011-1900-performer-requirement-matrix.md), R1–R10 × A, B, B2, C, D, E plus E2 (libmpv with the unmerged D3D11 render API, mpv#17764) and F (VLC `wall`), every cell cited. Ranking holds: C, then B2 as fallback. R8–R10 need our own code (or the same libplacebo patch) in both C and B2, and rule out A, D, E, E2 and F. FFmpeg 9.0.2 drops MKV ordered chapters and linked segments (`matroskadec.c`), so the per-file mpv fallback is required until our performer has its own timeline layer. Weak cells: B2 is derived only (P7 not run); C's R1/R9 wait for the full-screen P1 run; R10 can't be tested on Setup A (the Radeon 610M has no outputs).
 2. Decided: [ADR 0022](../../docs/adr/0022-own-performer-on-libplacebo-and-ffmpeg.md) (own C11 performer; mpv core + own video output as fallback; stock mpv as baseline and per-file fallback).
 3. **P0** (done 2026-10-11, [report](../reports/spike-261011-1247-performer-toolchain-p0.md)): MSYS2 UCRT64 under the user's profile; libplacebo master and plplay build; LGPL FFmpeg 9.0.2 built from source; `perf0` (plplay-derived, C11) plays on D3D11 (software and D3D11VA, our own `Present`: 0 late, 0 skipped) and Vulkan (jittery, unexplained hitches). Supported-file smoke test done 2026-10-11 ([file matrix](../reports/spike-261011-1955-supported-file-matrix.md), 53 cases on perf0 and stock mpv, `spikes/file-matrix/`): no library-level blocker; deinterlacing, rotation and SD colour fixed in perf0 with 81 lines behind switches. Close before the concept demo: text subtitles, software-decode fallback (D3D11VA refuses Hi10P, 4:2:2, 4:4:4, MPEG-4 ASP), a deliberate colour policy for SD and HDR-to-SDR (what you see: the user's call), raw-stream timestamps. Stays on the mpv per-file fallback until built: ordered chapters, PGS, Dolby Vision 5/8.1, IVTC, audio passthrough, HDR output.
-4. **P1**: the two-window presenter on libplacebo, on both D3D11 and Vulkan, plus one run with a monitor on the other graphics adapter; same measurements as the raw spike (overlay state, refreshes per frame, seam offset).
-5. **P2–P6** in the order of the engine research section 6: pan mode per refresh (row-aware), cues and seek latch, picture path quality and cost, audio sync (audio follows the master display), subtitles.
+4. **P1**: the two-window presenter on libplacebo, on both D3D11 and Vulkan, plus one run with a monitor on the other graphics adapter; same measurements as the raw spike (overlay state, refreshes per frame, seam offset). D3D11 done ([P1 report](../reports/spike-261011-1552-performer-two-window-p1.md); full screen with row times: [row-timing report](../reports/spike-261011-1915-row-timing-in-presenters.md)). Vulkan built and passing windowless tests, verdict "works with limits, provisional" ([Vulkan report](../reports/spike-261011-2100-performer-two-window-vulkan.md)); its windowed and full-screen suite moves to phase 8, optional, since the performer runs on D3D11 (ADR 0022). The other-adapter run can't happen on Setup A (the Radeon 610M drives no output); it waits for Setup B.
+5. **P2–P6** in the order of the engine research section 6: pan mode per refresh (row-aware), cues and seek latch, picture path quality and cost, audio sync (audio follows the master display), subtitles. Done 2026-10-12, built into `spikes/performer-p1/`:
+   - Cues and seek latch ([P3 report](../reports/spike-261011-2145-performer-cues-and-seek-latch.md)): 1,441 version swaps and 4,904 seeks in simulation, 0 wrong frames, 0 shots changed on screen.
+   - Picture path, pan mode and subtitles ([report](../reports/fullstack-developer-261012-1219-performer-picture-path.md)), as ADR 0026: libplacebo prepares each frame; our one resample with fold or curve, the shot's crop and place, a per-row camera slide from the cue sheet, and the rolling blend behind `--blend rolling` (off by default); glow surround; one colour correction and our dither; libass subtitles on the monitor the cue names. Within 0.46 code of the float64 reference in all 10 windowed cases; a windowed run with D3D11VA, 8 sheet versions and 7 seeks passed with 0 wrong frames; the HEVC episode played windowed with its own subtitles. Found: monitors with different per-pass values must not share a libplacebo dispatch (one refresh with a wrong crop otherwise).
+   - Sound ([report](../reports/fullstack-developer-261012-1133-performer-audio.md)): own decode, WASAPI shared mode, and a stand-in sink for tests; the sound follows the film clock with small resampling changes and never drops a picture. 13 headless runs and the real device: steady error p99 at most 0.295 ms, 0 underruns, 0 resyncs. Each restart is now planned far enough ahead for the sound's measured lead, so the start of the sound after a seek is no longer cut.
+   - Not built (the per-file fallback to stock mpv covers them, ADR 0022): automatic software decode when D3D11VA refuses (H.264 Hi10P, 4:2:2, 4:4:4), raw streams without timestamps, ordered chapters, PGS, audio passthrough, pitch-kept speed lock (the lock plays sound 0.1 % fast).
 6. Keep the supported-file matrix; judge the fallback against it.
 
 ## Success Criteria
 
 - [x] Requirement × option matrix with evidence for every cell (source line, doc, or measurement): [matrix](../reports/researcher-261011-1900-performer-requirement-matrix.md); the cells resting on derivation or windowed runs are listed there.
-- [ ] ADR for the performer engine, language and boundary.
-- [ ] If the engine is new: a skeleton plays the anime test episode on both monitors for 5 min with 0 dropped frames, audio in sync, and seeks work.
+- [x] ADR for the performer engine, language and boundary: [0022](../../docs/adr/0022-own-performer-on-libplacebo-and-ffmpeg.md), refined by [0026](../../docs/adr/0026-picture-path-one-resample-per-monitor.md).
+- [ ] If the engine is new: a skeleton plays the anime test episode on both monitors for 5 min with 0 dropped frames, audio in sync, and seeks work. Built: every part is in and passes its automated checks (windowed picture on both screens, headless sound sync, seeks); the 5-minute full-screen run is phase 8's pace measurement, with the user.
+
+**Closed 2026-10-12.** Verification on the real screens and by ear moves to [phase 8](./phase-08-thin-prototype-and-exit.md). Known: the headless latch test's real-program step fails its "every monitor starts together" check on a loaded machine (a late first refresh, [P3 report](../reports/spike-261011-2145-performer-cues-and-seek-latch.md) section 6), the same with sound and picture-path code switched off; it is watched in phase 8's full-screen run with the render thread in the multimedia "Games" class.
 
 ## Risk Assessment
 

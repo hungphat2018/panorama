@@ -2,4 +2,5 @@
 #pragma once
 
 extern const char pic_glsl_common[];   // the sigmoid transform pair
-extern const char pic_glsl_resample[]; // pic_main(): one output pixel
+extern const char pic_glsl_geometry[]; // pic_surface(), pic_map(): output pixel -> surface -> source
+extern const char pic_glsl_resample[]; // pic_main(): one output pixel (needs pic_glsl_geometry before it)

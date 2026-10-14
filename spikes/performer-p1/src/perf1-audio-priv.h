@@ -58,6 +58,7 @@ struct audio {
     int64_t written;            // frames handed to the sink since halt
     uint32_t ahead;             // frames to keep queued while sound plays
     uint32_t ahead_idle;        // ... while silent: shallow, so a restart announced late can still be placed in time
+    _Atomic double lead_s;      // largest measured time from writing a new epoch's first frame to hearing it (0: not yet)
     struct dev_clock dc;
     struct seg_log segs;
     struct sync_ctl ctl;

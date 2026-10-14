@@ -1,0 +1,98 @@
+{
+ "schema": "panorama.side-gate-bars/1",
+ "doc": "Bars of the per-frame side gate (live/side_gate.py, side-gate.py): a frame fails when any measure crosses its bar ({max} or {min}); {unset} records why a measure has none (reported, not judged). \"applies\": \"carried\" marks the bars that ask for the truth's own pixels: they judge carried truth (X1c-style tests) and are left out for generated sides (side-gate.py --generated), which use \"generated_max\" where a bar has one. Since 2026-10-14 11:35 the user asked Claude to judge the quality itself: the carried bars sit at the measurement floor (25 % above the largest difference between the truth's own two copies, raw and through the world, on X1c's 6 moments), far below what the user saw in the ladder; the generated bars come from the user's ladder answers (half the size seen, see ladder_evidence). A bar is relaxed only with evidence that it fails what the user cannot see.",
+ "bars": {
+  "seam": {
+   "max": 2.1, "applies": "carried",
+   "source": "floor: raw truth vs truth-pipe reaches 1.69 codes in the 16 px next to the seam (reaching f64 right), x 1.25"
+  },
+  "line": {
+   "max": 1.6, "applies": "carried",
+   "source": "floor: 1.29 codes within +-16 px of the halves' line (slow-side f60 right), x 1.25"
+  },
+  "inner": {
+   "max": 1.55, "applies": "carried",
+   "source": "floor: 1.23 codes over the side's inner half (reaching f68 right), x 1.25"
+  },
+  "outer": {
+   "max": 1.45, "applies": "carried",
+   "source": "floor: 1.16 codes over the side's outer half (reaching f48 right), x 1.25"
+  },
+  "drift": {
+   "max": 0.3, "generated_max": 2.0, "applies": "all",
+   "source": "carried: floor 0.23 px tile displacement (pan f12 right) x 1.25. generated: the ladder's break at half its estimated x75 (2.0 px: the user saw 5.7 px, missed 2.8 px) measures 1.96 px"
+  },
+  "jump": {
+   "max": 0.55, "generated_max": 0.71, "applies": "all",
+   "source": "two-sided |side change - truth change|. carried: floor 0.43 codes (reaching f40 right) x 1.25. generated: the 2.0 px ladder break measures 0.71 (mean of both sides)"
+  },
+  "motion_vs_truth": {
+   "max": 0.6, "generated_max": 1.9, "applies": "all",
+   "source": "carried: floor 0.46 px (reaching f16 right) x 1.25. generated: the 2.0 px ladder break measures 1.88 px (right; the left band was flat at its onset)"
+  },
+  "drift_vs_truth": {
+   "max": 0.6, "generated_max": 5.6, "applies": "all",
+   "source": "carried: floor 0.47 px (pan-patches f19 right) x 1.25. generated: the ladder's slow drift at half the size the user saw (11.3 px -> 5.65 px) measures 5.6 px; breaks are motion_vs_truth's (asked for by the phase 5 session, 2026-10-14 11:49: a frozen side under --generated passed)"
+  },
+  "detail_loss": {
+   "min": 0.9, "applies": "all",
+   "source": "1 s running median: the truth's own two copies reach 0.923 (pan right); phase 3's 1 MP plates at 0.85 of today's best were seen (14/20, 16/20), 2 MP at 0.99 matched"
+  },
+  "boil": {
+   "max": 1.0, "applies": "all",
+   "source": "codec noise: a clip and its re-encode with a different side differ by at most 0.32 codes per frame off the changed frames; criterion 5: a side changes only with the picture"
+  },
+  "detail": {
+   "min": 0.669,
+   "source": "truth-pipe's minimum over the 30 moments (shot323 f15 right): real content's softest seam band (truth-free; detail_loss carries the swap tests' bar)"
+  },
+  "seam_step": {
+   "max": 7.5,
+   "source": "truth-pipe's maximum over the 30 moments (shot323 f47 right; p99.9 2.5): an offset along the seam beyond real content's"
+  },
+  "seam_colour": {
+   "max": 3.5,
+   "source": "truth-pipe's maximum over the 30 moments (shot323 f21 right; p99.9 1.5)"
+  },
+  "seam_edges": {
+   "unset": "real content reaches 1.263 (shot261 f3 right; p99 0.88) while X1c's broken planner-v2 frames reach 0.9-1.0: one frame cannot tell a break from an edge that ends at the seam"
+  },
+  "seam_motion": {
+   "unset": "real action moves differently either side of the seam: truth-pipe reaches 61 px (shot323 f27; p99 26), the ladder's breaks 1.6-7 px"
+  },
+  "seam_drift": {
+   "unset": "real content reaches 100 px over 1 s (shot159 f24; p99 62)"
+  },
+  "pop": {
+   "unset": "real content reaches 16.4 (shot68 f9; p99 3.3); slow-side's 58.8-code snap gave 16.9"
+  },
+  "boil_free": {
+   "unset": "real content changes its true sides while the picture holds (shot246 f4 right: 73 codes; shot123: 19): truth-free boil needs the picture's own motion near the seam, not its hold"
+  }
+ },
+ "ladder_evidence": {
+  "folder": "../out/demo/20261014-105347-side-ladder",
+  "answers": "ladder-answers-20261014-113142.json: 5 of 32 trials, then the user asked Claude to judge itself (the two clips looked nearly the same apart from flicker on the left or a clear seam line: the events themselves)",
+  "break": "5.7 px and 8 px picked right, 2.8 px wrong (left side)",
+  "drift": "11.3 px and 22.6 px picked right"
+ },
+ "normal": {
+  "file": "../out/demo/20261014-043348-true-sides-c/gate-normal/normal.json",
+  "moments": "X1c's 6 (their truth-pipe clips) and the 24 of out/demo/20261014-050750-x1c-metrics.json (truth-pipe rebuilt from the film, written and read back the same way)",
+  "extreme": {
+   "seam_step": 7.5,
+   "seam_colour": 3.5,
+   "seam_edges": 1.263,
+   "detail": 0.669,
+   "seam_motion": 61.301,
+   "seam_drift": 100.338,
+   "pop": 16.396,
+   "boil_free": 73.331
+  }
+ },
+ "floor": {
+  "file": "made by side-gate.py x1c <X1c test> --versions truth (the raw truth against truth-pipe), 2026-10-14 11:40",
+  "max": {"seam": 1.692, "inner": 1.23, "outer": 1.157, "line": 1.294, "jump": 0.431, "drift": 0.227},
+  "min": {"shape": 0.63, "detail_loss_per_frame": 0.781, "detail_loss_1s": 0.923}
+ }
+}

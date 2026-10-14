@@ -23,6 +23,9 @@
 // Opens the chosen audio stream of cfg->file and the output (the default WASAPI device, or --audio-null's stand-in), and
 // starts the thread. NULL (with the reason printed) when there is no sound: --no-audio, no audio stream, no device.
 struct audio *audio_open(const struct cfg *cfg);
+// How far ahead of an epoch's first refresh the sound must hear of it to start on time (seconds, measured on the device).
+// Waits up to wait_s for the first measurement; 0 when none came.
+double audio_start_lead_s(struct audio *a, double wait_s);
 // engine_host.note: breaks and epoch starts, from the render thread. Never blocks.
 void audio_engine_note(void *user, const struct engine_note *n);
 // Stops the thread and the device, writes audio.csv into dir, prints the summary line. Safe to call twice.

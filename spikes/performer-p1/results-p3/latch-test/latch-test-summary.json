@@ -1,7 +1,7 @@
 {
- "started": "2026-10-11 21:24:23",
- "ok": false,
- "selftest": "cue-selftest: 155 checks, 0 failed",
+ "started": "2026-10-12 13:52:37",
+ "ok": true,
+ "selftest": "cue-selftest: 183 checks, 0 failed",
  "analyzer_tests": "33 tests, 0 failed",
  "families": [
   {
@@ -838,107 +838,7 @@
    }
   }
  },
- "exe_runs": [
-  {
-   "name": "23.976 fps clip, 240+96 Hz, a seek -50..+150 ms around each swap",
-   "swaps": 12,
-   "seeks": 11,
-   "pauses": 0,
-   "restarts": 12,
-   "refreshes": 15073,
-   "wrong": 0,
-   "changed": 0,
-   "breaks": 12,
-   "clock": 0,
-   "late": 0,
-   "verdict": "FAIL",
-   "seconds": 47.8
-  },
-  {
-   "name": "23.976 fps clip, 240+96 Hz, scrub at 5 seeks/s",
-   "swaps": 10,
-   "seeks": 98,
-   "pauses": 0,
-   "restarts": 98,
-   "refreshes": 14198,
-   "wrong": 0,
-   "changed": 0,
-   "breaks": 106,
-   "clock": 0,
-   "late": 0,
-   "verdict": "FAIL",
-   "seconds": 52.2
-  },
-  {
-   "name": "23.976 fps clip, 240+96 Hz, pause, resume, seek while paused",
-   "swaps": 6,
-   "seeks": 2,
-   "pauses": 5,
-   "restarts": 8,
-   "refreshes": 4580,
-   "wrong": 0,
-   "changed": 0,
-   "breaks": 9,
-   "clock": 0,
-   "late": 0,
-   "verdict": "FAIL",
-   "seconds": 22.2
-  },
-  {
-   "name": "23.976 fps clip, 240+96 Hz, 20 seeks/s",
-   "swaps": 4,
-   "seeks": 668,
-   "pauses": 0,
-   "restarts": 504,
-   "refreshes": 931,
-   "wrong": 0,
-   "changed": 0,
-   "breaks": 8,
-   "clock": 0,
-   "late": 0,
-   "verdict": "FAIL",
-   "seconds": 42.1
-  },
-  {
-   "name": "23.976 fps clip, 240+72 Hz, speed not locked",
-   "swaps": 8,
-   "seeks": 7,
-   "pauses": 0,
-   "restarts": 8,
-   "refreshes": 7684,
-   "wrong": 0,
-   "changed": 0,
-   "breaks": 0,
-   "clock": 0,
-   "late": 0,
-   "verdict": "PASS",
-   "seconds": 27.1
-  },
-  {
-   "name": "25 fps clip, 240+100 Hz",
-   "swaps": 7,
-   "seeks": 6,
-   "pauses": 0,
-   "restarts": 7,
-   "refreshes": 10086,
-   "wrong": 0,
-   "changed": 0,
-   "breaks": 0,
-   "clock": 0,
-   "late": 0,
-   "verdict": "PASS",
-   "seconds": 32.1
-  },
-  {
-   "name": "named pipe",
-   "result": "17 checks, 0 failed"
-  }
- ],
- "failures": [
-  "exe run 23.976 fps clip, 240+96 Hz, a seek -50..+150 ms around each swap: analyzer FAIL, see results-p3\\latch-test\\exe-adversarial-96\\analysis.txt",
-  "exe run 23.976 fps clip, 240+96 Hz, scrub at 5 seeks/s: analyzer FAIL, see results-p3\\latch-test\\exe-scrub-96\\analysis.txt",
-  "exe run 23.976 fps clip, 240+96 Hz, pause, resume, seek while paused: analyzer FAIL, see results-p3\\latch-test\\exe-breaks-96\\analysis.txt",
-  "exe run 23.976 fps clip, 240+96 Hz, 20 seeks/s: analyzer FAIL, see results-p3\\latch-test\\exe-stress-96\\analysis.txt"
- ],
- "seconds": 320.7
+ "exe_runs": [],
+ "failures": [],
+ "seconds": 91.4
 }

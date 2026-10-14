@@ -1,5 +1,7 @@
 // Command line of perf1 (the P3 build).
 #include "perf1-app.h"
+#include "perf1-ai-sides.h"
+#include "perf1-gpu-share.h"
 
 #include <math.h>
 
@@ -36,6 +38,8 @@ void args_usage(const char *argv0)
         "  --probe          print the outputs of the adapter that drives the screens, then exit\n",
         argv0);
     picture_usage();
+    gpu_share_usage();
+    ai_sides_usage();
 }
 
 // DISPLAYn=VALUE into a wide device name ("\\.\DISPLAYn") and the text after '='.
@@ -149,7 +153,15 @@ bool args_parse(int argc, char **argv, struct cfg *cfg)
         else if (!strcmp(a, "--audio-offset-ms") && v) { cfg->audio_offset_ms = atof(v); i++; }
         else if (!strcmp(a, "--audio-null-drift-ppm") && v) { cfg->audio_null_drift_ppm = atof(v); i++; }
         else if (!strcmp(a, "--audio-null-latency-ms") && v) { cfg->audio_null_latency_ms = atof(v); i++; }
-        else if (picture_arg(argc, argv, &i) <= 0) return false; // the picture path's options (perf1-picture-args.c)
+        else {
+            // --frame-latency, --gpu-priority, --vram-reserve-mb (perf1-gpu-share.c), --ai-* (perf1-ai-sides.c), then the
+            // picture path's options (perf1-picture-args.c)
+            int r = gpu_share_arg(argc, argv, &i);
+            if (r == 0)
+                r = ai_sides_arg(argc, argv, &i);
+            if (r < 0 || (r == 0 && picture_arg(argc, argv, &i) <= 0))
+                return false;
+        }
     }
     if (!cfg->probe_only && !cfg->file)
         return false;

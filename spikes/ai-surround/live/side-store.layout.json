@@ -1,0 +1,201 @@
+{
+  "schema": "panorama.side-store/2",
+  "doc": "Binary layout of the side store: one memory-mapped file shared by the live worker (spikes/ai-surround/live-worker.py, the only writer of everything but the player block) and the player (spikes/performer-p1, perf1 --ai-sides PATH, the only writer of the player block). Little-endian, every field naturally aligned. Python builds its numpy dtypes from this file (live/side_store.py); the C reader (src/perf1-ai-sides-store.h) mirrors it with static asserts, and the store self-test proves both agree. A change of any offset, size or meaning is a new schema_major (2: projective frame transforms and patch pages, phase 4). Regions, in file order: header (layout, worker and player blocks), frame table, shot table, canvas records (one per heap slot), heap (slots of heap_slot_bytes each, holding a canvas's pixels or a shot's patch page). TIMELINE and SPACE follow the content model (spikes/film-analysis/schema/common.schema.json): film time is seconds on the rebased timeline (first frame = 0, the player's frame time bit for bit), positions are pixels of the stored video frame, continuous (pixel u spans [u, u + 1), its centre at u + 0.5). WORLD: each canvas id (a set of shots that show one place) has its own world coordinates; a frame's transform maps its source pixels to them. CONSISTENCY: records that change after they are first published carry a sequence counter (frame.seq, shot.seq, canvas.gen, player.seq): the writer makes it odd, writes the fields, then makes it even; a reader copies the record and keeps the copy only if the counter was even and unchanged across the copy. A frame's pts, the layout block and the file size never change while store_uid stays the same.",
+  "byte_order": "little",
+  "header_bytes": 4096,
+  "blocks": {
+    "layout": {
+      "offset": 0, "bytes": 256,
+      "doc": "Written once by the worker that creates the file, before worker.state becomes running.",
+      "fields": [
+        {"name": "magic", "type": "S8", "offset": 0, "doc": "b'PNRSIDE2'"},
+        {"name": "schema_major", "type": "<u4", "offset": 8, "doc": "2"},
+        {"name": "schema_minor", "type": "<u4", "offset": 12, "doc": "0; a reader of the same major accepts any minor"},
+        {"name": "file_bytes", "type": "<u8", "offset": 16, "doc": "size of the whole store file"},
+        {"name": "header_bytes", "type": "<u4", "offset": 24, "doc": "4096"},
+        {"name": "frame_rec_bytes", "type": "<u4", "offset": 28, "doc": "96"},
+        {"name": "shot_rec_bytes", "type": "<u4", "offset": 32, "doc": "64"},
+        {"name": "canvas_rec_bytes", "type": "<u4", "offset": 36, "doc": "128"},
+        {"name": "max_frames", "type": "<u4", "offset": 40, "doc": "rows of the frame table"},
+        {"name": "max_shots", "type": "<u4", "offset": 44, "doc": "rows of the shot table"},
+        {"name": "heap_slots", "type": "<u4", "offset": 48, "doc": "canvas records, one per heap slot"},
+        {"name": "reserved0", "type": "<u4", "offset": 52},
+        {"name": "heap_slot_bytes", "type": "<u8", "offset": 56, "doc": "bytes of one heap slot (a multiple of 4096)"},
+        {"name": "off_frames", "type": "<u8", "offset": 64, "doc": "file offset of the frame table"},
+        {"name": "off_shots", "type": "<u8", "offset": 72, "doc": "file offset of the shot table"},
+        {"name": "off_canvases", "type": "<u8", "offset": 80, "doc": "file offset of the canvas records"},
+        {"name": "off_heap", "type": "<u8", "offset": 88, "doc": "file offset of heap slot 0 (a multiple of 4096)"},
+        {"name": "store_uid", "type": "<u8", "offset": 96, "doc": "random id of this file's contents; a new one whenever the worker re-creates the store, so the player drops everything it cached from the old one"}
+      ]
+    },
+    "worker": {
+      "offset": 256, "bytes": 256,
+      "doc": "Written by the worker only; each field is read on its own (aligned 4- and 8-byte values are read whole).",
+      "fields": [
+        {"name": "pid", "type": "<u4", "offset": 0},
+        {"name": "state", "type": "<u4", "offset": 4, "doc": "worker_state enum"},
+        {"name": "beat", "type": "<u8", "offset": 8, "doc": "grows about 10 times a second while the worker lives; the player calls the worker lost when it stops for 2 s"},
+        {"name": "qpc", "type": "<i8", "offset": 16, "doc": "QueryPerformanceCounter at the last beat"},
+        {"name": "qpc_freq", "type": "<i8", "offset": 24},
+        {"name": "film_bytes", "type": "<u8", "offset": 32, "doc": "size of the film file the store describes (the player checks it against its own file)"},
+        {"name": "src_w", "type": "<u4", "offset": 40, "doc": "stored picture size of the film"},
+        {"name": "src_h", "type": "<u4", "offset": 44},
+        {"name": "frames_published", "type": "<u4", "offset": 48, "doc": "frame-table rows whose pts are set: [0, frames_published) (raised only after their pts are written)"},
+        {"name": "shots_published", "type": "<u4", "offset": 52, "doc": "shot-table rows in use: [0, shots_published)"},
+        {"name": "analysed_frames", "type": "<u4", "offset": 56, "doc": "frames with a valid transform (diagnostic)"},
+        {"name": "painter_state", "type": "<u4", "offset": 60, "doc": "painter_state enum"},
+        {"name": "plates_done", "type": "<u4", "offset": 64},
+        {"name": "plates_skipped", "type": "<u4", "offset": 68, "doc": "plates not made because their shot was too short or could not be ready before it started"},
+        {"name": "cache_hits", "type": "<u4", "offset": 72, "doc": "canvases served from the disk cache"},
+        {"name": "throttle_events", "type": "<u4", "offset": 76, "doc": "times the worker held GPU work back because the player reported late frames or low slack"},
+        {"name": "painter_s_per_plate", "type": "<f4", "offset": 80, "doc": "running estimate the scheduler uses"},
+        {"name": "epoch_seen", "type": "<i4", "offset": 84, "doc": "the player epoch (seek counter) the worker has re-planned for"},
+        {"name": "reserved", "type": "<u8", "offset": 88},
+        {"name": "film_name", "type": "S128", "offset": 96, "doc": "UTF-8 base name of the film, NUL-padded"},
+        {"name": "status", "type": "S32", "offset": 224, "doc": "short ASCII status for logs"}
+      ]
+    },
+    "player": {
+      "offset": 512, "bytes": 512,
+      "doc": "Written by the player only, under seq. The worker follows the playhead and the GPU pressure from it.",
+      "fields": [
+        {"name": "seq", "type": "<u4", "offset": 0, "doc": "sequence counter of this block"},
+        {"name": "pid", "type": "<u4", "offset": 4},
+        {"name": "beat", "type": "<u8", "offset": 8, "doc": "grows with every write (each master refresh)"},
+        {"name": "qpc", "type": "<i8", "offset": 16, "doc": "QueryPerformanceCounter at the last write"},
+        {"name": "state", "type": "<u4", "offset": 24, "doc": "player_state enum"},
+        {"name": "epoch", "type": "<i4", "offset": 28, "doc": "seek counter: changes at every seek and at the film start"},
+        {"name": "playhead_s", "type": "<f8", "offset": 32, "doc": "film time the master monitor shows now"},
+        {"name": "speed", "type": "<f8", "offset": 40, "doc": "film seconds per wall second (0 while paused)"},
+        {"name": "slack_ms", "type": "<f4", "offset": 48, "doc": "smallest present lead (planned refresh time minus the present call) over the last 0.5 s, all monitors"},
+        {"name": "late_recent", "type": "<u4", "offset": 52, "doc": "refreshes without a new present in the last 1 s, all monitors"},
+        {"name": "late_total", "type": "<u8", "offset": 56},
+        {"name": "need_margin_px", "type": "<f4", "shape": [4], "offset": 64, "doc": "how far leftover pixels reach beyond the crop, source px, left/top/right/bottom: the largest over the cue sheet's shots and all monitors (the side area the worker must cover)"},
+        {"name": "need_valid", "type": "<u4", "offset": 80, "doc": "1 when need_margin_px is set"},
+        {"name": "src_w", "type": "<u4", "offset": 84, "doc": "the player's picture size (the worker checks it against its own)"},
+        {"name": "src_h", "type": "<u4", "offset": 88},
+        {"name": "uploading_slot", "type": "<i4", "offset": 92, "doc": "heap slot the player is copying to the GPU now (-1: none); the worker must not reuse it"},
+        {"name": "uploading_gen", "type": "<u4", "offset": 96, "doc": "that slot's gen when the copy started"},
+        {"name": "showing_shot", "type": "<i4", "offset": 100, "doc": "shot on screen (-1: none known)"},
+        {"name": "showing_tier", "type": "<u4", "offset": 104, "doc": "tier on screen (0 glow)"},
+        {"name": "showing_canvas", "type": "<i4", "offset": 108, "doc": "canvas id on screen (-1: glow)"},
+        {"name": "resident_n", "type": "<u4", "offset": 112, "doc": "canvases on the GPU now"},
+        {"name": "resident_canvas", "type": "<i4", "shape": [16], "offset": 116, "doc": "their canvas ids (diagnostic)"},
+        {"name": "uploads_done", "type": "<u4", "offset": 180},
+        {"name": "uploads_torn", "type": "<u4", "offset": 184, "doc": "copies dropped because the slot changed under them"},
+        {"name": "reserved", "type": "<u4", "offset": 188}
+      ]
+    }
+  },
+  "records": {
+    "frame": {
+      "bytes": 96,
+      "doc": "One row per frame of the film's frame table (the content model's rows, the player's frames). pts is written before frames_published covers the row and never changes. The rest is the side plan for that frame, written when its shot is analysed.",
+      "fields": [
+        {"name": "pts", "type": "<f8", "offset": 0, "doc": "film time of the frame, seconds"},
+        {"name": "seq", "type": "<u4", "offset": 8, "doc": "sequence counter of the fields below"},
+        {"name": "shot", "type": "<i4", "offset": 12, "doc": "row in the shot table, -1 while not analysed"},
+        {"name": "h", "type": "<f4", "shape": [8], "offset": 16, "doc": "the frame's camera transform, projective: source px (x, y) -> world px of its canvas: d = h6 x + h7 y + 1, wx = (h0 x + h1 y + h2) / d, wy = (h3 x + h4 y + h5) / d (a translation, or a homography where the camera model measured one: live/camera_model.py)"},
+        {"name": "gain", "type": "<f4", "shape": [4], "offset": 48, "doc": "linear-light gain of the canvas colour on the left/top/right/bottom side (1 = none); for now one value for all four: the picture's mean linear luma over its median over the shot's lit kept frames (a fade's dark frames left out), through a soft knee (analyse_v0)"},
+        {"name": "state", "type": "u1", "shape": [4], "offset": 64, "doc": "step state per side, left/top/right/bottom (step_state enum; the step planner's, live/step_planner.py; the player ignores it)"},
+        {"name": "flags", "type": "<u4", "offset": 68, "doc": "frame_flags bits"},
+        {"name": "reserved", "type": "<u4", "shape": [6], "offset": 72}
+      ]
+    },
+    "shot": {
+      "bytes": 64,
+      "doc": "One row per shot the worker knows. Rows are added in any order (after a seek the worker starts in the middle); a row describes a frame range, and frames name their row.",
+      "fields": [
+        {"name": "seq", "type": "<u4", "offset": 0, "doc": "sequence counter"},
+        {"name": "flags", "type": "<u4", "offset": 4, "doc": "shot_flags bits"},
+        {"name": "first_frame", "type": "<u4", "offset": 8},
+        {"name": "n_frames", "type": "<u4", "offset": 12},
+        {"name": "canvas_id", "type": "<u4", "offset": 16, "doc": "the set's canvas id (v1: the shot's own row)"},
+        {"name": "key_frame", "type": "<u4", "offset": 20, "doc": "frame whose source px the world px equal (v1: the shot's first frame)"},
+        {"name": "crop", "type": "<f4", "shape": [4], "offset": 24, "doc": "crop the analysis took as the picture, source px [x0, y0, x1, y1)"},
+        {"name": "start_s", "type": "<f8", "offset": 40, "doc": "cue-sheet start: halfway between the shot's first frame and the frame before it (0 for the first shot)"},
+        {"name": "end_s", "type": "<f8", "offset": 48, "doc": "the next shot's start"},
+        {"name": "best_tier", "type": "<u4", "offset": 56, "doc": "best tier made for its canvas so far (diagnostic)"},
+        {"name": "reserved", "type": "<u4", "offset": 60}
+      ]
+    },
+    "canvas": {
+      "bytes": 128,
+      "doc": "One record per heap slot: what the slot holds, a canvas version (kind canvas) or a shot's patch page (kind patch_page). A canvas version is an RGBA image of a set's world: texel (i, j) covers world px [x0 + i * scale, x0 + (i + 1) * scale) x [y0 + j * scale, ...). A patch page is the slot laid out as the patch_page record, its patch table, then (from page_header_bytes) the packed RGBA8 texels of tex_w x tex_h at row_bytes; world_x0, world_y0 and scale are unused (the page's grid map says where its patches go). The worker writes the slot while gen is odd and state is free, then sets state complete and makes gen even; to reuse a slot it makes gen odd first. The player shows a canvas version, and a shot's patch page, only from the first frame of a showing (a cut, a seek, the film start) and only if they were on the GPU by then.",
+      "fields": [
+        {"name": "gen", "type": "<u4", "offset": 0, "doc": "sequence counter of the slot (record and pixels)"},
+        {"name": "state", "type": "<u4", "offset": 4, "doc": "canvas_state enum"},
+        {"name": "canvas_id", "type": "<u4", "offset": 8},
+        {"name": "version", "type": "<u4", "offset": 12, "doc": "grows with every new version of a canvas id; (canvas_id, version, recipe) names the pixels"},
+        {"name": "tier", "type": "<u4", "offset": 16, "doc": "tier enum"},
+        {"name": "format", "type": "<u4", "offset": 20, "doc": "pixel_format enum"},
+        {"name": "tex_w", "type": "<u4", "offset": 24},
+        {"name": "tex_h", "type": "<u4", "offset": 28},
+        {"name": "row_bytes", "type": "<u4", "offset": 32},
+        {"name": "shot_hint", "type": "<i4", "offset": 36, "doc": "the shot it was made for (diagnostic)"},
+        {"name": "world_x0", "type": "<f8", "offset": 40, "doc": "world px at the left edge of texel column 0"},
+        {"name": "world_y0", "type": "<f8", "offset": 48, "doc": "world px at the top edge of texel row 0"},
+        {"name": "scale", "type": "<f8", "offset": 56, "doc": "world px per texel"},
+        {"name": "valid_from_s", "type": "<f8", "offset": 64, "doc": "start of the showing it was made for; the player never shows it for frames before that"},
+        {"name": "bytes", "type": "<u8", "offset": 72, "doc": "pixel bytes in the slot: tex_h * row_bytes"},
+        {"name": "recipe", "type": "<u8", "offset": 80, "doc": "hash of how it was made (analysis and painter versions, scale, margins)"},
+        {"name": "made_qpc", "type": "<i8", "offset": 88, "doc": "QueryPerformanceCounter when it was completed"},
+        {"name": "kind", "type": "<u4", "offset": 96, "doc": "canvas_kind enum"},
+        {"name": "shot", "type": "<i4", "offset": 100, "doc": "patch page: the shot row its patches belong to (-1 for a canvas)"},
+        {"name": "page_header_bytes", "type": "<u4", "offset": 104, "doc": "patch page: bytes before its texels (the patch_page record and its patch table, rounded up to 4096)"},
+        {"name": "n_patches", "type": "<u4", "offset": 108, "doc": "patch page: rows of its patch table"},
+        {"name": "reserved", "type": "<u8", "shape": [2], "offset": 112}
+      ]
+    },
+    "patch_page": {
+      "bytes": 256,
+      "doc": "Start of a heap slot that holds a shot's patch page (structure path, live/structure.py). The page grid is the player's accumulate and overlay textures: grid_w x grid_h texels; grid_map takes the set's world px to a grid texel coordinate (texel i spans [i, i + 1)). The patch table (n_patches patch records) follows at byte 256.",
+      "fields": [
+        {"name": "magic", "type": "S8", "offset": 0, "doc": "b'PNRPAGE1'"},
+        {"name": "shot", "type": "<i4", "offset": 8, "doc": "the shot row"},
+        {"name": "n_patches", "type": "<u4", "offset": 12},
+        {"name": "grid_w", "type": "<u4", "offset": 16},
+        {"name": "grid_h", "type": "<u4", "offset": 20},
+        {"name": "first_frame", "type": "<u4", "offset": 24, "doc": "the shot's first frame (a check)"},
+        {"name": "n_frames", "type": "<u4", "offset": 28, "doc": "the shot's frames (a check)"},
+        {"name": "grid_map", "type": "<f8", "shape": [9], "offset": 32, "doc": "3x3, row-major: set world px (x, y, 1) -> page grid texel coordinate (homogeneous)"},
+        {"name": "reserved", "type": "<u8", "shape": [19], "offset": 104}
+      ]
+    },
+    "patch": {
+      "bytes": 32,
+      "doc": "One patch of a page, in film-frame order. persistent: from film frame `frame` on, its texels replace the accumulate texture's at the destination rect (straight alpha: alpha 0 texels keep what is there); the player applies every persistent patch up to the frame on screen, in table order. overlay: shown over the rest for frames frame..until. The player composites overlay over accumulate over the base canvas, all sampled through the frame's transform.",
+      "fields": [
+        {"name": "frame", "type": "<u4", "offset": 0, "doc": "film frame (frame-table row) from which it applies"},
+        {"name": "until", "type": "<u4", "offset": 4, "doc": "overlay: last frame (inclusive); persistent: 0xFFFFFFFF"},
+        {"name": "kind", "type": "<u2", "offset": 8, "doc": "patch_kind enum"},
+        {"name": "side", "type": "u1", "offset": 10, "doc": "0 left, 1 top, 2 right, 3 bottom, 255 unknown (diagnostic)"},
+        {"name": "flags", "type": "u1", "offset": 11},
+        {"name": "dst_x", "type": "<u2", "offset": 12, "doc": "destination rect in the page grid, texels"},
+        {"name": "dst_y", "type": "<u2", "offset": 14},
+        {"name": "w", "type": "<u2", "offset": 16},
+        {"name": "h", "type": "<u2", "offset": 18},
+        {"name": "src_x", "type": "<u2", "offset": 20, "doc": "source rect's corner in the page's packed texels"},
+        {"name": "src_y", "type": "<u2", "offset": 22},
+        {"name": "reserved", "type": "<u4", "shape": [2], "offset": 24}
+      ]
+    }
+  },
+  "enums": {
+    "worker_state": {"starting": 0, "running": 1, "stopped": 2},
+    "painter_state": {"off": 0, "loading": 1, "idle": 2, "painting": 3, "throttled": 4},
+    "player_state": {"none": 0, "playing": 1, "paused": 2, "seeking": 3, "ended": 4},
+    "canvas_state": {"free": 0, "complete": 1, "evicted": 2},
+    "tier": {"glow": 0, "mosaic": 1, "plate": 2, "structure": 3, "refined": 4},
+    "pixel_format": {"rgba8_film": 1, "rgba16f_linear": 2},
+    "canvas_kind": {"canvas": 0, "patch_page": 1},
+    "patch_kind": {"persistent": 1, "overlay": 2},
+    "step_state": {"unknown": 0, "hold": 1, "still": 2, "slide": 3, "gain": 4, "patch": 5, "gen": 6},
+    "frame_flags": {"valid": 1, "cut": 2, "new_drawing": 4},
+    "shot_flags": {"known": 1, "analysed": 2, "mosaic_empty": 4, "short": 8, "from_content_model": 16}
+  },
+  "formats": {
+    "rgba8_film": "4 bytes per texel, rows of row_bytes: R, G, B as the film's own encoded values (BT.709 matrix, full range, the transfer the player decodes as BT.1886 with a true-black display, i.e. linear = code^2.4), A = coverage (straight alpha, 255 = fully covered). Uncovered texels carry their nearest covered colour so filtering never pulls in black.",
+    "rgba16f_linear": "reserved for a later minor version: half floats, linear light BT.709, premultiplied"
+  }
+}

@@ -1,5 +1,6 @@
 // One refresh of one monitor through the picture path, see perf1-picture.h.
 #include "perf1-picture-internal.h"
+#include "perf1-ai-sides.h"
 
 struct pic_mon g_pm[MAX_MONITORS];
 bool g_have_subs;
@@ -49,6 +50,7 @@ bool picture_init_monitor(struct monitor *m)
         fprintf(stderr, "perf1: %s: the picture path's GPU objects could not be created\n", m->name);
         return false;
     }
+    ai_sides_init_monitor(m, pm->surround); // --ai-sides: the AI sides' fill under the picture, before the glow
     return true;
 }
 
@@ -79,6 +81,8 @@ bool picture_init_subs(void)
 
 void picture_destroy(void)
 {
+    ai_sides_write_log();
+    ai_sides_destroy();
     for (int i = 0; i < MAX_MONITORS; i++) {
         struct pic_mon *pm = &g_pm[i];
         if (A.gpu.gpu) {
@@ -237,6 +241,7 @@ bool picture_draw(const struct pic_refresh *r)
     struct fp_surround_frame sf = surround_frame(pm, r, shot);
     if (!fp_surround_update(pm->surround, pm->canvas, &shot->look.look, &shot->look.time, &sf))
         return false;
+    ai_sides_refresh(r, shot, &job, front); // --ai-sides: the store, this showing's canvas, the fill's inputs
     // under the rolling blend the dump waits for a refresh that mixes two frames (the master never does)
     if (PC.dump_dir && !pm->dumped && r->pts >= PC.dump_at_s && (!PC.blend_rolling || tm.blend.partner || m->slot == A.master) &&
         (!PC.dump_cut || m->slot == A.master || (tm.blend.partner && shot_b != shot))) {

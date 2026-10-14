@@ -1,0 +1,51 @@
+{
+  "schema": "panorama.side-model-inputs/1",
+  "doc": "What the side model (role: redraw; phase 5 of plans/261013-0718-ai-surround-live-path, T4) receives for one new drawing, for each side, and what it returns. Every candidate of phase 5's bake-off (D learned carry, B wing specialist, A streaming video model, D + zones) reads this contract and nothing else, so swapping the model touches no other role. The worker builds one record per new drawing (a frame whose drawing differs from the previous one: camera_model.CameraTracker.new_drawing); a repeated drawing gets no record and the player keeps showing the last output (no boil by construction). A change of any field's meaning, shape or units is a new schema major.",
+  "units": {
+    "time": "film seconds on the rebased timeline and film frame indices of the frame table (live/__init__.py: the content model's and the player's frame times, bit for bit)",
+    "source_px": "pixels of the stored video frame, continuous: pixel u spans [u, u + 1), its centre at u + 0.5 (spikes/film-analysis/schema/common.schema.json)",
+    "world_px": "the shot's canvas world (one per set of shots that show one place): a frame's camera map W (3x3, projective) takes its source px to world px (live/camera_model.py, VERSION in the record)",
+    "side_px": "the side's own raster: side px (i, j) has its centre at source px (x0 + (i + 0.5) * s, y0 + (j + 0.5) * s), s = source px per side px (geometry.scale)",
+    "colour": "RGB uint8 in the film's own encoding (the decoded frame's sRGB-like values, no display gain); the player applies the side's display gain after"
+  },
+  "geometry": {
+    "doc": "Per side, the region beside the picture's crop it covers, in source px. X1's geometry: a side is side_share of the picture's width wide and the crop's full height. Left: x in [crop_x0 - w, crop_x0); right: [crop_x1, crop_x1 + w); w = side_share * (crop_x1 - crop_x0); rows [crop_y0, crop_y1). Top and bottom sides follow the same rule along the other axis when the room needs them (not built).",
+    "fields": [
+      {"name": "crop", "type": "4 x f64", "doc": "the picture's crop (x0, y0, x1, y1), source px (analyse_v0)"},
+      {"name": "side_share", "type": "f64", "doc": "0.5 (the product's 16:9 picture with a side half its width on each hand)"},
+      {"name": "scale", "type": "f64", "doc": "source px per side px: 1.0 at the film's own size (phase 3: sides at half the film's detail read as a join line, so the seam band stays at 1.0; coarser further out only where the gate's detail step passes)"},
+      {"name": "seam_band_px", "type": "u32", "doc": "256: the width of the picture band and of the full-detail band of the output next to the seam"}
+    ]
+  },
+  "record": {
+    "doc": "One per new drawing; both sides in one batch.",
+    "fields": [
+      {"name": "frame", "type": "u32", "doc": "film frame index of the new drawing"},
+      {"name": "pts", "type": "f64", "doc": "its film time"},
+      {"name": "shot", "type": "u32", "doc": "shot id (the frame table's); the model never reads across a cut"},
+      {"name": "drawing", "type": "u32", "doc": "index of this drawing within the shot (0 = the shot's first: no previous output)"},
+      {"name": "camera", "type": "object", "doc": "W (3x3 f64, this frame's source px -> world px), W_prev (the previous drawing's), model (still | translation | homography | arbitrated | predicted), agreement (0-1: how well the map holds in the picture's outer bands), camera_version"},
+      {"name": "gain", "type": "2 x f32", "doc": "the side's display gain (analyse_v0, per side) at this frame and the previous drawing's: the model outputs in film colour, the player multiplies"}
+    ]
+  },
+  "inputs": {
+    "doc": "Per side, every input in that side's raster unless said otherwise. mask: u8, 255 where the input has pixels.",
+    "fields": [
+      {"name": "picture_band", "shape": "H x seam_band_px x 3, u8", "producer": "frame_reader (the decoded frame, crop applied)", "doc": "the picture's own pixels next to the seam at full size (the model's anchor for detail and colour at the seam)"},
+      {"name": "picture_thumb", "shape": "270 x 480 x 3, u8", "producer": "frame_reader", "doc": "the whole picture, area-scaled: what is going on in it"},
+      {"name": "prev_side", "shape": "H x W x 3, u8 + mask", "producer": "the side model's own previous output, warped by structure (one projective resampling: W^-1 . W_prev)", "doc": "the last shown side carried by the camera to this drawing; empty at drawing 0. The model starts from it (X1c: a carried side breaks within 1-3 frames on real moves and drifts worse than a frozen one, so it is a starting point, never shown raw)"},
+      {"name": "plate", "shape": "H x W x 4, u8 (alpha = coverage)", "producer": "painter.py (T2 plate) or mosaic_t1.py (T1 mosaic) canvas, sampled through the canvas's world mapping (texel i at world px x0 + i * scale)", "doc": "the world's long-term memory; tier (1 or 2) and canvas generation in the record; empty when neither is ready (paint mode)"},
+      {"name": "exit_strips", "shape": "H x W x 4, u8 (alpha = coverage)", "producer": "structure.ShotStructure (persistent patches in world px)", "doc": "the picture's last view of what left it across this side's edge, accumulated over the shot"},
+      {"name": "zones", "shape": "H x 1, u8 + per side scalars", "producer": "step_planner.StepPlanner (SideStep)", "doc": "rows along the seam where the picture's change next to the seam is not explained by hold, camera slide or gain (zone), and the step's state, u_step, u_drift, u_near, gain: where invention is needed"},
+      {"name": "identity", "shape": "K x 224 x 224 x 3, u8 (K <= 4)", "producer": "identity_encoder.py + identity-refs.py clusters (identity/allowed.json only)", "doc": "crops of the characters the seam cuts, with their cluster ids: a cut-off character keeps its look (A14B and the plate invented a scarf and a ponytail)"},
+      {"name": "coming", "shape": "N x (picture_band + W relative to this drawing), N <= 8", "producer": "frame_reader + camera_model", "doc": "the shot's next drawings (the film is known ahead; never past the shot's end): chunk-bidirectional updates may read them"}
+    ]
+  },
+  "output": {
+    "doc": "Per side: the whole side for this drawing, shown as it is until the next drawing (the player does not warp it; the seam pull stays).",
+    "fields": [
+      {"name": "side", "shape": "H x W x 3, u8", "doc": "film colour, matched to the picture at the seam; full detail in the seam_band_px next to the seam"}
+    ],
+    "judged_by": "live/side_gate.py at the gate's scale (X1c's strip: the picture 960 px wide): every frame passes every bar in live/side-gate.json (seam break, drift and snap, detail, boil); with a truth on the held-out moments, without one in real use"
+  }
+}

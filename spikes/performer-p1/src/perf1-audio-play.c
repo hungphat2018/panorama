@@ -246,6 +246,15 @@ void audio_service(struct audio *a)
     audio_place_flush(a, host_s, false);
     log_second(a, host_s);
     uint32_t pad = s->padding(s);
+    // How far ahead a new epoch must be announced for its first sample to be heard on time: a deep queue left over from a
+    // break, one wake-up, and whatever the device holds beyond its buffer (a virtual driver may report 0 ms latency and
+    // still keep tens of ms). Measured, never taken from the reported latency alone; the engine reads the largest value.
+    if (devclock_valid(&a->dc)) {
+        double held = ((double) (a->written - (int64_t) pad) - devclock_frame_at(&a->dc, host_s)) / (double) s->rate;
+        double lead = (double) (a->ahead + s->period) / (double) s->rate + (held > 0.0 ? held : 0.0);
+        if (lead > atomic_load(&a->lead_s))
+            atomic_store(&a->lead_s, lead);
+    }
     uint32_t want = a->mode == AM_PLAYING ? a->ahead : a->ahead_idle;
     if (want < pad + s->period / 2)
         return;

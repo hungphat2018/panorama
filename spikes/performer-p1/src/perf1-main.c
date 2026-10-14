@@ -270,6 +270,15 @@ int main(int argc, char **argv)
     A.src_w = A.di.width;
     A.src_h = A.di.height;
     sound = audio_open(&A.cfg); // NULL when there is no sound (the film plays on without it)
+    if (sound) {
+        // Every restart is planned far enough ahead for the sound to start with the picture, not only for the renderers.
+        double lead = audio_start_lead_s(sound, 0.5);
+        if (lead > A.engine.cfg.restart_margin_s) {
+            printf("audio: restart margin %.1f ms (the sound's measured lead), was %.1f ms\n", lead * 1e3,
+                   A.engine.cfg.restart_margin_s * 1e3);
+            A.engine.cfg.restart_margin_s = lead;
+        }
+    }
 
     // The first cue sheet and the control channel, before anything plays: a bad sheet or script fails the run here.
     if (A.cfg.cues_file) {
